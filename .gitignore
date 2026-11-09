@@ -55,7 +55,8 @@ Thumbs.db
 .gemini/
 AGENTS.md
 
-# Raw bulk scanned images in 01_nguon (1,500+ full-res PNG scans ~600MB total)
+# Deliverables temporary run artifacts
+deliverables/*/deliverables/
 # Retain only the verified pilot PNGs required for unit tests & demo verification
 deliverables/**/01_nguon/*.png
 
