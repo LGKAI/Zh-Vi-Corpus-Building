@@ -1,7 +1,7 @@
 # BÁO CÁO CHẨN ĐOÁN CHẤT LƯỢNG NGỮ LIỆU & ĐỘ PHỦ TỪ VỰNG
 ## Hệ thống Dóng hàng Tự động Ngữ liệu Song ngữ Hán – Việt
 
-- **Thời điểm kiểm định**: `2026-11-18 13:41:57 UTC`
+- **Thời điểm kiểm định**: `2026-11-18 14:01:31 UTC`
 - **Phạm vi đối soát**: 3 bộ sách gốc (*Hán Văn Tinh Túy*, *Thơ văn Lý – Trần 2*, *Thể loại từ VN*).
 - **Công cụ chẩn đoán**: `src/word_aligner.py` & `src/exporter_and_qa.py`.
 
