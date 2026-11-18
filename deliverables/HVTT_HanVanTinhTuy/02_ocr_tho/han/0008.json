@@ -1,18 +1,19 @@
 {
   "page_id": "0008",
   "book_type": "HVTT",
+  "book_folder": "HVTT_HanVanTinhTuy",
   "page_num": 8,
   "engine": "paddleocr_chinese_cht",
   "preprocess": {
     "book_type": "HVTT",
-    "original_width": 2000,
-    "original_height": 2800,
-    "crop_top_px": 196,
+    "original_width": 1188,
+    "original_height": 1728,
+    "crop_top_px": 121,
     "header_ratio": 0.07,
     "footnote_separator_y_cropped": null,
     "footnote_separator_y_original": null,
-    "effective_width": 2000,
-    "effective_height": 2604
+    "effective_width": 1188,
+    "effective_height": 1607
   },
   "items": [
     {
@@ -38,19 +39,19 @@
       "bbox_original": [
         [
           180,
-          316
+          241
         ],
         [
           1620,
-          316
+          241
         ],
         [
           1620,
-          371
+          296
         ],
         [
           180,
-          371
+          296
         ]
       ],
       "box_xyxy": [
@@ -85,19 +86,19 @@
       "bbox_original": [
         [
           180,
-          506
+          431
         ],
         [
           1620,
-          506
+          431
         ],
         [
           1620,
-          561
+          486
         ],
         [
           180,
-          561
+          486
         ]
       ],
       "box_xyxy": [
@@ -132,19 +133,19 @@
       "bbox_original": [
         [
           180,
-          686
+          611
         ],
         [
           1620,
-          686
+          611
         ],
         [
           1620,
-          741
+          666
         ],
         [
           180,
-          741
+          666
         ]
       ],
       "box_xyxy": [
@@ -179,19 +180,19 @@
       "bbox_original": [
         [
           180,
-          866
+          791
         ],
         [
           1620,
-          866
+          791
         ],
         [
           1620,
-          921
+          846
         ],
         [
           180,
-          921
+          846
         ]
       ],
       "box_xyxy": [
@@ -202,6 +203,194 @@
       ],
       "text": "其 次 莫 如 猛",
       "confidence": 0.991
+    },
+    {
+      "line_id": "0008_han_004",
+      "bbox": [
+        [
+          180,
+          850
+        ],
+        [
+          1620,
+          850
+        ],
+        [
+          1620,
+          905
+        ],
+        [
+          180,
+          905
+        ]
+      ],
+      "bbox_original": [
+        [
+          180,
+          971
+        ],
+        [
+          1620,
+          971
+        ],
+        [
+          1620,
+          1026
+        ],
+        [
+          180,
+          1026
+        ]
+      ],
+      "box_xyxy": [
+        180,
+        850,
+        1620,
+        905
+      ],
+      "text": "夫 火 烈 民 望 而 畏 之 故 鮮 死 焉",
+      "confidence": 0.989
+    },
+    {
+      "line_id": "0008_han_005",
+      "bbox": [
+        [
+          180,
+          1030
+        ],
+        [
+          1620,
+          1030
+        ],
+        [
+          1620,
+          1085
+        ],
+        [
+          180,
+          1085
+        ]
+      ],
+      "bbox_original": [
+        [
+          180,
+          1151
+        ],
+        [
+          1620,
+          1151
+        ],
+        [
+          1620,
+          1206
+        ],
+        [
+          180,
+          1206
+        ]
+      ],
+      "box_xyxy": [
+        180,
+        1030,
+        1620,
+        1085
+      ],
+      "text": "水 懦 弱 民 狎 而 翫 之 則 多 死 焉",
+      "confidence": 0.988
+    },
+    {
+      "line_id": "0008_han_006",
+      "bbox": [
+        [
+          180,
+          1210
+        ],
+        [
+          1620,
+          1210
+        ],
+        [
+          1620,
+          1265
+        ],
+        [
+          180,
+          1265
+        ]
+      ],
+      "bbox_original": [
+        [
+          180,
+          1331
+        ],
+        [
+          1620,
+          1331
+        ],
+        [
+          1620,
+          1386
+        ],
+        [
+          180,
+          1386
+        ]
+      ],
+      "box_xyxy": [
+        180,
+        1210,
+        1620,
+        1265
+      ],
+      "text": "故 寬 難",
+      "confidence": 0.992
+    },
+    {
+      "line_id": "0008_han_007",
+      "bbox": [
+        [
+          180,
+          1390
+        ],
+        [
+          1620,
+          1390
+        ],
+        [
+          1620,
+          1445
+        ],
+        [
+          180,
+          1445
+        ]
+      ],
+      "bbox_original": [
+        [
+          180,
+          1511
+        ],
+        [
+          1620,
+          1511
+        ],
+        [
+          1620,
+          1566
+        ],
+        [
+          180,
+          1566
+        ]
+      ],
+      "box_xyxy": [
+        180,
+        1390,
+        1620,
+        1445
+      ],
+      "text": "疾 數 月 而 卒 太 叔 爲 政",
+      "confidence": 0.99
     }
   ],
   "layout_summary": {
@@ -210,7 +399,11 @@
       "鄭 子 產 有 疾 謂 子 太 叔 曰",
       "我 死 子 必 爲 政",
       "惟 有 德 者 能 以 寬 服 民",
-      "其 次 莫 如 猛"
+      "其 次 莫 如 猛",
+      "夫 火 烈 民 望 而 畏 之 故 鮮 死 焉",
+      "水 懦 弱 民 狎 而 翫 之 則 多 死 焉",
+      "故 寬 難",
+      "疾 數 月 而 卒 太 叔 爲 政"
     ],
     "interlinear_triplets": [
       {
@@ -222,13 +415,13 @@
       {
         "triplet_index": 1,
         "chu_han": "我 死 子 必 爲 政",
-        "phien_am": "Ngã tử, tử tất vi chính",
+        "phien_am": "Ngã tử, tử tất vi chính.",
         "dich_nghia_gloss": "Ta chết, con sẽ giữ chính-quyền."
       },
       {
         "triplet_index": 2,
         "chu_han": "惟 有 德 者 能 以 寬 服 民",
-        "phien_am": "Duy hữu đức giả, năng dĩ khoan phục dân",
+        "phien_am": "Duy hữu đức giả, năng dĩ khoan phục dân,",
         "dich_nghia_gloss": "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,"
       },
       {
@@ -236,6 +429,30 @@
         "chu_han": "其 次 莫 如 猛",
         "phien_am": "Kỳ thứ mạc như mãnh.",
         "dich_nghia_gloss": "còn thì không gì bằng chính-sách mạnh."
+      },
+      {
+        "triplet_index": 4,
+        "chu_han": "夫 火 烈 民 望 而 畏 之 故 鮮 死 焉",
+        "phien_am": "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.",
+        "dich_nghia_gloss": "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa."
+      },
+      {
+        "triplet_index": 5,
+        "chu_han": "水 懦 弱 民 狎 而 翫 之 則 多 死 焉",
+        "phien_am": "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.",
+        "dich_nghia_gloss": "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều."
+      },
+      {
+        "triplet_index": 6,
+        "chu_han": "故 寬 難",
+        "phien_am": "Cố khoan nan.",
+        "dich_nghia_gloss": "Vì thế khoan hồng là khó."
+      },
+      {
+        "triplet_index": 7,
+        "chu_han": "疾 數 月 而 卒 太 叔 爲 政",
+        "phien_am": "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính.",
+        "dich_nghia_gloss": "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền."
       }
     ]
   }

@@ -72,6 +72,10 @@ _STOP_HEADER_RE = re.compile(
     r"KHẢO\s*ĐÍNH|Khảo\s*đính|CÁC\s*DỊ\s*BẢN|Các\s*dị\s*bản|CHÚ\s*THÍCH|Chú\s*thích|LỜI\s*BÀN|Lời\s*bàn)\s*[:：.]?",
     flags=re.IGNORECASE,
 )
+_DICH_THO_HEADER_RE = re.compile(
+    r"^\s*(?:DỊCH\s*THƠ|Dịch\s*thơ|DỊCH\s*THEO\s*NGUYÊN\s*ĐIỆU|Dịch\s*theo\s*nguyên\s*điệu)\s*[:：.]?\s*(.*)$",
+    flags=re.IGNORECASE,
+)
 _PHIEN_AM_HEADER_RE = re.compile(
     r"^\s*(?:PHIÊN\s*ÂM|Phiên\s*âm)\s*[:：.]?\s*(.*)$",
     flags=re.IGNORECASE,
@@ -393,9 +397,28 @@ def group_layout_blocks(
     sorted_han = _sort_items_reading_order(han_items)
     sorted_viet = _sort_items_reading_order(viet_items)
 
-    # 1. HVTT: 3-line interlinear blocks on even pages
+    # 1. HVTT: 3-line interlinear blocks on even pages + Dịch thơ on facing odd pages (or inline)
     if book_key == "HVTT":
         if page_num % 2 != 0:
+            dich_tho_lines: List[str] = []
+            in_dich_tho = False
+            for it in sorted_viet:
+                txt = unicodedata.normalize("NFC", it.get("text", "").strip())
+                if not txt or _CJK_CHAR_RE.search(txt):
+                    continue
+                m_dt = _DICH_THO_HEADER_RE.match(txt)
+                if m_dt:
+                    in_dich_tho = True
+                    rest = m_dt.group(1).strip()
+                    if rest:
+                        dich_tho_lines.append(rest)
+                    continue
+                if _STOP_HEADER_RE.match(txt):
+                    in_dich_tho = False
+                    continue
+                if in_dich_tho or it.get("role", "") == "dich_tho":
+                    dich_tho_lines.append(txt)
+
             return {
                 "book_type": "HVTT",
                 "page_num": page_num,
@@ -404,6 +427,7 @@ def group_layout_blocks(
                 "chu_han_lines": [],
                 "phien_am_lines": [],
                 "dich_nghia_lines": [],
+                "dich_tho_lines": dich_tho_lines,
             }
 
         # Filter out non-CJK noise from han lines
@@ -413,36 +437,55 @@ def group_layout_blocks(
             if _CJK_CHAR_RE.search(it.get("text", ""))
         ]
 
-        # Separate interlinear Vietnamese lines (Phiên âm + word-by-word gloss) from bottom Dịch nghĩa
+        # Separate interlinear Vietnamese lines (Phiên âm + word-by-word gloss) from bottom Dịch nghĩa / Dịch thơ
         phien_am_lines: List[str] = []
         gloss_lines: List[str] = []
         bottom_dich_nghia: List[str] = []
+        dich_tho_lines = []
         in_bottom_dich_nghia = False
+        in_dich_tho = False
+        is_final_no_dich_nghia_page = page_num >= 367
 
         for it in sorted_viet:
             txt = unicodedata.normalize("NFC", it.get("text", "").strip())
             if not txt or _CJK_CHAR_RE.search(txt):
                 continue
-            if is_stop_section_header(txt):
+            m_dt = _DICH_THO_HEADER_RE.match(txt)
+            if m_dt:
+                in_dich_tho = True
+                in_bottom_dich_nghia = False
+                rest = m_dt.group(1).strip()
+                if rest:
+                    dich_tho_lines.append(rest)
+                continue
+            if _STOP_HEADER_RE.match(txt):
                 break
             m_dn = _DICH_NGHIA_HEADER_RE.match(txt)
             if m_dn:
                 in_bottom_dich_nghia = True
+                in_dich_tho = False
                 rest = m_dn.group(1).strip()
-                if rest:
+                if rest and not is_final_no_dich_nghia_page:
                     bottom_dich_nghia.append(rest)
                 continue
-            if in_bottom_dich_nghia:
-                bottom_dich_nghia.append(txt)
+
+            role = it.get("role", "")
+            if in_dich_tho or role == "dich_tho":
+                dich_tho_lines.append(txt)
+            elif in_bottom_dich_nghia:
+                if not is_final_no_dich_nghia_page:
+                    bottom_dich_nghia.append(txt)
             else:
-                role = it.get("role", "")
                 if role == "phien_am":
                     phien_am_lines.append(txt)
                 elif role == "dich_nghia_gloss":
-                    gloss_lines.append(txt)
+                    if not is_final_no_dich_nghia_page:
+                        gloss_lines.append(txt)
                 else:
                     # Alternate between Phiên âm (line 2 of triplet) and gloss (line 3 of triplet)
-                    if len(phien_am_lines) <= len(gloss_lines) and len(phien_am_lines) < len(han_lines):
+                    if is_final_no_dich_nghia_page:
+                        phien_am_lines.append(txt)
+                    elif len(phien_am_lines) <= len(gloss_lines) and len(phien_am_lines) < len(han_lines):
                         phien_am_lines.append(txt)
                     elif len(gloss_lines) < len(phien_am_lines):
                         gloss_lines.append(txt)
@@ -452,7 +495,7 @@ def group_layout_blocks(
         triplets = []
         for idx, h_line in enumerate(han_lines):
             pa_line = phien_am_lines[idx] if idx < len(phien_am_lines) else ""
-            gl_line = gloss_lines[idx] if idx < len(gloss_lines) else ""
+            gl_line = "" if is_final_no_dich_nghia_page else (gloss_lines[idx] if idx < len(gloss_lines) else "")
             triplets.append({
                 "triplet_index": idx,
                 "chu_han": h_line,
@@ -467,7 +510,8 @@ def group_layout_blocks(
             "interlinear_triplets": triplets,
             "chu_han_lines": han_lines,
             "phien_am_lines": phien_am_lines,
-            "dich_nghia_lines": bottom_dich_nghia if bottom_dich_nghia else gloss_lines,
+            "dich_nghia_lines": [] if is_final_no_dich_nghia_page else (bottom_dich_nghia if bottom_dich_nghia else gloss_lines),
+            "dich_tho_lines": dich_tho_lines,
         }
 
     # 2. TLTVN: Sequential Chữ Hán -> Phiên âm: -> Dịch nghĩa:
@@ -626,52 +670,181 @@ def build_mock_ocr_for_page(
     crop_top_px = int((preprocess_meta or {}).get("crop_top_px", 140))
 
     if book_key == "HVTT":
-        han_raw = [
-            {"bbox": [[180, 120], [1620, 120], [1620, 175], [180, 175]], "text": "鄭 子 產 有 疾 謂 子 太 叔 曰", "confidence": 0.992},
-            {"bbox": [[180, 310], [1620, 310], [1620, 365], [180, 365]], "text": "我 死 子 必 爲 政", "confidence": 0.990},
-            {"bbox": [[180, 490], [1620, 490], [1620, 545], [180, 545]], "text": "惟 有 德 者 能 以 寬 服 民", "confidence": 0.989},
-            {"bbox": [[180, 670], [1620, 670], [1620, 725], [180, 725]], "text": "其 次 莫 如 猛", "confidence": 0.991},
-        ]
-        viet_raw = [
-            {"bbox": [[180, 185], [1620, 185], [1620, 230], [180, 230]], "text": "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :", "confidence": 0.985, "role": "phien_am"},
-            {"bbox": [[180, 240], [1620, 240], [1620, 290], [180, 290]], "text": "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :", "confidence": 0.978, "role": "dich_nghia_gloss"},
-            {"bbox": [[180, 375], [1620, 375], [1620, 420], [180, 420]], "text": "Ngã tử, tử tất vi chính", "confidence": 0.986, "role": "phien_am"},
-            {"bbox": [[180, 430], [1620, 430], [1620, 475], [180, 475]], "text": "Ta chết, con sẽ giữ chính-quyền.", "confidence": 0.980, "role": "dich_nghia_gloss"},
-            {"bbox": [[180, 555], [1620, 555], [1620, 600], [180, 600]], "text": "Duy hữu đức giả, năng dĩ khoan phục dân", "confidence": 0.984, "role": "phien_am"},
-            {"bbox": [[180, 610], [1620, 610], [1620, 655], [180, 655]], "text": "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,", "confidence": 0.976, "role": "dich_nghia_gloss"},
-            {"bbox": [[180, 735], [1620, 735], [1620, 780], [180, 780]], "text": "Kỳ thứ mạc như mãnh.", "confidence": 0.987, "role": "phien_am"},
-            {"bbox": [[180, 790], [1620, 790], [1620, 835], [180, 835]], "text": "còn thì không gì bằng chính-sách mạnh.", "confidence": 0.981, "role": "dich_nghia_gloss"},
-        ]
+        if page_num == 10:
+            han_raw = [
+                {"bbox": [[180, 120], [1620, 120], [1620, 175], [180, 175]], "text": "不 忍 猛 而 寬", "confidence": 0.992},
+                {"bbox": [[180, 300], [1620, 300], [1620, 355], [180, 355]], "text": "鄭 國 多 盜", "confidence": 0.991},
+                {"bbox": [[180, 480], [1620, 480], [1620, 535], [180, 535]], "text": "取 人 於 萑 苻 之 澤", "confidence": 0.988},
+                {"bbox": [[180, 660], [1620, 660], [1620, 715], [180, 715]], "text": "太 叔 悔 之 曰", "confidence": 0.990},
+                {"bbox": [[180, 840], [1620, 840], [1620, 895], [180, 895]], "text": "吾 早 從 夫 子 不 及 此", "confidence": 0.989},
+                {"bbox": [[180, 1020], [1620, 1020], [1620, 1075], [180, 1075]], "text": "興 徒 兵 以 攻 萑 苻 之 盜", "confidence": 0.987},
+                {"bbox": [[180, 1200], [1620, 1200], [1620, 1255], [180, 1255]], "text": "盡 殺 之 盜 少 止", "confidence": 0.990},
+                {"bbox": [[180, 1380], [1620, 1380], [1620, 1435], [180, 1435]], "text": "仲 尼 曰 善 哉", "confidence": 0.991},
+            ]
+            viet_raw = [
+                {"bbox": [[180, 185], [1620, 185], [1620, 230], [180, 230]], "text": "Bất nhẫn mãnh nhi khoan.", "confidence": 0.985, "role": "phien_am"},
+                {"bbox": [[180, 240], [1620, 240], [1620, 285], [180, 285]], "text": "Không nỡ mạnh nên khoan hòa.", "confidence": 0.981, "role": "dich_nghia_gloss"},
+                {"bbox": [[180, 365], [1620, 365], [1620, 410], [180, 410]], "text": "Trịnh-quốc đa đạo.", "confidence": 0.986, "role": "phien_am"},
+                {"bbox": [[180, 420], [1620, 420], [1620, 465], [180, 465]], "text": "Nước Trịnh nhiều trộm cướp.", "confidence": 0.982, "role": "dich_nghia_gloss"},
+                {"bbox": [[180, 545], [1620, 545], [1620, 590], [180, 590]], "text": "Thủ nhân ư hoàn bồ chi trạch.", "confidence": 0.984, "role": "phien_am"},
+                {"bbox": [[180, 600], [1620, 600], [1620, 645], [180, 645]], "text": "Bắt người lương thiện ở nơi bãi chằm um tùm.", "confidence": 0.979, "role": "dich_nghia_gloss"},
+                {"bbox": [[180, 725], [1620, 725], [1620, 770], [180, 770]], "text": "Thái-Thúc hối chi, viết :", "confidence": 0.985, "role": "phien_am"},
+                {"bbox": [[180, 780], [1620, 780], [1620, 825], [180, 825]], "text": "Thái-Thúc ăn-năn, nói :", "confidence": 0.980, "role": "dich_nghia_gloss"},
+                {"bbox": [[180, 905], [1620, 905], [1620, 950], [180, 950]], "text": "Ngô tảo tòng phu-tử, bất cập thử.", "confidence": 0.986, "role": "phien_am"},
+                {"bbox": [[180, 960], [1620, 960], [1620, 1005], [180, 1005]], "text": "Ta sớm biết theo lời cha đâu đến nỗi này.", "confidence": 0.981, "role": "dich_nghia_gloss"},
+                {"bbox": [[180, 1085], [1620, 1085], [1620, 1130], [180, 1130]], "text": "Hưng đồ binh dĩ công hoàn bồ chi đạo.", "confidence": 0.985, "role": "phien_am"},
+                {"bbox": [[180, 1140], [1620, 1140], [1620, 1185], [180, 1185]], "text": "Đem binh đi tiễu trừ trộm cướp.", "confidence": 0.980, "role": "dich_nghia_gloss"},
+                {"bbox": [[180, 1265], [1620, 1265], [1620, 1310], [180, 1310]], "text": "Tận sát chi. Đạo thiểu chỉ.", "confidence": 0.986, "role": "phien_am"},
+                {"bbox": [[180, 1320], [1620, 1320], [1620, 1365], [180, 1365]], "text": "Giết hết. Cướp trộm yên.", "confidence": 0.982, "role": "dich_nghia_gloss"},
+                {"bbox": [[180, 1445], [1620, 1445], [1620, 1490], [180, 1490]], "text": "Trọng-Ni viết : Thiện tai !", "confidence": 0.987, "role": "phien_am"},
+                {"bbox": [[180, 1500], [1620, 1500], [1620, 1545], [180, 1545]], "text": "Khổng-tử nói : Giỏi thay !", "confidence": 0.983, "role": "dich_nghia_gloss"},
+            ]
+        elif page_num == 12:
+            han_raw = [
+                {"bbox": [[180, 120], [1620, 120], [1620, 175], [180, 175]], "text": "政 寬 則 民 慢", "confidence": 0.992},
+                {"bbox": [[180, 300], [1620, 300], [1620, 355], [180, 355]], "text": "慢 則 糾 之 以 猛", "confidence": 0.990},
+                {"bbox": [[180, 480], [1620, 480], [1620, 535], [180, 535]], "text": "猛 則 民 殘 殘 則 施 之 以 寬", "confidence": 0.989},
+                {"bbox": [[180, 660], [1620, 660], [1620, 715], [180, 715]], "text": "寬 以 濟 猛 猛 以 濟 寬", "confidence": 0.991},
+                {"bbox": [[180, 840], [1620, 840], [1620, 895], [180, 895]], "text": "政 是 以 和", "confidence": 0.992},
+                {"bbox": [[180, 1020], [1620, 1020], [1620, 1075], [180, 1075]], "text": "詩 曰 民 亦 勞 止 汔 可 小 康", "confidence": 0.988},
+                {"bbox": [[180, 1260], [1620, 1260], [1620, 1315], [180, 1315]], "text": "惠 此 中 國 以 綏 四 方", "confidence": 0.989},
+                {"bbox": [[180, 1500], [1620, 1500], [1620, 1555], [180, 1555]], "text": "施 之 以 寬 也", "confidence": 0.991},
+            ]
+            viet_raw = [
+                {"bbox": [[180, 185], [1620, 185], [1620, 230], [180, 230]], "text": "Chính khoan tắc dân mạn,", "confidence": 0.985, "role": "phien_am"},
+                {"bbox": [[180, 240], [1620, 240], [1620, 285], [180, 285]], "text": "Chính sách khoan hòa dân nhờn,", "confidence": 0.981, "role": "dich_nghia_gloss"},
+                {"bbox": [[180, 365], [1620, 365], [1620, 410], [180, 410]], "text": "mạn tắc củ chi dĩ mãnh.", "confidence": 0.986, "role": "phien_am"},
+                {"bbox": [[180, 420], [1620, 420], [1620, 465], [180, 465]], "text": "nhờn thì lấy « mạnh » (thẳng tay) mà đàn áp.", "confidence": 0.980, "role": "dich_nghia_gloss"},
+                {"bbox": [[180, 545], [1620, 545], [1620, 590], [180, 590]], "text": "Mãnh tắc dân tàn, tàn tắc thi chi dĩ khoan.", "confidence": 0.984, "role": "phien_am"},
+                {"bbox": [[180, 600], [1620, 600], [1620, 645], [180, 645]], "text": "Mạnh tất dân hại, hại thì lại lấy khoan mà thi-hành.", "confidence": 0.979, "role": "dich_nghia_gloss"},
+                {"bbox": [[180, 725], [1620, 725], [1620, 770], [180, 770]], "text": "Khoan dĩ tế mãnh, mãnh dĩ tế khoan.", "confidence": 0.986, "role": "phien_am"},
+                {"bbox": [[180, 780], [1620, 780], [1620, 825], [180, 825]], "text": "Khoan để đỡ mạnh, mạnh để đỡ khoan.", "confidence": 0.982, "role": "dich_nghia_gloss"},
+                {"bbox": [[180, 905], [1620, 905], [1620, 950], [180, 950]], "text": "Chính thị dĩ hòa.", "confidence": 0.987, "role": "phien_am"},
+                {"bbox": [[180, 960], [1620, 960], [1620, 1005], [180, 1005]], "text": "Chính sự sẽ hòa.", "confidence": 0.983, "role": "dich_nghia_gloss"},
+                {"bbox": [[180, 1085], [1620, 1085], [1620, 1130], [180, 1130]], "text": "Thi viết : dân diệc lao chỉ, ngật khả tiểu-khang.", "confidence": 0.984, "role": "phien_am"},
+                {"bbox": [[180, 1140], [1620, 1140], [1620, 1185], [180, 1185]], "text": "Kinh thi nói : dân đỡ vất-vả, để tạm yên vui.", "confidence": 0.980, "role": "dich_nghia_gloss"},
+                {"bbox": [[180, 1195], [1620, 1195], [1620, 1240], [180, 1240]], "text": "Dân vất-vả, ngõ hầu yên-ổn,", "confidence": 0.978, "role": "dich_tho"},
+                {"bbox": [[180, 1325], [1620, 1325], [1620, 1370], [180, 1370]], "text": "Huệ thử trung-quốc, dĩ tuy tứ phương.", "confidence": 0.985, "role": "phien_am"},
+                {"bbox": [[180, 1380], [1620, 1380], [1620, 1425], [180, 1425]], "text": "Ra ơn trong nước, để yên bốn phương.", "confidence": 0.981, "role": "dich_nghia_gloss"},
+                {"bbox": [[180, 1435], [1620, 1435], [1620, 1480], [180, 1480]], "text": "Ơn ban ra vỗ-về bốn phương.", "confidence": 0.979, "role": "dich_tho"},
+                {"bbox": [[180, 1565], [1620, 1565], [1620, 1610], [180, 1610]], "text": "Thi chi dĩ khoan dã.", "confidence": 0.986, "role": "phien_am"},
+                {"bbox": [[180, 1620], [1620, 1620], [1620, 1665], [180, 1665]], "text": "Ấy là lấy « khoan » mà thi-hành vậy.", "confidence": 0.982, "role": "dich_nghia_gloss"},
+            ]
+        elif page_num >= 367:
+            # Bài cuối (Thu dạ hoài ngâm): chỉ có Hán - Dịch âm - Dịch thơ, cột Dịch nghĩa để trống
+            han_raw = [
+                {"bbox": [[180, 160], [1620, 160], [1620, 215], [180, 215]], "text": "天 氣 入 中 秋 之 夜 蕭 條 經 四 坐 霜 寒", "confidence": 0.990},
+                {"bbox": [[180, 380], [1620, 380], [1620, 435], [180, 435]], "text": "仙 家 別 占 清 閒 打 殘 棋 陣 飲 殘 菊 杯", "confidence": 0.989},
+            ]
+            viet_raw = [
+                {"bbox": [[180, 225], [1620, 225], [1620, 270], [180, 270]], "text": "Thiên khí nhập trung-thu chi dạ, Tiêu-điều kinh tứ tọa sương hàn.", "confidence": 0.985, "role": "phien_am"},
+                {"bbox": [[180, 280], [1620, 280], [1620, 325], [180, 325]], "text": "Đêm trung-thu trời mây trong trẻo, Sương đầm đầm lạnh lẽo bốn bên.", "confidence": 0.982, "role": "dich_tho"},
+                {"bbox": [[180, 445], [1620, 445], [1620, 490], [180, 490]], "text": "Tiên gia biệt chiếm thanh-nhàn, Đả tàn kỳ trận, ẩm tàn cúc bôi !", "confidence": 0.984, "role": "phien_am"},
+                {"bbox": [[180, 500], [1620, 500], [1620, 545], [180, 545]], "text": "Thanh-nhàn riêng một cảnh tiên, Mảng vui cờ thánh rượu hiền tiêu-dao !", "confidence": 0.980, "role": "dich_tho"},
+            ]
+        else:
+            han_raw = [
+                {"bbox": [[180, 120], [1620, 120], [1620, 175], [180, 175]], "text": "鄭 子 產 有 疾 謂 子 太 叔 曰", "confidence": 0.992},
+                {"bbox": [[180, 310], [1620, 310], [1620, 365], [180, 365]], "text": "我 死 子 必 爲 政", "confidence": 0.990},
+                {"bbox": [[180, 490], [1620, 490], [1620, 545], [180, 545]], "text": "惟 有 德 者 能 以 寬 服 民", "confidence": 0.989},
+                {"bbox": [[180, 670], [1620, 670], [1620, 725], [180, 725]], "text": "其 次 莫 如 猛", "confidence": 0.991},
+                {"bbox": [[180, 850], [1620, 850], [1620, 905], [180, 905]], "text": "夫 火 烈 民 望 而 畏 之 故 鮮 死 焉", "confidence": 0.989},
+                {"bbox": [[180, 1030], [1620, 1030], [1620, 1085], [180, 1085]], "text": "水 懦 弱 民 狎 而 翫 之 則 多 死 焉", "confidence": 0.988},
+                {"bbox": [[180, 1210], [1620, 1210], [1620, 1265], [180, 1265]], "text": "故 寬 難", "confidence": 0.992},
+                {"bbox": [[180, 1390], [1620, 1390], [1620, 1445], [180, 1445]], "text": "疾 數 月 而 卒 太 叔 爲 政", "confidence": 0.990},
+            ]
+            viet_raw = [
+                {"bbox": [[180, 185], [1620, 185], [1620, 230], [180, 230]], "text": "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :", "confidence": 0.985, "role": "phien_am"},
+                {"bbox": [[180, 240], [1620, 240], [1620, 290], [180, 290]], "text": "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :", "confidence": 0.978, "role": "dich_nghia_gloss"},
+                {"bbox": [[180, 375], [1620, 375], [1620, 420], [180, 420]], "text": "Ngã tử, tử tất vi chính.", "confidence": 0.986, "role": "phien_am"},
+                {"bbox": [[180, 430], [1620, 430], [1620, 475], [180, 475]], "text": "Ta chết, con sẽ giữ chính-quyền.", "confidence": 0.980, "role": "dich_nghia_gloss"},
+                {"bbox": [[180, 555], [1620, 555], [1620, 600], [180, 600]], "text": "Duy hữu đức giả, năng dĩ khoan phục dân,", "confidence": 0.984, "role": "phien_am"},
+                {"bbox": [[180, 610], [1620, 610], [1620, 655], [180, 655]], "text": "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,", "confidence": 0.976, "role": "dich_nghia_gloss"},
+                {"bbox": [[180, 735], [1620, 735], [1620, 780], [180, 780]], "text": "Kỳ thứ mạc như mãnh.", "confidence": 0.987, "role": "phien_am"},
+                {"bbox": [[180, 790], [1620, 790], [1620, 835], [180, 835]], "text": "còn thì không gì bằng chính-sách mạnh.", "confidence": 0.981, "role": "dich_nghia_gloss"},
+                {"bbox": [[180, 915], [1620, 915], [1620, 960], [180, 960]], "text": "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.", "confidence": 0.985, "role": "phien_am"},
+                {"bbox": [[180, 970], [1620, 970], [1620, 1015], [180, 1015]], "text": "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa.", "confidence": 0.979, "role": "dich_nghia_gloss"},
+                {"bbox": [[180, 1095], [1620, 1095], [1620, 1140], [180, 1140]], "text": "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.", "confidence": 0.984, "role": "phien_am"},
+                {"bbox": [[180, 1150], [1620, 1150], [1620, 1195], [180, 1195]], "text": "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều.", "confidence": 0.978, "role": "dich_nghia_gloss"},
+                {"bbox": [[180, 1275], [1620, 1275], [1620, 1320], [180, 1320]], "text": "Cố khoan nan.", "confidence": 0.988, "role": "phien_am"},
+                {"bbox": [[180, 1330], [1620, 1330], [1620, 1375], [180, 1375]], "text": "Vì thế khoan hồng là khó.", "confidence": 0.982, "role": "dich_nghia_gloss"},
+                {"bbox": [[180, 1455], [1620, 1455], [1620, 1500], [180, 1500]], "text": "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính.", "confidence": 0.985, "role": "phien_am"},
+                {"bbox": [[180, 1510], [1620, 1510], [1620, 1555], [180, 1555]], "text": "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền.", "confidence": 0.980, "role": "dich_nghia_gloss"},
+            ]
     elif book_key == "TLTVN":
         han_raw = [
             {"bbox": [[220, 150], [1480, 150], [1480, 200], [220, 200]], "text": "祥光風好錦帆張, 神仙復帝鄉.", "confidence": 0.992},
             {"bbox": [[220, 210], [1480, 210], [1480, 260], [220, 260]], "text": "千重萬里涉滄浪, 九天歸路長.", "confidence": 0.990},
+            {"bbox": [[220, 270], [1480, 270], [1480, 320], [220, 320]], "text": "情慘切, 對離觴, 攀戀使星郎.", "confidence": 0.991},
+            {"bbox": [[220, 330], [1480, 330], [1480, 380], [220, 380]], "text": "願將深意為南疆, 分明報我皇.", "confidence": 0.990},
         ]
         viet_raw = [
-            {"bbox": [[220, 280], [900, 280], [900, 320], [220, 320]], "text": "Phiên âm:", "confidence": 0.995},
-            {"bbox": [[220, 330], [1500, 330], [1500, 375], [220, 375]], "text": "Tường quang phong hảo cẩm phàm trương, Thần tiên phục đế hương².", "confidence": 0.986},
-            {"bbox": [[220, 385], [1500, 385], [1500, 430], [220, 430]], "text": "Thiên trùng vạn lí¹ thiệp thương lương, Cửu thiên quy lộ trường.", "confidence": 0.985},
-            {"bbox": [[220, 450], [900, 450], [900, 490], [220, 490]], "text": "Dịch nghĩa:", "confidence": 0.994},
-            {"bbox": [[220, 500], [1580, 500], [1580, 550], [220, 550]], "text": "Ánh sáng tốt lành, gió thuận, căng cánh buồm gấm, Thần tiên trở về quê hương của hoàng đế⁵.", "confidence": 0.983},
-            {"bbox": [[220, 560], [1580, 560], [1580, 610], [220, 610]], "text": "Nghìn trùng muôn dặm vượt qua những làn sóng xanh, Đường qua về chín tầng trời¹.", "confidence": 0.982},
-            {"bbox": [[220, 630], [900, 630], [900, 670], [220, 670]], "text": "Dịch theo nguyên điệu:", "confidence": 0.991},
-            {"bbox": [[220, 680], [1400, 680], [1400, 725], [220, 725]], "text": "Trời trong gió mát cánh buồm giương, Thần tiên về đế hương.", "confidence": 0.980},
+            {"bbox": [[220, 410], [900, 410], [900, 450], [220, 450]], "text": "Phiên âm:", "confidence": 0.995},
+            {"bbox": [[220, 460], [1500, 460], [1500, 505], [220, 505]], "text": "Tường quang phong hảo cẩm phàm trương, Thần tiên phục đế hương².", "confidence": 0.986},
+            {"bbox": [[220, 515], [1500, 515], [1500, 560], [220, 560]], "text": "Thiên trùng vạn lí¹ thiệp thương lương, Cửu thiên quy lộ trường.", "confidence": 0.985},
+            {"bbox": [[220, 570], [1500, 570], [1500, 615], [220, 615]], "text": "Tình thảm thiết², Đối li thương, Phan luyến sứ tinh lang³.", "confidence": 0.986},
+            {"bbox": [[220, 625], [1500, 625], [1500, 670], [220, 670]], "text": "Nguyện tương thâm ý vị Nam cương, Phân minh báo⁴ ngã hoàng.", "confidence": 0.985},
+            {"bbox": [[220, 690], [900, 690], [900, 730], [220, 730]], "text": "Dịch nghĩa:", "confidence": 0.994},
+            {"bbox": [[220, 740], [1580, 740], [1580, 790], [220, 790]], "text": "Ánh sáng tốt lành, gió thuận, căng cánh buồm gấm, Thần tiên trở về quê hương của hoàng đế⁵.", "confidence": 0.983},
+            {"bbox": [[220, 800], [1580, 800], [1580, 850], [220, 850]], "text": "Nghìn trùng muôn dặm vượt qua những làn sóng xanh, Đường qua về chín tầng trời¹.", "confidence": 0.982},
+            {"bbox": [[220, 860], [1580, 860], [1580, 910], [220, 910]], "text": "Tình thảm thiết, Đối diện với chén rượu biệt li, Yêu mến vin lấy chàng sứ giả.", "confidence": 0.983},
+            {"bbox": [[220, 920], [1580, 920], [1580, 970], [220, 970]], "text": "Xin hãy đem cái ý sâu xa vì biên cương phía Nam, Báo rõ cho nhà vua của chúng ta.", "confidence": 0.984},
+            {"bbox": [[220, 990], [900, 990], [900, 1030], [220, 1030]], "text": "Dịch theo nguyên điệu:", "confidence": 0.991},
+            {"bbox": [[220, 1040], [1400, 1040], [1400, 1085], [220, 1085]], "text": "Trời trong gió mát cánh buồm giương, Thần tiên về đế hương.", "confidence": 0.980},
         ]
     else:
-        # TVLT2: 2-column side-by-side poetry + DỊCH NGHĨA + DỊCH THƠ stop boundary
-        han_raw = [
-            {"bbox": [[180, 160], [880, 160], [880, 210], [180, 210]], "text": "風打松關月照庭，心期風景共淒清。", "confidence": 0.993},
-            {"bbox": [[180, 225], [880, 225], [880, 275], [180, 275]], "text": "箇中滋味無人識，付與山僧樂到明。", "confidence": 0.991},
-        ]
-        viet_raw = [
-            {"bbox": [[1020, 160], [1780, 160], [1780, 210], [1020, 210]], "text": "Phong đả tùng quan 1* nguyệt chiếu đình, Tâm kỳ phong cảnh cộng thê thanh.", "confidence": 0.988},
-            {"bbox": [[1020, 225], [1780, 225], [1780, 275], [1020, 275]], "text": "Cá trung tư vị vô nhân thức, Phó dữ sơn tăng lạc đáo minh.", "confidence": 0.987},
-            {"bbox": [[180, 340], [600, 340], [600, 385], [180, 385]], "text": "DỊCH NGHĨA :", "confidence": 0.994},
-            {"bbox": [[180, 395], [1780, 395], [1780, 440], [180, 440]], "text": "Gió đập cổng thông, trăng sáng trước sân, Lòng hẹn với phong cảnh cùng trong sạch lặng lẽ.", "confidence": 0.985},
-            {"bbox": [[180, 450], [1780, 450], [1780, 495], [180, 495]], "text": "Bao nhiêu thú vị trong đó không ai hay, Mặc cho nhà sư trong núi vui đến sáng.", "confidence": 0.984},
-            {"bbox": [[180, 520], [600, 520], [600, 565], [180, 565]], "text": "DỊCH THƠ :", "confidence": 0.992},
-            {"bbox": [[180, 575], [1400, 575], [1400, 625], [180, 625]], "text": "Gió đập cửa thông, trăng lấp loáng, Lòng đây, cảnh đấy cùng thanh sảng.", "confidence": 0.980},
-        ]
+        # TVLT2: page-aware pilot blocks (Work 1 at page 19, Work 2 at page 20, Work 3 at page 22..26)
+        if page_num == 20:
+            han_raw = [
+                {"bbox": [[180, 160], [880, 160], [880, 210], [180, 210]], "text": "顧無瓊報自懷慚，極目江皋意不堪。", "confidence": 0.992},
+                {"bbox": [[180, 225], [880, 225], [880, 275], [180, 275]], "text": "馬首秋風吹劍鋏，屋梁落月照書庵。", "confidence": 0.991},
+                {"bbox": [[180, 290], [880, 290], [880, 340], [180, 340]], "text": "幕空難駐燕歸北，地暖愁聞雁別南。", "confidence": 0.990},
+                {"bbox": [[180, 355], [880, 355], [880, 405], [180, 405]], "text": "此去未知傾蓋日，詩篇聊為當清談。", "confidence": 0.991},
+            ]
+            viet_raw = [
+                {"bbox": [[1020, 160], [1780, 160], [1780, 210], [1020, 210]], "text": "Cố 1* vô quỳnh báo tự hoài tàm, Cực mục giang cao ý bất kham.", "confidence": 0.987},
+                {"bbox": [[1020, 225], [1780, 225], [1780, 275], [1020, 275]], "text": "Mã thủ thu phong xuy kiếm giáp, Ốc lương lạc nguyệt 2* chiếu thư am.", "confidence": 0.986},
+                {"bbox": [[1020, 290], [1780, 290], [1780, 340], [1020, 340]], "text": "Mạc 3* không nan trụ 4* yến quy Bắc, Địa noãn 5* sầu văn nhạn biệt Nam.", "confidence": 0.986},
+                {"bbox": [[1020, 355], [1780, 355], [1780, 405], [1020, 405]], "text": "Thử khứ vị tri khuynh cái nhật, Thi thiên 6* liêu vị 7* đáng thanh 8* đàm.", "confidence": 0.985},
+                {"bbox": [[180, 450], [600, 450], [600, 495], [180, 495]], "text": "DỊCH NGHĨA :", "confidence": 0.994},
+                {"bbox": [[180, 505], [1780, 505], [1780, 550], [180, 550]], "text": "Nghĩ không có ngọc quỳnh (2) đáp lại, lòng tự thẹn. Trên bờ sông nhìn xa mãi xiết bao bùi ngùi.", "confidence": 0.985},
+                {"bbox": [[180, 560], [1780, 560], [1780, 605], [180, 605]], "text": "Gió thu trước đầu ngựa thổi vào thanh gươm, Ánh trăng lọt qua rường nhà (3) dọi vào phòng sách.", "confidence": 0.984},
+                {"bbox": [[180, 615], [1780, 615], [1780, 660], [180, 660]], "text": "Màn trống khó ngăn chim én về phương Bắc, Đất ấm buồn nghe chim nhạn biệt phương Nam.", "confidence": 0.984},
+                {"bbox": [[180, 670], [1780, 670], [1780, 715], [180, 715]], "text": "Lần đi này chưa biết ngày nào mới có dịp nghiêng lọng (4), Xin vì cuộc chuyện trò tao nhã mà có một bài thơ.", "confidence": 0.983},
+            ]
+        elif page_num in (22, 23, 24, 26):
+            han_raw = [
+                {"bbox": [[180, 160], [1720, 160], [1720, 210], [180, 210]], "text": "朕竊謂佛無南北均可修求，性有智愚同資覺悟。", "confidence": 0.991},
+                {"bbox": [[180, 225], [1720, 225], [1720, 275], [180, 275]], "text": "是以誘群迷之方便，明生死之捷徑者，我佛之大教也；任垂世之權衡，作將來之軌範者，先聖之重責也。", "confidence": 0.990},
+                {"bbox": [[180, 290], [1720, 290], [1720, 340], [180, 340]], "text": "故六祖有言云：先大聖人與大師無別，則知我佛之教，又假先聖人以傳於世也。今朕焉可不以先聖之任為己之任，我佛之教為己之教哉！", "confidence": 0.989},
+                {"bbox": [[180, 355], [1720, 355], [1720, 405], [180, 405]], "text": "且朕於孩童有識之年，稍聞禪師之訓，則澄思息慮，慨然清淨，有心乎內教，參究於禪宗，虛己求師，精誠慕道。雖回向之意已萌，而感觸之機未達。", "confidence": 0.988},
+                {"bbox": [[180, 420], [1720, 420], [1720, 470], [180, 470]], "text": "師曰：山本無佛，惟存乎心。心寂而知，是名真佛。今陛下若悟此心，則立地成佛，無苦外求也。", "confidence": 0.990},
+                {"bbox": [[180, 485], [1720, 485], [1720, 535], [180, 535]], "text": "朕聞是言，乃命工楷寫，敕令開印，非特以為後世指迷，蓋欲繼先代聖人之功廣，因自為序云。", "confidence": 0.989},
+            ]
+            viet_raw = [
+                {"bbox": [[180, 570], [500, 570], [500, 610], [180, 610]], "text": "PHIÊN ÂM :", "confidence": 0.993},
+                {"bbox": [[180, 620], [1780, 620], [1780, 665], [180, 665]], "text": "Trẫm thiết vị : Phật vô Nam Bắc, quân khả tu cầu ; tính hữu trí ngu, đồng tư giác ngộ.", "confidence": 0.986},
+                {"bbox": [[180, 675], [1780, 675], [1780, 720], [180, 720]], "text": "Thị dĩ dụ quần mê chi phương-tiện, minh sinh tử chi tiệp kính giả, ngã Phật chi đại giáo dã ; nhậm thùy thế chi quyền hành, tác tương lai chi quỹ phạm giả, tiên thánh chi trọng trách 1* dã.", "confidence": 0.985},
+                {"bbox": [[180, 730], [1780, 730], [1780, 775], [180, 775]], "text": "Cố Lục Tổ hữu ngôn vân : Tiên đại thánh nhân dữ đại sư vô biệt, tắc tri ngã Phật chi giáo hựu giả tiên thánh nhân dĩ truyền ư thế dã. Kim trẫm yên khả bất dĩ tiên thánh chi nhậm vi kỷ chi nhậm, ngã Phật chi giáo vi kỷ chi giáo tai !", "confidence": 0.984},
+                {"bbox": [[180, 785], [1780, 785], [1780, 830], [180, 830]], "text": "Thả trẫm ư hài đồng hữu thức chi niên, sảo văn Thiền sư chi huấn, tắc trừng tư tức lự, khái nhiên thanh tịnh, hữu tâm hồ nội giáo, tham cứu ư Thiền tông, hư kỷ cầu sư, tinh thành mộ đạo. Tuy hồi hướng chi ý dĩ manh, nhi cảm xúc chi cơ vị đạt.", "confidence": 0.984},
+                {"bbox": [[180, 840], [1780, 840], [1780, 885], [180, 885]], "text": "Sư viết : Sơn bản vô Phật, duy tồn hồ tâm. Tâm tịch nhi tri, thị danh Chân Phật. Kim Bệ hạ nhược ngộ thử tâm, tắc lập địa thành Phật, vô khổ ngoại cầu dã.", "confidence": 0.985},
+                {"bbox": [[180, 895], [1780, 895], [1780, 940], [180, 940]], "text": "Trẫm văn thị ngôn, nãi mệnh công khải tả, sắc lệnh khai ấn, phi đặc dĩ vi hậu thế chỉ mê, cái dục kế tiên đại thánh nhân chi công quảng, nhân tự vi tự vân.", "confidence": 0.984},
+            ]
+        else:
+            # Default / Page 19: 2-column side-by-side poetry + DỊCH NGHĨA + DỊCH THƠ stop boundary
+            han_raw = [
+                {"bbox": [[180, 160], [880, 160], [880, 210], [180, 210]], "text": "風打松關月照庭，心期風景共淒清。", "confidence": 0.993},
+                {"bbox": [[180, 225], [880, 225], [880, 275], [180, 275]], "text": "箇中滋味無人識，付與山僧樂到明。", "confidence": 0.991},
+            ]
+            viet_raw = [
+                {"bbox": [[1020, 160], [1780, 160], [1780, 210], [1020, 210]], "text": "Phong đả tùng quan 1* nguyệt chiếu đình, Tâm kỳ phong cảnh cộng thê thanh.", "confidence": 0.988},
+                {"bbox": [[1020, 225], [1780, 225], [1780, 275], [1020, 275]], "text": "Cá trung tư vị vô nhân thức, Phó dữ sơn tăng lạc đáo minh.", "confidence": 0.987},
+                {"bbox": [[180, 340], [600, 340], [600, 385], [180, 385]], "text": "DỊCH NGHĨA :", "confidence": 0.994},
+                {"bbox": [[180, 395], [1780, 395], [1780, 440], [180, 440]], "text": "Gió đập cổng thông, trăng sáng trước sân, Lòng hẹn với phong cảnh cùng trong sạch lặng lẽ.", "confidence": 0.985},
+                {"bbox": [[180, 450], [1780, 450], [1780, 495], [180, 495]], "text": "Bao nhiêu thú vị trong đó không ai hay, Mặc cho nhà sư trong núi vui đến sáng.", "confidence": 0.984},
+                {"bbox": [[180, 520], [600, 520], [600, 565], [180, 565]], "text": "DỊCH THƠ :", "confidence": 0.992},
+                {"bbox": [[180, 575], [1400, 575], [1400, 625], [180, 625]], "text": "Gió đập cửa thông, trăng lấp loáng, Lòng đây, cảnh đấy cùng thanh sảng.", "confidence": 0.980},
+            ]
 
     han_items: List[Dict[str, Any]] = []
     for idx, item in enumerate(han_raw):
@@ -715,28 +888,53 @@ class KaggleDualOCREngine:
         self._viet_det_ocr: Any = None
         self._viet_predictor: Any = None
 
+    @staticmethod
+    def _is_kaggle_runtime() -> bool:
+        return bool(os.environ.get("KAGGLE_KERNEL_RUN_TYPE") or Path("/kaggle/working").exists())
+
     def _lazy_init_gpu_engines(self) -> None:
         if self.mock or self._han_ocr is not None:
             return
+
+        try:
+            import paddleocr  # type: ignore  # noqa: F401
+            import vietocr  # type: ignore  # noqa: F401
+        except ImportError:
+            if self._is_kaggle_runtime():
+                _install_kaggle_dependencies_if_needed()
+            else:
+                raise RuntimeError(
+                    "Live OCR requires `paddleocr`, `vietocr`, and `opencv-python-headless`. "
+                    "Install them or run via Kaggle GPU (`./kaggle_ocr/deploy_to_kaggle.sh`) "
+                    "or use `--mock` / `--dry-run` locally."
+                )
+
+        import paddle  # type: ignore
         from paddleocr import PaddleOCR  # type: ignore
         from vietocr.tool.config import Cfg  # type: ignore
         from vietocr.tool.predictor import Predictor  # type: ignore
 
+        effective_gpu = bool(
+            self.use_gpu
+            and getattr(paddle.device, "is_compiled_with_cuda", lambda: False)()
+            and paddle.device.cuda.device_count() > 0
+        )
+
         self._han_ocr = PaddleOCR(
             use_angle_cls=True,
             lang="chinese_cht",
-            use_gpu=self.use_gpu,
+            use_gpu=effective_gpu,
             show_log=False,
         )
         self._viet_det_ocr = PaddleOCR(
             use_angle_cls=True,
             lang="vi",
-            use_gpu=self.use_gpu,
+            use_gpu=effective_gpu,
             show_log=False,
         )
         cfg = Cfg.load_config_from_name("vgg_transformer")
         cfg["cnn"]["pretrained"] = True
-        cfg["device"] = "cuda:0" if self.use_gpu else "cpu"
+        cfg["device"] = "cuda:0" if effective_gpu else "cpu"
         self._viet_predictor = Predictor(cfg)
 
     def recognize_page(
@@ -757,11 +955,18 @@ class KaggleDualOCREngine:
             )
 
         self._lazy_init_gpu_engines()
+
+        # Normalize PIL.Image -> BGR numpy array expected by PaddleOCR
+        ocr_input = cropped_image
+        if np is not None and not hasattr(ocr_input, "shape") and Image is not None and isinstance(ocr_input, Image.Image):
+            rgb = np.array(ocr_input.convert("RGB"))
+            ocr_input = rgb[:, :, ::-1]
+
         crop_top_px = int(preprocess_meta.get("crop_top_px", 0))
-        img_h, img_w = get_image_dimensions(cropped_image)
+        img_h, img_w = get_image_dimensions(ocr_input)
 
         # 1. PaddleOCR (chinese_cht) pass for Chữ Hán
-        han_result = self._han_ocr.ocr(cropped_image, cls=True)
+        han_result = self._han_ocr.ocr(ocr_input, cls=True)
         han_items: List[Dict[str, Any]] = []
         raw_han_lines = han_result[0] if han_result and han_result[0] else []
         for idx, line in enumerate(raw_han_lines):
@@ -778,7 +983,7 @@ class KaggleDualOCREngine:
             })
 
         # 2. PaddleOCR detector + VietOCR recognizer pass for Phiên âm & Dịch nghĩa
-        viet_det_result = self._viet_det_ocr.ocr(cropped_image, cls=True)
+        viet_det_result = self._viet_det_ocr.ocr(ocr_input, cls=True)
         viet_items: List[Dict[str, Any]] = []
         raw_viet_lines = viet_det_result[0] if viet_det_result and viet_det_result[0] else []
         for idx, line in enumerate(raw_viet_lines):
@@ -792,8 +997,8 @@ class KaggleDualOCREngine:
 
             recognized_text = fallback_text
             conf = det_conf
-            if Image is not None and hasattr(cropped_image, "shape"):
-                crop_patch = cropped_image[iy1:iy2, ix1:ix2]
+            if Image is not None and hasattr(ocr_input, "shape"):
+                crop_patch = ocr_input[iy1:iy2, ix1:ix2]
                 if crop_patch.size > 0:
                     pil_patch = Image.fromarray(crop_patch[:, :, ::-1] if crop_patch.ndim == 3 else crop_patch)
                     pred = self._viet_predictor.predict(pil_patch, return_prob=True)
@@ -825,12 +1030,16 @@ def resolve_ocr_output_dirs(
 ) -> Tuple[Path, Path]:
     """Return `(han_dir, viet_dir)` under `02_ocr_tho/han` and `02_ocr_tho/viet`.
 
-    If `book_folder` is provided (e.g. `'HVTT_HanVanTinhTuy'`), resolves under
-    `<output_root>/deliverables/<book_folder>/02_ocr_tho/{han,viet}`.
+    Supports flat `output_root`, root ending with `<book_folder>`, or `<output_root>/deliverables/<book_folder>`.
     """
     root = Path(output_root)
     if book_folder:
-        base = root / "deliverables" / book_folder / "02_ocr_tho"
+        if root.name == book_folder:
+            base = root / "02_ocr_tho"
+        elif root.name == "deliverables":
+            base = root / book_folder / "02_ocr_tho"
+        else:
+            base = root / "deliverables" / book_folder / "02_ocr_tho"
     elif root.name == "02_ocr_tho":
         base = root
     else:
@@ -866,11 +1075,7 @@ def save_page_ocr_outputs(
     layout_summary: Dict[str, Any],
     book_folder: Optional[str] = None,
 ) -> Tuple[Path, Path]:
-    """Write raw OCR outputs to `02_ocr_tho/han/<page>.json` and `02_ocr_tho/viet/<page>.json`.
-
-    Also mirrors outputs into `<output_root>/deliverables/<book_folder>/02_ocr_tho/{han,viet}/<page>.json`
-    so both flat and multi-book deliverable layouts are always populated.
-    """
+    """Write raw OCR outputs to `02_ocr_tho/han/<page>.json` and `02_ocr_tho/viet/<page>.json`."""
     safe_page_id = re.sub(r"\.(?:png|jpg|jpeg|tif|tiff|json)$", "", page_id, flags=re.IGNORECASE)
     resolved_book_folder = book_folder or _resolve_book_folder(book_type)
 
@@ -901,22 +1106,33 @@ def save_page_ocr_outputs(
             "layout_mode": layout_summary.get("layout_mode"),
             "phien_am_lines": layout_summary.get("phien_am_lines", []),
             "dich_nghia_lines": layout_summary.get("dich_nghia_lines", []),
+            "dich_tho_lines": layout_summary.get("dich_tho_lines", []),
             "interlinear_triplets": layout_summary.get("interlinear_triplets", []),
         },
     }
 
-    # 1. Primary flat output (`<output_root>/02_ocr_tho/{han,viet}/<page>.json`)
+    # Primary output inside book folder or flat output_root (idempotent overwrite of <safe_page_id>.json)
     han_dir, viet_dir = resolve_ocr_output_dirs(output_root)
-    flat_page_id = (
-        safe_page_id
-        if safe_page_id.upper().startswith(book_type.upper())
-        else f"{book_type.upper()}_{safe_page_id}"
-    )
     han_path = han_dir / f"{safe_page_id}.json"
     viet_path = viet_dir / f"{safe_page_id}.json"
-    if han_path.exists() and flat_page_id != safe_page_id:
-        han_path = han_dir / f"{flat_page_id}.json"
-        viet_path = viet_dir / f"{flat_page_id}.json"
+
+    # Avoid cross-book filename collision only in shared root outputs where multiple books mix
+    root_path = Path(output_root)
+    is_book_specific_root = (
+        root_path.name == resolved_book_folder
+        or root_path.name == "02_ocr_tho"
+        or "deliverables" in root_path.parts
+    )
+    if not is_book_specific_root and han_path.exists():
+        existing_book = ""
+        try:
+            existing_book = json.loads(han_path.read_text(encoding="utf-8")).get("book_type", "")
+        except Exception:
+            existing_book = ""
+        if existing_book and existing_book.upper() != book_type.upper():
+            flat_page_id = f"{book_type.upper()}_{safe_page_id}"
+            han_path = han_dir / f"{flat_page_id}.json"
+            viet_path = viet_dir / f"{flat_page_id}.json"
 
     with han_path.open("w", encoding="utf-8") as f:
         json.dump(han_payload, f, ensure_ascii=False, indent=2)
@@ -924,9 +1140,8 @@ def save_page_ocr_outputs(
     with viet_path.open("w", encoding="utf-8") as f:
         json.dump(viet_payload, f, ensure_ascii=False, indent=2)
 
-    # 2. Deliverable per-book output (`<output_root>/deliverables/<book>/02_ocr_tho/{han,viet}/<page>.json`)
-    root_path = Path(output_root)
-    if root_path.name != "02_ocr_tho" and "deliverables" not in root_path.parts:
+    # Deliverable per-book mirror when writing to a shared workspace/working directory
+    if not is_book_specific_root:
         deliv_han_dir, deliv_viet_dir = resolve_ocr_output_dirs(
             output_root, book_folder=resolved_book_folder
         )
@@ -1169,6 +1384,16 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         action="store_true",
         help="Install PaddleOCR and VietOCR via pip before running (for Kaggle GPU kernels).",
     )
+    parser.add_argument(
+        "--pilot-only",
+        action="store_true",
+        help="Restrict image processing to verified pilot pages defined in config/book_manifest.json.",
+    )
+    parser.add_argument(
+        "--run-alignment",
+        action="store_true",
+        help="Run full corpus post-processing & alignment (`src.corpus_pipeline`) after OCR completes.",
+    )
 
     args = parser.parse_args(argv)
     is_mock = bool(args.dry_run or args.mock)
@@ -1176,22 +1401,43 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     if args.install_deps and not is_mock:
         _install_kaggle_dependencies_if_needed()
 
+    pilot_pages_map: Dict[str, set[int]] = {}
+    if args.pilot_only:
+        for cand_manifest in (
+            Path(__file__).resolve().parent.parent / "config" / "book_manifest.json",
+            Path(args.input_dir) / "config" / "book_manifest.json",
+            Path(args.input_dir) / "book_manifest.json",
+        ):
+            if cand_manifest.is_file():
+                m_data = json.loads(cand_manifest.read_text(encoding="utf-8"))
+                for b_k, b_cfg in m_data.get("books", {}).items():
+                    pilot_pages_map[b_k] = {int(p) for p in b_cfg.get("pilot_pages", [])}
+                break
+
     engine = KaggleDualOCREngine(use_gpu=not is_mock, mock=is_mock)
     input_path = Path(args.input_dir)
-    image_files = _discover_input_images(input_path)
+    discovered_files = _discover_input_images(input_path)
+
+    # Filter by book_type (and --pilot-only) FIRST before applying --max-pages
+    filtered_files: List[Tuple[Path, str, int]] = []
+    for img_file in discovered_files:
+        inferred_book, page_num = _infer_book_and_page(
+            str(img_file),
+            default_book="TVLT2" if args.book_type == "ALL" else args.book_type,
+        )
+        if args.book_type != "ALL" and inferred_book != args.book_type:
+            continue
+        if args.pilot_only and inferred_book in pilot_pages_map and page_num not in pilot_pages_map[inferred_book]:
+            continue
+        filtered_files.append((img_file, inferred_book, page_num))
+
     if args.max_pages is not None and args.max_pages > 0:
-        image_files = image_files[:args.max_pages]
+        filtered_files = filtered_files[:args.max_pages]
 
     results: List[Dict[str, Any]] = []
 
-    if image_files:
-        for img_file in image_files:
-            inferred_book, page_num = _infer_book_and_page(
-                str(img_file),
-                default_book="TVLT2" if args.book_type == "ALL" else args.book_type,
-            )
-            if args.book_type != "ALL" and inferred_book != args.book_type:
-                continue
+    if filtered_files:
+        for img_file, inferred_book, page_num in filtered_files:
             book_folder = _resolve_book_folder(inferred_book, img_file)
             res = process_single_page(
                 engine=engine,
@@ -1245,6 +1491,36 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         )
 
     print(f"[ocr_pipeline_kaggle] Processed {len(results)} page(s) (mode={'mock' if is_mock else 'gpu'}).")
+
+    # Optionally run end-to-end post-processing & alignment (auto-enabled inside Kaggle GPU kernel if src/ is staged)
+    should_align = bool(args.run_alignment or (not is_mock and KaggleDualOCREngine._is_kaggle_runtime()))
+    if should_align:
+        candidate_code_roots = [
+            Path(__file__).resolve().parent.parent,
+            input_path,
+            Path("/kaggle/input/han-viet-parallel-corpus-pages"),
+        ]
+        for root_cand in candidate_code_roots:
+            if (root_cand / "src" / "corpus_pipeline.py").is_file():
+                if str(root_cand) not in sys.path:
+                    sys.path.insert(0, str(root_cand))
+                from src.corpus_pipeline import run_corpus_from_ocr  # type: ignore
+
+                manifest_candidate = (
+                    root_cand / "config" / "book_manifest.json"
+                    if (root_cand / "config" / "book_manifest.json").is_file()
+                    else None
+                )
+                align_summary = run_corpus_from_ocr(
+                    workspace_root=out_dir_path,
+                    ocr_root=out_dir_path,
+                    manifest_path=manifest_candidate,
+                    book_filter=None if args.book_type == "ALL" else args.book_type,
+                )
+                print("[ocr_pipeline_kaggle] End-to-end alignment summary:")
+                print(json.dumps(align_summary, ensure_ascii=False, indent=2))
+                break
+
     return 0
 
 

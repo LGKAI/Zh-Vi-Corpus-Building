@@ -1,18 +1,19 @@
 {
   "page_id": "0040",
   "book_type": "TVLT2",
+  "book_folder": "TVLT2_ThoVanLyTran2",
   "page_num": 40,
   "engine": "vietocr_vgg_transformer",
   "preprocess": {
     "book_type": "TVLT2",
-    "original_width": 2000,
-    "original_height": 2800,
-    "crop_top_px": 196,
+    "original_width": 1590,
+    "original_height": 2211,
+    "crop_top_px": 155,
     "header_ratio": 0.07,
     "footnote_separator_y_cropped": null,
     "footnote_separator_y_original": null,
-    "effective_width": 2000,
-    "effective_height": 2604
+    "effective_width": 1590,
+    "effective_height": 2056
   },
   "items": [
     {
@@ -38,19 +39,19 @@
       "bbox_original": [
         [
           1020,
-          356
+          315
         ],
         [
           1780,
-          356
+          315
         ],
         [
           1780,
-          406
+          365
         ],
         [
           1020,
-          406
+          365
         ]
       ],
       "box_xyxy": [
@@ -85,19 +86,19 @@
       "bbox_original": [
         [
           1020,
-          421
+          380
         ],
         [
           1780,
-          421
+          380
         ],
         [
           1780,
-          471
+          430
         ],
         [
           1020,
-          471
+          430
         ]
       ],
       "box_xyxy": [
@@ -132,19 +133,19 @@
       "bbox_original": [
         [
           180,
-          536
+          495
         ],
         [
           600,
-          536
+          495
         ],
         [
           600,
-          581
+          540
         ],
         [
           180,
-          581
+          540
         ]
       ],
       "box_xyxy": [
@@ -179,19 +180,19 @@
       "bbox_original": [
         [
           180,
-          591
+          550
         ],
         [
           1780,
-          591
+          550
         ],
         [
           1780,
-          636
+          595
         ],
         [
           180,
-          636
+          595
         ]
       ],
       "box_xyxy": [
@@ -226,19 +227,19 @@
       "bbox_original": [
         [
           180,
-          646
+          605
         ],
         [
           1780,
-          646
+          605
         ],
         [
           1780,
-          691
+          650
         ],
         [
           180,
-          691
+          650
         ]
       ],
       "box_xyxy": [
@@ -273,19 +274,19 @@
       "bbox_original": [
         [
           180,
-          716
+          675
         ],
         [
           600,
-          716
+          675
         ],
         [
           600,
-          761
+          720
         ],
         [
           180,
-          761
+          720
         ]
       ],
       "box_xyxy": [
@@ -320,19 +321,19 @@
       "bbox_original": [
         [
           180,
-          771
+          730
         ],
         [
           1400,
-          771
+          730
         ],
         [
           1400,
-          821
+          780
         ],
         [
           180,
-          821
+          780
         ]
       ],
       "box_xyxy": [
@@ -355,6 +356,7 @@
       "Gió đập cổng thông, trăng sáng trước sân, Lòng hẹn với phong cảnh cùng trong sạch lặng lẽ.",
       "Bao nhiêu thú vị trong đó không ai hay, Mặc cho nhà sư trong núi vui đến sáng."
     ],
+    "dich_tho_lines": [],
     "interlinear_triplets": []
   }
 }

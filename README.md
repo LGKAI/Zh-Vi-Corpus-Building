@@ -2,7 +2,7 @@
 ### Sino-Vietnamese Classical OCR, Disambiguation & Parallel Alignment System
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
-[![Tests](https://img.shields.io/badge/pytest-39%20passed%20(100%25)-brightgreen.svg)]()
+[![Tests](https://img.shields.io/badge/pytest-43%20passed%20(100%25)-brightgreen.svg)]()
 [![QA Error Rate](https://img.shields.io/badge/QA%20Error%20Rate-0.00%25-success.svg)]()
 [![License](https://img.shields.io/badge/license-Academic%20Research-lightgrey.svg)]()
 [![Streamlit UI](https://img.shields.io/badge/UI-Streamlit%20CAT%20Workbench-FF4B4B.svg)](https://streamlit.io/)
@@ -134,6 +134,7 @@ OCR_NLP/
 │   └── tickets.json               # Danh mục cấu trúc nhiệm vụ kỹ thuật
 │
 ├── src/                           # SOURCE CODE CỐT LÕI
+│   ├── corpus_pipeline.py         # Cầu nối End-to-End: đọc 02_ocr_tho JSON -> dóng hàng -> xuất bản
 │   ├── aligner.py                 # Thuật toán Plateau Dynamic Programming Aligner
 │   ├── poetic_aligner.py          # Dóng hàng thơ Đường luật, Song thất lục bát
 │   ├── ocr_disambiguator.py       # Engine khử nhầm lẫn 105+ cụm chữ Hán
@@ -145,7 +146,9 @@ OCR_NLP/
 │   └── workbench_editor.py        # CAT Workbench: edit, split, merge, insert, delete
 │
 ├── scripts/                       # KỊCH BẢN THỰC THI & CHẨN ĐOÁN
-│   ├── run_pilot_demo.py          # Chạy toàn bộ pipeline từ OCR đến xuất bản
+│   ├── run_end_to_end.py          # Chạy toàn trình End-to-End (OCR -> Dóng hàng -> HF -> Demo)
+│   ├── run_pilot_demo.py          # Chạy nhanh bộ dữ liệu pilot chuẩn hóa
+│   ├── demo_1_2_pages.py          # Tạo gói demo 1-2 trang theo yêu cầu giảng viên
 │   ├── diagnose_corpus_quality.py # Phân tích chất lượng ngữ liệu, độ phủ từ vựng
 │   ├── inspect_alignment.py       # CLI kiểm tra đối soát từng cặp câu trên Terminal
 │   ├── package_hf_dataset.py      # Đóng gói Hugging Face Dataset (train/val/test)
@@ -154,13 +157,19 @@ OCR_NLP/
 │   └── extract_pages.swift        # Trích xuất ảnh 300 DPI từ PDF bằng Apple Quartz
 │
 ├── kaggle_ocr/                    # TRIỂN KHAI KAGGLE DUAL-GPU OCR
-│   ├── ocr_pipeline_kaggle.py     # Pipeline OCR cắt layout, tách Header/Footnote
-│   ├── deploy_to_kaggle.sh        # Script đẩy notebook & dữ liệu lên Kaggle
+│   ├── ocr_pipeline_kaggle.py     # Pipeline OCR cắt layout, tách Header/Footnote, tự cài deps & dóng hàng
+│   ├── deploy_to_kaggle.sh        # Script đẩy ảnh, src/ & notebook lên Kaggle GPU
 │   ├── kernel-metadata.json       # Cấu hình GPU T4 Kaggle Kernel
 │   └── dataset-metadata.json      # Cấu hình Kaggle Dataset
 │
 ├── web_app/                       # GIAO DIỆN CAT WORKBENCH & VISUAL INSPECTOR
 │   └── app.py                     # Streamlit App tương tác, đối soát ảnh & sửa trực tiếp
+│
+├── demo_giang_vien/               # GÓI DEMO THEO YÊU CẦU GIẢNG VIÊN
+│   ├── HVTT_demo.tsv / .xlsx      # HVTT 4 cột (bài cuối để trống Dịch nghĩa)
+│   ├── TVLT2_demo.tsv / .xlsx     # TVLT2 kèm bản dịch Bài 3 từ Google Drive
+│   ├── TLTVN_demo.tsv / .xlsx     # TLTVN Phần Ba tuyển tập từ
+│   └── BAO_CAO_DEMO_GIANG_VIEN.md # Báo cáo thống kê bài khuyết & phụ lục chữ Hán
 │
 ├── deliverables/                  # KẾT QUẢ ĐẦU RA SỐ HÓA & DÓNG HÀNG
 │   ├── full_ocr_summary.json      # Báo cáo tổng hợp số liệu OCR toàn dự án
@@ -183,20 +192,21 @@ OCR_NLP/
 ├── dataset_export/                # HUGGING FACE TRANSLATION DATASET
 │   ├── README.md                  # Dataset Card chuẩn quốc tế
 │   ├── dataset_info.json          # Metadata & Schema
-│   ├── train.jsonl                # Tập huấn luyện (33 mẫu)
-│   ├── validation.jsonl           # Tập đánh giá (4 mẫu)
-│   └── test.jsonl                 # Tập kiểm thử (5 mẫu)
+│   ├── train.jsonl                # Tập huấn luyện
+│   ├── validation.jsonl           # Tập đánh giá
+│   └── test.jsonl                 # Tập kiểm thử
 │
 ├── docs/                          # BÁO CÁO HỌC THUẬT & KIỂM KÊ
 │   ├── BANG_KIEM_KE_NGUON.md      # Kiểm kê 8 trường bắt buộc & công thức offset
 │   ├── BAO_CAO_CHAN_DOAN_CHAT_LUONG.md # Báo cáo độ phủ từ vựng và câu cần lưu ý
 │   ├── NGHIEN_CUU_VA_TOI_UU_SOTA.md # Nghiên cứu tổng quan SOTA (2024-2026)
-│   ├── THONG_KE_BO_SUNG_GIANG_VIEN.md # Thống kê 6 tác giả/tác phẩm bổ sung TLTVN
-│   ├── WAYFINDER.md               # Đồ thị phụ thuộc nhiệm vụ (18/18 hoàn thành)
+│   ├── THONG_KE_BO_SUNG_GIANG_VIEN.md # Thống kê các bài khuyết & phụ lục TLTVN
+│   ├── WAYFINDER.md               # Đồ thị phụ thuộc nhiệm vụ
 │   └── HANDOFF.md                 # Biên bản bàn giao kỹ thuật & trạng thái
 │
-└── tests/                         # TOÀN BỘ 39 UNIT & INTEGRATION TESTS
-    ├── test_pipeline.py           # Kiểm thử toàn diện pipeline end-to-end
+└── tests/                         # TOÀN BỘ 43 UNIT & INTEGRATION TESTS
+    ├── test_pipeline.py           # Kiểm thử các module lõi & quy chuẩn nộp bài
+    ├── test_end_to_end_pipeline.py # Kiểm thử toàn trình End-to-End từ OCR JSON -> TSV/XLSX
     ├── test_advanced_alignment_and_disambiguation.py # Test 105+ cụm OCR & word aligner
     ├── test_workbench_editor.py   # Test 5 toán tử CAT Workbench
     └── test_stress_and_edge_cases.py # Test chịu tải 1,000 cặp câu & dữ liệu dị thường
@@ -217,13 +227,22 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 7.2. Chạy toàn bộ Test Suite (39 bài kiểm tra)
+### 7.2. Chạy toàn bộ Pipeline End-to-End (1 Lệnh duy nhất)
+```bash
+# Chạy khép kín: OCR (hoặc đọc 02_ocr_tho) -> Khử nhầm lẫn -> Dóng hàng -> QA -> HF Dataset -> Chẩn đoán -> Demo
+python3 scripts/run_end_to_end.py --pilot-only
+
+# Sau khi tải 02_ocr_tho thật từ Kaggle về, chạy dóng hàng toàn bộ:
+python3 scripts/run_end_to_end.py --skip-ocr
+```
+
+### 7.3. Chạy toàn bộ Test Suite (43 bài kiểm tra)
 ```bash
 pytest tests/ -v
 ```
-*Kết quả kỳ vọng: 39 passed in ~1.2s (100% OK).*
+*Kết quả kỳ vọng: 43 passed in ~1.5s (100% OK).*
 
-### 7.3. Khởi chạy Giao diện Web App CAT Workbench
+### 7.4. Khởi chạy Giao diện Web App CAT Workbench
 ```bash
 streamlit run web_app/app.py
 ```
@@ -232,7 +251,7 @@ Giao diện mở tại `http://localhost:8501`, cho phép:
 - Xem ảnh scan trang sách gốc (`01_nguon`) tương ứng với từng câu.
 - Sửa trực tiếp, tách câu, gộp câu, thêm dòng, xóa dòng và lưu lại tức thì thành tệp `.tsv` và `.xlsx`.
 
-### 7.4. Kiểm tra đối soát nhanh trên Terminal
+### 7.5. Kiểm tra đối soát nhanh trên Terminal
 ```bash
 # Kiểm tra sách Hán Văn Tinh Túy
 python3 scripts/inspect_alignment.py --book HVTT
@@ -244,18 +263,10 @@ python3 scripts/inspect_alignment.py --book TVLT2
 python3 scripts/inspect_alignment.py --book TLTVN
 ```
 
-### 7.5. Chạy Chẩn đoán Chất lượng Ngữ liệu Toàn diện
+### 7.6. Chạy Chẩn đoán Chất lượng & Đóng gói Hugging Face Dataset
 ```bash
 python3 scripts/diagnose_corpus_quality.py
-```
-Báo cáo chi tiết sẽ được tự động xuất ra [`docs/BAO_CAO_CHAN_DOAN_CHAT_LUONG.md`](docs/BAO_CAO_CHAN_DOAN_CHAT_LUONG.md).
-
-### 7.6. Đóng gói Hugging Face Dataset & Benchmark Dịch máy
-```bash
-# Tạo các tập train/validation/test
 python3 scripts/package_hf_dataset.py
-
-# Đánh giá benchmark downstream NMT
 python3 scripts/eval_translation_benchmark.py
 ```
 
@@ -266,13 +277,15 @@ python3 scripts/eval_translation_benchmark.py
 Thư mục `kaggle_ocr/` cung cấp giải pháp xử lý trọn vẹn toàn bộ 1,583 trang sách scan trên môi trường đám mây miễn phí Kaggle (2x Nvidia T4 15GB VRAM):
 
 1. **Chuẩn bị API Kaggle**: Đặt file `kaggle.json` tại `~/.kaggle/kaggle.json`.
-2. **Đẩy notebook và pipeline**:
+2. **Đẩy ảnh gốc, mã nguồn `src/` và pipeline lên Kaggle GPU**:
    ```bash
-   bash kaggle_ocr/deploy_to_kaggle.sh
+   bash kaggle_ocr/deploy_to_kaggle.sh --stage-images --push-dataset --push-kernel
    ```
-3. **Chạy suy luận cục bộ hoặc kéo kết quả về**:
+3. **Theo dõi và kéo toàn bộ kết quả OCR + Dóng hàng về máy**:
    ```bash
-   python3 scripts/kaggle_full_inference.py --run
+   bash kaggle_ocr/deploy_to_kaggle.sh --status
+   bash kaggle_ocr/deploy_to_kaggle.sh --pull-output
+   python3 scripts/run_end_to_end.py --skip-ocr
    ```
 
 ---

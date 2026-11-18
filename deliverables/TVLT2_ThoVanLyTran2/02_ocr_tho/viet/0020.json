@@ -1,18 +1,19 @@
 {
   "page_id": "0020",
   "book_type": "TVLT2",
+  "book_folder": "TVLT2_ThoVanLyTran2",
   "page_num": 20,
   "engine": "vietocr_vgg_transformer",
   "preprocess": {
     "book_type": "TVLT2",
-    "original_width": 2000,
-    "original_height": 2800,
-    "crop_top_px": 196,
+    "original_width": 1590,
+    "original_height": 2211,
+    "crop_top_px": 155,
     "header_ratio": 0.07,
     "footnote_separator_y_cropped": null,
     "footnote_separator_y_original": null,
-    "effective_width": 2000,
-    "effective_height": 2604
+    "effective_width": 1590,
+    "effective_height": 2056
   },
   "items": [
     {
@@ -38,19 +39,19 @@
       "bbox_original": [
         [
           1020,
-          356
+          315
         ],
         [
           1780,
-          356
+          315
         ],
         [
           1780,
-          406
+          365
         ],
         [
           1020,
-          406
+          365
         ]
       ],
       "box_xyxy": [
@@ -59,8 +60,8 @@
         1780,
         210
       ],
-      "text": "Phong đả tùng quan 1* nguyệt chiếu đình, Tâm kỳ phong cảnh cộng thê thanh.",
-      "confidence": 0.988
+      "text": "Cố 1* vô quỳnh báo tự hoài tàm, Cực mục giang cao ý bất kham.",
+      "confidence": 0.987
     },
     {
       "line_id": "0020_viet_001",
@@ -85,19 +86,19 @@
       "bbox_original": [
         [
           1020,
-          421
+          380
         ],
         [
           1780,
-          421
+          380
         ],
         [
           1780,
-          471
+          430
         ],
         [
           1020,
-          471
+          430
         ]
       ],
       "box_xyxy": [
@@ -106,101 +107,101 @@
         1780,
         275
       ],
-      "text": "Cá trung tư vị vô nhân thức, Phó dữ sơn tăng lạc đáo minh.",
-      "confidence": 0.987
+      "text": "Mã thủ thu phong xuy kiếm giáp, Ốc lương lạc nguyệt 2* chiếu thư am.",
+      "confidence": 0.986
     },
     {
       "line_id": "0020_viet_002",
       "bbox": [
         [
-          180,
+          1020,
+          290
+        ],
+        [
+          1780,
+          290
+        ],
+        [
+          1780,
           340
         ],
         [
-          600,
+          1020,
           340
-        ],
-        [
-          600,
-          385
-        ],
-        [
-          180,
-          385
         ]
       ],
       "bbox_original": [
         [
-          180,
-          536
+          1020,
+          445
         ],
         [
-          600,
-          536
+          1780,
+          445
         ],
         [
-          600,
-          581
+          1780,
+          495
         ],
         [
-          180,
-          581
+          1020,
+          495
         ]
       ],
       "box_xyxy": [
-        180,
-        340,
-        600,
-        385
+        1020,
+        290,
+        1780,
+        340
       ],
-      "text": "DỊCH NGHĨA :",
-      "confidence": 0.994
+      "text": "Mạc 3* không nan trụ 4* yến quy Bắc, Địa noãn 5* sầu văn nhạn biệt Nam.",
+      "confidence": 0.986
     },
     {
       "line_id": "0020_viet_003",
       "bbox": [
         [
-          180,
-          395
+          1020,
+          355
         ],
         [
           1780,
-          395
+          355
         ],
         [
           1780,
-          440
+          405
         ],
         [
-          180,
-          440
+          1020,
+          405
         ]
       ],
       "bbox_original": [
         [
-          180,
-          591
+          1020,
+          510
         ],
         [
           1780,
-          591
+          510
         ],
         [
           1780,
-          636
+          560
         ],
         [
-          180,
-          636
+          1020,
+          560
         ]
       ],
       "box_xyxy": [
-        180,
-        395,
+        1020,
+        355,
         1780,
-        440
+        405
       ],
-      "text": "Gió đập cổng thông, trăng sáng trước sân, Lòng hẹn với phong cảnh cùng trong sạch lặng lẽ.",
+      "text": "Thử khứ vị tri khuynh cái nhật, Thi thiên 6* liêu vị 7* đáng thanh 8* đàm.",
       "confidence": 0.985
     },
     {
@@ -211,11 +212,11 @@
           450
         ],
         [
-          1780,
+          600,
           450
         ],
         [
-          1780,
+          600,
           495
         ],
         [
@@ -226,135 +227,234 @@
       "bbox_original": [
         [
           180,
-          646
+          605
         ],
         [
-          1780,
-          646
+          600,
+          605
         ],
         [
-          1780,
-          691
+          600,
+          650
         ],
         [
           180,
-          691
+          650
         ]
       ],
       "box_xyxy": [
         180,
         450,
-        1780,
+        600,
         495
       ],
-      "text": "Bao nhiêu thú vị trong đó không ai hay, Mặc cho nhà sư trong núi vui đến sáng.",
-      "confidence": 0.984
+      "text": "DỊCH NGHĨA :",
+      "confidence": 0.994
     },
     {
       "line_id": "0020_viet_005",
       "bbox": [
         [
           180,
-          520
+          505
         ],
         [
-          600,
-          520
+          1780,
+          505
         ],
         [
-          600,
-          565
+          1780,
+          550
         ],
         [
           180,
-          565
+          550
         ]
       ],
       "bbox_original": [
         [
           180,
-          716
+          660
         ],
         [
-          600,
-          716
+          1780,
+          660
         ],
         [
-          600,
-          761
+          1780,
+          705
         ],
         [
           180,
-          761
+          705
         ]
       ],
       "box_xyxy": [
         180,
-        520,
-        600,
-        565
+        505,
+        1780,
+        550
       ],
-      "text": "DỊCH THƠ :",
-      "confidence": 0.992
+      "text": "Nghĩ không có ngọc quỳnh (2) đáp lại, lòng tự thẹn. Trên bờ sông nhìn xa mãi xiết bao bùi ngùi.",
+      "confidence": 0.985
     },
     {
       "line_id": "0020_viet_006",
       "bbox": [
         [
           180,
-          575
+          560
         ],
         [
-          1400,
-          575
+          1780,
+          560
         ],
         [
-          1400,
-          625
+          1780,
+          605
         ],
         [
           180,
-          625
+          605
         ]
       ],
       "bbox_original": [
         [
           180,
-          771
+          715
         ],
         [
-          1400,
-          771
+          1780,
+          715
         ],
         [
-          1400,
-          821
+          1780,
+          760
         ],
         [
           180,
-          821
+          760
         ]
       ],
       "box_xyxy": [
         180,
-        575,
-        1400,
-        625
+        560,
+        1780,
+        605
       ],
-      "text": "Gió đập cửa thông, trăng lấp loáng, Lòng đây, cảnh đấy cùng thanh sảng.",
-      "confidence": 0.98
+      "text": "Gió thu trước đầu ngựa thổi vào thanh gươm, Ánh trăng lọt qua rường nhà (3) dọi vào phòng sách.",
+      "confidence": 0.984
+    },
+    {
+      "line_id": "0020_viet_007",
+      "bbox": [
+        [
+          180,
+          615
+        ],
+        [
+          1780,
+          615
+        ],
+        [
+          1780,
+          660
+        ],
+        [
+          180,
+          660
+        ]
+      ],
+      "bbox_original": [
+        [
+          180,
+          770
+        ],
+        [
+          1780,
+          770
+        ],
+        [
+          1780,
+          815
+        ],
+        [
+          180,
+          815
+        ]
+      ],
+      "box_xyxy": [
+        180,
+        615,
+        1780,
+        660
+      ],
+      "text": "Màn trống khó ngăn chim én về phương Bắc, Đất ấm buồn nghe chim nhạn biệt phương Nam.",
+      "confidence": 0.984
+    },
+    {
+      "line_id": "0020_viet_008",
+      "bbox": [
+        [
+          180,
+          670
+        ],
+        [
+          1780,
+          670
+        ],
+        [
+          1780,
+          715
+        ],
+        [
+          180,
+          715
+        ]
+      ],
+      "bbox_original": [
+        [
+          180,
+          825
+        ],
+        [
+          1780,
+          825
+        ],
+        [
+          1780,
+          870
+        ],
+        [
+          180,
+          870
+        ]
+      ],
+      "box_xyxy": [
+        180,
+        670,
+        1780,
+        715
+      ],
+      "text": "Lần đi này chưa biết ngày nào mới có dịp nghiêng lọng (4), Xin vì cuộc chuyện trò tao nhã mà có một bài thơ.",
+      "confidence": 0.983
     }
   ],
   "layout_summary": {
     "layout_mode": "two_column_poetry",
     "phien_am_lines": [
-      "Phong đả tùng quan 1* nguyệt chiếu đình, Tâm kỳ phong cảnh cộng thê thanh.",
-      "Cá trung tư vị vô nhân thức, Phó dữ sơn tăng lạc đáo minh."
+      "Cố 1* vô quỳnh báo tự hoài tàm, Cực mục giang cao ý bất kham.",
+      "Mã thủ thu phong xuy kiếm giáp, Ốc lương lạc nguyệt 2* chiếu thư am.",
+      "Mạc 3* không nan trụ 4* yến quy Bắc, Địa noãn 5* sầu văn nhạn biệt Nam.",
+      "Thử khứ vị tri khuynh cái nhật, Thi thiên 6* liêu vị 7* đáng thanh 8* đàm."
     ],
     "dich_nghia_lines": [
-      "Gió đập cổng thông, trăng sáng trước sân, Lòng hẹn với phong cảnh cùng trong sạch lặng lẽ.",
-      "Bao nhiêu thú vị trong đó không ai hay, Mặc cho nhà sư trong núi vui đến sáng."
+      "Nghĩ không có ngọc quỳnh (2) đáp lại, lòng tự thẹn. Trên bờ sông nhìn xa mãi xiết bao bùi ngùi.",
+      "Gió thu trước đầu ngựa thổi vào thanh gươm, Ánh trăng lọt qua rường nhà (3) dọi vào phòng sách.",
+      "Màn trống khó ngăn chim én về phương Bắc, Đất ấm buồn nghe chim nhạn biệt phương Nam.",
+      "Lần đi này chưa biết ngày nào mới có dịp nghiêng lọng (4), Xin vì cuộc chuyện trò tao nhã mà có một bài thơ."
     ],
+    "dich_tho_lines": [],
     "interlinear_triplets": []
   }
 }

@@ -65,6 +65,12 @@ _NUMERIC_ANCHORS: list[tuple[str, tuple[str, ...]]] = [
 _LEXICAL_ANCHORS: list[tuple[str, tuple[str, ...]]] = [
     ("王", ("vua", "vương", "chúa")),
     ("帝", ("đế", "vua", "hoàng")),
+    ("朕", ("trẫm",)),
+    ("佛", ("phật",)),
+    ("師", ("sư", "thầy")),
+    ("禪", ("thiền",)),
+    ("道", ("đạo", "đường")),
+    ("教", ("giáo", "dạy")),
     ("天", ("trời", "thiên")),
     ("地", ("đất", "địa")),
     ("山", ("núi", "sơn", "non")),

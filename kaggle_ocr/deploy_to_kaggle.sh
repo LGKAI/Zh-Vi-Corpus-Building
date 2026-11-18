@@ -151,7 +151,7 @@ staging_dir.mkdir(parents=True, exist_ok=True)
 # 1. Copy dataset-metadata.json into staging root
 shutil.copy2(script_dir / "dataset-metadata.json", staging_dir / "dataset-metadata.json")
 
-# 2. Copy config/book_manifest.json if present
+# 2. Copy config/book_manifest.json, src/, and supplement texts so Kaggle runs end-to-end
 manifest_src = project_root / "config" / "book_manifest.json"
 manifest_data = {}
 if manifest_src.is_file():
@@ -159,6 +159,16 @@ if manifest_src.is_file():
     (staging_dir / "config").mkdir(parents=True, exist_ok=True)
     shutil.copy2(manifest_src, staging_dir / "config" / "book_manifest.json")
     shutil.copy2(manifest_src, staging_dir / "book_manifest.json")
+
+src_pkg = project_root / "src"
+if src_pkg.is_dir():
+    shutil.copytree(src_pkg, staging_dir / "src", ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+
+supp_src = project_root / "deliverables" / "TVLT2_ThoVanLyTran2" / "01_nguon" / "bai_03_thien_tong_chi_nam_tu_dich_nghia.txt"
+if supp_src.is_file():
+    supp_dst = staging_dir / "deliverables" / "TVLT2_ThoVanLyTran2" / "01_nguon" / supp_src.name
+    supp_dst.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(supp_src, supp_dst)
 
 # 3. Hardlink *.png files from deliverables/<book>/01_nguon/*.png
 total_linked = 0

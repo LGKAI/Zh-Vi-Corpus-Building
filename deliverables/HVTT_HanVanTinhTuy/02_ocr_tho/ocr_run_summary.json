@@ -1,14 +1,14 @@
 {
   "mode": "mock",
-  "pages_processed": 10,
+  "pages_processed": 11,
   "pages": [
     {
       "page_id": "0008",
       "book_type": "HVTT",
       "book_folder": "HVTT_HanVanTinhTuy",
       "page_num": 8,
-      "han_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/han/HVTT_0008.json",
-      "viet_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/viet/HVTT_0008.json",
+      "han_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/han/0008.json",
+      "viet_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/viet/0008.json",
       "preprocess": {
         "book_type": "HVTT",
         "original_width": 1188,
@@ -208,6 +208,194 @@
           ],
           "text": "其 次 莫 如 猛",
           "confidence": 0.991
+        },
+        {
+          "line_id": "0008_han_004",
+          "bbox": [
+            [
+              180,
+              850
+            ],
+            [
+              1620,
+              850
+            ],
+            [
+              1620,
+              905
+            ],
+            [
+              180,
+              905
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              971
+            ],
+            [
+              1620,
+              971
+            ],
+            [
+              1620,
+              1026
+            ],
+            [
+              180,
+              1026
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            850,
+            1620,
+            905
+          ],
+          "text": "夫 火 烈 民 望 而 畏 之 故 鮮 死 焉",
+          "confidence": 0.989
+        },
+        {
+          "line_id": "0008_han_005",
+          "bbox": [
+            [
+              180,
+              1030
+            ],
+            [
+              1620,
+              1030
+            ],
+            [
+              1620,
+              1085
+            ],
+            [
+              180,
+              1085
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1151
+            ],
+            [
+              1620,
+              1151
+            ],
+            [
+              1620,
+              1206
+            ],
+            [
+              180,
+              1206
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1030,
+            1620,
+            1085
+          ],
+          "text": "水 懦 弱 民 狎 而 翫 之 則 多 死 焉",
+          "confidence": 0.988
+        },
+        {
+          "line_id": "0008_han_006",
+          "bbox": [
+            [
+              180,
+              1210
+            ],
+            [
+              1620,
+              1210
+            ],
+            [
+              1620,
+              1265
+            ],
+            [
+              180,
+              1265
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1331
+            ],
+            [
+              1620,
+              1331
+            ],
+            [
+              1620,
+              1386
+            ],
+            [
+              180,
+              1386
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1210,
+            1620,
+            1265
+          ],
+          "text": "故 寬 難",
+          "confidence": 0.992
+        },
+        {
+          "line_id": "0008_han_007",
+          "bbox": [
+            [
+              180,
+              1390
+            ],
+            [
+              1620,
+              1390
+            ],
+            [
+              1620,
+              1445
+            ],
+            [
+              180,
+              1445
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1511
+            ],
+            [
+              1620,
+              1511
+            ],
+            [
+              1620,
+              1566
+            ],
+            [
+              180,
+              1566
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1390,
+            1620,
+            1445
+          ],
+          "text": "疾 數 月 而 卒 太 叔 爲 政",
+          "confidence": 0.99
         }
       ],
       "viet_items": [
@@ -351,7 +539,7 @@
             1620,
             420
           ],
-          "text": "Ngã tử, tử tất vi chính",
+          "text": "Ngã tử, tử tất vi chính.",
           "confidence": 0.986,
           "role": "phien_am"
         },
@@ -447,7 +635,7 @@
             1620,
             600
           ],
-          "text": "Duy hữu đức giả, năng dĩ khoan phục dân",
+          "text": "Duy hữu đức giả, năng dĩ khoan phục dân,",
           "confidence": 0.984,
           "role": "phien_am"
         },
@@ -594,6 +782,390 @@
           "text": "còn thì không gì bằng chính-sách mạnh.",
           "confidence": 0.981,
           "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0008_viet_008",
+          "bbox": [
+            [
+              180,
+              915
+            ],
+            [
+              1620,
+              915
+            ],
+            [
+              1620,
+              960
+            ],
+            [
+              180,
+              960
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1036
+            ],
+            [
+              1620,
+              1036
+            ],
+            [
+              1620,
+              1081
+            ],
+            [
+              180,
+              1081
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            915,
+            1620,
+            960
+          ],
+          "text": "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.",
+          "confidence": 0.985,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0008_viet_009",
+          "bbox": [
+            [
+              180,
+              970
+            ],
+            [
+              1620,
+              970
+            ],
+            [
+              1620,
+              1015
+            ],
+            [
+              180,
+              1015
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1091
+            ],
+            [
+              1620,
+              1091
+            ],
+            [
+              1620,
+              1136
+            ],
+            [
+              180,
+              1136
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            970,
+            1620,
+            1015
+          ],
+          "text": "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa.",
+          "confidence": 0.979,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0008_viet_010",
+          "bbox": [
+            [
+              180,
+              1095
+            ],
+            [
+              1620,
+              1095
+            ],
+            [
+              1620,
+              1140
+            ],
+            [
+              180,
+              1140
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1216
+            ],
+            [
+              1620,
+              1216
+            ],
+            [
+              1620,
+              1261
+            ],
+            [
+              180,
+              1261
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1095,
+            1620,
+            1140
+          ],
+          "text": "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.",
+          "confidence": 0.984,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0008_viet_011",
+          "bbox": [
+            [
+              180,
+              1150
+            ],
+            [
+              1620,
+              1150
+            ],
+            [
+              1620,
+              1195
+            ],
+            [
+              180,
+              1195
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1271
+            ],
+            [
+              1620,
+              1271
+            ],
+            [
+              1620,
+              1316
+            ],
+            [
+              180,
+              1316
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1150,
+            1620,
+            1195
+          ],
+          "text": "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều.",
+          "confidence": 0.978,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0008_viet_012",
+          "bbox": [
+            [
+              180,
+              1275
+            ],
+            [
+              1620,
+              1275
+            ],
+            [
+              1620,
+              1320
+            ],
+            [
+              180,
+              1320
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1396
+            ],
+            [
+              1620,
+              1396
+            ],
+            [
+              1620,
+              1441
+            ],
+            [
+              180,
+              1441
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1275,
+            1620,
+            1320
+          ],
+          "text": "Cố khoan nan.",
+          "confidence": 0.988,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0008_viet_013",
+          "bbox": [
+            [
+              180,
+              1330
+            ],
+            [
+              1620,
+              1330
+            ],
+            [
+              1620,
+              1375
+            ],
+            [
+              180,
+              1375
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1451
+            ],
+            [
+              1620,
+              1451
+            ],
+            [
+              1620,
+              1496
+            ],
+            [
+              180,
+              1496
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1330,
+            1620,
+            1375
+          ],
+          "text": "Vì thế khoan hồng là khó.",
+          "confidence": 0.982,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0008_viet_014",
+          "bbox": [
+            [
+              180,
+              1455
+            ],
+            [
+              1620,
+              1455
+            ],
+            [
+              1620,
+              1500
+            ],
+            [
+              180,
+              1500
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1576
+            ],
+            [
+              1620,
+              1576
+            ],
+            [
+              1620,
+              1621
+            ],
+            [
+              180,
+              1621
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1455,
+            1620,
+            1500
+          ],
+          "text": "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính.",
+          "confidence": 0.985,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0008_viet_015",
+          "bbox": [
+            [
+              180,
+              1510
+            ],
+            [
+              1620,
+              1510
+            ],
+            [
+              1620,
+              1555
+            ],
+            [
+              180,
+              1555
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1631
+            ],
+            [
+              1620,
+              1631
+            ],
+            [
+              1620,
+              1676
+            ],
+            [
+              180,
+              1676
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1510,
+            1620,
+            1555
+          ],
+          "text": "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền.",
+          "confidence": 0.98,
+          "role": "dich_nghia_gloss"
         }
       ],
       "layout_summary": {
@@ -610,13 +1182,13 @@
           {
             "triplet_index": 1,
             "chu_han": "我 死 子 必 爲 政",
-            "phien_am": "Ngã tử, tử tất vi chính",
+            "phien_am": "Ngã tử, tử tất vi chính.",
             "dich_nghia_gloss": "Ta chết, con sẽ giữ chính-quyền."
           },
           {
             "triplet_index": 2,
             "chu_han": "惟 有 德 者 能 以 寬 服 民",
-            "phien_am": "Duy hữu đức giả, năng dĩ khoan phục dân",
+            "phien_am": "Duy hữu đức giả, năng dĩ khoan phục dân,",
             "dich_nghia_gloss": "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,"
           },
           {
@@ -624,26 +1196,63 @@
             "chu_han": "其 次 莫 如 猛",
             "phien_am": "Kỳ thứ mạc như mãnh.",
             "dich_nghia_gloss": "còn thì không gì bằng chính-sách mạnh."
+          },
+          {
+            "triplet_index": 4,
+            "chu_han": "夫 火 烈 民 望 而 畏 之 故 鮮 死 焉",
+            "phien_am": "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.",
+            "dich_nghia_gloss": "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa."
+          },
+          {
+            "triplet_index": 5,
+            "chu_han": "水 懦 弱 民 狎 而 翫 之 則 多 死 焉",
+            "phien_am": "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.",
+            "dich_nghia_gloss": "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều."
+          },
+          {
+            "triplet_index": 6,
+            "chu_han": "故 寬 難",
+            "phien_am": "Cố khoan nan.",
+            "dich_nghia_gloss": "Vì thế khoan hồng là khó."
+          },
+          {
+            "triplet_index": 7,
+            "chu_han": "疾 數 月 而 卒 太 叔 爲 政",
+            "phien_am": "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính.",
+            "dich_nghia_gloss": "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền."
           }
         ],
         "chu_han_lines": [
           "鄭 子 產 有 疾 謂 子 太 叔 曰",
           "我 死 子 必 爲 政",
           "惟 有 德 者 能 以 寬 服 民",
-          "其 次 莫 如 猛"
+          "其 次 莫 如 猛",
+          "夫 火 烈 民 望 而 畏 之 故 鮮 死 焉",
+          "水 懦 弱 民 狎 而 翫 之 則 多 死 焉",
+          "故 寬 難",
+          "疾 數 月 而 卒 太 叔 爲 政"
         ],
         "phien_am_lines": [
           "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
-          "Ngã tử, tử tất vi chính",
-          "Duy hữu đức giả, năng dĩ khoan phục dân",
-          "Kỳ thứ mạc như mãnh."
+          "Ngã tử, tử tất vi chính.",
+          "Duy hữu đức giả, năng dĩ khoan phục dân,",
+          "Kỳ thứ mạc như mãnh.",
+          "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.",
+          "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.",
+          "Cố khoan nan.",
+          "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính."
         ],
         "dich_nghia_lines": [
           "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :",
           "Ta chết, con sẽ giữ chính-quyền.",
           "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
-          "còn thì không gì bằng chính-sách mạnh."
-        ]
+          "còn thì không gì bằng chính-sách mạnh.",
+          "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa.",
+          "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều.",
+          "Vì thế khoan hồng là khó.",
+          "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền."
+        ],
+        "dich_tho_lines": []
       }
     },
     {
@@ -651,8 +1260,8 @@
       "book_type": "HVTT",
       "book_folder": "HVTT_HanVanTinhTuy",
       "page_num": 9,
-      "han_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/han/HVTT_0009.json",
-      "viet_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/viet/HVTT_0009.json",
+      "han_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/han/0009.json",
+      "viet_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/viet/0009.json",
       "preprocess": {
         "book_type": "HVTT",
         "original_width": 1188,
@@ -852,6 +1461,194 @@
           ],
           "text": "其 次 莫 如 猛",
           "confidence": 0.991
+        },
+        {
+          "line_id": "0009_han_004",
+          "bbox": [
+            [
+              180,
+              850
+            ],
+            [
+              1620,
+              850
+            ],
+            [
+              1620,
+              905
+            ],
+            [
+              180,
+              905
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              971
+            ],
+            [
+              1620,
+              971
+            ],
+            [
+              1620,
+              1026
+            ],
+            [
+              180,
+              1026
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            850,
+            1620,
+            905
+          ],
+          "text": "夫 火 烈 民 望 而 畏 之 故 鮮 死 焉",
+          "confidence": 0.989
+        },
+        {
+          "line_id": "0009_han_005",
+          "bbox": [
+            [
+              180,
+              1030
+            ],
+            [
+              1620,
+              1030
+            ],
+            [
+              1620,
+              1085
+            ],
+            [
+              180,
+              1085
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1151
+            ],
+            [
+              1620,
+              1151
+            ],
+            [
+              1620,
+              1206
+            ],
+            [
+              180,
+              1206
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1030,
+            1620,
+            1085
+          ],
+          "text": "水 懦 弱 民 狎 而 翫 之 則 多 死 焉",
+          "confidence": 0.988
+        },
+        {
+          "line_id": "0009_han_006",
+          "bbox": [
+            [
+              180,
+              1210
+            ],
+            [
+              1620,
+              1210
+            ],
+            [
+              1620,
+              1265
+            ],
+            [
+              180,
+              1265
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1331
+            ],
+            [
+              1620,
+              1331
+            ],
+            [
+              1620,
+              1386
+            ],
+            [
+              180,
+              1386
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1210,
+            1620,
+            1265
+          ],
+          "text": "故 寬 難",
+          "confidence": 0.992
+        },
+        {
+          "line_id": "0009_han_007",
+          "bbox": [
+            [
+              180,
+              1390
+            ],
+            [
+              1620,
+              1390
+            ],
+            [
+              1620,
+              1445
+            ],
+            [
+              180,
+              1445
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1511
+            ],
+            [
+              1620,
+              1511
+            ],
+            [
+              1620,
+              1566
+            ],
+            [
+              180,
+              1566
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1390,
+            1620,
+            1445
+          ],
+          "text": "疾 數 月 而 卒 太 叔 爲 政",
+          "confidence": 0.99
         }
       ],
       "viet_items": [
@@ -995,7 +1792,7 @@
             1620,
             420
           ],
-          "text": "Ngã tử, tử tất vi chính",
+          "text": "Ngã tử, tử tất vi chính.",
           "confidence": 0.986,
           "role": "phien_am"
         },
@@ -1091,7 +1888,7 @@
             1620,
             600
           ],
-          "text": "Duy hữu đức giả, năng dĩ khoan phục dân",
+          "text": "Duy hữu đức giả, năng dĩ khoan phục dân,",
           "confidence": 0.984,
           "role": "phien_am"
         },
@@ -1238,6 +2035,390 @@
           "text": "còn thì không gì bằng chính-sách mạnh.",
           "confidence": 0.981,
           "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0009_viet_008",
+          "bbox": [
+            [
+              180,
+              915
+            ],
+            [
+              1620,
+              915
+            ],
+            [
+              1620,
+              960
+            ],
+            [
+              180,
+              960
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1036
+            ],
+            [
+              1620,
+              1036
+            ],
+            [
+              1620,
+              1081
+            ],
+            [
+              180,
+              1081
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            915,
+            1620,
+            960
+          ],
+          "text": "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.",
+          "confidence": 0.985,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0009_viet_009",
+          "bbox": [
+            [
+              180,
+              970
+            ],
+            [
+              1620,
+              970
+            ],
+            [
+              1620,
+              1015
+            ],
+            [
+              180,
+              1015
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1091
+            ],
+            [
+              1620,
+              1091
+            ],
+            [
+              1620,
+              1136
+            ],
+            [
+              180,
+              1136
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            970,
+            1620,
+            1015
+          ],
+          "text": "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa.",
+          "confidence": 0.979,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0009_viet_010",
+          "bbox": [
+            [
+              180,
+              1095
+            ],
+            [
+              1620,
+              1095
+            ],
+            [
+              1620,
+              1140
+            ],
+            [
+              180,
+              1140
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1216
+            ],
+            [
+              1620,
+              1216
+            ],
+            [
+              1620,
+              1261
+            ],
+            [
+              180,
+              1261
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1095,
+            1620,
+            1140
+          ],
+          "text": "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.",
+          "confidence": 0.984,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0009_viet_011",
+          "bbox": [
+            [
+              180,
+              1150
+            ],
+            [
+              1620,
+              1150
+            ],
+            [
+              1620,
+              1195
+            ],
+            [
+              180,
+              1195
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1271
+            ],
+            [
+              1620,
+              1271
+            ],
+            [
+              1620,
+              1316
+            ],
+            [
+              180,
+              1316
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1150,
+            1620,
+            1195
+          ],
+          "text": "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều.",
+          "confidence": 0.978,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0009_viet_012",
+          "bbox": [
+            [
+              180,
+              1275
+            ],
+            [
+              1620,
+              1275
+            ],
+            [
+              1620,
+              1320
+            ],
+            [
+              180,
+              1320
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1396
+            ],
+            [
+              1620,
+              1396
+            ],
+            [
+              1620,
+              1441
+            ],
+            [
+              180,
+              1441
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1275,
+            1620,
+            1320
+          ],
+          "text": "Cố khoan nan.",
+          "confidence": 0.988,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0009_viet_013",
+          "bbox": [
+            [
+              180,
+              1330
+            ],
+            [
+              1620,
+              1330
+            ],
+            [
+              1620,
+              1375
+            ],
+            [
+              180,
+              1375
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1451
+            ],
+            [
+              1620,
+              1451
+            ],
+            [
+              1620,
+              1496
+            ],
+            [
+              180,
+              1496
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1330,
+            1620,
+            1375
+          ],
+          "text": "Vì thế khoan hồng là khó.",
+          "confidence": 0.982,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0009_viet_014",
+          "bbox": [
+            [
+              180,
+              1455
+            ],
+            [
+              1620,
+              1455
+            ],
+            [
+              1620,
+              1500
+            ],
+            [
+              180,
+              1500
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1576
+            ],
+            [
+              1620,
+              1576
+            ],
+            [
+              1620,
+              1621
+            ],
+            [
+              180,
+              1621
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1455,
+            1620,
+            1500
+          ],
+          "text": "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính.",
+          "confidence": 0.985,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0009_viet_015",
+          "bbox": [
+            [
+              180,
+              1510
+            ],
+            [
+              1620,
+              1510
+            ],
+            [
+              1620,
+              1555
+            ],
+            [
+              180,
+              1555
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1631
+            ],
+            [
+              1620,
+              1631
+            ],
+            [
+              1620,
+              1676
+            ],
+            [
+              180,
+              1676
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1510,
+            1620,
+            1555
+          ],
+          "text": "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền.",
+          "confidence": 0.98,
+          "role": "dich_nghia_gloss"
         }
       ],
       "layout_summary": {
@@ -1247,7 +2428,8 @@
         "interlinear_triplets": [],
         "chu_han_lines": [],
         "phien_am_lines": [],
-        "dich_nghia_lines": []
+        "dich_nghia_lines": [],
+        "dich_tho_lines": []
       }
     },
     {
@@ -1255,8 +2437,8 @@
       "book_type": "HVTT",
       "book_folder": "HVTT_HanVanTinhTuy",
       "page_num": 10,
-      "han_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/han/HVTT_0010.json",
-      "viet_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/viet/HVTT_0010.json",
+      "han_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/han/0010.json",
+      "viet_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/viet/0010.json",
       "preprocess": {
         "book_type": "HVTT",
         "original_width": 1188,
@@ -1313,7 +2495,7 @@
             1620,
             175
           ],
-          "text": "鄭 子 產 有 疾 謂 子 太 叔 曰",
+          "text": "不 忍 猛 而 寬",
           "confidence": 0.992
         },
         {
@@ -1321,140 +2503,328 @@
           "bbox": [
             [
               180,
-              310
+              300
             ],
             [
               1620,
-              310
+              300
             ],
             [
               1620,
-              365
+              355
             ],
             [
               180,
-              365
+              355
             ]
           ],
           "bbox_original": [
             [
               180,
-              431
+              421
             ],
             [
               1620,
-              431
+              421
             ],
             [
               1620,
-              486
+              476
             ],
             [
               180,
-              486
+              476
             ]
           ],
           "box_xyxy": [
             180,
-            310,
+            300,
             1620,
-            365
+            355
           ],
-          "text": "我 死 子 必 爲 政",
-          "confidence": 0.99
+          "text": "鄭 國 多 盜",
+          "confidence": 0.991
         },
         {
           "line_id": "0010_han_002",
           "bbox": [
             [
               180,
-              490
+              480
             ],
             [
               1620,
-              490
+              480
             ],
             [
               1620,
-              545
+              535
             ],
             [
               180,
-              545
+              535
             ]
           ],
           "bbox_original": [
             [
               180,
-              611
+              601
             ],
             [
               1620,
-              611
+              601
             ],
             [
               1620,
-              666
+              656
             ],
             [
               180,
-              666
+              656
             ]
           ],
           "box_xyxy": [
             180,
-            490,
+            480,
             1620,
-            545
+            535
           ],
-          "text": "惟 有 德 者 能 以 寬 服 民",
-          "confidence": 0.989
+          "text": "取 人 於 萑 苻 之 澤",
+          "confidence": 0.988
         },
         {
           "line_id": "0010_han_003",
           "bbox": [
             [
               180,
-              670
+              660
             ],
             [
               1620,
-              670
+              660
             ],
             [
               1620,
-              725
+              715
             ],
             [
               180,
-              725
+              715
             ]
           ],
           "bbox_original": [
             [
               180,
-              791
+              781
             ],
             [
               1620,
-              791
+              781
             ],
             [
               1620,
-              846
+              836
             ],
             [
               180,
-              846
+              836
             ]
           ],
           "box_xyxy": [
             180,
-            670,
+            660,
             1620,
-            725
+            715
           ],
-          "text": "其 次 莫 如 猛",
+          "text": "太 叔 悔 之 曰",
+          "confidence": 0.99
+        },
+        {
+          "line_id": "0010_han_004",
+          "bbox": [
+            [
+              180,
+              840
+            ],
+            [
+              1620,
+              840
+            ],
+            [
+              1620,
+              895
+            ],
+            [
+              180,
+              895
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              961
+            ],
+            [
+              1620,
+              961
+            ],
+            [
+              1620,
+              1016
+            ],
+            [
+              180,
+              1016
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            840,
+            1620,
+            895
+          ],
+          "text": "吾 早 從 夫 子 不 及 此",
+          "confidence": 0.989
+        },
+        {
+          "line_id": "0010_han_005",
+          "bbox": [
+            [
+              180,
+              1020
+            ],
+            [
+              1620,
+              1020
+            ],
+            [
+              1620,
+              1075
+            ],
+            [
+              180,
+              1075
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1141
+            ],
+            [
+              1620,
+              1141
+            ],
+            [
+              1620,
+              1196
+            ],
+            [
+              180,
+              1196
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1020,
+            1620,
+            1075
+          ],
+          "text": "興 徒 兵 以 攻 萑 苻 之 盜",
+          "confidence": 0.987
+        },
+        {
+          "line_id": "0010_han_006",
+          "bbox": [
+            [
+              180,
+              1200
+            ],
+            [
+              1620,
+              1200
+            ],
+            [
+              1620,
+              1255
+            ],
+            [
+              180,
+              1255
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1321
+            ],
+            [
+              1620,
+              1321
+            ],
+            [
+              1620,
+              1376
+            ],
+            [
+              180,
+              1376
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1200,
+            1620,
+            1255
+          ],
+          "text": "盡 殺 之 盜 少 止",
+          "confidence": 0.99
+        },
+        {
+          "line_id": "0010_han_007",
+          "bbox": [
+            [
+              180,
+              1380
+            ],
+            [
+              1620,
+              1380
+            ],
+            [
+              1620,
+              1435
+            ],
+            [
+              180,
+              1435
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1501
+            ],
+            [
+              1620,
+              1501
+            ],
+            [
+              1620,
+              1556
+            ],
+            [
+              180,
+              1556
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1380,
+            1620,
+            1435
+          ],
+          "text": "仲 尼 曰 善 哉",
           "confidence": 0.991
         }
       ],
@@ -1503,7 +2873,7 @@
             1620,
             230
           ],
-          "text": "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
+          "text": "Bất nhẫn mãnh nhi khoan.",
           "confidence": 0.985,
           "role": "phien_am"
         },
@@ -1520,11 +2890,11 @@
             ],
             [
               1620,
-              290
+              285
             ],
             [
               180,
-              290
+              285
             ]
           ],
           "bbox_original": [
@@ -1538,21 +2908,21 @@
             ],
             [
               1620,
-              411
+              406
             ],
             [
               180,
-              411
+              406
             ]
           ],
           "box_xyxy": [
             180,
             240,
             1620,
-            290
+            285
           ],
-          "text": "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :",
-          "confidence": 0.978,
+          "text": "Không nỡ mạnh nên khoan hòa.",
+          "confidence": 0.981,
           "role": "dich_nghia_gloss"
         },
         {
@@ -1560,46 +2930,46 @@
           "bbox": [
             [
               180,
-              375
+              365
             ],
             [
               1620,
-              375
+              365
             ],
             [
               1620,
-              420
+              410
             ],
             [
               180,
-              420
+              410
             ]
           ],
           "bbox_original": [
             [
               180,
-              496
+              486
             ],
             [
               1620,
-              496
+              486
             ],
             [
               1620,
-              541
+              531
             ],
             [
               180,
-              541
+              531
             ]
           ],
           "box_xyxy": [
             180,
-            375,
+            365,
             1620,
-            420
+            410
           ],
-          "text": "Ngã tử, tử tất vi chính",
+          "text": "Trịnh-quốc đa đạo.",
           "confidence": 0.986,
           "role": "phien_am"
         },
@@ -1608,47 +2978,47 @@
           "bbox": [
             [
               180,
-              430
+              420
             ],
             [
               1620,
-              430
+              420
             ],
             [
               1620,
-              475
+              465
             ],
             [
               180,
-              475
+              465
             ]
           ],
           "bbox_original": [
             [
               180,
-              551
+              541
             ],
             [
               1620,
-              551
+              541
             ],
             [
               1620,
-              596
+              586
             ],
             [
               180,
-              596
+              586
             ]
           ],
           "box_xyxy": [
             180,
-            430,
+            420,
             1620,
-            475
+            465
           ],
-          "text": "Ta chết, con sẽ giữ chính-quyền.",
-          "confidence": 0.98,
+          "text": "Nước Trịnh nhiều trộm cướp.",
+          "confidence": 0.982,
           "role": "dich_nghia_gloss"
         },
         {
@@ -1656,46 +3026,46 @@
           "bbox": [
             [
               180,
-              555
+              545
             ],
             [
               1620,
-              555
+              545
             ],
             [
               1620,
-              600
+              590
             ],
             [
               180,
-              600
+              590
             ]
           ],
           "bbox_original": [
             [
               180,
-              676
+              666
             ],
             [
               1620,
-              676
+              666
             ],
             [
               1620,
-              721
+              711
             ],
             [
               180,
-              721
+              711
             ]
           ],
           "box_xyxy": [
             180,
-            555,
+            545,
             1620,
-            600
+            590
           ],
-          "text": "Duy hữu đức giả, năng dĩ khoan phục dân",
+          "text": "Thủ nhân ư hoàn bồ chi trạch.",
           "confidence": 0.984,
           "role": "phien_am"
         },
@@ -1704,47 +3074,47 @@
           "bbox": [
             [
               180,
-              610
+              600
             ],
             [
               1620,
-              610
+              600
             ],
             [
               1620,
-              655
+              645
             ],
             [
               180,
-              655
+              645
             ]
           ],
           "bbox_original": [
             [
               180,
-              731
+              721
             ],
             [
               1620,
-              731
+              721
             ],
             [
               1620,
-              776
+              766
             ],
             [
               180,
-              776
+              766
             ]
           ],
           "box_xyxy": [
             180,
-            610,
+            600,
             1620,
-            655
+            645
           ],
-          "text": "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
-          "confidence": 0.976,
+          "text": "Bắt người lương thiện ở nơi bãi chằm um tùm.",
+          "confidence": 0.979,
           "role": "dich_nghia_gloss"
         },
         {
@@ -1752,47 +3122,47 @@
           "bbox": [
             [
               180,
-              735
+              725
             ],
             [
               1620,
-              735
+              725
             ],
             [
               1620,
-              780
+              770
             ],
             [
               180,
-              780
+              770
             ]
           ],
           "bbox_original": [
             [
               180,
-              856
+              846
             ],
             [
               1620,
-              856
+              846
             ],
             [
               1620,
-              901
+              891
             ],
             [
               180,
-              901
+              891
             ]
           ],
           "box_xyxy": [
             180,
-            735,
+            725,
             1620,
-            780
+            770
           ],
-          "text": "Kỳ thứ mạc như mãnh.",
-          "confidence": 0.987,
+          "text": "Thái-Thúc hối chi, viết :",
+          "confidence": 0.985,
           "role": "phien_am"
         },
         {
@@ -1800,47 +3170,431 @@
           "bbox": [
             [
               180,
-              790
+              780
             ],
             [
               1620,
-              790
+              780
             ],
             [
               1620,
-              835
+              825
             ],
             [
               180,
-              835
+              825
             ]
           ],
           "bbox_original": [
             [
               180,
-              911
+              901
             ],
             [
               1620,
-              911
+              901
             ],
             [
               1620,
-              956
+              946
             ],
             [
               180,
-              956
+              946
             ]
           ],
           "box_xyxy": [
             180,
-            790,
+            780,
             1620,
-            835
+            825
           ],
-          "text": "còn thì không gì bằng chính-sách mạnh.",
+          "text": "Thái-Thúc ăn-năn, nói :",
+          "confidence": 0.98,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0010_viet_008",
+          "bbox": [
+            [
+              180,
+              905
+            ],
+            [
+              1620,
+              905
+            ],
+            [
+              1620,
+              950
+            ],
+            [
+              180,
+              950
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1026
+            ],
+            [
+              1620,
+              1026
+            ],
+            [
+              1620,
+              1071
+            ],
+            [
+              180,
+              1071
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            905,
+            1620,
+            950
+          ],
+          "text": "Ngô tảo tòng phu-tử, bất cập thử.",
+          "confidence": 0.986,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0010_viet_009",
+          "bbox": [
+            [
+              180,
+              960
+            ],
+            [
+              1620,
+              960
+            ],
+            [
+              1620,
+              1005
+            ],
+            [
+              180,
+              1005
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1081
+            ],
+            [
+              1620,
+              1081
+            ],
+            [
+              1620,
+              1126
+            ],
+            [
+              180,
+              1126
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            960,
+            1620,
+            1005
+          ],
+          "text": "Ta sớm biết theo lời cha đâu đến nỗi này.",
           "confidence": 0.981,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0010_viet_010",
+          "bbox": [
+            [
+              180,
+              1085
+            ],
+            [
+              1620,
+              1085
+            ],
+            [
+              1620,
+              1130
+            ],
+            [
+              180,
+              1130
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1206
+            ],
+            [
+              1620,
+              1206
+            ],
+            [
+              1620,
+              1251
+            ],
+            [
+              180,
+              1251
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1085,
+            1620,
+            1130
+          ],
+          "text": "Hưng đồ binh dĩ công hoàn bồ chi đạo.",
+          "confidence": 0.985,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0010_viet_011",
+          "bbox": [
+            [
+              180,
+              1140
+            ],
+            [
+              1620,
+              1140
+            ],
+            [
+              1620,
+              1185
+            ],
+            [
+              180,
+              1185
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1261
+            ],
+            [
+              1620,
+              1261
+            ],
+            [
+              1620,
+              1306
+            ],
+            [
+              180,
+              1306
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1140,
+            1620,
+            1185
+          ],
+          "text": "Đem binh đi tiễu trừ trộm cướp.",
+          "confidence": 0.98,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0010_viet_012",
+          "bbox": [
+            [
+              180,
+              1265
+            ],
+            [
+              1620,
+              1265
+            ],
+            [
+              1620,
+              1310
+            ],
+            [
+              180,
+              1310
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1386
+            ],
+            [
+              1620,
+              1386
+            ],
+            [
+              1620,
+              1431
+            ],
+            [
+              180,
+              1431
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1265,
+            1620,
+            1310
+          ],
+          "text": "Tận sát chi. Đạo thiểu chỉ.",
+          "confidence": 0.986,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0010_viet_013",
+          "bbox": [
+            [
+              180,
+              1320
+            ],
+            [
+              1620,
+              1320
+            ],
+            [
+              1620,
+              1365
+            ],
+            [
+              180,
+              1365
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1441
+            ],
+            [
+              1620,
+              1441
+            ],
+            [
+              1620,
+              1486
+            ],
+            [
+              180,
+              1486
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1320,
+            1620,
+            1365
+          ],
+          "text": "Giết hết. Cướp trộm yên.",
+          "confidence": 0.982,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0010_viet_014",
+          "bbox": [
+            [
+              180,
+              1445
+            ],
+            [
+              1620,
+              1445
+            ],
+            [
+              1620,
+              1490
+            ],
+            [
+              180,
+              1490
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1566
+            ],
+            [
+              1620,
+              1566
+            ],
+            [
+              1620,
+              1611
+            ],
+            [
+              180,
+              1611
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1445,
+            1620,
+            1490
+          ],
+          "text": "Trọng-Ni viết : Thiện tai !",
+          "confidence": 0.987,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0010_viet_015",
+          "bbox": [
+            [
+              180,
+              1500
+            ],
+            [
+              1620,
+              1500
+            ],
+            [
+              1620,
+              1545
+            ],
+            [
+              180,
+              1545
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1621
+            ],
+            [
+              1620,
+              1621
+            ],
+            [
+              1620,
+              1666
+            ],
+            [
+              180,
+              1666
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1500,
+            1620,
+            1545
+          ],
+          "text": "Khổng-tử nói : Giỏi thay !",
+          "confidence": 0.983,
           "role": "dich_nghia_gloss"
         }
       ],
@@ -1851,47 +3605,84 @@
         "interlinear_triplets": [
           {
             "triplet_index": 0,
-            "chu_han": "鄭 子 產 有 疾 謂 子 太 叔 曰",
-            "phien_am": "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
-            "dich_nghia_gloss": "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :"
+            "chu_han": "不 忍 猛 而 寬",
+            "phien_am": "Bất nhẫn mãnh nhi khoan.",
+            "dich_nghia_gloss": "Không nỡ mạnh nên khoan hòa."
           },
           {
             "triplet_index": 1,
-            "chu_han": "我 死 子 必 爲 政",
-            "phien_am": "Ngã tử, tử tất vi chính",
-            "dich_nghia_gloss": "Ta chết, con sẽ giữ chính-quyền."
+            "chu_han": "鄭 國 多 盜",
+            "phien_am": "Trịnh-quốc đa đạo.",
+            "dich_nghia_gloss": "Nước Trịnh nhiều trộm cướp."
           },
           {
             "triplet_index": 2,
-            "chu_han": "惟 有 德 者 能 以 寬 服 民",
-            "phien_am": "Duy hữu đức giả, năng dĩ khoan phục dân",
-            "dich_nghia_gloss": "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,"
+            "chu_han": "取 人 於 萑 苻 之 澤",
+            "phien_am": "Thủ nhân ư hoàn bồ chi trạch.",
+            "dich_nghia_gloss": "Bắt người lương thiện ở nơi bãi chằm um tùm."
           },
           {
             "triplet_index": 3,
-            "chu_han": "其 次 莫 如 猛",
-            "phien_am": "Kỳ thứ mạc như mãnh.",
-            "dich_nghia_gloss": "còn thì không gì bằng chính-sách mạnh."
+            "chu_han": "太 叔 悔 之 曰",
+            "phien_am": "Thái-Thúc hối chi, viết :",
+            "dich_nghia_gloss": "Thái-Thúc ăn-năn, nói :"
+          },
+          {
+            "triplet_index": 4,
+            "chu_han": "吾 早 從 夫 子 不 及 此",
+            "phien_am": "Ngô tảo tòng phu-tử, bất cập thử.",
+            "dich_nghia_gloss": "Ta sớm biết theo lời cha đâu đến nỗi này."
+          },
+          {
+            "triplet_index": 5,
+            "chu_han": "興 徒 兵 以 攻 萑 苻 之 盜",
+            "phien_am": "Hưng đồ binh dĩ công hoàn bồ chi đạo.",
+            "dich_nghia_gloss": "Đem binh đi tiễu trừ trộm cướp."
+          },
+          {
+            "triplet_index": 6,
+            "chu_han": "盡 殺 之 盜 少 止",
+            "phien_am": "Tận sát chi. Đạo thiểu chỉ.",
+            "dich_nghia_gloss": "Giết hết. Cướp trộm yên."
+          },
+          {
+            "triplet_index": 7,
+            "chu_han": "仲 尼 曰 善 哉",
+            "phien_am": "Trọng-Ni viết : Thiện tai !",
+            "dich_nghia_gloss": "Khổng-tử nói : Giỏi thay !"
           }
         ],
         "chu_han_lines": [
-          "鄭 子 產 有 疾 謂 子 太 叔 曰",
-          "我 死 子 必 爲 政",
-          "惟 有 德 者 能 以 寬 服 民",
-          "其 次 莫 如 猛"
+          "不 忍 猛 而 寬",
+          "鄭 國 多 盜",
+          "取 人 於 萑 苻 之 澤",
+          "太 叔 悔 之 曰",
+          "吾 早 從 夫 子 不 及 此",
+          "興 徒 兵 以 攻 萑 苻 之 盜",
+          "盡 殺 之 盜 少 止",
+          "仲 尼 曰 善 哉"
         ],
         "phien_am_lines": [
-          "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
-          "Ngã tử, tử tất vi chính",
-          "Duy hữu đức giả, năng dĩ khoan phục dân",
-          "Kỳ thứ mạc như mãnh."
+          "Bất nhẫn mãnh nhi khoan.",
+          "Trịnh-quốc đa đạo.",
+          "Thủ nhân ư hoàn bồ chi trạch.",
+          "Thái-Thúc hối chi, viết :",
+          "Ngô tảo tòng phu-tử, bất cập thử.",
+          "Hưng đồ binh dĩ công hoàn bồ chi đạo.",
+          "Tận sát chi. Đạo thiểu chỉ.",
+          "Trọng-Ni viết : Thiện tai !"
         ],
         "dich_nghia_lines": [
-          "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :",
-          "Ta chết, con sẽ giữ chính-quyền.",
-          "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
-          "còn thì không gì bằng chính-sách mạnh."
-        ]
+          "Không nỡ mạnh nên khoan hòa.",
+          "Nước Trịnh nhiều trộm cướp.",
+          "Bắt người lương thiện ở nơi bãi chằm um tùm.",
+          "Thái-Thúc ăn-năn, nói :",
+          "Ta sớm biết theo lời cha đâu đến nỗi này.",
+          "Đem binh đi tiễu trừ trộm cướp.",
+          "Giết hết. Cướp trộm yên.",
+          "Khổng-tử nói : Giỏi thay !"
+        ],
+        "dich_tho_lines": []
       }
     },
     {
@@ -1899,8 +3690,8 @@
       "book_type": "HVTT",
       "book_folder": "HVTT_HanVanTinhTuy",
       "page_num": 11,
-      "han_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/han/HVTT_0011.json",
-      "viet_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/viet/HVTT_0011.json",
+      "han_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/han/0011.json",
+      "viet_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/viet/0011.json",
       "preprocess": {
         "book_type": "HVTT",
         "original_width": 1188,
@@ -2100,6 +3891,194 @@
           ],
           "text": "其 次 莫 如 猛",
           "confidence": 0.991
+        },
+        {
+          "line_id": "0011_han_004",
+          "bbox": [
+            [
+              180,
+              850
+            ],
+            [
+              1620,
+              850
+            ],
+            [
+              1620,
+              905
+            ],
+            [
+              180,
+              905
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              971
+            ],
+            [
+              1620,
+              971
+            ],
+            [
+              1620,
+              1026
+            ],
+            [
+              180,
+              1026
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            850,
+            1620,
+            905
+          ],
+          "text": "夫 火 烈 民 望 而 畏 之 故 鮮 死 焉",
+          "confidence": 0.989
+        },
+        {
+          "line_id": "0011_han_005",
+          "bbox": [
+            [
+              180,
+              1030
+            ],
+            [
+              1620,
+              1030
+            ],
+            [
+              1620,
+              1085
+            ],
+            [
+              180,
+              1085
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1151
+            ],
+            [
+              1620,
+              1151
+            ],
+            [
+              1620,
+              1206
+            ],
+            [
+              180,
+              1206
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1030,
+            1620,
+            1085
+          ],
+          "text": "水 懦 弱 民 狎 而 翫 之 則 多 死 焉",
+          "confidence": 0.988
+        },
+        {
+          "line_id": "0011_han_006",
+          "bbox": [
+            [
+              180,
+              1210
+            ],
+            [
+              1620,
+              1210
+            ],
+            [
+              1620,
+              1265
+            ],
+            [
+              180,
+              1265
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1331
+            ],
+            [
+              1620,
+              1331
+            ],
+            [
+              1620,
+              1386
+            ],
+            [
+              180,
+              1386
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1210,
+            1620,
+            1265
+          ],
+          "text": "故 寬 難",
+          "confidence": 0.992
+        },
+        {
+          "line_id": "0011_han_007",
+          "bbox": [
+            [
+              180,
+              1390
+            ],
+            [
+              1620,
+              1390
+            ],
+            [
+              1620,
+              1445
+            ],
+            [
+              180,
+              1445
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1511
+            ],
+            [
+              1620,
+              1511
+            ],
+            [
+              1620,
+              1566
+            ],
+            [
+              180,
+              1566
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1390,
+            1620,
+            1445
+          ],
+          "text": "疾 數 月 而 卒 太 叔 爲 政",
+          "confidence": 0.99
         }
       ],
       "viet_items": [
@@ -2243,7 +4222,7 @@
             1620,
             420
           ],
-          "text": "Ngã tử, tử tất vi chính",
+          "text": "Ngã tử, tử tất vi chính.",
           "confidence": 0.986,
           "role": "phien_am"
         },
@@ -2339,7 +4318,7 @@
             1620,
             600
           ],
-          "text": "Duy hữu đức giả, năng dĩ khoan phục dân",
+          "text": "Duy hữu đức giả, năng dĩ khoan phục dân,",
           "confidence": 0.984,
           "role": "phien_am"
         },
@@ -2486,6 +4465,390 @@
           "text": "còn thì không gì bằng chính-sách mạnh.",
           "confidence": 0.981,
           "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0011_viet_008",
+          "bbox": [
+            [
+              180,
+              915
+            ],
+            [
+              1620,
+              915
+            ],
+            [
+              1620,
+              960
+            ],
+            [
+              180,
+              960
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1036
+            ],
+            [
+              1620,
+              1036
+            ],
+            [
+              1620,
+              1081
+            ],
+            [
+              180,
+              1081
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            915,
+            1620,
+            960
+          ],
+          "text": "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.",
+          "confidence": 0.985,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0011_viet_009",
+          "bbox": [
+            [
+              180,
+              970
+            ],
+            [
+              1620,
+              970
+            ],
+            [
+              1620,
+              1015
+            ],
+            [
+              180,
+              1015
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1091
+            ],
+            [
+              1620,
+              1091
+            ],
+            [
+              1620,
+              1136
+            ],
+            [
+              180,
+              1136
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            970,
+            1620,
+            1015
+          ],
+          "text": "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa.",
+          "confidence": 0.979,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0011_viet_010",
+          "bbox": [
+            [
+              180,
+              1095
+            ],
+            [
+              1620,
+              1095
+            ],
+            [
+              1620,
+              1140
+            ],
+            [
+              180,
+              1140
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1216
+            ],
+            [
+              1620,
+              1216
+            ],
+            [
+              1620,
+              1261
+            ],
+            [
+              180,
+              1261
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1095,
+            1620,
+            1140
+          ],
+          "text": "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.",
+          "confidence": 0.984,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0011_viet_011",
+          "bbox": [
+            [
+              180,
+              1150
+            ],
+            [
+              1620,
+              1150
+            ],
+            [
+              1620,
+              1195
+            ],
+            [
+              180,
+              1195
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1271
+            ],
+            [
+              1620,
+              1271
+            ],
+            [
+              1620,
+              1316
+            ],
+            [
+              180,
+              1316
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1150,
+            1620,
+            1195
+          ],
+          "text": "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều.",
+          "confidence": 0.978,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0011_viet_012",
+          "bbox": [
+            [
+              180,
+              1275
+            ],
+            [
+              1620,
+              1275
+            ],
+            [
+              1620,
+              1320
+            ],
+            [
+              180,
+              1320
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1396
+            ],
+            [
+              1620,
+              1396
+            ],
+            [
+              1620,
+              1441
+            ],
+            [
+              180,
+              1441
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1275,
+            1620,
+            1320
+          ],
+          "text": "Cố khoan nan.",
+          "confidence": 0.988,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0011_viet_013",
+          "bbox": [
+            [
+              180,
+              1330
+            ],
+            [
+              1620,
+              1330
+            ],
+            [
+              1620,
+              1375
+            ],
+            [
+              180,
+              1375
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1451
+            ],
+            [
+              1620,
+              1451
+            ],
+            [
+              1620,
+              1496
+            ],
+            [
+              180,
+              1496
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1330,
+            1620,
+            1375
+          ],
+          "text": "Vì thế khoan hồng là khó.",
+          "confidence": 0.982,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0011_viet_014",
+          "bbox": [
+            [
+              180,
+              1455
+            ],
+            [
+              1620,
+              1455
+            ],
+            [
+              1620,
+              1500
+            ],
+            [
+              180,
+              1500
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1576
+            ],
+            [
+              1620,
+              1576
+            ],
+            [
+              1620,
+              1621
+            ],
+            [
+              180,
+              1621
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1455,
+            1620,
+            1500
+          ],
+          "text": "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính.",
+          "confidence": 0.985,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0011_viet_015",
+          "bbox": [
+            [
+              180,
+              1510
+            ],
+            [
+              1620,
+              1510
+            ],
+            [
+              1620,
+              1555
+            ],
+            [
+              180,
+              1555
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1631
+            ],
+            [
+              1620,
+              1631
+            ],
+            [
+              1620,
+              1676
+            ],
+            [
+              180,
+              1676
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1510,
+            1620,
+            1555
+          ],
+          "text": "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền.",
+          "confidence": 0.98,
+          "role": "dich_nghia_gloss"
         }
       ],
       "layout_summary": {
@@ -2495,7 +4858,8 @@
         "interlinear_triplets": [],
         "chu_han_lines": [],
         "phien_am_lines": [],
-        "dich_nghia_lines": []
+        "dich_nghia_lines": [],
+        "dich_tho_lines": []
       }
     },
     {
@@ -2503,8 +4867,8 @@
       "book_type": "HVTT",
       "book_folder": "HVTT_HanVanTinhTuy",
       "page_num": 12,
-      "han_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/han/HVTT_0012.json",
-      "viet_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/viet/HVTT_0012.json",
+      "han_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/han/0012.json",
+      "viet_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/viet/0012.json",
       "preprocess": {
         "book_type": "HVTT",
         "original_width": 1188,
@@ -2561,7 +4925,7 @@
             1620,
             175
           ],
-          "text": "鄭 子 產 有 疾 謂 子 太 叔 曰",
+          "text": "政 寬 則 民 慢",
           "confidence": 0.992
         },
         {
@@ -2569,46 +4933,46 @@
           "bbox": [
             [
               180,
-              310
+              300
             ],
             [
               1620,
-              310
+              300
             ],
             [
               1620,
-              365
+              355
             ],
             [
               180,
-              365
+              355
             ]
           ],
           "bbox_original": [
             [
               180,
-              431
+              421
             ],
             [
               1620,
-              431
+              421
             ],
             [
               1620,
-              486
+              476
             ],
             [
               180,
-              486
+              476
             ]
           ],
           "box_xyxy": [
             180,
-            310,
+            300,
             1620,
-            365
+            355
           ],
-          "text": "我 死 子 必 爲 政",
+          "text": "慢 則 糾 之 以 猛",
           "confidence": 0.99
         },
         {
@@ -2616,46 +4980,46 @@
           "bbox": [
             [
               180,
-              490
+              480
             ],
             [
               1620,
-              490
+              480
             ],
             [
               1620,
-              545
+              535
             ],
             [
               180,
-              545
+              535
             ]
           ],
           "bbox_original": [
             [
               180,
-              611
+              601
             ],
             [
               1620,
-              611
+              601
             ],
             [
               1620,
-              666
+              656
             ],
             [
               180,
-              666
+              656
             ]
           ],
           "box_xyxy": [
             180,
-            490,
+            480,
             1620,
-            545
+            535
           ],
-          "text": "惟 有 德 者 能 以 寬 服 民",
+          "text": "猛 則 民 殘 殘 則 施 之 以 寬",
           "confidence": 0.989
         },
         {
@@ -2663,46 +5027,234 @@
           "bbox": [
             [
               180,
-              670
+              660
             ],
             [
               1620,
-              670
+              660
             ],
             [
               1620,
-              725
+              715
             ],
             [
               180,
-              725
+              715
             ]
           ],
           "bbox_original": [
             [
               180,
-              791
+              781
             ],
             [
               1620,
-              791
+              781
             ],
             [
               1620,
-              846
+              836
             ],
             [
               180,
-              846
+              836
             ]
           ],
           "box_xyxy": [
             180,
-            670,
+            660,
             1620,
-            725
+            715
           ],
-          "text": "其 次 莫 如 猛",
+          "text": "寬 以 濟 猛 猛 以 濟 寬",
+          "confidence": 0.991
+        },
+        {
+          "line_id": "0012_han_004",
+          "bbox": [
+            [
+              180,
+              840
+            ],
+            [
+              1620,
+              840
+            ],
+            [
+              1620,
+              895
+            ],
+            [
+              180,
+              895
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              961
+            ],
+            [
+              1620,
+              961
+            ],
+            [
+              1620,
+              1016
+            ],
+            [
+              180,
+              1016
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            840,
+            1620,
+            895
+          ],
+          "text": "政 是 以 和",
+          "confidence": 0.992
+        },
+        {
+          "line_id": "0012_han_005",
+          "bbox": [
+            [
+              180,
+              1020
+            ],
+            [
+              1620,
+              1020
+            ],
+            [
+              1620,
+              1075
+            ],
+            [
+              180,
+              1075
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1141
+            ],
+            [
+              1620,
+              1141
+            ],
+            [
+              1620,
+              1196
+            ],
+            [
+              180,
+              1196
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1020,
+            1620,
+            1075
+          ],
+          "text": "詩 曰 民 亦 勞 止 汔 可 小 康",
+          "confidence": 0.988
+        },
+        {
+          "line_id": "0012_han_006",
+          "bbox": [
+            [
+              180,
+              1260
+            ],
+            [
+              1620,
+              1260
+            ],
+            [
+              1620,
+              1315
+            ],
+            [
+              180,
+              1315
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1381
+            ],
+            [
+              1620,
+              1381
+            ],
+            [
+              1620,
+              1436
+            ],
+            [
+              180,
+              1436
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1260,
+            1620,
+            1315
+          ],
+          "text": "惠 此 中 國 以 綏 四 方",
+          "confidence": 0.989
+        },
+        {
+          "line_id": "0012_han_007",
+          "bbox": [
+            [
+              180,
+              1500
+            ],
+            [
+              1620,
+              1500
+            ],
+            [
+              1620,
+              1555
+            ],
+            [
+              180,
+              1555
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1621
+            ],
+            [
+              1620,
+              1621
+            ],
+            [
+              1620,
+              1676
+            ],
+            [
+              180,
+              1676
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1500,
+            1620,
+            1555
+          ],
+          "text": "施 之 以 寬 也",
           "confidence": 0.991
         }
       ],
@@ -2751,7 +5303,7 @@
             1620,
             230
           ],
-          "text": "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
+          "text": "Chính khoan tắc dân mạn,",
           "confidence": 0.985,
           "role": "phien_am"
         },
@@ -2768,11 +5320,11 @@
             ],
             [
               1620,
-              290
+              285
             ],
             [
               180,
-              290
+              285
             ]
           ],
           "bbox_original": [
@@ -2786,21 +5338,21 @@
             ],
             [
               1620,
-              411
+              406
             ],
             [
               180,
-              411
+              406
             ]
           ],
           "box_xyxy": [
             180,
             240,
             1620,
-            290
+            285
           ],
-          "text": "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :",
-          "confidence": 0.978,
+          "text": "Chính sách khoan hòa dân nhờn,",
+          "confidence": 0.981,
           "role": "dich_nghia_gloss"
         },
         {
@@ -2808,46 +5360,46 @@
           "bbox": [
             [
               180,
-              375
+              365
             ],
             [
               1620,
-              375
+              365
             ],
             [
               1620,
-              420
+              410
             ],
             [
               180,
-              420
+              410
             ]
           ],
           "bbox_original": [
             [
               180,
-              496
+              486
             ],
             [
               1620,
-              496
+              486
             ],
             [
               1620,
-              541
+              531
             ],
             [
               180,
-              541
+              531
             ]
           ],
           "box_xyxy": [
             180,
-            375,
+            365,
             1620,
-            420
+            410
           ],
-          "text": "Ngã tử, tử tất vi chính",
+          "text": "mạn tắc củ chi dĩ mãnh.",
           "confidence": 0.986,
           "role": "phien_am"
         },
@@ -2856,46 +5408,46 @@
           "bbox": [
             [
               180,
-              430
+              420
             ],
             [
               1620,
-              430
+              420
             ],
             [
               1620,
-              475
+              465
             ],
             [
               180,
-              475
+              465
             ]
           ],
           "bbox_original": [
             [
               180,
-              551
+              541
             ],
             [
               1620,
-              551
+              541
             ],
             [
               1620,
-              596
+              586
             ],
             [
               180,
-              596
+              586
             ]
           ],
           "box_xyxy": [
             180,
-            430,
+            420,
             1620,
-            475
+            465
           ],
-          "text": "Ta chết, con sẽ giữ chính-quyền.",
+          "text": "nhờn thì lấy « mạnh » (thẳng tay) mà đàn áp.",
           "confidence": 0.98,
           "role": "dich_nghia_gloss"
         },
@@ -2904,46 +5456,46 @@
           "bbox": [
             [
               180,
-              555
+              545
             ],
             [
               1620,
-              555
+              545
             ],
             [
               1620,
-              600
+              590
             ],
             [
               180,
-              600
+              590
             ]
           ],
           "bbox_original": [
             [
               180,
-              676
+              666
             ],
             [
               1620,
-              676
+              666
             ],
             [
               1620,
-              721
+              711
             ],
             [
               180,
-              721
+              711
             ]
           ],
           "box_xyxy": [
             180,
-            555,
+            545,
             1620,
-            600
+            590
           ],
-          "text": "Duy hữu đức giả, năng dĩ khoan phục dân",
+          "text": "Mãnh tắc dân tàn, tàn tắc thi chi dĩ khoan.",
           "confidence": 0.984,
           "role": "phien_am"
         },
@@ -2952,47 +5504,47 @@
           "bbox": [
             [
               180,
-              610
+              600
             ],
             [
               1620,
-              610
+              600
             ],
             [
               1620,
-              655
+              645
             ],
             [
               180,
-              655
+              645
             ]
           ],
           "bbox_original": [
             [
               180,
-              731
+              721
             ],
             [
               1620,
-              731
+              721
             ],
             [
               1620,
-              776
+              766
             ],
             [
               180,
-              776
+              766
             ]
           ],
           "box_xyxy": [
             180,
-            610,
+            600,
             1620,
-            655
+            645
           ],
-          "text": "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
-          "confidence": 0.976,
+          "text": "Mạnh tất dân hại, hại thì lại lấy khoan mà thi-hành.",
+          "confidence": 0.979,
           "role": "dich_nghia_gloss"
         },
         {
@@ -3000,47 +5552,47 @@
           "bbox": [
             [
               180,
-              735
+              725
             ],
             [
               1620,
-              735
+              725
             ],
             [
               1620,
-              780
+              770
             ],
             [
               180,
-              780
+              770
             ]
           ],
           "bbox_original": [
             [
               180,
-              856
+              846
             ],
             [
               1620,
-              856
+              846
             ],
             [
               1620,
-              901
+              891
             ],
             [
               180,
-              901
+              891
             ]
           ],
           "box_xyxy": [
             180,
-            735,
+            725,
             1620,
-            780
+            770
           ],
-          "text": "Kỳ thứ mạc như mãnh.",
-          "confidence": 0.987,
+          "text": "Khoan dĩ tế mãnh, mãnh dĩ tế khoan.",
+          "confidence": 0.986,
           "role": "phien_am"
         },
         {
@@ -3048,47 +5600,527 @@
           "bbox": [
             [
               180,
-              790
+              780
             ],
             [
               1620,
-              790
+              780
             ],
             [
               1620,
-              835
+              825
             ],
             [
               180,
-              835
+              825
             ]
           ],
           "bbox_original": [
             [
               180,
-              911
+              901
             ],
             [
               1620,
-              911
+              901
             ],
             [
               1620,
-              956
+              946
             ],
             [
               180,
-              956
+              946
             ]
           ],
           "box_xyxy": [
             180,
-            790,
+            780,
             1620,
-            835
+            825
           ],
-          "text": "còn thì không gì bằng chính-sách mạnh.",
+          "text": "Khoan để đỡ mạnh, mạnh để đỡ khoan.",
+          "confidence": 0.982,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0012_viet_008",
+          "bbox": [
+            [
+              180,
+              905
+            ],
+            [
+              1620,
+              905
+            ],
+            [
+              1620,
+              950
+            ],
+            [
+              180,
+              950
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1026
+            ],
+            [
+              1620,
+              1026
+            ],
+            [
+              1620,
+              1071
+            ],
+            [
+              180,
+              1071
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            905,
+            1620,
+            950
+          ],
+          "text": "Chính thị dĩ hòa.",
+          "confidence": 0.987,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0012_viet_009",
+          "bbox": [
+            [
+              180,
+              960
+            ],
+            [
+              1620,
+              960
+            ],
+            [
+              1620,
+              1005
+            ],
+            [
+              180,
+              1005
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1081
+            ],
+            [
+              1620,
+              1081
+            ],
+            [
+              1620,
+              1126
+            ],
+            [
+              180,
+              1126
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            960,
+            1620,
+            1005
+          ],
+          "text": "Chính sự sẽ hòa.",
+          "confidence": 0.983,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0012_viet_010",
+          "bbox": [
+            [
+              180,
+              1085
+            ],
+            [
+              1620,
+              1085
+            ],
+            [
+              1620,
+              1130
+            ],
+            [
+              180,
+              1130
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1206
+            ],
+            [
+              1620,
+              1206
+            ],
+            [
+              1620,
+              1251
+            ],
+            [
+              180,
+              1251
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1085,
+            1620,
+            1130
+          ],
+          "text": "Thi viết : dân diệc lao chỉ, ngật khả tiểu-khang.",
+          "confidence": 0.984,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0012_viet_011",
+          "bbox": [
+            [
+              180,
+              1140
+            ],
+            [
+              1620,
+              1140
+            ],
+            [
+              1620,
+              1185
+            ],
+            [
+              180,
+              1185
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1261
+            ],
+            [
+              1620,
+              1261
+            ],
+            [
+              1620,
+              1306
+            ],
+            [
+              180,
+              1306
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1140,
+            1620,
+            1185
+          ],
+          "text": "Kinh thi nói : dân đỡ vất-vả, để tạm yên vui.",
+          "confidence": 0.98,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0012_viet_012",
+          "bbox": [
+            [
+              180,
+              1195
+            ],
+            [
+              1620,
+              1195
+            ],
+            [
+              1620,
+              1240
+            ],
+            [
+              180,
+              1240
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1316
+            ],
+            [
+              1620,
+              1316
+            ],
+            [
+              1620,
+              1361
+            ],
+            [
+              180,
+              1361
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1195,
+            1620,
+            1240
+          ],
+          "text": "Dân vất-vả, ngõ hầu yên-ổn,",
+          "confidence": 0.978,
+          "role": "dich_tho"
+        },
+        {
+          "line_id": "0012_viet_013",
+          "bbox": [
+            [
+              180,
+              1325
+            ],
+            [
+              1620,
+              1325
+            ],
+            [
+              1620,
+              1370
+            ],
+            [
+              180,
+              1370
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1446
+            ],
+            [
+              1620,
+              1446
+            ],
+            [
+              1620,
+              1491
+            ],
+            [
+              180,
+              1491
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1325,
+            1620,
+            1370
+          ],
+          "text": "Huệ thử trung-quốc, dĩ tuy tứ phương.",
+          "confidence": 0.985,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0012_viet_014",
+          "bbox": [
+            [
+              180,
+              1380
+            ],
+            [
+              1620,
+              1380
+            ],
+            [
+              1620,
+              1425
+            ],
+            [
+              180,
+              1425
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1501
+            ],
+            [
+              1620,
+              1501
+            ],
+            [
+              1620,
+              1546
+            ],
+            [
+              180,
+              1546
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1380,
+            1620,
+            1425
+          ],
+          "text": "Ra ơn trong nước, để yên bốn phương.",
           "confidence": 0.981,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0012_viet_015",
+          "bbox": [
+            [
+              180,
+              1435
+            ],
+            [
+              1620,
+              1435
+            ],
+            [
+              1620,
+              1480
+            ],
+            [
+              180,
+              1480
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1556
+            ],
+            [
+              1620,
+              1556
+            ],
+            [
+              1620,
+              1601
+            ],
+            [
+              180,
+              1601
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1435,
+            1620,
+            1480
+          ],
+          "text": "Ơn ban ra vỗ-về bốn phương.",
+          "confidence": 0.979,
+          "role": "dich_tho"
+        },
+        {
+          "line_id": "0012_viet_016",
+          "bbox": [
+            [
+              180,
+              1565
+            ],
+            [
+              1620,
+              1565
+            ],
+            [
+              1620,
+              1610
+            ],
+            [
+              180,
+              1610
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1686
+            ],
+            [
+              1620,
+              1686
+            ],
+            [
+              1620,
+              1731
+            ],
+            [
+              180,
+              1731
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1565,
+            1620,
+            1610
+          ],
+          "text": "Thi chi dĩ khoan dã.",
+          "confidence": 0.986,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0012_viet_017",
+          "bbox": [
+            [
+              180,
+              1620
+            ],
+            [
+              1620,
+              1620
+            ],
+            [
+              1620,
+              1665
+            ],
+            [
+              180,
+              1665
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1741
+            ],
+            [
+              1620,
+              1741
+            ],
+            [
+              1620,
+              1786
+            ],
+            [
+              180,
+              1786
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1620,
+            1620,
+            1665
+          ],
+          "text": "Ấy là lấy « khoan » mà thi-hành vậy.",
+          "confidence": 0.982,
           "role": "dich_nghia_gloss"
         }
       ],
@@ -3099,46 +6131,86 @@
         "interlinear_triplets": [
           {
             "triplet_index": 0,
-            "chu_han": "鄭 子 產 有 疾 謂 子 太 叔 曰",
-            "phien_am": "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
-            "dich_nghia_gloss": "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :"
+            "chu_han": "政 寬 則 民 慢",
+            "phien_am": "Chính khoan tắc dân mạn,",
+            "dich_nghia_gloss": "Chính sách khoan hòa dân nhờn,"
           },
           {
             "triplet_index": 1,
-            "chu_han": "我 死 子 必 爲 政",
-            "phien_am": "Ngã tử, tử tất vi chính",
-            "dich_nghia_gloss": "Ta chết, con sẽ giữ chính-quyền."
+            "chu_han": "慢 則 糾 之 以 猛",
+            "phien_am": "mạn tắc củ chi dĩ mãnh.",
+            "dich_nghia_gloss": "nhờn thì lấy « mạnh » (thẳng tay) mà đàn áp."
           },
           {
             "triplet_index": 2,
-            "chu_han": "惟 有 德 者 能 以 寬 服 民",
-            "phien_am": "Duy hữu đức giả, năng dĩ khoan phục dân",
-            "dich_nghia_gloss": "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,"
+            "chu_han": "猛 則 民 殘 殘 則 施 之 以 寬",
+            "phien_am": "Mãnh tắc dân tàn, tàn tắc thi chi dĩ khoan.",
+            "dich_nghia_gloss": "Mạnh tất dân hại, hại thì lại lấy khoan mà thi-hành."
           },
           {
             "triplet_index": 3,
-            "chu_han": "其 次 莫 如 猛",
-            "phien_am": "Kỳ thứ mạc như mãnh.",
-            "dich_nghia_gloss": "còn thì không gì bằng chính-sách mạnh."
+            "chu_han": "寬 以 濟 猛 猛 以 濟 寬",
+            "phien_am": "Khoan dĩ tế mãnh, mãnh dĩ tế khoan.",
+            "dich_nghia_gloss": "Khoan để đỡ mạnh, mạnh để đỡ khoan."
+          },
+          {
+            "triplet_index": 4,
+            "chu_han": "政 是 以 和",
+            "phien_am": "Chính thị dĩ hòa.",
+            "dich_nghia_gloss": "Chính sự sẽ hòa."
+          },
+          {
+            "triplet_index": 5,
+            "chu_han": "詩 曰 民 亦 勞 止 汔 可 小 康",
+            "phien_am": "Thi viết : dân diệc lao chỉ, ngật khả tiểu-khang.",
+            "dich_nghia_gloss": "Kinh thi nói : dân đỡ vất-vả, để tạm yên vui."
+          },
+          {
+            "triplet_index": 6,
+            "chu_han": "惠 此 中 國 以 綏 四 方",
+            "phien_am": "Huệ thử trung-quốc, dĩ tuy tứ phương.",
+            "dich_nghia_gloss": "Ra ơn trong nước, để yên bốn phương."
+          },
+          {
+            "triplet_index": 7,
+            "chu_han": "施 之 以 寬 也",
+            "phien_am": "Thi chi dĩ khoan dã.",
+            "dich_nghia_gloss": "Ấy là lấy « khoan » mà thi-hành vậy."
           }
         ],
         "chu_han_lines": [
-          "鄭 子 產 有 疾 謂 子 太 叔 曰",
-          "我 死 子 必 爲 政",
-          "惟 有 德 者 能 以 寬 服 民",
-          "其 次 莫 如 猛"
+          "政 寬 則 民 慢",
+          "慢 則 糾 之 以 猛",
+          "猛 則 民 殘 殘 則 施 之 以 寬",
+          "寬 以 濟 猛 猛 以 濟 寬",
+          "政 是 以 和",
+          "詩 曰 民 亦 勞 止 汔 可 小 康",
+          "惠 此 中 國 以 綏 四 方",
+          "施 之 以 寬 也"
         ],
         "phien_am_lines": [
-          "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
-          "Ngã tử, tử tất vi chính",
-          "Duy hữu đức giả, năng dĩ khoan phục dân",
-          "Kỳ thứ mạc như mãnh."
+          "Chính khoan tắc dân mạn,",
+          "mạn tắc củ chi dĩ mãnh.",
+          "Mãnh tắc dân tàn, tàn tắc thi chi dĩ khoan.",
+          "Khoan dĩ tế mãnh, mãnh dĩ tế khoan.",
+          "Chính thị dĩ hòa.",
+          "Thi viết : dân diệc lao chỉ, ngật khả tiểu-khang.",
+          "Huệ thử trung-quốc, dĩ tuy tứ phương.",
+          "Thi chi dĩ khoan dã."
         ],
         "dich_nghia_lines": [
-          "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :",
-          "Ta chết, con sẽ giữ chính-quyền.",
-          "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
-          "còn thì không gì bằng chính-sách mạnh."
+          "Chính sách khoan hòa dân nhờn,",
+          "nhờn thì lấy « mạnh » (thẳng tay) mà đàn áp.",
+          "Mạnh tất dân hại, hại thì lại lấy khoan mà thi-hành.",
+          "Khoan để đỡ mạnh, mạnh để đỡ khoan.",
+          "Chính sự sẽ hòa.",
+          "Kinh thi nói : dân đỡ vất-vả, để tạm yên vui.",
+          "Ra ơn trong nước, để yên bốn phương.",
+          "Ấy là lấy « khoan » mà thi-hành vậy."
+        ],
+        "dich_tho_lines": [
+          "Dân vất-vả, ngõ hầu yên-ổn,",
+          "Ơn ban ra vỗ-về bốn phương."
         ]
       }
     },
@@ -3147,8 +6219,8 @@
       "book_type": "HVTT",
       "book_folder": "HVTT_HanVanTinhTuy",
       "page_num": 13,
-      "han_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/han/HVTT_0013.json",
-      "viet_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/viet/HVTT_0013.json",
+      "han_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/han/0013.json",
+      "viet_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/viet/0013.json",
       "preprocess": {
         "book_type": "HVTT",
         "original_width": 1188,
@@ -3348,6 +6420,194 @@
           ],
           "text": "其 次 莫 如 猛",
           "confidence": 0.991
+        },
+        {
+          "line_id": "0013_han_004",
+          "bbox": [
+            [
+              180,
+              850
+            ],
+            [
+              1620,
+              850
+            ],
+            [
+              1620,
+              905
+            ],
+            [
+              180,
+              905
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              971
+            ],
+            [
+              1620,
+              971
+            ],
+            [
+              1620,
+              1026
+            ],
+            [
+              180,
+              1026
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            850,
+            1620,
+            905
+          ],
+          "text": "夫 火 烈 民 望 而 畏 之 故 鮮 死 焉",
+          "confidence": 0.989
+        },
+        {
+          "line_id": "0013_han_005",
+          "bbox": [
+            [
+              180,
+              1030
+            ],
+            [
+              1620,
+              1030
+            ],
+            [
+              1620,
+              1085
+            ],
+            [
+              180,
+              1085
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1151
+            ],
+            [
+              1620,
+              1151
+            ],
+            [
+              1620,
+              1206
+            ],
+            [
+              180,
+              1206
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1030,
+            1620,
+            1085
+          ],
+          "text": "水 懦 弱 民 狎 而 翫 之 則 多 死 焉",
+          "confidence": 0.988
+        },
+        {
+          "line_id": "0013_han_006",
+          "bbox": [
+            [
+              180,
+              1210
+            ],
+            [
+              1620,
+              1210
+            ],
+            [
+              1620,
+              1265
+            ],
+            [
+              180,
+              1265
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1331
+            ],
+            [
+              1620,
+              1331
+            ],
+            [
+              1620,
+              1386
+            ],
+            [
+              180,
+              1386
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1210,
+            1620,
+            1265
+          ],
+          "text": "故 寬 難",
+          "confidence": 0.992
+        },
+        {
+          "line_id": "0013_han_007",
+          "bbox": [
+            [
+              180,
+              1390
+            ],
+            [
+              1620,
+              1390
+            ],
+            [
+              1620,
+              1445
+            ],
+            [
+              180,
+              1445
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1511
+            ],
+            [
+              1620,
+              1511
+            ],
+            [
+              1620,
+              1566
+            ],
+            [
+              180,
+              1566
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1390,
+            1620,
+            1445
+          ],
+          "text": "疾 數 月 而 卒 太 叔 爲 政",
+          "confidence": 0.99
         }
       ],
       "viet_items": [
@@ -3491,7 +6751,7 @@
             1620,
             420
           ],
-          "text": "Ngã tử, tử tất vi chính",
+          "text": "Ngã tử, tử tất vi chính.",
           "confidence": 0.986,
           "role": "phien_am"
         },
@@ -3587,7 +6847,7 @@
             1620,
             600
           ],
-          "text": "Duy hữu đức giả, năng dĩ khoan phục dân",
+          "text": "Duy hữu đức giả, năng dĩ khoan phục dân,",
           "confidence": 0.984,
           "role": "phien_am"
         },
@@ -3734,6 +6994,390 @@
           "text": "còn thì không gì bằng chính-sách mạnh.",
           "confidence": 0.981,
           "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0013_viet_008",
+          "bbox": [
+            [
+              180,
+              915
+            ],
+            [
+              1620,
+              915
+            ],
+            [
+              1620,
+              960
+            ],
+            [
+              180,
+              960
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1036
+            ],
+            [
+              1620,
+              1036
+            ],
+            [
+              1620,
+              1081
+            ],
+            [
+              180,
+              1081
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            915,
+            1620,
+            960
+          ],
+          "text": "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.",
+          "confidence": 0.985,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0013_viet_009",
+          "bbox": [
+            [
+              180,
+              970
+            ],
+            [
+              1620,
+              970
+            ],
+            [
+              1620,
+              1015
+            ],
+            [
+              180,
+              1015
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1091
+            ],
+            [
+              1620,
+              1091
+            ],
+            [
+              1620,
+              1136
+            ],
+            [
+              180,
+              1136
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            970,
+            1620,
+            1015
+          ],
+          "text": "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa.",
+          "confidence": 0.979,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0013_viet_010",
+          "bbox": [
+            [
+              180,
+              1095
+            ],
+            [
+              1620,
+              1095
+            ],
+            [
+              1620,
+              1140
+            ],
+            [
+              180,
+              1140
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1216
+            ],
+            [
+              1620,
+              1216
+            ],
+            [
+              1620,
+              1261
+            ],
+            [
+              180,
+              1261
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1095,
+            1620,
+            1140
+          ],
+          "text": "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.",
+          "confidence": 0.984,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0013_viet_011",
+          "bbox": [
+            [
+              180,
+              1150
+            ],
+            [
+              1620,
+              1150
+            ],
+            [
+              1620,
+              1195
+            ],
+            [
+              180,
+              1195
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1271
+            ],
+            [
+              1620,
+              1271
+            ],
+            [
+              1620,
+              1316
+            ],
+            [
+              180,
+              1316
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1150,
+            1620,
+            1195
+          ],
+          "text": "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều.",
+          "confidence": 0.978,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0013_viet_012",
+          "bbox": [
+            [
+              180,
+              1275
+            ],
+            [
+              1620,
+              1275
+            ],
+            [
+              1620,
+              1320
+            ],
+            [
+              180,
+              1320
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1396
+            ],
+            [
+              1620,
+              1396
+            ],
+            [
+              1620,
+              1441
+            ],
+            [
+              180,
+              1441
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1275,
+            1620,
+            1320
+          ],
+          "text": "Cố khoan nan.",
+          "confidence": 0.988,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0013_viet_013",
+          "bbox": [
+            [
+              180,
+              1330
+            ],
+            [
+              1620,
+              1330
+            ],
+            [
+              1620,
+              1375
+            ],
+            [
+              180,
+              1375
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1451
+            ],
+            [
+              1620,
+              1451
+            ],
+            [
+              1620,
+              1496
+            ],
+            [
+              180,
+              1496
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1330,
+            1620,
+            1375
+          ],
+          "text": "Vì thế khoan hồng là khó.",
+          "confidence": 0.982,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0013_viet_014",
+          "bbox": [
+            [
+              180,
+              1455
+            ],
+            [
+              1620,
+              1455
+            ],
+            [
+              1620,
+              1500
+            ],
+            [
+              180,
+              1500
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1576
+            ],
+            [
+              1620,
+              1576
+            ],
+            [
+              1620,
+              1621
+            ],
+            [
+              180,
+              1621
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1455,
+            1620,
+            1500
+          ],
+          "text": "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính.",
+          "confidence": 0.985,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0013_viet_015",
+          "bbox": [
+            [
+              180,
+              1510
+            ],
+            [
+              1620,
+              1510
+            ],
+            [
+              1620,
+              1555
+            ],
+            [
+              180,
+              1555
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1631
+            ],
+            [
+              1620,
+              1631
+            ],
+            [
+              1620,
+              1676
+            ],
+            [
+              180,
+              1676
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1510,
+            1620,
+            1555
+          ],
+          "text": "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền.",
+          "confidence": 0.98,
+          "role": "dich_nghia_gloss"
         }
       ],
       "layout_summary": {
@@ -3743,16 +7387,17 @@
         "interlinear_triplets": [],
         "chu_han_lines": [],
         "phien_am_lines": [],
-        "dich_nghia_lines": []
+        "dich_nghia_lines": [],
+        "dich_tho_lines": []
       }
     },
     {
-      "page_id": "0014",
+      "page_id": "0050",
       "book_type": "HVTT",
       "book_folder": "HVTT_HanVanTinhTuy",
-      "page_num": 14,
-      "han_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/han/HVTT_0014.json",
-      "viet_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/viet/HVTT_0014.json",
+      "page_num": 50,
+      "han_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/han/0050.json",
+      "viet_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/viet/0050.json",
       "preprocess": {
         "book_type": "HVTT",
         "original_width": 1188,
@@ -3766,7 +7411,7 @@
       },
       "han_items": [
         {
-          "line_id": "0014_han_000",
+          "line_id": "0050_han_000",
           "bbox": [
             [
               180,
@@ -3813,7 +7458,7 @@
           "confidence": 0.992
         },
         {
-          "line_id": "0014_han_001",
+          "line_id": "0050_han_001",
           "bbox": [
             [
               180,
@@ -3860,7 +7505,7 @@
           "confidence": 0.99
         },
         {
-          "line_id": "0014_han_002",
+          "line_id": "0050_han_002",
           "bbox": [
             [
               180,
@@ -3907,7 +7552,7 @@
           "confidence": 0.989
         },
         {
-          "line_id": "0014_han_003",
+          "line_id": "0050_han_003",
           "bbox": [
             [
               180,
@@ -3952,11 +7597,199 @@
           ],
           "text": "其 次 莫 如 猛",
           "confidence": 0.991
+        },
+        {
+          "line_id": "0050_han_004",
+          "bbox": [
+            [
+              180,
+              850
+            ],
+            [
+              1620,
+              850
+            ],
+            [
+              1620,
+              905
+            ],
+            [
+              180,
+              905
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              971
+            ],
+            [
+              1620,
+              971
+            ],
+            [
+              1620,
+              1026
+            ],
+            [
+              180,
+              1026
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            850,
+            1620,
+            905
+          ],
+          "text": "夫 火 烈 民 望 而 畏 之 故 鮮 死 焉",
+          "confidence": 0.989
+        },
+        {
+          "line_id": "0050_han_005",
+          "bbox": [
+            [
+              180,
+              1030
+            ],
+            [
+              1620,
+              1030
+            ],
+            [
+              1620,
+              1085
+            ],
+            [
+              180,
+              1085
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1151
+            ],
+            [
+              1620,
+              1151
+            ],
+            [
+              1620,
+              1206
+            ],
+            [
+              180,
+              1206
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1030,
+            1620,
+            1085
+          ],
+          "text": "水 懦 弱 民 狎 而 翫 之 則 多 死 焉",
+          "confidence": 0.988
+        },
+        {
+          "line_id": "0050_han_006",
+          "bbox": [
+            [
+              180,
+              1210
+            ],
+            [
+              1620,
+              1210
+            ],
+            [
+              1620,
+              1265
+            ],
+            [
+              180,
+              1265
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1331
+            ],
+            [
+              1620,
+              1331
+            ],
+            [
+              1620,
+              1386
+            ],
+            [
+              180,
+              1386
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1210,
+            1620,
+            1265
+          ],
+          "text": "故 寬 難",
+          "confidence": 0.992
+        },
+        {
+          "line_id": "0050_han_007",
+          "bbox": [
+            [
+              180,
+              1390
+            ],
+            [
+              1620,
+              1390
+            ],
+            [
+              1620,
+              1445
+            ],
+            [
+              180,
+              1445
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1511
+            ],
+            [
+              1620,
+              1511
+            ],
+            [
+              1620,
+              1566
+            ],
+            [
+              180,
+              1566
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1390,
+            1620,
+            1445
+          ],
+          "text": "疾 數 月 而 卒 太 叔 爲 政",
+          "confidence": 0.99
         }
       ],
       "viet_items": [
         {
-          "line_id": "0014_viet_000",
+          "line_id": "0050_viet_000",
           "bbox": [
             [
               180,
@@ -4004,7 +7837,7 @@
           "role": "phien_am"
         },
         {
-          "line_id": "0014_viet_001",
+          "line_id": "0050_viet_001",
           "bbox": [
             [
               180,
@@ -4052,7 +7885,7 @@
           "role": "dich_nghia_gloss"
         },
         {
-          "line_id": "0014_viet_002",
+          "line_id": "0050_viet_002",
           "bbox": [
             [
               180,
@@ -4095,12 +7928,12 @@
             1620,
             420
           ],
-          "text": "Ngã tử, tử tất vi chính",
+          "text": "Ngã tử, tử tất vi chính.",
           "confidence": 0.986,
           "role": "phien_am"
         },
         {
-          "line_id": "0014_viet_003",
+          "line_id": "0050_viet_003",
           "bbox": [
             [
               180,
@@ -4148,7 +7981,7 @@
           "role": "dich_nghia_gloss"
         },
         {
-          "line_id": "0014_viet_004",
+          "line_id": "0050_viet_004",
           "bbox": [
             [
               180,
@@ -4191,12 +8024,12 @@
             1620,
             600
           ],
-          "text": "Duy hữu đức giả, năng dĩ khoan phục dân",
+          "text": "Duy hữu đức giả, năng dĩ khoan phục dân,",
           "confidence": 0.984,
           "role": "phien_am"
         },
         {
-          "line_id": "0014_viet_005",
+          "line_id": "0050_viet_005",
           "bbox": [
             [
               180,
@@ -4244,7 +8077,7 @@
           "role": "dich_nghia_gloss"
         },
         {
-          "line_id": "0014_viet_006",
+          "line_id": "0050_viet_006",
           "bbox": [
             [
               180,
@@ -4292,7 +8125,7 @@
           "role": "phien_am"
         },
         {
-          "line_id": "0014_viet_007",
+          "line_id": "0050_viet_007",
           "bbox": [
             [
               180,
@@ -4338,11 +8171,395 @@
           "text": "còn thì không gì bằng chính-sách mạnh.",
           "confidence": 0.981,
           "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0050_viet_008",
+          "bbox": [
+            [
+              180,
+              915
+            ],
+            [
+              1620,
+              915
+            ],
+            [
+              1620,
+              960
+            ],
+            [
+              180,
+              960
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1036
+            ],
+            [
+              1620,
+              1036
+            ],
+            [
+              1620,
+              1081
+            ],
+            [
+              180,
+              1081
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            915,
+            1620,
+            960
+          ],
+          "text": "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.",
+          "confidence": 0.985,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0050_viet_009",
+          "bbox": [
+            [
+              180,
+              970
+            ],
+            [
+              1620,
+              970
+            ],
+            [
+              1620,
+              1015
+            ],
+            [
+              180,
+              1015
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1091
+            ],
+            [
+              1620,
+              1091
+            ],
+            [
+              1620,
+              1136
+            ],
+            [
+              180,
+              1136
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            970,
+            1620,
+            1015
+          ],
+          "text": "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa.",
+          "confidence": 0.979,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0050_viet_010",
+          "bbox": [
+            [
+              180,
+              1095
+            ],
+            [
+              1620,
+              1095
+            ],
+            [
+              1620,
+              1140
+            ],
+            [
+              180,
+              1140
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1216
+            ],
+            [
+              1620,
+              1216
+            ],
+            [
+              1620,
+              1261
+            ],
+            [
+              180,
+              1261
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1095,
+            1620,
+            1140
+          ],
+          "text": "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.",
+          "confidence": 0.984,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0050_viet_011",
+          "bbox": [
+            [
+              180,
+              1150
+            ],
+            [
+              1620,
+              1150
+            ],
+            [
+              1620,
+              1195
+            ],
+            [
+              180,
+              1195
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1271
+            ],
+            [
+              1620,
+              1271
+            ],
+            [
+              1620,
+              1316
+            ],
+            [
+              180,
+              1316
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1150,
+            1620,
+            1195
+          ],
+          "text": "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều.",
+          "confidence": 0.978,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0050_viet_012",
+          "bbox": [
+            [
+              180,
+              1275
+            ],
+            [
+              1620,
+              1275
+            ],
+            [
+              1620,
+              1320
+            ],
+            [
+              180,
+              1320
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1396
+            ],
+            [
+              1620,
+              1396
+            ],
+            [
+              1620,
+              1441
+            ],
+            [
+              180,
+              1441
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1275,
+            1620,
+            1320
+          ],
+          "text": "Cố khoan nan.",
+          "confidence": 0.988,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0050_viet_013",
+          "bbox": [
+            [
+              180,
+              1330
+            ],
+            [
+              1620,
+              1330
+            ],
+            [
+              1620,
+              1375
+            ],
+            [
+              180,
+              1375
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1451
+            ],
+            [
+              1620,
+              1451
+            ],
+            [
+              1620,
+              1496
+            ],
+            [
+              180,
+              1496
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1330,
+            1620,
+            1375
+          ],
+          "text": "Vì thế khoan hồng là khó.",
+          "confidence": 0.982,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0050_viet_014",
+          "bbox": [
+            [
+              180,
+              1455
+            ],
+            [
+              1620,
+              1455
+            ],
+            [
+              1620,
+              1500
+            ],
+            [
+              180,
+              1500
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1576
+            ],
+            [
+              1620,
+              1576
+            ],
+            [
+              1620,
+              1621
+            ],
+            [
+              180,
+              1621
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1455,
+            1620,
+            1500
+          ],
+          "text": "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính.",
+          "confidence": 0.985,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0050_viet_015",
+          "bbox": [
+            [
+              180,
+              1510
+            ],
+            [
+              1620,
+              1510
+            ],
+            [
+              1620,
+              1555
+            ],
+            [
+              180,
+              1555
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1631
+            ],
+            [
+              1620,
+              1631
+            ],
+            [
+              1620,
+              1676
+            ],
+            [
+              180,
+              1676
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1510,
+            1620,
+            1555
+          ],
+          "text": "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền.",
+          "confidence": 0.98,
+          "role": "dich_nghia_gloss"
         }
       ],
       "layout_summary": {
         "book_type": "HVTT",
-        "page_num": 14,
+        "page_num": 50,
         "layout_mode": "interlinear_3line_even_page",
         "interlinear_triplets": [
           {
@@ -4354,13 +8571,13 @@
           {
             "triplet_index": 1,
             "chu_han": "我 死 子 必 爲 政",
-            "phien_am": "Ngã tử, tử tất vi chính",
+            "phien_am": "Ngã tử, tử tất vi chính.",
             "dich_nghia_gloss": "Ta chết, con sẽ giữ chính-quyền."
           },
           {
             "triplet_index": 2,
             "chu_han": "惟 有 德 者 能 以 寬 服 民",
-            "phien_am": "Duy hữu đức giả, năng dĩ khoan phục dân",
+            "phien_am": "Duy hữu đức giả, năng dĩ khoan phục dân,",
             "dich_nghia_gloss": "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,"
           },
           {
@@ -4368,35 +8585,72 @@
             "chu_han": "其 次 莫 如 猛",
             "phien_am": "Kỳ thứ mạc như mãnh.",
             "dich_nghia_gloss": "còn thì không gì bằng chính-sách mạnh."
+          },
+          {
+            "triplet_index": 4,
+            "chu_han": "夫 火 烈 民 望 而 畏 之 故 鮮 死 焉",
+            "phien_am": "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.",
+            "dich_nghia_gloss": "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa."
+          },
+          {
+            "triplet_index": 5,
+            "chu_han": "水 懦 弱 民 狎 而 翫 之 則 多 死 焉",
+            "phien_am": "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.",
+            "dich_nghia_gloss": "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều."
+          },
+          {
+            "triplet_index": 6,
+            "chu_han": "故 寬 難",
+            "phien_am": "Cố khoan nan.",
+            "dich_nghia_gloss": "Vì thế khoan hồng là khó."
+          },
+          {
+            "triplet_index": 7,
+            "chu_han": "疾 數 月 而 卒 太 叔 爲 政",
+            "phien_am": "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính.",
+            "dich_nghia_gloss": "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền."
           }
         ],
         "chu_han_lines": [
           "鄭 子 產 有 疾 謂 子 太 叔 曰",
           "我 死 子 必 爲 政",
           "惟 有 德 者 能 以 寬 服 民",
-          "其 次 莫 如 猛"
+          "其 次 莫 如 猛",
+          "夫 火 烈 民 望 而 畏 之 故 鮮 死 焉",
+          "水 懦 弱 民 狎 而 翫 之 則 多 死 焉",
+          "故 寬 難",
+          "疾 數 月 而 卒 太 叔 爲 政"
         ],
         "phien_am_lines": [
           "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
-          "Ngã tử, tử tất vi chính",
-          "Duy hữu đức giả, năng dĩ khoan phục dân",
-          "Kỳ thứ mạc như mãnh."
+          "Ngã tử, tử tất vi chính.",
+          "Duy hữu đức giả, năng dĩ khoan phục dân,",
+          "Kỳ thứ mạc như mãnh.",
+          "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.",
+          "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.",
+          "Cố khoan nan.",
+          "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính."
         ],
         "dich_nghia_lines": [
           "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :",
           "Ta chết, con sẽ giữ chính-quyền.",
           "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
-          "còn thì không gì bằng chính-sách mạnh."
-        ]
+          "còn thì không gì bằng chính-sách mạnh.",
+          "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa.",
+          "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều.",
+          "Vì thế khoan hồng là khó.",
+          "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền."
+        ],
+        "dich_tho_lines": []
       }
     },
     {
-      "page_id": "0015",
+      "page_id": "0312",
       "book_type": "HVTT",
       "book_folder": "HVTT_HanVanTinhTuy",
-      "page_num": 15,
-      "han_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/han/HVTT_0015.json",
-      "viet_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/viet/HVTT_0015.json",
+      "page_num": 312,
+      "han_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/han/0312.json",
+      "viet_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/viet/0312.json",
       "preprocess": {
         "book_type": "HVTT",
         "original_width": 1188,
@@ -4410,7 +8664,7 @@
       },
       "han_items": [
         {
-          "line_id": "0015_han_000",
+          "line_id": "0312_han_000",
           "bbox": [
             [
               180,
@@ -4457,7 +8711,7 @@
           "confidence": 0.992
         },
         {
-          "line_id": "0015_han_001",
+          "line_id": "0312_han_001",
           "bbox": [
             [
               180,
@@ -4504,7 +8758,7 @@
           "confidence": 0.99
         },
         {
-          "line_id": "0015_han_002",
+          "line_id": "0312_han_002",
           "bbox": [
             [
               180,
@@ -4551,7 +8805,7 @@
           "confidence": 0.989
         },
         {
-          "line_id": "0015_han_003",
+          "line_id": "0312_han_003",
           "bbox": [
             [
               180,
@@ -4596,11 +8850,199 @@
           ],
           "text": "其 次 莫 如 猛",
           "confidence": 0.991
+        },
+        {
+          "line_id": "0312_han_004",
+          "bbox": [
+            [
+              180,
+              850
+            ],
+            [
+              1620,
+              850
+            ],
+            [
+              1620,
+              905
+            ],
+            [
+              180,
+              905
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              971
+            ],
+            [
+              1620,
+              971
+            ],
+            [
+              1620,
+              1026
+            ],
+            [
+              180,
+              1026
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            850,
+            1620,
+            905
+          ],
+          "text": "夫 火 烈 民 望 而 畏 之 故 鮮 死 焉",
+          "confidence": 0.989
+        },
+        {
+          "line_id": "0312_han_005",
+          "bbox": [
+            [
+              180,
+              1030
+            ],
+            [
+              1620,
+              1030
+            ],
+            [
+              1620,
+              1085
+            ],
+            [
+              180,
+              1085
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1151
+            ],
+            [
+              1620,
+              1151
+            ],
+            [
+              1620,
+              1206
+            ],
+            [
+              180,
+              1206
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1030,
+            1620,
+            1085
+          ],
+          "text": "水 懦 弱 民 狎 而 翫 之 則 多 死 焉",
+          "confidence": 0.988
+        },
+        {
+          "line_id": "0312_han_006",
+          "bbox": [
+            [
+              180,
+              1210
+            ],
+            [
+              1620,
+              1210
+            ],
+            [
+              1620,
+              1265
+            ],
+            [
+              180,
+              1265
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1331
+            ],
+            [
+              1620,
+              1331
+            ],
+            [
+              1620,
+              1386
+            ],
+            [
+              180,
+              1386
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1210,
+            1620,
+            1265
+          ],
+          "text": "故 寬 難",
+          "confidence": 0.992
+        },
+        {
+          "line_id": "0312_han_007",
+          "bbox": [
+            [
+              180,
+              1390
+            ],
+            [
+              1620,
+              1390
+            ],
+            [
+              1620,
+              1445
+            ],
+            [
+              180,
+              1445
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1511
+            ],
+            [
+              1620,
+              1511
+            ],
+            [
+              1620,
+              1566
+            ],
+            [
+              180,
+              1566
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1390,
+            1620,
+            1445
+          ],
+          "text": "疾 數 月 而 卒 太 叔 爲 政",
+          "confidence": 0.99
         }
       ],
       "viet_items": [
         {
-          "line_id": "0015_viet_000",
+          "line_id": "0312_viet_000",
           "bbox": [
             [
               180,
@@ -4648,7 +9090,7 @@
           "role": "phien_am"
         },
         {
-          "line_id": "0015_viet_001",
+          "line_id": "0312_viet_001",
           "bbox": [
             [
               180,
@@ -4696,7 +9138,7 @@
           "role": "dich_nghia_gloss"
         },
         {
-          "line_id": "0015_viet_002",
+          "line_id": "0312_viet_002",
           "bbox": [
             [
               180,
@@ -4739,12 +9181,12 @@
             1620,
             420
           ],
-          "text": "Ngã tử, tử tất vi chính",
+          "text": "Ngã tử, tử tất vi chính.",
           "confidence": 0.986,
           "role": "phien_am"
         },
         {
-          "line_id": "0015_viet_003",
+          "line_id": "0312_viet_003",
           "bbox": [
             [
               180,
@@ -4792,7 +9234,7 @@
           "role": "dich_nghia_gloss"
         },
         {
-          "line_id": "0015_viet_004",
+          "line_id": "0312_viet_004",
           "bbox": [
             [
               180,
@@ -4835,12 +9277,12 @@
             1620,
             600
           ],
-          "text": "Duy hữu đức giả, năng dĩ khoan phục dân",
+          "text": "Duy hữu đức giả, năng dĩ khoan phục dân,",
           "confidence": 0.984,
           "role": "phien_am"
         },
         {
-          "line_id": "0015_viet_005",
+          "line_id": "0312_viet_005",
           "bbox": [
             [
               180,
@@ -4888,7 +9330,7 @@
           "role": "dich_nghia_gloss"
         },
         {
-          "line_id": "0015_viet_006",
+          "line_id": "0312_viet_006",
           "bbox": [
             [
               180,
@@ -4936,7 +9378,7 @@
           "role": "phien_am"
         },
         {
-          "line_id": "0015_viet_007",
+          "line_id": "0312_viet_007",
           "bbox": [
             [
               180,
@@ -4982,615 +9424,395 @@
           "text": "còn thì không gì bằng chính-sách mạnh.",
           "confidence": 0.981,
           "role": "dich_nghia_gloss"
-        }
-      ],
-      "layout_summary": {
-        "book_type": "HVTT",
-        "page_num": 15,
-        "layout_mode": "odd_page_commentary_skipped",
-        "interlinear_triplets": [],
-        "chu_han_lines": [],
-        "phien_am_lines": [],
-        "dich_nghia_lines": []
-      }
-    },
-    {
-      "page_id": "0016",
-      "book_type": "HVTT",
-      "book_folder": "HVTT_HanVanTinhTuy",
-      "page_num": 16,
-      "han_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/han/HVTT_0016.json",
-      "viet_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/viet/HVTT_0016.json",
-      "preprocess": {
-        "book_type": "HVTT",
-        "original_width": 1188,
-        "original_height": 1728,
-        "crop_top_px": 121,
-        "header_ratio": 0.07,
-        "footnote_separator_y_cropped": null,
-        "footnote_separator_y_original": null,
-        "effective_width": 1188,
-        "effective_height": 1607
-      },
-      "han_items": [
-        {
-          "line_id": "0016_han_000",
-          "bbox": [
-            [
-              180,
-              120
-            ],
-            [
-              1620,
-              120
-            ],
-            [
-              1620,
-              175
-            ],
-            [
-              180,
-              175
-            ]
-          ],
-          "bbox_original": [
-            [
-              180,
-              241
-            ],
-            [
-              1620,
-              241
-            ],
-            [
-              1620,
-              296
-            ],
-            [
-              180,
-              296
-            ]
-          ],
-          "box_xyxy": [
-            180,
-            120,
-            1620,
-            175
-          ],
-          "text": "鄭 子 產 有 疾 謂 子 太 叔 曰",
-          "confidence": 0.992
         },
         {
-          "line_id": "0016_han_001",
+          "line_id": "0312_viet_008",
           "bbox": [
             [
               180,
-              310
+              915
             ],
             [
               1620,
-              310
+              915
             ],
             [
               1620,
-              365
+              960
             ],
             [
               180,
-              365
+              960
             ]
           ],
           "bbox_original": [
             [
               180,
-              431
+              1036
             ],
             [
               1620,
-              431
+              1036
             ],
             [
               1620,
-              486
+              1081
             ],
             [
               180,
-              486
+              1081
             ]
           ],
           "box_xyxy": [
             180,
-            310,
+            915,
             1620,
-            365
+            960
           ],
-          "text": "我 死 子 必 爲 政",
-          "confidence": 0.99
-        },
-        {
-          "line_id": "0016_han_002",
-          "bbox": [
-            [
-              180,
-              490
-            ],
-            [
-              1620,
-              490
-            ],
-            [
-              1620,
-              545
-            ],
-            [
-              180,
-              545
-            ]
-          ],
-          "bbox_original": [
-            [
-              180,
-              611
-            ],
-            [
-              1620,
-              611
-            ],
-            [
-              1620,
-              666
-            ],
-            [
-              180,
-              666
-            ]
-          ],
-          "box_xyxy": [
-            180,
-            490,
-            1620,
-            545
-          ],
-          "text": "惟 有 德 者 能 以 寬 服 民",
-          "confidence": 0.989
-        },
-        {
-          "line_id": "0016_han_003",
-          "bbox": [
-            [
-              180,
-              670
-            ],
-            [
-              1620,
-              670
-            ],
-            [
-              1620,
-              725
-            ],
-            [
-              180,
-              725
-            ]
-          ],
-          "bbox_original": [
-            [
-              180,
-              791
-            ],
-            [
-              1620,
-              791
-            ],
-            [
-              1620,
-              846
-            ],
-            [
-              180,
-              846
-            ]
-          ],
-          "box_xyxy": [
-            180,
-            670,
-            1620,
-            725
-          ],
-          "text": "其 次 莫 如 猛",
-          "confidence": 0.991
-        }
-      ],
-      "viet_items": [
-        {
-          "line_id": "0016_viet_000",
-          "bbox": [
-            [
-              180,
-              185
-            ],
-            [
-              1620,
-              185
-            ],
-            [
-              1620,
-              230
-            ],
-            [
-              180,
-              230
-            ]
-          ],
-          "bbox_original": [
-            [
-              180,
-              306
-            ],
-            [
-              1620,
-              306
-            ],
-            [
-              1620,
-              351
-            ],
-            [
-              180,
-              351
-            ]
-          ],
-          "box_xyxy": [
-            180,
-            185,
-            1620,
-            230
-          ],
-          "text": "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
+          "text": "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.",
           "confidence": 0.985,
           "role": "phien_am"
         },
         {
-          "line_id": "0016_viet_001",
+          "line_id": "0312_viet_009",
           "bbox": [
             [
               180,
-              240
+              970
             ],
             [
               1620,
-              240
+              970
             ],
             [
               1620,
-              290
+              1015
             ],
             [
               180,
-              290
+              1015
             ]
           ],
           "bbox_original": [
             [
               180,
-              361
+              1091
             ],
             [
               1620,
-              361
+              1091
             ],
             [
               1620,
-              411
+              1136
             ],
             [
               180,
-              411
+              1136
             ]
           ],
           "box_xyxy": [
             180,
-            240,
+            970,
             1620,
-            290
+            1015
           ],
-          "text": "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :",
-          "confidence": 0.978,
+          "text": "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa.",
+          "confidence": 0.979,
           "role": "dich_nghia_gloss"
         },
         {
-          "line_id": "0016_viet_002",
+          "line_id": "0312_viet_010",
           "bbox": [
             [
               180,
-              375
+              1095
             ],
             [
               1620,
-              375
+              1095
             ],
             [
               1620,
-              420
+              1140
             ],
             [
               180,
-              420
+              1140
             ]
           ],
           "bbox_original": [
             [
               180,
-              496
+              1216
             ],
             [
               1620,
-              496
+              1216
             ],
             [
               1620,
-              541
+              1261
             ],
             [
               180,
-              541
+              1261
             ]
           ],
           "box_xyxy": [
             180,
-            375,
+            1095,
             1620,
-            420
+            1140
           ],
-          "text": "Ngã tử, tử tất vi chính",
-          "confidence": 0.986,
-          "role": "phien_am"
-        },
-        {
-          "line_id": "0016_viet_003",
-          "bbox": [
-            [
-              180,
-              430
-            ],
-            [
-              1620,
-              430
-            ],
-            [
-              1620,
-              475
-            ],
-            [
-              180,
-              475
-            ]
-          ],
-          "bbox_original": [
-            [
-              180,
-              551
-            ],
-            [
-              1620,
-              551
-            ],
-            [
-              1620,
-              596
-            ],
-            [
-              180,
-              596
-            ]
-          ],
-          "box_xyxy": [
-            180,
-            430,
-            1620,
-            475
-          ],
-          "text": "Ta chết, con sẽ giữ chính-quyền.",
-          "confidence": 0.98,
-          "role": "dich_nghia_gloss"
-        },
-        {
-          "line_id": "0016_viet_004",
-          "bbox": [
-            [
-              180,
-              555
-            ],
-            [
-              1620,
-              555
-            ],
-            [
-              1620,
-              600
-            ],
-            [
-              180,
-              600
-            ]
-          ],
-          "bbox_original": [
-            [
-              180,
-              676
-            ],
-            [
-              1620,
-              676
-            ],
-            [
-              1620,
-              721
-            ],
-            [
-              180,
-              721
-            ]
-          ],
-          "box_xyxy": [
-            180,
-            555,
-            1620,
-            600
-          ],
-          "text": "Duy hữu đức giả, năng dĩ khoan phục dân",
+          "text": "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.",
           "confidence": 0.984,
           "role": "phien_am"
         },
         {
-          "line_id": "0016_viet_005",
+          "line_id": "0312_viet_011",
           "bbox": [
             [
               180,
-              610
+              1150
             ],
             [
               1620,
-              610
+              1150
             ],
             [
               1620,
-              655
+              1195
             ],
             [
               180,
-              655
+              1195
             ]
           ],
           "bbox_original": [
             [
               180,
-              731
+              1271
             ],
             [
               1620,
-              731
+              1271
             ],
             [
               1620,
-              776
+              1316
             ],
             [
               180,
-              776
+              1316
             ]
           ],
           "box_xyxy": [
             180,
-            610,
+            1150,
             1620,
-            655
+            1195
           ],
-          "text": "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
-          "confidence": 0.976,
+          "text": "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều.",
+          "confidence": 0.978,
           "role": "dich_nghia_gloss"
         },
         {
-          "line_id": "0016_viet_006",
+          "line_id": "0312_viet_012",
           "bbox": [
             [
               180,
-              735
+              1275
             ],
             [
               1620,
-              735
+              1275
             ],
             [
               1620,
-              780
+              1320
             ],
             [
               180,
-              780
+              1320
             ]
           ],
           "bbox_original": [
             [
               180,
-              856
+              1396
             ],
             [
               1620,
-              856
+              1396
             ],
             [
               1620,
-              901
+              1441
             ],
             [
               180,
-              901
+              1441
             ]
           ],
           "box_xyxy": [
             180,
-            735,
+            1275,
             1620,
-            780
+            1320
           ],
-          "text": "Kỳ thứ mạc như mãnh.",
-          "confidence": 0.987,
+          "text": "Cố khoan nan.",
+          "confidence": 0.988,
           "role": "phien_am"
         },
         {
-          "line_id": "0016_viet_007",
+          "line_id": "0312_viet_013",
           "bbox": [
             [
               180,
-              790
+              1330
             ],
             [
               1620,
-              790
+              1330
             ],
             [
               1620,
-              835
+              1375
             ],
             [
               180,
-              835
+              1375
             ]
           ],
           "bbox_original": [
             [
               180,
-              911
+              1451
             ],
             [
               1620,
-              911
+              1451
             ],
             [
               1620,
-              956
+              1496
             ],
             [
               180,
-              956
+              1496
             ]
           ],
           "box_xyxy": [
             180,
-            790,
+            1330,
             1620,
-            835
+            1375
           ],
-          "text": "còn thì không gì bằng chính-sách mạnh.",
-          "confidence": 0.981,
+          "text": "Vì thế khoan hồng là khó.",
+          "confidence": 0.982,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0312_viet_014",
+          "bbox": [
+            [
+              180,
+              1455
+            ],
+            [
+              1620,
+              1455
+            ],
+            [
+              1620,
+              1500
+            ],
+            [
+              180,
+              1500
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1576
+            ],
+            [
+              1620,
+              1576
+            ],
+            [
+              1620,
+              1621
+            ],
+            [
+              180,
+              1621
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1455,
+            1620,
+            1500
+          ],
+          "text": "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính.",
+          "confidence": 0.985,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0312_viet_015",
+          "bbox": [
+            [
+              180,
+              1510
+            ],
+            [
+              1620,
+              1510
+            ],
+            [
+              1620,
+              1555
+            ],
+            [
+              180,
+              1555
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1631
+            ],
+            [
+              1620,
+              1631
+            ],
+            [
+              1620,
+              1676
+            ],
+            [
+              180,
+              1676
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1510,
+            1620,
+            1555
+          ],
+          "text": "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền.",
+          "confidence": 0.98,
           "role": "dich_nghia_gloss"
         }
       ],
       "layout_summary": {
         "book_type": "HVTT",
-        "page_num": 16,
+        "page_num": 312,
         "layout_mode": "interlinear_3line_even_page",
         "interlinear_triplets": [
           {
@@ -5602,13 +9824,13 @@
           {
             "triplet_index": 1,
             "chu_han": "我 死 子 必 爲 政",
-            "phien_am": "Ngã tử, tử tất vi chính",
+            "phien_am": "Ngã tử, tử tất vi chính.",
             "dich_nghia_gloss": "Ta chết, con sẽ giữ chính-quyền."
           },
           {
             "triplet_index": 2,
             "chu_han": "惟 有 德 者 能 以 寬 服 民",
-            "phien_am": "Duy hữu đức giả, năng dĩ khoan phục dân",
+            "phien_am": "Duy hữu đức giả, năng dĩ khoan phục dân,",
             "dich_nghia_gloss": "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,"
           },
           {
@@ -5616,35 +9838,72 @@
             "chu_han": "其 次 莫 如 猛",
             "phien_am": "Kỳ thứ mạc như mãnh.",
             "dich_nghia_gloss": "còn thì không gì bằng chính-sách mạnh."
+          },
+          {
+            "triplet_index": 4,
+            "chu_han": "夫 火 烈 民 望 而 畏 之 故 鮮 死 焉",
+            "phien_am": "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.",
+            "dich_nghia_gloss": "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa."
+          },
+          {
+            "triplet_index": 5,
+            "chu_han": "水 懦 弱 民 狎 而 翫 之 則 多 死 焉",
+            "phien_am": "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.",
+            "dich_nghia_gloss": "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều."
+          },
+          {
+            "triplet_index": 6,
+            "chu_han": "故 寬 難",
+            "phien_am": "Cố khoan nan.",
+            "dich_nghia_gloss": "Vì thế khoan hồng là khó."
+          },
+          {
+            "triplet_index": 7,
+            "chu_han": "疾 數 月 而 卒 太 叔 爲 政",
+            "phien_am": "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính.",
+            "dich_nghia_gloss": "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền."
           }
         ],
         "chu_han_lines": [
           "鄭 子 產 有 疾 謂 子 太 叔 曰",
           "我 死 子 必 爲 政",
           "惟 有 德 者 能 以 寬 服 民",
-          "其 次 莫 如 猛"
+          "其 次 莫 如 猛",
+          "夫 火 烈 民 望 而 畏 之 故 鮮 死 焉",
+          "水 懦 弱 民 狎 而 翫 之 則 多 死 焉",
+          "故 寬 難",
+          "疾 數 月 而 卒 太 叔 爲 政"
         ],
         "phien_am_lines": [
           "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
-          "Ngã tử, tử tất vi chính",
-          "Duy hữu đức giả, năng dĩ khoan phục dân",
-          "Kỳ thứ mạc như mãnh."
+          "Ngã tử, tử tất vi chính.",
+          "Duy hữu đức giả, năng dĩ khoan phục dân,",
+          "Kỳ thứ mạc như mãnh.",
+          "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.",
+          "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.",
+          "Cố khoan nan.",
+          "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính."
         ],
         "dich_nghia_lines": [
           "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :",
           "Ta chết, con sẽ giữ chính-quyền.",
           "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
-          "còn thì không gì bằng chính-sách mạnh."
-        ]
+          "còn thì không gì bằng chính-sách mạnh.",
+          "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa.",
+          "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều.",
+          "Vì thế khoan hồng là khó.",
+          "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền."
+        ],
+        "dich_tho_lines": []
       }
     },
     {
-      "page_id": "0017",
+      "page_id": "0326",
       "book_type": "HVTT",
       "book_folder": "HVTT_HanVanTinhTuy",
-      "page_num": 17,
-      "han_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/han/HVTT_0017.json",
-      "viet_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/viet/HVTT_0017.json",
+      "page_num": 326,
+      "han_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/han/0326.json",
+      "viet_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/viet/0326.json",
       "preprocess": {
         "book_type": "HVTT",
         "original_width": 1188,
@@ -5658,7 +9917,7 @@
       },
       "han_items": [
         {
-          "line_id": "0017_han_000",
+          "line_id": "0326_han_000",
           "bbox": [
             [
               180,
@@ -5705,7 +9964,7 @@
           "confidence": 0.992
         },
         {
-          "line_id": "0017_han_001",
+          "line_id": "0326_han_001",
           "bbox": [
             [
               180,
@@ -5752,7 +10011,7 @@
           "confidence": 0.99
         },
         {
-          "line_id": "0017_han_002",
+          "line_id": "0326_han_002",
           "bbox": [
             [
               180,
@@ -5799,7 +10058,7 @@
           "confidence": 0.989
         },
         {
-          "line_id": "0017_han_003",
+          "line_id": "0326_han_003",
           "bbox": [
             [
               180,
@@ -5844,11 +10103,199 @@
           ],
           "text": "其 次 莫 如 猛",
           "confidence": 0.991
+        },
+        {
+          "line_id": "0326_han_004",
+          "bbox": [
+            [
+              180,
+              850
+            ],
+            [
+              1620,
+              850
+            ],
+            [
+              1620,
+              905
+            ],
+            [
+              180,
+              905
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              971
+            ],
+            [
+              1620,
+              971
+            ],
+            [
+              1620,
+              1026
+            ],
+            [
+              180,
+              1026
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            850,
+            1620,
+            905
+          ],
+          "text": "夫 火 烈 民 望 而 畏 之 故 鮮 死 焉",
+          "confidence": 0.989
+        },
+        {
+          "line_id": "0326_han_005",
+          "bbox": [
+            [
+              180,
+              1030
+            ],
+            [
+              1620,
+              1030
+            ],
+            [
+              1620,
+              1085
+            ],
+            [
+              180,
+              1085
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1151
+            ],
+            [
+              1620,
+              1151
+            ],
+            [
+              1620,
+              1206
+            ],
+            [
+              180,
+              1206
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1030,
+            1620,
+            1085
+          ],
+          "text": "水 懦 弱 民 狎 而 翫 之 則 多 死 焉",
+          "confidence": 0.988
+        },
+        {
+          "line_id": "0326_han_006",
+          "bbox": [
+            [
+              180,
+              1210
+            ],
+            [
+              1620,
+              1210
+            ],
+            [
+              1620,
+              1265
+            ],
+            [
+              180,
+              1265
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1331
+            ],
+            [
+              1620,
+              1331
+            ],
+            [
+              1620,
+              1386
+            ],
+            [
+              180,
+              1386
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1210,
+            1620,
+            1265
+          ],
+          "text": "故 寬 難",
+          "confidence": 0.992
+        },
+        {
+          "line_id": "0326_han_007",
+          "bbox": [
+            [
+              180,
+              1390
+            ],
+            [
+              1620,
+              1390
+            ],
+            [
+              1620,
+              1445
+            ],
+            [
+              180,
+              1445
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1511
+            ],
+            [
+              1620,
+              1511
+            ],
+            [
+              1620,
+              1566
+            ],
+            [
+              180,
+              1566
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1390,
+            1620,
+            1445
+          ],
+          "text": "疾 數 月 而 卒 太 叔 爲 政",
+          "confidence": 0.99
         }
       ],
       "viet_items": [
         {
-          "line_id": "0017_viet_000",
+          "line_id": "0326_viet_000",
           "bbox": [
             [
               180,
@@ -5896,7 +10343,7 @@
           "role": "phien_am"
         },
         {
-          "line_id": "0017_viet_001",
+          "line_id": "0326_viet_001",
           "bbox": [
             [
               180,
@@ -5944,7 +10391,7 @@
           "role": "dich_nghia_gloss"
         },
         {
-          "line_id": "0017_viet_002",
+          "line_id": "0326_viet_002",
           "bbox": [
             [
               180,
@@ -5987,12 +10434,12 @@
             1620,
             420
           ],
-          "text": "Ngã tử, tử tất vi chính",
+          "text": "Ngã tử, tử tất vi chính.",
           "confidence": 0.986,
           "role": "phien_am"
         },
         {
-          "line_id": "0017_viet_003",
+          "line_id": "0326_viet_003",
           "bbox": [
             [
               180,
@@ -6040,7 +10487,7 @@
           "role": "dich_nghia_gloss"
         },
         {
-          "line_id": "0017_viet_004",
+          "line_id": "0326_viet_004",
           "bbox": [
             [
               180,
@@ -6083,12 +10530,12 @@
             1620,
             600
           ],
-          "text": "Duy hữu đức giả, năng dĩ khoan phục dân",
+          "text": "Duy hữu đức giả, năng dĩ khoan phục dân,",
           "confidence": 0.984,
           "role": "phien_am"
         },
         {
-          "line_id": "0017_viet_005",
+          "line_id": "0326_viet_005",
           "bbox": [
             [
               180,
@@ -6136,7 +10583,7 @@
           "role": "dich_nghia_gloss"
         },
         {
-          "line_id": "0017_viet_006",
+          "line_id": "0326_viet_006",
           "bbox": [
             [
               180,
@@ -6184,7 +10631,7 @@
           "role": "phien_am"
         },
         {
-          "line_id": "0017_viet_007",
+          "line_id": "0326_viet_007",
           "bbox": [
             [
               180,
@@ -6230,16 +10677,1140 @@
           "text": "còn thì không gì bằng chính-sách mạnh.",
           "confidence": 0.981,
           "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0326_viet_008",
+          "bbox": [
+            [
+              180,
+              915
+            ],
+            [
+              1620,
+              915
+            ],
+            [
+              1620,
+              960
+            ],
+            [
+              180,
+              960
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1036
+            ],
+            [
+              1620,
+              1036
+            ],
+            [
+              1620,
+              1081
+            ],
+            [
+              180,
+              1081
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            915,
+            1620,
+            960
+          ],
+          "text": "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.",
+          "confidence": 0.985,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0326_viet_009",
+          "bbox": [
+            [
+              180,
+              970
+            ],
+            [
+              1620,
+              970
+            ],
+            [
+              1620,
+              1015
+            ],
+            [
+              180,
+              1015
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1091
+            ],
+            [
+              1620,
+              1091
+            ],
+            [
+              1620,
+              1136
+            ],
+            [
+              180,
+              1136
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            970,
+            1620,
+            1015
+          ],
+          "text": "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa.",
+          "confidence": 0.979,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0326_viet_010",
+          "bbox": [
+            [
+              180,
+              1095
+            ],
+            [
+              1620,
+              1095
+            ],
+            [
+              1620,
+              1140
+            ],
+            [
+              180,
+              1140
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1216
+            ],
+            [
+              1620,
+              1216
+            ],
+            [
+              1620,
+              1261
+            ],
+            [
+              180,
+              1261
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1095,
+            1620,
+            1140
+          ],
+          "text": "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.",
+          "confidence": 0.984,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0326_viet_011",
+          "bbox": [
+            [
+              180,
+              1150
+            ],
+            [
+              1620,
+              1150
+            ],
+            [
+              1620,
+              1195
+            ],
+            [
+              180,
+              1195
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1271
+            ],
+            [
+              1620,
+              1271
+            ],
+            [
+              1620,
+              1316
+            ],
+            [
+              180,
+              1316
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1150,
+            1620,
+            1195
+          ],
+          "text": "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều.",
+          "confidence": 0.978,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0326_viet_012",
+          "bbox": [
+            [
+              180,
+              1275
+            ],
+            [
+              1620,
+              1275
+            ],
+            [
+              1620,
+              1320
+            ],
+            [
+              180,
+              1320
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1396
+            ],
+            [
+              1620,
+              1396
+            ],
+            [
+              1620,
+              1441
+            ],
+            [
+              180,
+              1441
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1275,
+            1620,
+            1320
+          ],
+          "text": "Cố khoan nan.",
+          "confidence": 0.988,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0326_viet_013",
+          "bbox": [
+            [
+              180,
+              1330
+            ],
+            [
+              1620,
+              1330
+            ],
+            [
+              1620,
+              1375
+            ],
+            [
+              180,
+              1375
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1451
+            ],
+            [
+              1620,
+              1451
+            ],
+            [
+              1620,
+              1496
+            ],
+            [
+              180,
+              1496
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1330,
+            1620,
+            1375
+          ],
+          "text": "Vì thế khoan hồng là khó.",
+          "confidence": 0.982,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0326_viet_014",
+          "bbox": [
+            [
+              180,
+              1455
+            ],
+            [
+              1620,
+              1455
+            ],
+            [
+              1620,
+              1500
+            ],
+            [
+              180,
+              1500
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1576
+            ],
+            [
+              1620,
+              1576
+            ],
+            [
+              1620,
+              1621
+            ],
+            [
+              180,
+              1621
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1455,
+            1620,
+            1500
+          ],
+          "text": "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính.",
+          "confidence": 0.985,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0326_viet_015",
+          "bbox": [
+            [
+              180,
+              1510
+            ],
+            [
+              1620,
+              1510
+            ],
+            [
+              1620,
+              1555
+            ],
+            [
+              180,
+              1555
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              1631
+            ],
+            [
+              1620,
+              1631
+            ],
+            [
+              1620,
+              1676
+            ],
+            [
+              180,
+              1676
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            1510,
+            1620,
+            1555
+          ],
+          "text": "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền.",
+          "confidence": 0.98,
+          "role": "dich_nghia_gloss"
         }
       ],
       "layout_summary": {
         "book_type": "HVTT",
-        "page_num": 17,
+        "page_num": 326,
+        "layout_mode": "interlinear_3line_even_page",
+        "interlinear_triplets": [
+          {
+            "triplet_index": 0,
+            "chu_han": "鄭 子 產 有 疾 謂 子 太 叔 曰",
+            "phien_am": "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
+            "dich_nghia_gloss": "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :"
+          },
+          {
+            "triplet_index": 1,
+            "chu_han": "我 死 子 必 爲 政",
+            "phien_am": "Ngã tử, tử tất vi chính.",
+            "dich_nghia_gloss": "Ta chết, con sẽ giữ chính-quyền."
+          },
+          {
+            "triplet_index": 2,
+            "chu_han": "惟 有 德 者 能 以 寬 服 民",
+            "phien_am": "Duy hữu đức giả, năng dĩ khoan phục dân,",
+            "dich_nghia_gloss": "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,"
+          },
+          {
+            "triplet_index": 3,
+            "chu_han": "其 次 莫 如 猛",
+            "phien_am": "Kỳ thứ mạc như mãnh.",
+            "dich_nghia_gloss": "còn thì không gì bằng chính-sách mạnh."
+          },
+          {
+            "triplet_index": 4,
+            "chu_han": "夫 火 烈 民 望 而 畏 之 故 鮮 死 焉",
+            "phien_am": "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.",
+            "dich_nghia_gloss": "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa."
+          },
+          {
+            "triplet_index": 5,
+            "chu_han": "水 懦 弱 民 狎 而 翫 之 則 多 死 焉",
+            "phien_am": "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.",
+            "dich_nghia_gloss": "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều."
+          },
+          {
+            "triplet_index": 6,
+            "chu_han": "故 寬 難",
+            "phien_am": "Cố khoan nan.",
+            "dich_nghia_gloss": "Vì thế khoan hồng là khó."
+          },
+          {
+            "triplet_index": 7,
+            "chu_han": "疾 數 月 而 卒 太 叔 爲 政",
+            "phien_am": "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính.",
+            "dich_nghia_gloss": "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền."
+          }
+        ],
+        "chu_han_lines": [
+          "鄭 子 產 有 疾 謂 子 太 叔 曰",
+          "我 死 子 必 爲 政",
+          "惟 有 德 者 能 以 寬 服 民",
+          "其 次 莫 如 猛",
+          "夫 火 烈 民 望 而 畏 之 故 鮮 死 焉",
+          "水 懦 弱 民 狎 而 翫 之 則 多 死 焉",
+          "故 寬 難",
+          "疾 數 月 而 卒 太 叔 爲 政"
+        ],
+        "phien_am_lines": [
+          "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
+          "Ngã tử, tử tất vi chính.",
+          "Duy hữu đức giả, năng dĩ khoan phục dân,",
+          "Kỳ thứ mạc như mãnh.",
+          "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.",
+          "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.",
+          "Cố khoan nan.",
+          "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính."
+        ],
+        "dich_nghia_lines": [
+          "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :",
+          "Ta chết, con sẽ giữ chính-quyền.",
+          "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
+          "còn thì không gì bằng chính-sách mạnh.",
+          "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa.",
+          "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều.",
+          "Vì thế khoan hồng là khó.",
+          "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền."
+        ],
+        "dich_tho_lines": []
+      }
+    },
+    {
+      "page_id": "0368",
+      "book_type": "HVTT",
+      "book_folder": "HVTT_HanVanTinhTuy",
+      "page_num": 368,
+      "han_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/han/0368.json",
+      "viet_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/viet/0368.json",
+      "preprocess": {
+        "book_type": "HVTT",
+        "original_width": 1188,
+        "original_height": 1728,
+        "crop_top_px": 121,
+        "header_ratio": 0.07,
+        "footnote_separator_y_cropped": null,
+        "footnote_separator_y_original": null,
+        "effective_width": 1188,
+        "effective_height": 1607
+      },
+      "han_items": [
+        {
+          "line_id": "0368_han_000",
+          "bbox": [
+            [
+              180,
+              160
+            ],
+            [
+              1620,
+              160
+            ],
+            [
+              1620,
+              215
+            ],
+            [
+              180,
+              215
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              281
+            ],
+            [
+              1620,
+              281
+            ],
+            [
+              1620,
+              336
+            ],
+            [
+              180,
+              336
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            160,
+            1620,
+            215
+          ],
+          "text": "天 氣 入 中 秋 之 夜 蕭 條 經 四 坐 霜 寒",
+          "confidence": 0.99
+        },
+        {
+          "line_id": "0368_han_001",
+          "bbox": [
+            [
+              180,
+              380
+            ],
+            [
+              1620,
+              380
+            ],
+            [
+              1620,
+              435
+            ],
+            [
+              180,
+              435
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              501
+            ],
+            [
+              1620,
+              501
+            ],
+            [
+              1620,
+              556
+            ],
+            [
+              180,
+              556
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            380,
+            1620,
+            435
+          ],
+          "text": "仙 家 別 占 清 閒 打 殘 棋 陣 飲 殘 菊 杯",
+          "confidence": 0.989
+        }
+      ],
+      "viet_items": [
+        {
+          "line_id": "0368_viet_000",
+          "bbox": [
+            [
+              180,
+              225
+            ],
+            [
+              1620,
+              225
+            ],
+            [
+              1620,
+              270
+            ],
+            [
+              180,
+              270
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              346
+            ],
+            [
+              1620,
+              346
+            ],
+            [
+              1620,
+              391
+            ],
+            [
+              180,
+              391
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            225,
+            1620,
+            270
+          ],
+          "text": "Thiên khí nhập trung-thu chi dạ, Tiêu-điều kinh tứ tọa sương hàn.",
+          "confidence": 0.985,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0368_viet_001",
+          "bbox": [
+            [
+              180,
+              280
+            ],
+            [
+              1620,
+              280
+            ],
+            [
+              1620,
+              325
+            ],
+            [
+              180,
+              325
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              401
+            ],
+            [
+              1620,
+              401
+            ],
+            [
+              1620,
+              446
+            ],
+            [
+              180,
+              446
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            280,
+            1620,
+            325
+          ],
+          "text": "Đêm trung-thu trời mây trong trẻo, Sương đầm đầm lạnh lẽo bốn bên.",
+          "confidence": 0.982,
+          "role": "dich_tho"
+        },
+        {
+          "line_id": "0368_viet_002",
+          "bbox": [
+            [
+              180,
+              445
+            ],
+            [
+              1620,
+              445
+            ],
+            [
+              1620,
+              490
+            ],
+            [
+              180,
+              490
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              566
+            ],
+            [
+              1620,
+              566
+            ],
+            [
+              1620,
+              611
+            ],
+            [
+              180,
+              611
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            445,
+            1620,
+            490
+          ],
+          "text": "Tiên gia biệt chiếm thanh-nhàn, Đả tàn kỳ trận, ẩm tàn cúc bôi !",
+          "confidence": 0.984,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0368_viet_003",
+          "bbox": [
+            [
+              180,
+              500
+            ],
+            [
+              1620,
+              500
+            ],
+            [
+              1620,
+              545
+            ],
+            [
+              180,
+              545
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              621
+            ],
+            [
+              1620,
+              621
+            ],
+            [
+              1620,
+              666
+            ],
+            [
+              180,
+              666
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            500,
+            1620,
+            545
+          ],
+          "text": "Thanh-nhàn riêng một cảnh tiên, Mảng vui cờ thánh rượu hiền tiêu-dao !",
+          "confidence": 0.98,
+          "role": "dich_tho"
+        }
+      ],
+      "layout_summary": {
+        "book_type": "HVTT",
+        "page_num": 368,
+        "layout_mode": "interlinear_3line_even_page",
+        "interlinear_triplets": [
+          {
+            "triplet_index": 0,
+            "chu_han": "天 氣 入 中 秋 之 夜 蕭 條 經 四 坐 霜 寒",
+            "phien_am": "Thiên khí nhập trung-thu chi dạ, Tiêu-điều kinh tứ tọa sương hàn.",
+            "dich_nghia_gloss": ""
+          },
+          {
+            "triplet_index": 1,
+            "chu_han": "仙 家 別 占 清 閒 打 殘 棋 陣 飲 殘 菊 杯",
+            "phien_am": "Tiên gia biệt chiếm thanh-nhàn, Đả tàn kỳ trận, ẩm tàn cúc bôi !",
+            "dich_nghia_gloss": ""
+          }
+        ],
+        "chu_han_lines": [
+          "天 氣 入 中 秋 之 夜 蕭 條 經 四 坐 霜 寒",
+          "仙 家 別 占 清 閒 打 殘 棋 陣 飲 殘 菊 杯"
+        ],
+        "phien_am_lines": [
+          "Thiên khí nhập trung-thu chi dạ, Tiêu-điều kinh tứ tọa sương hàn.",
+          "Tiên gia biệt chiếm thanh-nhàn, Đả tàn kỳ trận, ẩm tàn cúc bôi !"
+        ],
+        "dich_nghia_lines": [],
+        "dich_tho_lines": [
+          "Đêm trung-thu trời mây trong trẻo, Sương đầm đầm lạnh lẽo bốn bên.",
+          "Thanh-nhàn riêng một cảnh tiên, Mảng vui cờ thánh rượu hiền tiêu-dao !"
+        ]
+      }
+    },
+    {
+      "page_id": "0369",
+      "book_type": "HVTT",
+      "book_folder": "HVTT_HanVanTinhTuy",
+      "page_num": 369,
+      "han_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/han/0369.json",
+      "viet_json": "/Users/khoa/study/nam_3_ky_1/nlp/LAB/lab_gki/deliverables/HVTT_HanVanTinhTuy/02_ocr_tho/viet/0369.json",
+      "preprocess": {
+        "book_type": "HVTT",
+        "original_width": 1188,
+        "original_height": 1728,
+        "crop_top_px": 121,
+        "header_ratio": 0.07,
+        "footnote_separator_y_cropped": null,
+        "footnote_separator_y_original": null,
+        "effective_width": 1188,
+        "effective_height": 1607
+      },
+      "han_items": [
+        {
+          "line_id": "0369_han_000",
+          "bbox": [
+            [
+              180,
+              160
+            ],
+            [
+              1620,
+              160
+            ],
+            [
+              1620,
+              215
+            ],
+            [
+              180,
+              215
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              281
+            ],
+            [
+              1620,
+              281
+            ],
+            [
+              1620,
+              336
+            ],
+            [
+              180,
+              336
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            160,
+            1620,
+            215
+          ],
+          "text": "天 氣 入 中 秋 之 夜 蕭 條 經 四 坐 霜 寒",
+          "confidence": 0.99
+        },
+        {
+          "line_id": "0369_han_001",
+          "bbox": [
+            [
+              180,
+              380
+            ],
+            [
+              1620,
+              380
+            ],
+            [
+              1620,
+              435
+            ],
+            [
+              180,
+              435
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              501
+            ],
+            [
+              1620,
+              501
+            ],
+            [
+              1620,
+              556
+            ],
+            [
+              180,
+              556
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            380,
+            1620,
+            435
+          ],
+          "text": "仙 家 別 占 清 閒 打 殘 棋 陣 飲 殘 菊 杯",
+          "confidence": 0.989
+        }
+      ],
+      "viet_items": [
+        {
+          "line_id": "0369_viet_000",
+          "bbox": [
+            [
+              180,
+              225
+            ],
+            [
+              1620,
+              225
+            ],
+            [
+              1620,
+              270
+            ],
+            [
+              180,
+              270
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              346
+            ],
+            [
+              1620,
+              346
+            ],
+            [
+              1620,
+              391
+            ],
+            [
+              180,
+              391
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            225,
+            1620,
+            270
+          ],
+          "text": "Thiên khí nhập trung-thu chi dạ, Tiêu-điều kinh tứ tọa sương hàn.",
+          "confidence": 0.985,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0369_viet_001",
+          "bbox": [
+            [
+              180,
+              280
+            ],
+            [
+              1620,
+              280
+            ],
+            [
+              1620,
+              325
+            ],
+            [
+              180,
+              325
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              401
+            ],
+            [
+              1620,
+              401
+            ],
+            [
+              1620,
+              446
+            ],
+            [
+              180,
+              446
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            280,
+            1620,
+            325
+          ],
+          "text": "Đêm trung-thu trời mây trong trẻo, Sương đầm đầm lạnh lẽo bốn bên.",
+          "confidence": 0.982,
+          "role": "dich_tho"
+        },
+        {
+          "line_id": "0369_viet_002",
+          "bbox": [
+            [
+              180,
+              445
+            ],
+            [
+              1620,
+              445
+            ],
+            [
+              1620,
+              490
+            ],
+            [
+              180,
+              490
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              566
+            ],
+            [
+              1620,
+              566
+            ],
+            [
+              1620,
+              611
+            ],
+            [
+              180,
+              611
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            445,
+            1620,
+            490
+          ],
+          "text": "Tiên gia biệt chiếm thanh-nhàn, Đả tàn kỳ trận, ẩm tàn cúc bôi !",
+          "confidence": 0.984,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0369_viet_003",
+          "bbox": [
+            [
+              180,
+              500
+            ],
+            [
+              1620,
+              500
+            ],
+            [
+              1620,
+              545
+            ],
+            [
+              180,
+              545
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              621
+            ],
+            [
+              1620,
+              621
+            ],
+            [
+              1620,
+              666
+            ],
+            [
+              180,
+              666
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            500,
+            1620,
+            545
+          ],
+          "text": "Thanh-nhàn riêng một cảnh tiên, Mảng vui cờ thánh rượu hiền tiêu-dao !",
+          "confidence": 0.98,
+          "role": "dich_tho"
+        }
+      ],
+      "layout_summary": {
+        "book_type": "HVTT",
+        "page_num": 369,
         "layout_mode": "odd_page_commentary_skipped",
         "interlinear_triplets": [],
         "chu_han_lines": [],
         "phien_am_lines": [],
-        "dich_nghia_lines": []
+        "dich_nghia_lines": [],
+        "dich_tho_lines": [
+          "Đêm trung-thu trời mây trong trẻo, Sương đầm đầm lạnh lẽo bốn bên.",
+          "Thanh-nhàn riêng một cảnh tiên, Mảng vui cờ thánh rượu hiền tiêu-dao !"
+        ]
       }
     }
   ]

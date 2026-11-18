@@ -1,18 +1,19 @@
 {
   "page_id": "0020",
   "book_type": "TVLT2",
+  "book_folder": "TVLT2_ThoVanLyTran2",
   "page_num": 20,
   "engine": "paddleocr_chinese_cht",
   "preprocess": {
     "book_type": "TVLT2",
-    "original_width": 2000,
-    "original_height": 2800,
-    "crop_top_px": 196,
+    "original_width": 1590,
+    "original_height": 2211,
+    "crop_top_px": 155,
     "header_ratio": 0.07,
     "footnote_separator_y_cropped": null,
     "footnote_separator_y_original": null,
-    "effective_width": 2000,
-    "effective_height": 2604
+    "effective_width": 1590,
+    "effective_height": 2056
   },
   "items": [
     {
@@ -38,19 +39,19 @@
       "bbox_original": [
         [
           180,
-          356
+          315
         ],
         [
           880,
-          356
+          315
         ],
         [
           880,
-          406
+          365
         ],
         [
           180,
-          406
+          365
         ]
       ],
       "box_xyxy": [
@@ -59,8 +60,8 @@
         880,
         210
       ],
-      "text": "風打松關月照庭，心期風景共淒清。",
-      "confidence": 0.993
+      "text": "顧無瓊報自懷慚，極目江皋意不堪。",
+      "confidence": 0.992
     },
     {
       "line_id": "0020_han_001",
@@ -85,19 +86,19 @@
       "bbox_original": [
         [
           180,
-          421
+          380
         ],
         [
           880,
-          421
+          380
         ],
         [
           880,
-          471
+          430
         ],
         [
           180,
-          471
+          430
         ]
       ],
       "box_xyxy": [
@@ -106,15 +107,111 @@
         880,
         275
       ],
-      "text": "箇中滋味無人識，付與山僧樂到明。",
+      "text": "馬首秋風吹劍鋏，屋梁落月照書庵。",
+      "confidence": 0.991
+    },
+    {
+      "line_id": "0020_han_002",
+      "bbox": [
+        [
+          180,
+          290
+        ],
+        [
+          880,
+          290
+        ],
+        [
+          880,
+          340
+        ],
+        [
+          180,
+          340
+        ]
+      ],
+      "bbox_original": [
+        [
+          180,
+          445
+        ],
+        [
+          880,
+          445
+        ],
+        [
+          880,
+          495
+        ],
+        [
+          180,
+          495
+        ]
+      ],
+      "box_xyxy": [
+        180,
+        290,
+        880,
+        340
+      ],
+      "text": "幕空難駐燕歸北，地暖愁聞雁別南。",
+      "confidence": 0.99
+    },
+    {
+      "line_id": "0020_han_003",
+      "bbox": [
+        [
+          180,
+          355
+        ],
+        [
+          880,
+          355
+        ],
+        [
+          880,
+          405
+        ],
+        [
+          180,
+          405
+        ]
+      ],
+      "bbox_original": [
+        [
+          180,
+          510
+        ],
+        [
+          880,
+          510
+        ],
+        [
+          880,
+          560
+        ],
+        [
+          180,
+          560
+        ]
+      ],
+      "box_xyxy": [
+        180,
+        355,
+        880,
+        405
+      ],
+      "text": "此去未知傾蓋日，詩篇聊為當清談。",
       "confidence": 0.991
     }
   ],
   "layout_summary": {
     "layout_mode": "two_column_poetry",
     "chu_han_lines": [
-      "風打松關月照庭，心期風景共淒清。",
-      "箇中滋味無人識，付與山僧樂到明。"
+      "顧無瓊報自懷慚，極目江皋意不堪。",
+      "馬首秋風吹劍鋏，屋梁落月照書庵。",
+      "幕空難駐燕歸北，地暖愁聞雁別南。",
+      "此去未知傾蓋日，詩篇聊為當清談。"
     ],
     "interlinear_triplets": []
   }

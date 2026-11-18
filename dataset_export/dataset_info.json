@@ -1,11 +1,11 @@
 {
   "dataset_name": "sino-vietnamese-parallel-corpus",
   "version": "1.0.0",
-  "total_records": 42,
+  "total_records": 47,
   "splits": {
-    "train": 33,
+    "train": 37,
     "validation": 4,
-    "test": 5
+    "test": 6
   },
   "features": [
     "id",

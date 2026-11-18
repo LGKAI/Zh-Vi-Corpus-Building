@@ -33,10 +33,10 @@ Mỗi mẫu dữ liệu hỗ trợ **4 tầng ngữ liệu đối chiếu**:
 - `vietnamese_verse_translation`: Bản dịch thơ (Lục bát / Song thất lục bát / Thơ Đường).
 
 ## Cấu trúc Phân chia (Splits)
-- **Tổng số mẫu**: 42
-- **Tập Train**: 33 mẫu
+- **Tổng số mẫu**: 47
+- **Tập Train**: 37 mẫu
 - **Tập Validation**: 4 mẫu
-- **Tập Test**: 5 mẫu
+- **Tập Test**: 6 mẫu
 
 ## Lược đồ Dữ liệu (Schema)
 ```json

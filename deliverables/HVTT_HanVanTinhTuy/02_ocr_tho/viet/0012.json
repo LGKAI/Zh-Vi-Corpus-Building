@@ -1,18 +1,19 @@
 {
   "page_id": "0012",
   "book_type": "HVTT",
+  "book_folder": "HVTT_HanVanTinhTuy",
   "page_num": 12,
   "engine": "vietocr_vgg_transformer",
   "preprocess": {
     "book_type": "HVTT",
-    "original_width": 2000,
-    "original_height": 2800,
-    "crop_top_px": 196,
+    "original_width": 1188,
+    "original_height": 1728,
+    "crop_top_px": 121,
     "header_ratio": 0.07,
     "footnote_separator_y_cropped": null,
     "footnote_separator_y_original": null,
-    "effective_width": 2000,
-    "effective_height": 2604
+    "effective_width": 1188,
+    "effective_height": 1607
   },
   "items": [
     {
@@ -38,19 +39,19 @@
       "bbox_original": [
         [
           180,
-          381
+          306
         ],
         [
           1620,
-          381
+          306
         ],
         [
           1620,
-          426
+          351
         ],
         [
           180,
-          426
+          351
         ]
       ],
       "box_xyxy": [
@@ -59,7 +60,7 @@
         1620,
         230
       ],
-      "text": "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
+      "text": "Chính khoan tắc dân mạn,",
       "confidence": 0.985,
       "role": "phien_am"
     },
@@ -76,39 +77,39 @@
         ],
         [
           1620,
-          290
+          285
         ],
         [
           180,
-          290
+          285
         ]
       ],
       "bbox_original": [
         [
           180,
-          436
+          361
         ],
         [
           1620,
-          436
+          361
         ],
         [
           1620,
-          486
+          406
         ],
         [
           180,
-          486
+          406
         ]
       ],
       "box_xyxy": [
         180,
         240,
         1620,
-        290
+        285
       ],
-      "text": "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :",
-      "confidence": 0.978,
+      "text": "Chính sách khoan hòa dân nhờn,",
+      "confidence": 0.981,
       "role": "dich_nghia_gloss"
     },
     {
@@ -116,46 +117,46 @@
       "bbox": [
         [
           180,
-          375
+          365
         ],
         [
           1620,
-          375
+          365
         ],
         [
           1620,
-          420
+          410
         ],
         [
           180,
-          420
+          410
         ]
       ],
       "bbox_original": [
         [
           180,
-          571
+          486
         ],
         [
           1620,
-          571
+          486
         ],
         [
           1620,
-          616
+          531
         ],
         [
           180,
-          616
+          531
         ]
       ],
       "box_xyxy": [
         180,
-        375,
+        365,
         1620,
-        420
+        410
       ],
-      "text": "Ngã tử, tử tất vi chính",
+      "text": "mạn tắc củ chi dĩ mãnh.",
       "confidence": 0.986,
       "role": "phien_am"
     },
@@ -164,46 +165,46 @@
       "bbox": [
         [
           180,
-          430
+          420
         ],
         [
           1620,
-          430
+          420
         ],
         [
           1620,
-          475
+          465
         ],
         [
           180,
-          475
+          465
         ]
       ],
       "bbox_original": [
         [
           180,
-          626
+          541
         ],
         [
           1620,
-          626
+          541
         ],
         [
           1620,
-          671
+          586
         ],
         [
           180,
-          671
+          586
         ]
       ],
       "box_xyxy": [
         180,
-        430,
+        420,
         1620,
-        475
+        465
       ],
-      "text": "Ta chết, con sẽ giữ chính-quyền.",
+      "text": "nhờn thì lấy « mạnh » (thẳng tay) mà đàn áp.",
       "confidence": 0.98,
       "role": "dich_nghia_gloss"
     },
@@ -212,46 +213,46 @@
       "bbox": [
         [
           180,
-          555
+          545
         ],
         [
           1620,
-          555
+          545
         ],
         [
           1620,
-          600
+          590
         ],
         [
           180,
-          600
+          590
         ]
       ],
       "bbox_original": [
         [
           180,
-          751
+          666
         ],
         [
           1620,
-          751
+          666
         ],
         [
           1620,
-          796
+          711
         ],
         [
           180,
-          796
+          711
         ]
       ],
       "box_xyxy": [
         180,
-        555,
+        545,
         1620,
-        600
+        590
       ],
-      "text": "Duy hữu đức giả, năng dĩ khoan phục dân",
+      "text": "Mãnh tắc dân tàn, tàn tắc thi chi dĩ khoan.",
       "confidence": 0.984,
       "role": "phien_am"
     },
@@ -260,47 +261,47 @@
       "bbox": [
         [
           180,
-          610
+          600
         ],
         [
           1620,
-          610
+          600
         ],
         [
           1620,
-          655
+          645
         ],
         [
           180,
-          655
+          645
         ]
       ],
       "bbox_original": [
         [
           180,
-          806
+          721
         ],
         [
           1620,
-          806
+          721
         ],
         [
           1620,
-          851
+          766
         ],
         [
           180,
-          851
+          766
         ]
       ],
       "box_xyxy": [
         180,
-        610,
+        600,
         1620,
-        655
+        645
       ],
-      "text": "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
-      "confidence": 0.976,
+      "text": "Mạnh tất dân hại, hại thì lại lấy khoan mà thi-hành.",
+      "confidence": 0.979,
       "role": "dich_nghia_gloss"
     },
     {
@@ -308,47 +309,47 @@
       "bbox": [
         [
           180,
-          735
+          725
         ],
         [
           1620,
-          735
+          725
         ],
         [
           1620,
-          780
+          770
         ],
         [
           180,
-          780
+          770
         ]
       ],
       "bbox_original": [
         [
           180,
-          931
+          846
         ],
         [
           1620,
-          931
+          846
         ],
         [
           1620,
-          976
+          891
         ],
         [
           180,
-          976
+          891
         ]
       ],
       "box_xyxy": [
         180,
-        735,
+        725,
         1620,
-        780
+        770
       ],
-      "text": "Kỳ thứ mạc như mãnh.",
-      "confidence": 0.987,
+      "text": "Khoan dĩ tế mãnh, mãnh dĩ tế khoan.",
+      "confidence": 0.986,
       "role": "phien_am"
     },
     {
@@ -356,88 +357,604 @@
       "bbox": [
         [
           180,
-          790
+          780
         ],
         [
           1620,
-          790
+          780
         ],
         [
           1620,
-          835
+          825
         ],
         [
           180,
-          835
+          825
         ]
       ],
       "bbox_original": [
         [
           180,
-          986
+          901
         ],
         [
           1620,
-          986
+          901
         ],
         [
           1620,
-          1031
+          946
         ],
         [
           180,
-          1031
+          946
         ]
       ],
       "box_xyxy": [
         180,
-        790,
+        780,
         1620,
-        835
+        825
       ],
-      "text": "còn thì không gì bằng chính-sách mạnh.",
+      "text": "Khoan để đỡ mạnh, mạnh để đỡ khoan.",
+      "confidence": 0.982,
+      "role": "dich_nghia_gloss"
+    },
+    {
+      "line_id": "0012_viet_008",
+      "bbox": [
+        [
+          180,
+          905
+        ],
+        [
+          1620,
+          905
+        ],
+        [
+          1620,
+          950
+        ],
+        [
+          180,
+          950
+        ]
+      ],
+      "bbox_original": [
+        [
+          180,
+          1026
+        ],
+        [
+          1620,
+          1026
+        ],
+        [
+          1620,
+          1071
+        ],
+        [
+          180,
+          1071
+        ]
+      ],
+      "box_xyxy": [
+        180,
+        905,
+        1620,
+        950
+      ],
+      "text": "Chính thị dĩ hòa.",
+      "confidence": 0.987,
+      "role": "phien_am"
+    },
+    {
+      "line_id": "0012_viet_009",
+      "bbox": [
+        [
+          180,
+          960
+        ],
+        [
+          1620,
+          960
+        ],
+        [
+          1620,
+          1005
+        ],
+        [
+          180,
+          1005
+        ]
+      ],
+      "bbox_original": [
+        [
+          180,
+          1081
+        ],
+        [
+          1620,
+          1081
+        ],
+        [
+          1620,
+          1126
+        ],
+        [
+          180,
+          1126
+        ]
+      ],
+      "box_xyxy": [
+        180,
+        960,
+        1620,
+        1005
+      ],
+      "text": "Chính sự sẽ hòa.",
+      "confidence": 0.983,
+      "role": "dich_nghia_gloss"
+    },
+    {
+      "line_id": "0012_viet_010",
+      "bbox": [
+        [
+          180,
+          1085
+        ],
+        [
+          1620,
+          1085
+        ],
+        [
+          1620,
+          1130
+        ],
+        [
+          180,
+          1130
+        ]
+      ],
+      "bbox_original": [
+        [
+          180,
+          1206
+        ],
+        [
+          1620,
+          1206
+        ],
+        [
+          1620,
+          1251
+        ],
+        [
+          180,
+          1251
+        ]
+      ],
+      "box_xyxy": [
+        180,
+        1085,
+        1620,
+        1130
+      ],
+      "text": "Thi viết : dân diệc lao chỉ, ngật khả tiểu-khang.",
+      "confidence": 0.984,
+      "role": "phien_am"
+    },
+    {
+      "line_id": "0012_viet_011",
+      "bbox": [
+        [
+          180,
+          1140
+        ],
+        [
+          1620,
+          1140
+        ],
+        [
+          1620,
+          1185
+        ],
+        [
+          180,
+          1185
+        ]
+      ],
+      "bbox_original": [
+        [
+          180,
+          1261
+        ],
+        [
+          1620,
+          1261
+        ],
+        [
+          1620,
+          1306
+        ],
+        [
+          180,
+          1306
+        ]
+      ],
+      "box_xyxy": [
+        180,
+        1140,
+        1620,
+        1185
+      ],
+      "text": "Kinh thi nói : dân đỡ vất-vả, để tạm yên vui.",
+      "confidence": 0.98,
+      "role": "dich_nghia_gloss"
+    },
+    {
+      "line_id": "0012_viet_012",
+      "bbox": [
+        [
+          180,
+          1195
+        ],
+        [
+          1620,
+          1195
+        ],
+        [
+          1620,
+          1240
+        ],
+        [
+          180,
+          1240
+        ]
+      ],
+      "bbox_original": [
+        [
+          180,
+          1316
+        ],
+        [
+          1620,
+          1316
+        ],
+        [
+          1620,
+          1361
+        ],
+        [
+          180,
+          1361
+        ]
+      ],
+      "box_xyxy": [
+        180,
+        1195,
+        1620,
+        1240
+      ],
+      "text": "Dân vất-vả, ngõ hầu yên-ổn,",
+      "confidence": 0.978,
+      "role": "dich_tho"
+    },
+    {
+      "line_id": "0012_viet_013",
+      "bbox": [
+        [
+          180,
+          1325
+        ],
+        [
+          1620,
+          1325
+        ],
+        [
+          1620,
+          1370
+        ],
+        [
+          180,
+          1370
+        ]
+      ],
+      "bbox_original": [
+        [
+          180,
+          1446
+        ],
+        [
+          1620,
+          1446
+        ],
+        [
+          1620,
+          1491
+        ],
+        [
+          180,
+          1491
+        ]
+      ],
+      "box_xyxy": [
+        180,
+        1325,
+        1620,
+        1370
+      ],
+      "text": "Huệ thử trung-quốc, dĩ tuy tứ phương.",
+      "confidence": 0.985,
+      "role": "phien_am"
+    },
+    {
+      "line_id": "0012_viet_014",
+      "bbox": [
+        [
+          180,
+          1380
+        ],
+        [
+          1620,
+          1380
+        ],
+        [
+          1620,
+          1425
+        ],
+        [
+          180,
+          1425
+        ]
+      ],
+      "bbox_original": [
+        [
+          180,
+          1501
+        ],
+        [
+          1620,
+          1501
+        ],
+        [
+          1620,
+          1546
+        ],
+        [
+          180,
+          1546
+        ]
+      ],
+      "box_xyxy": [
+        180,
+        1380,
+        1620,
+        1425
+      ],
+      "text": "Ra ơn trong nước, để yên bốn phương.",
       "confidence": 0.981,
+      "role": "dich_nghia_gloss"
+    },
+    {
+      "line_id": "0012_viet_015",
+      "bbox": [
+        [
+          180,
+          1435
+        ],
+        [
+          1620,
+          1435
+        ],
+        [
+          1620,
+          1480
+        ],
+        [
+          180,
+          1480
+        ]
+      ],
+      "bbox_original": [
+        [
+          180,
+          1556
+        ],
+        [
+          1620,
+          1556
+        ],
+        [
+          1620,
+          1601
+        ],
+        [
+          180,
+          1601
+        ]
+      ],
+      "box_xyxy": [
+        180,
+        1435,
+        1620,
+        1480
+      ],
+      "text": "Ơn ban ra vỗ-về bốn phương.",
+      "confidence": 0.979,
+      "role": "dich_tho"
+    },
+    {
+      "line_id": "0012_viet_016",
+      "bbox": [
+        [
+          180,
+          1565
+        ],
+        [
+          1620,
+          1565
+        ],
+        [
+          1620,
+          1610
+        ],
+        [
+          180,
+          1610
+        ]
+      ],
+      "bbox_original": [
+        [
+          180,
+          1686
+        ],
+        [
+          1620,
+          1686
+        ],
+        [
+          1620,
+          1731
+        ],
+        [
+          180,
+          1731
+        ]
+      ],
+      "box_xyxy": [
+        180,
+        1565,
+        1620,
+        1610
+      ],
+      "text": "Thi chi dĩ khoan dã.",
+      "confidence": 0.986,
+      "role": "phien_am"
+    },
+    {
+      "line_id": "0012_viet_017",
+      "bbox": [
+        [
+          180,
+          1620
+        ],
+        [
+          1620,
+          1620
+        ],
+        [
+          1620,
+          1665
+        ],
+        [
+          180,
+          1665
+        ]
+      ],
+      "bbox_original": [
+        [
+          180,
+          1741
+        ],
+        [
+          1620,
+          1741
+        ],
+        [
+          1620,
+          1786
+        ],
+        [
+          180,
+          1786
+        ]
+      ],
+      "box_xyxy": [
+        180,
+        1620,
+        1620,
+        1665
+      ],
+      "text": "Ấy là lấy « khoan » mà thi-hành vậy.",
+      "confidence": 0.982,
       "role": "dich_nghia_gloss"
     }
   ],
   "layout_summary": {
     "layout_mode": "interlinear_3line_even_page",
     "phien_am_lines": [
-      "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
-      "Ngã tử, tử tất vi chính",
-      "Duy hữu đức giả, năng dĩ khoan phục dân",
-      "Kỳ thứ mạc như mãnh."
+      "Chính khoan tắc dân mạn,",
+      "mạn tắc củ chi dĩ mãnh.",
+      "Mãnh tắc dân tàn, tàn tắc thi chi dĩ khoan.",
+      "Khoan dĩ tế mãnh, mãnh dĩ tế khoan.",
+      "Chính thị dĩ hòa.",
+      "Thi viết : dân diệc lao chỉ, ngật khả tiểu-khang.",
+      "Huệ thử trung-quốc, dĩ tuy tứ phương.",
+      "Thi chi dĩ khoan dã."
     ],
     "dich_nghia_lines": [
-      "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :",
-      "Ta chết, con sẽ giữ chính-quyền.",
-      "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
-      "còn thì không gì bằng chính-sách mạnh."
+      "Chính sách khoan hòa dân nhờn,",
+      "nhờn thì lấy « mạnh » (thẳng tay) mà đàn áp.",
+      "Mạnh tất dân hại, hại thì lại lấy khoan mà thi-hành.",
+      "Khoan để đỡ mạnh, mạnh để đỡ khoan.",
+      "Chính sự sẽ hòa.",
+      "Kinh thi nói : dân đỡ vất-vả, để tạm yên vui.",
+      "Ra ơn trong nước, để yên bốn phương.",
+      "Ấy là lấy « khoan » mà thi-hành vậy."
+    ],
+    "dich_tho_lines": [
+      "Dân vất-vả, ngõ hầu yên-ổn,",
+      "Ơn ban ra vỗ-về bốn phương."
     ],
     "interlinear_triplets": [
       {
         "triplet_index": 0,
-        "chu_han": "鄭 子 產 有 疾 謂 子 太 叔 曰",
-        "phien_am": "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
-        "dich_nghia_gloss": "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :"
+        "chu_han": "政 寬 則 民 慢",
+        "phien_am": "Chính khoan tắc dân mạn,",
+        "dich_nghia_gloss": "Chính sách khoan hòa dân nhờn,"
       },
       {
         "triplet_index": 1,
-        "chu_han": "我 死 子 必 爲 政",
-        "phien_am": "Ngã tử, tử tất vi chính",
-        "dich_nghia_gloss": "Ta chết, con sẽ giữ chính-quyền."
+        "chu_han": "慢 則 糾 之 以 猛",
+        "phien_am": "mạn tắc củ chi dĩ mãnh.",
+        "dich_nghia_gloss": "nhờn thì lấy « mạnh » (thẳng tay) mà đàn áp."
       },
       {
         "triplet_index": 2,
-        "chu_han": "惟 有 德 者 能 以 寬 服 民",
-        "phien_am": "Duy hữu đức giả, năng dĩ khoan phục dân",
-        "dich_nghia_gloss": "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,"
+        "chu_han": "猛 則 民 殘 殘 則 施 之 以 寬",
+        "phien_am": "Mãnh tắc dân tàn, tàn tắc thi chi dĩ khoan.",
+        "dich_nghia_gloss": "Mạnh tất dân hại, hại thì lại lấy khoan mà thi-hành."
       },
       {
         "triplet_index": 3,
-        "chu_han": "其 次 莫 如 猛",
-        "phien_am": "Kỳ thứ mạc như mãnh.",
-        "dich_nghia_gloss": "còn thì không gì bằng chính-sách mạnh."
+        "chu_han": "寬 以 濟 猛 猛 以 濟 寬",
+        "phien_am": "Khoan dĩ tế mãnh, mãnh dĩ tế khoan.",
+        "dich_nghia_gloss": "Khoan để đỡ mạnh, mạnh để đỡ khoan."
+      },
+      {
+        "triplet_index": 4,
+        "chu_han": "政 是 以 和",
+        "phien_am": "Chính thị dĩ hòa.",
+        "dich_nghia_gloss": "Chính sự sẽ hòa."
+      },
+      {
+        "triplet_index": 5,
+        "chu_han": "詩 曰 民 亦 勞 止 汔 可 小 康",
+        "phien_am": "Thi viết : dân diệc lao chỉ, ngật khả tiểu-khang.",
+        "dich_nghia_gloss": "Kinh thi nói : dân đỡ vất-vả, để tạm yên vui."
+      },
+      {
+        "triplet_index": 6,
+        "chu_han": "惠 此 中 國 以 綏 四 方",
+        "phien_am": "Huệ thử trung-quốc, dĩ tuy tứ phương.",
+        "dich_nghia_gloss": "Ra ơn trong nước, để yên bốn phương."
+      },
+      {
+        "triplet_index": 7,
+        "chu_han": "施 之 以 寬 也",
+        "phien_am": "Thi chi dĩ khoan dã.",
+        "dich_nghia_gloss": "Ấy là lấy « khoan » mà thi-hành vậy."
       }
     ]
   }
