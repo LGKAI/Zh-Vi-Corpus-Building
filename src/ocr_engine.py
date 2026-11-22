@@ -2081,7 +2081,6 @@ def _write_jsonl_records(output_dir: Path, results: Sequence[Dict[str, Any]]) ->
 
     global_jsonl_paths = [
         output_dir / "02_ocr_tho" / "ocr_results.jsonl",
-        output_dir / "ocr_results.jsonl",
     ]
     for g_path in global_jsonl_paths:
         g_path.parent.mkdir(parents=True, exist_ok=True)
@@ -2251,14 +2250,16 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     input_path = Path(args.input_dir)
     discovered_files = _discover_input_images(input_path)
 
+    req_type = "ALL" if args.book_type == "ALL" else BOOK_ALIAS_TO_LAYOUT.get(args.book_type.upper(), args.book_type.upper())
+
     # Filter by book_type (and --pilot-only) FIRST before applying --max-pages
     filtered_files: List[Tuple[Path, str, int]] = []
     for img_file in discovered_files:
         inferred_book, page_num = _infer_book_and_page(
             str(img_file),
-            default_book="TVLT2" if args.book_type == "ALL" else args.book_type,
+            default_book="TVLT2" if req_type == "ALL" else req_type,
         )
-        if args.book_type != "ALL" and inferred_book != args.book_type:
+        if req_type != "ALL" and inferred_book != req_type:
             continue
         if args.pilot_only and inferred_book in pilot_pages_map and page_num not in pilot_pages_map[inferred_book]:
             continue

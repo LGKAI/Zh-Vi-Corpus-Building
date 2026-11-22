@@ -10,10 +10,10 @@
     "original_height": 1640,
     "crop_top_px": 115,
     "header_ratio": 0.07,
-    "footnote_separator_y_cropped": null,
-    "footnote_separator_y_original": null,
+    "footnote_separator_y_cropped": 385,
+    "footnote_separator_y_original": 500,
     "effective_width": 1122,
-    "effective_height": 1525
+    "effective_height": 385
   },
   "items": [
     {
@@ -109,13 +109,109 @@
       ],
       "text": "千重萬里涉滄浪, 九天歸路長.",
       "confidence": 0.99
+    },
+    {
+      "line_id": "0135_han_002",
+      "bbox": [
+        [
+          220,
+          270
+        ],
+        [
+          1480,
+          270
+        ],
+        [
+          1480,
+          320
+        ],
+        [
+          220,
+          320
+        ]
+      ],
+      "bbox_original": [
+        [
+          220,
+          385
+        ],
+        [
+          1480,
+          385
+        ],
+        [
+          1480,
+          435
+        ],
+        [
+          220,
+          435
+        ]
+      ],
+      "box_xyxy": [
+        220,
+        270,
+        1480,
+        320
+      ],
+      "text": "情慘切, 對離觴, 攀戀使星郎.",
+      "confidence": 0.991
+    },
+    {
+      "line_id": "0135_han_003",
+      "bbox": [
+        [
+          220,
+          330
+        ],
+        [
+          1480,
+          330
+        ],
+        [
+          1480,
+          380
+        ],
+        [
+          220,
+          380
+        ]
+      ],
+      "bbox_original": [
+        [
+          220,
+          445
+        ],
+        [
+          1480,
+          445
+        ],
+        [
+          1480,
+          495
+        ],
+        [
+          220,
+          495
+        ]
+      ],
+      "box_xyxy": [
+        220,
+        330,
+        1480,
+        380
+      ],
+      "text": "願將深意為南疆, 分明報我皇.",
+      "confidence": 0.99
     }
   ],
   "layout_summary": {
-    "layout_mode": "sequential_han_phien_dich_tho",
+    "layout_mode": "sequential_han_phien_dich",
     "chu_han_lines": [
       "祥光風好錦帆張, 神仙復帝鄉.",
-      "千重萬里涉滄浪, 九天歸路長."
+      "千重萬里涉滄浪, 九天歸路長.",
+      "情慘切, 對離觴, 攀戀使星郎.",
+      "願將深意為南疆, 分明報我皇."
     ],
     "interlinear_triplets": []
   }

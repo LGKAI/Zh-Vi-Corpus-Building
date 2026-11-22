@@ -20,395 +20,197 @@
       "line_id": "0013_viet_000",
       "bbox": [
         [
-          180,
-          185
+          95,
+          30
         ],
         [
-          1620,
-          185
+          380,
+          30
         ],
         [
-          1620,
-          230
+          380,
+          65
         ],
         [
-          180,
-          230
+          95,
+          65
         ]
       ],
       "bbox_original": [
         [
-          180,
-          306
+          95,
+          151
         ],
         [
-          1620,
-          306
+          380,
+          151
         ],
         [
-          1620,
-          351
+          380,
+          186
         ],
         [
-          180,
-          351
+          95,
+          186
         ]
       ],
       "box_xyxy": [
-        180,
-        185,
-        1620,
-        230
+        95,
+        30,
+        380,
+        65
       ],
-      "text": "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
-      "confidence": 0.985,
-      "role": "phien_am"
+      "text": "HÁN-VĂN TINH-TUÝ",
+      "confidence": 0.989
     },
     {
       "line_id": "0013_viet_001",
       "bbox": [
         [
-          180,
-          240
+          997,
+          30
         ],
         [
-          1620,
-          240
+          1092,
+          30
         ],
         [
-          1620,
-          290
+          1092,
+          65
         ],
         [
-          180,
-          290
+          997,
+          65
         ]
       ],
       "bbox_original": [
         [
-          180,
-          361
+          997,
+          151
         ],
         [
-          1620,
-          361
+          1092,
+          151
         ],
         [
-          1620,
-          411
+          1092,
+          186
         ],
         [
-          180,
-          411
+          997,
+          186
         ]
       ],
       "box_xyxy": [
-        180,
-        240,
-        1620,
-        290
+        997,
+        30,
+        1092,
+        65
       ],
-      "text": "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :",
-      "confidence": 0.978,
-      "role": "dich_nghia_gloss"
+      "text": "9",
+      "confidence": 0.988
     },
     {
       "line_id": "0013_viet_002",
       "bbox": [
         [
-          180,
-          375
+          178,
+          160
         ],
         [
-          1620,
-          375
+          534,
+          160
         ],
         [
-          1620,
-          420
+          534,
+          205
         ],
         [
-          180,
-          420
+          178,
+          205
         ]
       ],
       "bbox_original": [
         [
-          180,
-          496
+          178,
+          281
         ],
         [
-          1620,
-          496
+          534,
+          281
         ],
         [
-          1620,
-          541
+          534,
+          326
         ],
         [
-          180,
-          541
+          178,
+          326
         ]
       ],
       "box_xyxy": [
-        180,
-        375,
-        1620,
-        420
+        178,
+        160,
+        534,
+        205
       ],
-      "text": "Ngã tử, tử tất vi chính",
-      "confidence": 0.986,
-      "role": "phien_am"
+      "text": "CHÚ THÍCH :",
+      "confidence": 0.99
     },
     {
       "line_id": "0013_viet_003",
       "bbox": [
         [
-          180,
-          430
+          178,
+          220
         ],
         [
-          1620,
-          430
+          1009,
+          220
         ],
         [
-          1620,
-          475
+          1009,
+          265
         ],
         [
-          180,
-          475
+          178,
+          265
         ]
       ],
       "bbox_original": [
         [
-          180,
-          551
+          178,
+          341
         ],
         [
-          1620,
-          551
+          1009,
+          341
         ],
         [
-          1620,
-          596
+          1009,
+          386
         ],
         [
-          180,
-          596
+          178,
+          386
         ]
       ],
       "box_xyxy": [
-        180,
-        430,
-        1620,
-        475
+        178,
+        220,
+        1009,
+        265
       ],
-      "text": "Ta chết, con sẽ giữ chính-quyền.",
-      "confidence": 0.98,
-      "role": "dich_nghia_gloss"
-    },
-    {
-      "line_id": "0013_viet_004",
-      "bbox": [
-        [
-          180,
-          555
-        ],
-        [
-          1620,
-          555
-        ],
-        [
-          1620,
-          600
-        ],
-        [
-          180,
-          600
-        ]
-      ],
-      "bbox_original": [
-        [
-          180,
-          676
-        ],
-        [
-          1620,
-          676
-        ],
-        [
-          1620,
-          721
-        ],
-        [
-          180,
-          721
-        ]
-      ],
-      "box_xyxy": [
-        180,
-        555,
-        1620,
-        600
-      ],
-      "text": "Duy hữu đức giả, năng dĩ khoan phục dân",
-      "confidence": 0.984,
-      "role": "phien_am"
-    },
-    {
-      "line_id": "0013_viet_005",
-      "bbox": [
-        [
-          180,
-          610
-        ],
-        [
-          1620,
-          610
-        ],
-        [
-          1620,
-          655
-        ],
-        [
-          180,
-          655
-        ]
-      ],
-      "bbox_original": [
-        [
-          180,
-          731
-        ],
-        [
-          1620,
-          731
-        ],
-        [
-          1620,
-          776
-        ],
-        [
-          180,
-          776
-        ]
-      ],
-      "box_xyxy": [
-        180,
-        610,
-        1620,
-        655
-      ],
-      "text": "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
-      "confidence": 0.976,
-      "role": "dich_nghia_gloss"
-    },
-    {
-      "line_id": "0013_viet_006",
-      "bbox": [
-        [
-          180,
-          735
-        ],
-        [
-          1620,
-          735
-        ],
-        [
-          1620,
-          780
-        ],
-        [
-          180,
-          780
-        ]
-      ],
-      "bbox_original": [
-        [
-          180,
-          856
-        ],
-        [
-          1620,
-          856
-        ],
-        [
-          1620,
-          901
-        ],
-        [
-          180,
-          901
-        ]
-      ],
-      "box_xyxy": [
-        180,
-        735,
-        1620,
-        780
-      ],
-      "text": "Kỳ thứ mạc như mãnh.",
-      "confidence": 0.987,
-      "role": "phien_am"
-    },
-    {
-      "line_id": "0013_viet_007",
-      "bbox": [
-        [
-          180,
-          790
-        ],
-        [
-          1620,
-          790
-        ],
-        [
-          1620,
-          835
-        ],
-        [
-          180,
-          835
-        ]
-      ],
-      "bbox_original": [
-        [
-          180,
-          911
-        ],
-        [
-          1620,
-          911
-        ],
-        [
-          1620,
-          956
-        ],
-        [
-          180,
-          956
-        ]
-      ],
-      "box_xyxy": [
-        180,
-        790,
-        1620,
-        835
-      ],
-      "text": "còn thì không gì bằng chính-sách mạnh.",
-      "confidence": 0.981,
-      "role": "dich_nghia_gloss"
+      "text": "1) Chú giải văn bản cổ.",
+      "confidence": 0.98
     }
   ],
   "layout_summary": {
-    "layout_mode": "odd_page_work_title",
-    "phien_am_lines": [
-      "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :"
-    ],
-    "dich_nghia_lines": [
-      "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :"
-    ],
-    "interlinear_triplets": []
+    "layout_mode": "odd_page_commentary_skipped",
+    "phien_am_lines": [],
+    "dich_nghia_lines": [],
+    "dich_tho_lines": [],
+    "interlinear_triplets": [],
+    "dich_tho_y_centers": []
   }
 }

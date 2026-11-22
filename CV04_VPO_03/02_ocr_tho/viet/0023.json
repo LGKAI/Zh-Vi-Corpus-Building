@@ -20,235 +20,235 @@
       "line_id": "0023_viet_000",
       "bbox": [
         [
-          1020,
-          160
+          180,
+          570
         ],
         [
-          1780,
-          160
+          500,
+          570
         ],
         [
-          1780,
-          210
+          500,
+          610
         ],
         [
-          1020,
-          210
+          180,
+          610
         ]
       ],
       "bbox_original": [
         [
-          1020,
-          315
+          180,
+          725
         ],
         [
-          1780,
-          315
+          500,
+          725
         ],
         [
-          1780,
-          365
+          500,
+          765
         ],
         [
-          1020,
-          365
+          180,
+          765
         ]
       ],
       "box_xyxy": [
-        1020,
-        160,
-        1780,
-        210
+        180,
+        570,
+        500,
+        610
       ],
-      "text": "Phong đả tùng quan 1* nguyệt chiếu đình, Tâm kỳ phong cảnh cộng thê thanh.",
-      "confidence": 0.988
+      "text": "PHIÊN ÂM :",
+      "confidence": 0.993
     },
     {
       "line_id": "0023_viet_001",
       "bbox": [
         [
-          1020,
-          225
+          180,
+          620
         ],
         [
           1780,
-          225
+          620
         ],
         [
           1780,
-          275
+          665
         ],
         [
-          1020,
-          275
+          180,
+          665
         ]
       ],
       "bbox_original": [
         [
-          1020,
-          380
+          180,
+          775
         ],
         [
           1780,
-          380
+          775
         ],
         [
           1780,
-          430
+          820
         ],
         [
-          1020,
-          430
+          180,
+          820
         ]
       ],
       "box_xyxy": [
-        1020,
-        225,
+        180,
+        620,
         1780,
-        275
+        665
       ],
-      "text": "Cá trung tư vị vô nhân thức, Phó dữ sơn tăng lạc đáo minh.",
-      "confidence": 0.987
+      "text": "Trẫm thiết vị : Phật vô Nam Bắc, quân khả tu cầu ; tính hữu trí ngu, đồng tư giác ngộ.",
+      "confidence": 0.986
     },
     {
       "line_id": "0023_viet_002",
       "bbox": [
         [
           180,
-          340
+          675
         ],
         [
-          600,
-          340
+          1780,
+          675
         ],
         [
-          600,
-          385
+          1780,
+          720
         ],
         [
           180,
-          385
+          720
         ]
       ],
       "bbox_original": [
         [
           180,
-          495
+          830
         ],
         [
-          600,
-          495
+          1780,
+          830
         ],
         [
-          600,
-          540
+          1780,
+          875
         ],
         [
           180,
-          540
+          875
         ]
       ],
       "box_xyxy": [
         180,
-        340,
-        600,
-        385
+        675,
+        1780,
+        720
       ],
-      "text": "DỊCH NGHĨA :",
-      "confidence": 0.994
+      "text": "Thị dĩ dụ quần mê chi phương-tiện, minh sinh tử chi tiệp kính giả, ngã Phật chi đại giáo dã ; nhậm thùy thế chi quyền hành, tác tương lai chi quỹ phạm giả, tiên thánh chi trọng trách 1* dã.",
+      "confidence": 0.985
     },
     {
       "line_id": "0023_viet_003",
       "bbox": [
         [
           180,
-          395
+          730
         ],
         [
           1780,
-          395
+          730
         ],
         [
           1780,
-          440
+          775
         ],
         [
           180,
-          440
+          775
         ]
       ],
       "bbox_original": [
         [
           180,
-          550
+          885
         ],
         [
           1780,
-          550
+          885
         ],
         [
           1780,
-          595
+          930
         ],
         [
           180,
-          595
+          930
         ]
       ],
       "box_xyxy": [
         180,
-        395,
+        730,
         1780,
-        440
+        775
       ],
-      "text": "Gió đập cổng thông, trăng sáng trước sân, Lòng hẹn với phong cảnh cùng trong sạch lặng lẽ.",
-      "confidence": 0.985
+      "text": "Cố Lục Tổ hữu ngôn vân : Tiên đại thánh nhân dữ đại sư vô biệt, tắc tri ngã Phật chi giáo hựu giả tiên thánh nhân dĩ truyền ư thế dã. Kim trẫm yên khả bất dĩ tiên thánh chi nhậm vi kỷ chi nhậm, ngã Phật chi giáo vi kỷ chi giáo tai !",
+      "confidence": 0.984
     },
     {
       "line_id": "0023_viet_004",
       "bbox": [
         [
           180,
-          450
+          785
         ],
         [
           1780,
-          450
+          785
         ],
         [
           1780,
-          495
+          830
         ],
         [
           180,
-          495
+          830
         ]
       ],
       "bbox_original": [
         [
           180,
-          605
+          940
         ],
         [
           1780,
-          605
+          940
         ],
         [
           1780,
-          650
+          985
         ],
         [
           180,
-          650
+          985
         ]
       ],
       "box_xyxy": [
         180,
-        450,
+        785,
         1780,
-        495
+        830
       ],
-      "text": "Bao nhiêu thú vị trong đó không ai hay, Mặc cho nhà sư trong núi vui đến sáng.",
+      "text": "Thả trẫm ư hài đồng hữu thức chi niên, sảo văn Thiền sư chi huấn, tắc trừng tư tức lự, khái nhiên thanh tịnh, hữu tâm hồ nội giáo, tham cứu ư Thiền tông, hư kỷ cầu sư, tinh thành mộ đạo. Tuy hồi hướng chi ý dĩ manh, nhi cảm xúc chi cơ vị đạt.",
       "confidence": 0.984
     },
     {
@@ -256,106 +256,108 @@
       "bbox": [
         [
           180,
-          520
+          840
         ],
         [
-          600,
-          520
+          1780,
+          840
         ],
         [
-          600,
-          565
+          1780,
+          885
         ],
         [
           180,
-          565
+          885
         ]
       ],
       "bbox_original": [
         [
           180,
-          675
+          995
         ],
         [
-          600,
-          675
+          1780,
+          995
         ],
         [
-          600,
-          720
+          1780,
+          1040
         ],
         [
           180,
-          720
+          1040
         ]
       ],
       "box_xyxy": [
         180,
-        520,
-        600,
-        565
+        840,
+        1780,
+        885
       ],
-      "text": "DỊCH THƠ :",
-      "confidence": 0.992
+      "text": "Sư viết : Sơn bản vô Phật, duy tồn hồ tâm. Tâm tịch nhi tri, thị danh Chân Phật. Kim Bệ hạ nhược ngộ thử tâm, tắc lập địa thành Phật, vô khổ ngoại cầu dã.",
+      "confidence": 0.985
     },
     {
       "line_id": "0023_viet_006",
       "bbox": [
         [
           180,
-          575
+          895
         ],
         [
-          1400,
-          575
+          1780,
+          895
         ],
         [
-          1400,
-          625
+          1780,
+          940
         ],
         [
           180,
-          625
+          940
         ]
       ],
       "bbox_original": [
         [
           180,
-          730
+          1050
         ],
         [
-          1400,
-          730
+          1780,
+          1050
         ],
         [
-          1400,
-          780
+          1780,
+          1095
         ],
         [
           180,
-          780
+          1095
         ]
       ],
       "box_xyxy": [
         180,
-        575,
-        1400,
-        625
+        895,
+        1780,
+        940
       ],
-      "text": "Gió đập cửa thông, trăng lấp loáng, Lòng đây, cảnh đấy cùng thanh sảng.",
-      "confidence": 0.98
+      "text": "Trẫm văn thị ngôn, nãi mệnh công khải tả, sắc lệnh khai ấn, phi đặc dĩ vi hậu thế chỉ mê, cái dục kế tiên đại thánh nhân chi công quảng, nhân tự vi tự vân.",
+      "confidence": 0.984
     }
   ],
   "layout_summary": {
-    "layout_mode": "two_column_poetry",
+    "layout_mode": "sequential_prose",
     "phien_am_lines": [
-      "Phong đả tùng quan 1* nguyệt chiếu đình, Tâm kỳ phong cảnh cộng thê thanh.",
-      "Cá trung tư vị vô nhân thức, Phó dữ sơn tăng lạc đáo minh."
+      "Trẫm thiết vị : Phật vô Nam Bắc, quân khả tu cầu ; tính hữu trí ngu, đồng tư giác ngộ.",
+      "Thị dĩ dụ quần mê chi phương-tiện, minh sinh tử chi tiệp kính giả, ngã Phật chi đại giáo dã ; nhậm thùy thế chi quyền hành, tác tương lai chi quỹ phạm giả, tiên thánh chi trọng trách 1* dã.",
+      "Cố Lục Tổ hữu ngôn vân : Tiên đại thánh nhân dữ đại sư vô biệt, tắc tri ngã Phật chi giáo hựu giả tiên thánh nhân dĩ truyền ư thế dã. Kim trẫm yên khả bất dĩ tiên thánh chi nhậm vi kỷ chi nhậm, ngã Phật chi giáo vi kỷ chi giáo tai !",
+      "Thả trẫm ư hài đồng hữu thức chi niên, sảo văn Thiền sư chi huấn, tắc trừng tư tức lự, khái nhiên thanh tịnh, hữu tâm hồ nội giáo, tham cứu ư Thiền tông, hư kỷ cầu sư, tinh thành mộ đạo. Tuy hồi hướng chi ý dĩ manh, nhi cảm xúc chi cơ vị đạt.",
+      "Sư viết : Sơn bản vô Phật, duy tồn hồ tâm. Tâm tịch nhi tri, thị danh Chân Phật. Kim Bệ hạ nhược ngộ thử tâm, tắc lập địa thành Phật, vô khổ ngoại cầu dã.",
+      "Trẫm văn thị ngôn, nãi mệnh công khải tả, sắc lệnh khai ấn, phi đặc dĩ vi hậu thế chỉ mê, cái dục kế tiên đại thánh nhân chi công quảng, nhân tự vi tự vân."
     ],
-    "dich_nghia_lines": [
-      "Gió đập cổng thông, trăng sáng trước sân, Lòng hẹn với phong cảnh cùng trong sạch lặng lẽ.",
-      "Bao nhiêu thú vị trong đó không ai hay, Mặc cho nhà sư trong núi vui đến sáng."
-    ],
+    "dich_nghia_lines": [],
+    "dich_tho_lines": [],
     "interlinear_triplets": []
   }
 }
