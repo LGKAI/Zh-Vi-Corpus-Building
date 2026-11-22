@@ -87,8 +87,8 @@ DEFAULT_MIN_SEPARATOR_WIDTH_RATIO = 0.15
 
 # Regex patterns for section headers in TVLT2 / TLTVN / HVTT
 _STOP_HEADER_RE = re.compile(
-    r"^\s*(?:DỊCH\s*THƠ|Dịch\s*thơ|DỊCH\s*THEO\s*NGUYÊN\s*ĐIỆU|Dịch\s*theo\s*nguyên\s*điệu|"
-    r"KHẢO\s*ĐÍNH|Khảo\s*đính|CÁC\s*DỊ\s*BẢN|Các\s*dị\s*bản|CHÚ\s*THÍCH|Chú\s*thích|LỜI\s*BÀN|Lời\s*bàn)\s*[:：.]?",
+    r"^\s*(?:KHẢO\s*ĐÍNH|Khảo\s*đính|CÁC\s*DỊ\s*BẢN|Các\s*dị\s*bản|"
+    r"CHÚ\s*THÍCH|Chú\s*thích|LỜI\s*BÀN|Lời\s*bàn|TIỂU[- ]?DẪN|Tiểu[- ]?dẫn)\s*[:：.—-]?",
     flags=re.IGNORECASE,
 )
 _PHIEN_AM_HEADER_RE = re.compile(
@@ -97,6 +97,10 @@ _PHIEN_AM_HEADER_RE = re.compile(
 )
 _DICH_NGHIA_HEADER_RE = re.compile(
     r"^\s*(?:DỊCH\s*NGHĨA|Dịch\s*nghĩa|DỊCH\s*XUÔI|Dịch\s*xuôi)\s*[:：.]?\s*(.*)$",
+    flags=re.IGNORECASE,
+)
+_DICH_THO_HEADER_RE = re.compile(
+    r"^\s*(?:DỊCH\s*THƠ|Dịch\s*thơ|DỊCH\s*THEO\s*NGUYÊN\s*ĐIỆU|Dịch\s*theo\s*nguyên\s*điệu)\s*[:：.]?\s*(.*)$",
     flags=re.IGNORECASE,
 )
 
@@ -348,7 +352,7 @@ def is_stop_section_header(text: str) -> bool:
 
 
 def classify_section_header(text: str) -> Optional[str]:
-    """Classify a line as `'stop'`, `'phien_am'`, `'dich_nghia'`, or `None`."""
+    """Classify a line as `'stop'`, `'phien_am'`, `'dich_nghia'`, `'dich_tho'`, or `None`."""
     if not text:
         return None
     normalized = unicodedata.normalize("NFC", text.strip())
@@ -358,6 +362,8 @@ def classify_section_header(text: str) -> Optional[str]:
         return "phien_am"
     if _DICH_NGHIA_HEADER_RE.match(normalized):
         return "dich_nghia"
+    if _DICH_THO_HEADER_RE.match(normalized):
+        return "dich_tho"
     return None
 
 
@@ -412,25 +418,48 @@ def group_layout_blocks(
     sorted_han = _sort_items_reading_order(han_items)
     sorted_viet = _sort_items_reading_order(viet_items)
 
-    # 1. HVTT: 3-line interlinear blocks on even pages
+    # 1. HVTT: 3-line interlinear blocks on even pages; Dịch thơ or Title on odd pages
     if book_key == "HVTT":
-        if page_num % 2 != 0:
-            return {
-                "book_type": "HVTT",
-                "page_num": page_num,
-                "layout_mode": "odd_page_commentary_skipped",
-                "interlinear_triplets": [],
-                "chu_han_lines": [],
-                "phien_am_lines": [],
-                "dich_nghia_lines": [],
-            }
-
-        # Filter out non-CJK noise from han lines
         han_lines = [
             it["text"].strip()
             for it in sorted_han
             if _CJK_CHAR_RE.search(it.get("text", ""))
         ]
+
+        if page_num % 2 != 0:
+            # Odd page in HVTT is either:
+            # (a) Title + Tiểu dẫn page (e.g., PDF 7, 367) containing CJK title at top, or
+            # (b) Facing Dịch thơ page (e.g., PDF 9, 11, 13, 369) containing verse translation lines.
+            viet_lines_before_stop: List[str] = []
+            for it in sorted_viet:
+                txt = unicodedata.normalize("NFC", it.get("text", "").strip())
+                if not txt or _CJK_CHAR_RE.search(txt):
+                    continue
+                if is_stop_section_header(txt):
+                    break
+                viet_lines_before_stop.append(txt)
+
+            if han_lines:
+                return {
+                    "book_type": "HVTT",
+                    "page_num": page_num,
+                    "layout_mode": "odd_page_work_title",
+                    "interlinear_triplets": [],
+                    "chu_han_lines": han_lines[:1],
+                    "phien_am_lines": viet_lines_before_stop[:1],
+                    "dich_nghia_lines": viet_lines_before_stop[1:2],
+                    "dich_tho_lines": [],
+                }
+            return {
+                "book_type": "HVTT",
+                "page_num": page_num,
+                "layout_mode": "odd_page_dich_tho",
+                "interlinear_triplets": [],
+                "chu_han_lines": [],
+                "phien_am_lines": [],
+                "dich_nghia_lines": [],
+                "dich_tho_lines": viet_lines_before_stop,
+            }
 
         # Separate interlinear Vietnamese lines (Phiên âm + word-by-word gloss) from bottom Dịch nghĩa
         phien_am_lines: List[str] = []
@@ -487,9 +516,10 @@ def group_layout_blocks(
             "chu_han_lines": han_lines,
             "phien_am_lines": phien_am_lines,
             "dich_nghia_lines": bottom_dich_nghia if bottom_dich_nghia else gloss_lines,
+            "dich_tho_lines": [],
         }
 
-    # 2. TLTVN: Sequential Chữ Hán -> Phiên âm: -> Dịch nghĩa:
+    # 2. TLTVN: Sequential Chữ Hán -> Phiên âm: -> Dịch nghĩa: -> Dịch theo nguyên điệu:
     if book_key == "TLTVN":
         han_lines = [
             it["text"].strip()
@@ -498,6 +528,7 @@ def group_layout_blocks(
         ]
         phien_am_lines = []
         dich_nghia_lines = []
+        dich_tho_lines: List[str] = []
         current_section = "phien_am"
 
         for it in sorted_viet:
@@ -519,8 +550,16 @@ def group_layout_blocks(
                 if rest:
                     dich_nghia_lines.append(rest)
                 continue
+            if header_type == "dich_tho":
+                current_section = "dich_tho"
+                rest = _DICH_THO_HEADER_RE.sub("", txt).strip()
+                if rest:
+                    dich_tho_lines.append(rest)
+                continue
 
-            if current_section == "dich_nghia":
+            if current_section == "dich_tho":
+                dich_tho_lines.append(txt)
+            elif current_section == "dich_nghia":
                 dich_nghia_lines.append(txt)
             else:
                 phien_am_lines.append(txt)
@@ -528,16 +567,16 @@ def group_layout_blocks(
         return {
             "book_type": "TLTVN",
             "page_num": page_num,
-            "layout_mode": "sequential_han_phien_dich",
+            "layout_mode": "sequential_han_phien_dich_tho",
             "chu_han_lines": han_lines,
             "phien_am_lines": phien_am_lines,
             "dich_nghia_lines": dich_nghia_lines,
+            "dich_tho_lines": dich_tho_lines,
         }
 
-    # 3. TVLT2: 2-column side-by-side poetry OR sequential prose, stopping at DỊCH THƠ / KHẢO ĐÍNH / CHÚ THÍCH
+    # 3. TVLT2: 2-column side-by-side poetry OR sequential prose, extracting DỊCH THƠ and stopping at KHẢO ĐÍNH / CHÚ THÍCH
     mid_x = 0.5 * float(page_width)
 
-    # First find the vertical y-cutoff where a stop header (DỊCH THƠ / KHẢO ĐÍNH / CHÚ THÍCH) appears
     stop_y: Optional[float] = None
     for it in sorted_viet:
         txt = unicodedata.normalize("NFC", it.get("text", "").strip())
@@ -556,7 +595,6 @@ def group_layout_blocks(
             continue
         active_han_items.append(it)
 
-    # Detect if Han items are predominantly in the left column (2-column poetry layout)
     left_col_han = [
         it for it in active_han_items
         if 0.5 * (_box_bounds(it)[0] + _box_bounds(it)[2]) < mid_x
@@ -569,12 +607,14 @@ def group_layout_blocks(
             for vit in sorted_viet
             if (stop_y is None or _box_bounds(vit)[1] < stop_y)
             and not _DICH_NGHIA_HEADER_RE.match(unicodedata.normalize("NFC", vit.get("text", "").strip()))
+            and not _DICH_THO_HEADER_RE.match(unicodedata.normalize("NFC", vit.get("text", "").strip()))
         )
     )
 
     han_lines = [it["text"].strip() for it in active_han_items]
     phien_am_lines = []
     dich_nghia_lines = []
+    dich_tho_lines = []
     current_section = "phien_am"
 
     for it in sorted_viet:
@@ -600,8 +640,16 @@ def group_layout_blocks(
             if rest:
                 dich_nghia_lines.append(rest)
             continue
+        if header_type == "dich_tho":
+            current_section = "dich_tho"
+            rest = _DICH_THO_HEADER_RE.sub("", txt).strip()
+            if rest:
+                dich_tho_lines.append(rest)
+            continue
 
-        if current_section == "dich_nghia":
+        if current_section == "dich_tho":
+            dich_tho_lines.append(txt)
+        elif current_section == "dich_nghia":
             dich_nghia_lines.append(txt)
         elif is_two_column_poetry:
             x_center = 0.5 * (x1 + x2)
@@ -618,6 +666,7 @@ def group_layout_blocks(
         "chu_han_lines": han_lines,
         "phien_am_lines": phien_am_lines,
         "dich_nghia_lines": dich_nghia_lines,
+        "dich_tho_lines": dich_tho_lines,
     }
 
 

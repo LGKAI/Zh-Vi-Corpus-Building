@@ -27,7 +27,11 @@ from src.exporter_and_qa import (
     read_xlsx_zero_dep,
     validate_pairs,
 )
-from src.ocr_disambiguator import correct_han_line_with_phien_am
+from src.ocr_disambiguator import (
+    correct_han_line_with_phien_am,
+    levenshtein_align_han_phien_am,
+)
+from src.ocr_engine import build_mock_ocr_for_page, group_layout_blocks
 from src.pdf_extractor import parse_page_spec, render_pdf_pages_to_png
 from src.phonetic_verifier import (
     count_han_chars,
@@ -87,6 +91,17 @@ class TestCV04PipelineSuite(unittest.TestCase):
         corrected, changes = correct_han_line_with_phien_am("夫火烈民望而畏之", "Phù hỏa liệt, dân vọng nhi úy chi")
         self.assertEqual(corrected, "夫火烈民望而畏之")
         self.assertIsInstance(changes, list)
+
+        # Test M.E.D. Levenshtein alignment with S1 ∩ S2 intersection (開 -> 關 for 'quan')
+        med = levenshtein_align_han_phien_am("風打松開月照庭", "Phong đả tùng quan nguyệt chiếu đình")
+        self.assertEqual(med["aligned_han"][3], "關")
+        self.assertIn("corrected", med["operations"])
+
+        # Test layout grouping preserves dich_tho_lines in TLTVN and TVLT2
+        for btype in ("TLTVN", "TVLT2"):
+            h_items, v_items = build_mock_ocr_for_page("0001", book_type=btype, page_num=2)
+            grouped = group_layout_blocks(h_items, v_items, book_type=btype, page_num=2)
+            self.assertGreater(len(grouped.get("dich_tho_lines", [])), 0)
 
     def test_gale_church_alignment_fast(self) -> None:
         han = ["學而時習之，不亦說乎。", "有朋自遠方來，不亦樂乎。"]

@@ -402,9 +402,13 @@
     }
   ],
   "layout_summary": {
-    "layout_mode": "odd_page_commentary_skipped",
-    "phien_am_lines": [],
-    "dich_nghia_lines": [],
+    "layout_mode": "odd_page_work_title",
+    "phien_am_lines": [
+      "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :"
+    ],
+    "dich_nghia_lines": [
+      "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :"
+    ],
     "interlinear_triplets": []
   }
 }

@@ -333,30 +333,162 @@ def disambiguate_character_with_phonetic(
     return detected_char, False, "no_candidate_matched"
 
 
+def _build_syllable_to_han_index() -> Dict[str, Set[str]]:
+    """Build inverted QuocNgu_SinoNom_Dic mapping normalized syllable -> set of Han characters (S2)."""
+    from src.phonetic_verifier import CORE_HAN_VIET_DICT
+
+    s2_map: Dict[str, Set[str]] = {}
+    for ch, readings in CORE_HAN_VIET_DICT.items():
+        for r in readings:
+            norm_r = normalize_syllable(r)
+            if norm_r:
+                s2_map.setdefault(norm_r, set()).add(ch)
+    for cluster in VISUAL_CONFUSION_CLUSTERS:
+        for ch, readings in cluster.items():
+            for r in readings:
+                norm_r = normalize_syllable(r)
+                if norm_r:
+                    s2_map.setdefault(norm_r, set()).add(ch)
+    return s2_map
+
+
+_SYLLABLE_TO_HAN_S2: Optional[Dict[str, Set[str]]] = None
+
+
+def get_s1_similar_chars(han_char: str) -> Set[str]:
+    """Return S1 = set of visually similar Han characters (SinoNom_Similar_Dic)."""
+    cluster = _CHAR_TO_CLUSTER.get(han_char)
+    if not cluster:
+        return {han_char}
+    return set(cluster.keys()) | {han_char}
+
+
+def get_s2_phonetic_chars(syllable: str) -> Set[str]:
+    """Return S2 = set of Han characters matching the Sino-Vietnamese syllable (QuocNgu_SinoNom_Dic)."""
+    global _SYLLABLE_TO_HAN_S2
+    if _SYLLABLE_TO_HAN_S2 is None:
+        _SYLLABLE_TO_HAN_S2 = _build_syllable_to_han_index()
+    return _SYLLABLE_TO_HAN_S2.get(normalize_syllable(syllable), set())
+
+
+def levenshtein_align_han_phien_am(
+    han_line: str,
+    phien_am_line: str,
+) -> Dict[str, Any]:
+    """M.E.D. (Levenshtein) character-to-syllable alignment using S1 ∩ S2 intersection.
+
+    Implements the lab specification in `docs/Hướng dẫn dóng hàng dịch âm.docx`:
+    - S1(s_n): visually similar Han characters (`SinoNom_Similar_Dic`).
+    - S2(q_n): Han characters with reading `q_n` (`QuocNgu_SinoNom_Dic`).
+    - If `s_n in S2(q_n)` -> exact OCR match (cost 0.0).
+    - Else if `S1(s_n) ∩ S2(q_n)` is non-empty -> OCR visual confusion corrected (cost 0.25).
+    - Else -> mismatch (cost 1.0), or gap `_` (insertion/deletion cost 1.0).
+    """
+    clean_pa = re.sub(r"(?:\[\d+\]|\(\d+\)|\d+\*+|[¹²³⁴⁵⁶⁷⁸⁹⁰]+)", "", phien_am_line or "")
+    syllables = _VIET_WORD_RE.findall(clean_pa)
+    cjk_tokens = re.findall(
+        r"\[\s*MASK\s*\]|[\u3007\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\U00020000-\U0002ebef]",
+        han_line or "",
+        flags=re.IGNORECASE,
+    )
+    cjk_tokens = ["[MASK]" if t.upper().startswith("[") else t for t in cjk_tokens]
+
+    m, n = len(cjk_tokens), len(syllables)
+    dp = [[0.0] * (n + 1) for _ in range(m + 1)]
+    back: List[List[Optional[Tuple[str, str, str]]]] = [[None] * (n + 1) for _ in range(m + 1)]
+
+    for i in range(1, m + 1):
+        dp[i][0] = i * 1.0
+        back[i][0] = ("del", cjk_tokens[i - 1], "_")
+    for j in range(1, n + 1):
+        dp[0][j] = j * 1.0
+        back[0][j] = ("ins", "_", syllables[j - 1])
+
+    for i in range(1, m + 1):
+        s_i = cjk_tokens[i - 1]
+        for j in range(1, n + 1):
+            q_j = syllables[j - 1]
+            if s_i == "[MASK]":
+                sub_cost = 0.0
+                resolved_char = "[MASK]"
+                op = "mask"
+            else:
+                s2 = get_s2_phonetic_chars(q_j)
+                if s_i in s2 or not s2:
+                    sub_cost = 0.0 if s_i in s2 else 0.4
+                    resolved_char = s_i
+                    op = "match"
+                else:
+                    s1 = get_s1_similar_chars(s_i)
+                    inter = sorted(s1 & s2)
+                    if inter:
+                        sub_cost = 0.2
+                        resolved_char = inter[0]
+                        op = "corrected"
+                    else:
+                        sub_cost = 1.0
+                        resolved_char = s_i
+                        op = "sub"
+
+            cand_sub = dp[i - 1][j - 1] + sub_cost
+            cand_del = dp[i - 1][j] + 1.0
+            cand_ins = dp[i][j - 1] + 1.0
+
+            best = min(cand_sub, cand_del, cand_ins)
+            dp[i][j] = best
+            if best == cand_sub:
+                back[i][j] = (op, resolved_char, q_j)
+            elif best == cand_del:
+                back[i][j] = ("del", s_i, "_")
+            else:
+                back[i][j] = ("ins", "_", q_j)
+
+    aligned_han: List[str] = []
+    aligned_qn: List[str] = []
+    ops: List[str] = []
+    ci, cj = m, n
+    while ci > 0 or cj > 0:
+        step = back[ci][cj]
+        if step is None:
+            break
+        op, h_tok, q_tok = step
+        aligned_han.append(h_tok)
+        aligned_qn.append(q_tok)
+        ops.append(op)
+        if op in ("match", "corrected", "sub", "mask"):
+            ci -= 1
+            cj -= 1
+        elif op == "del":
+            ci -= 1
+        else:
+            cj -= 1
+
+    aligned_han.reverse()
+    aligned_qn.reverse()
+    ops.reverse()
+
+    return {
+        "edit_distance": round(dp[m][n], 4),
+        "aligned_han": aligned_han,
+        "aligned_quoc_ngu": aligned_qn,
+        "operations": ops,
+    }
+
+
 def correct_han_line_with_phien_am(
     han_line: str,
     phien_am_line: str,
 ) -> Tuple[str, List[Dict[str, Any]]]:
-    """Perform Vietnamese-guided post-OCR correction on a parallel Hán line.
-
-    Scans CJK ideographs and aligns them with tokens in `phien_am_line`.
-    When a character belongs to a visual confusion cluster and its phonetic reading
-    disagrees with the OCR prediction, it is corrected to the visually matching glyph.
-
-    Returns:
-        `(corrected_han_line, list_of_applied_corrections)`
-    """
+    """Perform Vietnamese-guided post-OCR correction on a parallel Hán line."""
     if not han_line or not phien_am_line:
         return han_line, []
 
-    # Clean phonetic tokens (strip footnote indicators like 1*, [1], (1))
     clean_phien_am = re.sub(r"(?:\[\d+\]|\(\d+\)|\d+\*+|[¹²³⁴⁵⁶⁷⁸⁹⁰]+)", "", phien_am_line)
     phien_am_tokens = _VIET_WORD_RE.findall(clean_phien_am)
 
     cjk_matches = list(_CJK_CHAR_RE.finditer(han_line))
     corrections_applied: List[Dict[str, Any]] = []
 
-    # Only perform 1:1 token-to-character correction when lengths match
     if len(cjk_matches) != len(phien_am_tokens):
         return han_line, []
 

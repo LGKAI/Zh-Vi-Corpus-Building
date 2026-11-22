@@ -6,6 +6,7 @@ __pycache__/
 # Raw data containing large PDFs (>100MB exceeds GitHub limit)
 raw_data/
 *.pdf
+*.docx
 
 # Environments
 .env

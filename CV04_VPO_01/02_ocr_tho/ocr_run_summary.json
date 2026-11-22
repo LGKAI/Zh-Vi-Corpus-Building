@@ -1,7 +1,618 @@
 {
   "mode": "mock",
-  "pages_processed": 11,
+  "pages_processed": 13,
   "pages": [
+    {
+      "page_id": "0007",
+      "book_type": "HVTT",
+      "book_folder": "CV04_VPO_01",
+      "page_num": 7,
+      "han_json": "D:\\ChuyenNganhAI\\3_NaturalLanguageProcessing\\Practice\\Lab2_DongHangHan-Viet\\CV04_VPO_01\\02_ocr_tho\\han\\0007.json",
+      "viet_json": "D:\\ChuyenNganhAI\\3_NaturalLanguageProcessing\\Practice\\Lab2_DongHangHan-Viet\\CV04_VPO_01\\02_ocr_tho\\viet\\0007.json",
+      "preprocess": {
+        "book_type": "HVTT",
+        "original_width": 1100,
+        "original_height": 1600,
+        "crop_top_px": 112,
+        "header_ratio": 0.07,
+        "footnote_separator_y_cropped": null,
+        "footnote_separator_y_original": null,
+        "effective_width": 1100,
+        "effective_height": 1488
+      },
+      "han_items": [
+        {
+          "line_id": "0007_han_000",
+          "bbox": [
+            [
+              180,
+              120
+            ],
+            [
+              1620,
+              120
+            ],
+            [
+              1620,
+              175
+            ],
+            [
+              180,
+              175
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              232
+            ],
+            [
+              1620,
+              232
+            ],
+            [
+              1620,
+              287
+            ],
+            [
+              180,
+              287
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            120,
+            1620,
+            175
+          ],
+          "text": "鄭 子 產 有 疾 謂 子 太 叔 曰",
+          "confidence": 0.992
+        },
+        {
+          "line_id": "0007_han_001",
+          "bbox": [
+            [
+              180,
+              310
+            ],
+            [
+              1620,
+              310
+            ],
+            [
+              1620,
+              365
+            ],
+            [
+              180,
+              365
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              422
+            ],
+            [
+              1620,
+              422
+            ],
+            [
+              1620,
+              477
+            ],
+            [
+              180,
+              477
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            310,
+            1620,
+            365
+          ],
+          "text": "我 死 子 必 爲 政",
+          "confidence": 0.99
+        },
+        {
+          "line_id": "0007_han_002",
+          "bbox": [
+            [
+              180,
+              490
+            ],
+            [
+              1620,
+              490
+            ],
+            [
+              1620,
+              545
+            ],
+            [
+              180,
+              545
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              602
+            ],
+            [
+              1620,
+              602
+            ],
+            [
+              1620,
+              657
+            ],
+            [
+              180,
+              657
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            490,
+            1620,
+            545
+          ],
+          "text": "惟 有 德 者 能 以 寬 服 民",
+          "confidence": 0.989
+        },
+        {
+          "line_id": "0007_han_003",
+          "bbox": [
+            [
+              180,
+              670
+            ],
+            [
+              1620,
+              670
+            ],
+            [
+              1620,
+              725
+            ],
+            [
+              180,
+              725
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              782
+            ],
+            [
+              1620,
+              782
+            ],
+            [
+              1620,
+              837
+            ],
+            [
+              180,
+              837
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            670,
+            1620,
+            725
+          ],
+          "text": "其 次 莫 如 猛",
+          "confidence": 0.991
+        }
+      ],
+      "viet_items": [
+        {
+          "line_id": "0007_viet_000",
+          "bbox": [
+            [
+              180,
+              185
+            ],
+            [
+              1620,
+              185
+            ],
+            [
+              1620,
+              230
+            ],
+            [
+              180,
+              230
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              297
+            ],
+            [
+              1620,
+              297
+            ],
+            [
+              1620,
+              342
+            ],
+            [
+              180,
+              342
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            185,
+            1620,
+            230
+          ],
+          "text": "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
+          "confidence": 0.985,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0007_viet_001",
+          "bbox": [
+            [
+              180,
+              240
+            ],
+            [
+              1620,
+              240
+            ],
+            [
+              1620,
+              290
+            ],
+            [
+              180,
+              290
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              352
+            ],
+            [
+              1620,
+              352
+            ],
+            [
+              1620,
+              402
+            ],
+            [
+              180,
+              402
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            240,
+            1620,
+            290
+          ],
+          "text": "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :",
+          "confidence": 0.978,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0007_viet_002",
+          "bbox": [
+            [
+              180,
+              375
+            ],
+            [
+              1620,
+              375
+            ],
+            [
+              1620,
+              420
+            ],
+            [
+              180,
+              420
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              487
+            ],
+            [
+              1620,
+              487
+            ],
+            [
+              1620,
+              532
+            ],
+            [
+              180,
+              532
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            375,
+            1620,
+            420
+          ],
+          "text": "Ngã tử, tử tất vi chính",
+          "confidence": 0.986,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0007_viet_003",
+          "bbox": [
+            [
+              180,
+              430
+            ],
+            [
+              1620,
+              430
+            ],
+            [
+              1620,
+              475
+            ],
+            [
+              180,
+              475
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              542
+            ],
+            [
+              1620,
+              542
+            ],
+            [
+              1620,
+              587
+            ],
+            [
+              180,
+              587
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            430,
+            1620,
+            475
+          ],
+          "text": "Ta chết, con sẽ giữ chính-quyền.",
+          "confidence": 0.98,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0007_viet_004",
+          "bbox": [
+            [
+              180,
+              555
+            ],
+            [
+              1620,
+              555
+            ],
+            [
+              1620,
+              600
+            ],
+            [
+              180,
+              600
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              667
+            ],
+            [
+              1620,
+              667
+            ],
+            [
+              1620,
+              712
+            ],
+            [
+              180,
+              712
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            555,
+            1620,
+            600
+          ],
+          "text": "Duy hữu đức giả, năng dĩ khoan phục dân",
+          "confidence": 0.984,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0007_viet_005",
+          "bbox": [
+            [
+              180,
+              610
+            ],
+            [
+              1620,
+              610
+            ],
+            [
+              1620,
+              655
+            ],
+            [
+              180,
+              655
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              722
+            ],
+            [
+              1620,
+              722
+            ],
+            [
+              1620,
+              767
+            ],
+            [
+              180,
+              767
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            610,
+            1620,
+            655
+          ],
+          "text": "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
+          "confidence": 0.976,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0007_viet_006",
+          "bbox": [
+            [
+              180,
+              735
+            ],
+            [
+              1620,
+              735
+            ],
+            [
+              1620,
+              780
+            ],
+            [
+              180,
+              780
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              847
+            ],
+            [
+              1620,
+              847
+            ],
+            [
+              1620,
+              892
+            ],
+            [
+              180,
+              892
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            735,
+            1620,
+            780
+          ],
+          "text": "Kỳ thứ mạc như mãnh.",
+          "confidence": 0.987,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0007_viet_007",
+          "bbox": [
+            [
+              180,
+              790
+            ],
+            [
+              1620,
+              790
+            ],
+            [
+              1620,
+              835
+            ],
+            [
+              180,
+              835
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              902
+            ],
+            [
+              1620,
+              902
+            ],
+            [
+              1620,
+              947
+            ],
+            [
+              180,
+              947
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            790,
+            1620,
+            835
+          ],
+          "text": "còn thì không gì bằng chính-sách mạnh.",
+          "confidence": 0.981,
+          "role": "dich_nghia_gloss"
+        }
+      ],
+      "layout_summary": {
+        "book_type": "HVTT",
+        "page_num": 7,
+        "layout_mode": "odd_page_work_title",
+        "interlinear_triplets": [],
+        "chu_han_lines": [
+          "鄭 子 產 有 疾 謂 子 太 叔 曰"
+        ],
+        "phien_am_lines": [
+          "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :"
+        ],
+        "dich_nghia_lines": [
+          "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :"
+        ],
+        "dich_tho_lines": []
+      }
+    },
     {
       "page_id": "0008",
       "book_type": "HVTT",
@@ -643,7 +1254,8 @@
           "Ta chết, con sẽ giữ chính-quyền.",
           "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
           "còn thì không gì bằng chính-sách mạnh."
-        ]
+        ],
+        "dich_tho_lines": []
       }
     },
     {
@@ -1243,11 +1855,18 @@
       "layout_summary": {
         "book_type": "HVTT",
         "page_num": 9,
-        "layout_mode": "odd_page_commentary_skipped",
+        "layout_mode": "odd_page_work_title",
         "interlinear_triplets": [],
-        "chu_han_lines": [],
-        "phien_am_lines": [],
-        "dich_nghia_lines": []
+        "chu_han_lines": [
+          "鄭 子 產 有 疾 謂 子 太 叔 曰"
+        ],
+        "phien_am_lines": [
+          "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :"
+        ],
+        "dich_nghia_lines": [
+          "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :"
+        ],
+        "dich_tho_lines": []
       }
     },
     {
@@ -1891,7 +2510,8 @@
           "Ta chết, con sẽ giữ chính-quyền.",
           "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
           "còn thì không gì bằng chính-sách mạnh."
-        ]
+        ],
+        "dich_tho_lines": []
       }
     },
     {
@@ -2491,11 +3111,18 @@
       "layout_summary": {
         "book_type": "HVTT",
         "page_num": 11,
-        "layout_mode": "odd_page_commentary_skipped",
+        "layout_mode": "odd_page_work_title",
         "interlinear_triplets": [],
-        "chu_han_lines": [],
-        "phien_am_lines": [],
-        "dich_nghia_lines": []
+        "chu_han_lines": [
+          "鄭 子 產 有 疾 謂 子 太 叔 曰"
+        ],
+        "phien_am_lines": [
+          "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :"
+        ],
+        "dich_nghia_lines": [
+          "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :"
+        ],
+        "dich_tho_lines": []
       }
     },
     {
@@ -3139,7 +3766,8 @@
           "Ta chết, con sẽ giữ chính-quyền.",
           "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
           "còn thì không gì bằng chính-sách mạnh."
-        ]
+        ],
+        "dich_tho_lines": []
       }
     },
     {
@@ -3739,11 +4367,18 @@
       "layout_summary": {
         "book_type": "HVTT",
         "page_num": 13,
-        "layout_mode": "odd_page_commentary_skipped",
+        "layout_mode": "odd_page_work_title",
         "interlinear_triplets": [],
-        "chu_han_lines": [],
-        "phien_am_lines": [],
-        "dich_nghia_lines": []
+        "chu_han_lines": [
+          "鄭 子 產 有 疾 謂 子 太 叔 曰"
+        ],
+        "phien_am_lines": [
+          "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :"
+        ],
+        "dich_nghia_lines": [
+          "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :"
+        ],
+        "dich_tho_lines": []
       }
     },
     {
@@ -4387,7 +5022,8 @@
           "Ta chết, con sẽ giữ chính-quyền.",
           "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
           "còn thì không gì bằng chính-sách mạnh."
-        ]
+        ],
+        "dich_tho_lines": []
       }
     },
     {
@@ -5031,7 +5667,8 @@
           "Ta chết, con sẽ giữ chính-quyền.",
           "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
           "còn thì không gì bằng chính-sách mạnh."
-        ]
+        ],
+        "dich_tho_lines": []
       }
     },
     {
@@ -5675,7 +6312,619 @@
           "Ta chết, con sẽ giữ chính-quyền.",
           "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
           "còn thì không gì bằng chính-sách mạnh."
-        ]
+        ],
+        "dich_tho_lines": []
+      }
+    },
+    {
+      "page_id": "0367",
+      "book_type": "HVTT",
+      "book_folder": "CV04_VPO_01",
+      "page_num": 367,
+      "han_json": "D:\\ChuyenNganhAI\\3_NaturalLanguageProcessing\\Practice\\Lab2_DongHangHan-Viet\\CV04_VPO_01\\02_ocr_tho\\han\\0367.json",
+      "viet_json": "D:\\ChuyenNganhAI\\3_NaturalLanguageProcessing\\Practice\\Lab2_DongHangHan-Viet\\CV04_VPO_01\\02_ocr_tho\\viet\\0367.json",
+      "preprocess": {
+        "book_type": "HVTT",
+        "original_width": 1100,
+        "original_height": 1600,
+        "crop_top_px": 112,
+        "header_ratio": 0.07,
+        "footnote_separator_y_cropped": null,
+        "footnote_separator_y_original": null,
+        "effective_width": 1100,
+        "effective_height": 1488
+      },
+      "han_items": [
+        {
+          "line_id": "0367_han_000",
+          "bbox": [
+            [
+              180,
+              120
+            ],
+            [
+              1620,
+              120
+            ],
+            [
+              1620,
+              175
+            ],
+            [
+              180,
+              175
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              232
+            ],
+            [
+              1620,
+              232
+            ],
+            [
+              1620,
+              287
+            ],
+            [
+              180,
+              287
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            120,
+            1620,
+            175
+          ],
+          "text": "鄭 子 產 有 疾 謂 子 太 叔 曰",
+          "confidence": 0.992
+        },
+        {
+          "line_id": "0367_han_001",
+          "bbox": [
+            [
+              180,
+              310
+            ],
+            [
+              1620,
+              310
+            ],
+            [
+              1620,
+              365
+            ],
+            [
+              180,
+              365
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              422
+            ],
+            [
+              1620,
+              422
+            ],
+            [
+              1620,
+              477
+            ],
+            [
+              180,
+              477
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            310,
+            1620,
+            365
+          ],
+          "text": "我 死 子 必 爲 政",
+          "confidence": 0.99
+        },
+        {
+          "line_id": "0367_han_002",
+          "bbox": [
+            [
+              180,
+              490
+            ],
+            [
+              1620,
+              490
+            ],
+            [
+              1620,
+              545
+            ],
+            [
+              180,
+              545
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              602
+            ],
+            [
+              1620,
+              602
+            ],
+            [
+              1620,
+              657
+            ],
+            [
+              180,
+              657
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            490,
+            1620,
+            545
+          ],
+          "text": "惟 有 德 者 能 以 寬 服 民",
+          "confidence": 0.989
+        },
+        {
+          "line_id": "0367_han_003",
+          "bbox": [
+            [
+              180,
+              670
+            ],
+            [
+              1620,
+              670
+            ],
+            [
+              1620,
+              725
+            ],
+            [
+              180,
+              725
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              782
+            ],
+            [
+              1620,
+              782
+            ],
+            [
+              1620,
+              837
+            ],
+            [
+              180,
+              837
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            670,
+            1620,
+            725
+          ],
+          "text": "其 次 莫 如 猛",
+          "confidence": 0.991
+        }
+      ],
+      "viet_items": [
+        {
+          "line_id": "0367_viet_000",
+          "bbox": [
+            [
+              180,
+              185
+            ],
+            [
+              1620,
+              185
+            ],
+            [
+              1620,
+              230
+            ],
+            [
+              180,
+              230
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              297
+            ],
+            [
+              1620,
+              297
+            ],
+            [
+              1620,
+              342
+            ],
+            [
+              180,
+              342
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            185,
+            1620,
+            230
+          ],
+          "text": "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
+          "confidence": 0.985,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0367_viet_001",
+          "bbox": [
+            [
+              180,
+              240
+            ],
+            [
+              1620,
+              240
+            ],
+            [
+              1620,
+              290
+            ],
+            [
+              180,
+              290
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              352
+            ],
+            [
+              1620,
+              352
+            ],
+            [
+              1620,
+              402
+            ],
+            [
+              180,
+              402
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            240,
+            1620,
+            290
+          ],
+          "text": "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :",
+          "confidence": 0.978,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0367_viet_002",
+          "bbox": [
+            [
+              180,
+              375
+            ],
+            [
+              1620,
+              375
+            ],
+            [
+              1620,
+              420
+            ],
+            [
+              180,
+              420
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              487
+            ],
+            [
+              1620,
+              487
+            ],
+            [
+              1620,
+              532
+            ],
+            [
+              180,
+              532
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            375,
+            1620,
+            420
+          ],
+          "text": "Ngã tử, tử tất vi chính",
+          "confidence": 0.986,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0367_viet_003",
+          "bbox": [
+            [
+              180,
+              430
+            ],
+            [
+              1620,
+              430
+            ],
+            [
+              1620,
+              475
+            ],
+            [
+              180,
+              475
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              542
+            ],
+            [
+              1620,
+              542
+            ],
+            [
+              1620,
+              587
+            ],
+            [
+              180,
+              587
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            430,
+            1620,
+            475
+          ],
+          "text": "Ta chết, con sẽ giữ chính-quyền.",
+          "confidence": 0.98,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0367_viet_004",
+          "bbox": [
+            [
+              180,
+              555
+            ],
+            [
+              1620,
+              555
+            ],
+            [
+              1620,
+              600
+            ],
+            [
+              180,
+              600
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              667
+            ],
+            [
+              1620,
+              667
+            ],
+            [
+              1620,
+              712
+            ],
+            [
+              180,
+              712
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            555,
+            1620,
+            600
+          ],
+          "text": "Duy hữu đức giả, năng dĩ khoan phục dân",
+          "confidence": 0.984,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0367_viet_005",
+          "bbox": [
+            [
+              180,
+              610
+            ],
+            [
+              1620,
+              610
+            ],
+            [
+              1620,
+              655
+            ],
+            [
+              180,
+              655
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              722
+            ],
+            [
+              1620,
+              722
+            ],
+            [
+              1620,
+              767
+            ],
+            [
+              180,
+              767
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            610,
+            1620,
+            655
+          ],
+          "text": "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
+          "confidence": 0.976,
+          "role": "dich_nghia_gloss"
+        },
+        {
+          "line_id": "0367_viet_006",
+          "bbox": [
+            [
+              180,
+              735
+            ],
+            [
+              1620,
+              735
+            ],
+            [
+              1620,
+              780
+            ],
+            [
+              180,
+              780
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              847
+            ],
+            [
+              1620,
+              847
+            ],
+            [
+              1620,
+              892
+            ],
+            [
+              180,
+              892
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            735,
+            1620,
+            780
+          ],
+          "text": "Kỳ thứ mạc như mãnh.",
+          "confidence": 0.987,
+          "role": "phien_am"
+        },
+        {
+          "line_id": "0367_viet_007",
+          "bbox": [
+            [
+              180,
+              790
+            ],
+            [
+              1620,
+              790
+            ],
+            [
+              1620,
+              835
+            ],
+            [
+              180,
+              835
+            ]
+          ],
+          "bbox_original": [
+            [
+              180,
+              902
+            ],
+            [
+              1620,
+              902
+            ],
+            [
+              1620,
+              947
+            ],
+            [
+              180,
+              947
+            ]
+          ],
+          "box_xyxy": [
+            180,
+            790,
+            1620,
+            835
+          ],
+          "text": "còn thì không gì bằng chính-sách mạnh.",
+          "confidence": 0.981,
+          "role": "dich_nghia_gloss"
+        }
+      ],
+      "layout_summary": {
+        "book_type": "HVTT",
+        "page_num": 367,
+        "layout_mode": "odd_page_work_title",
+        "interlinear_triplets": [],
+        "chu_han_lines": [
+          "鄭 子 產 有 疾 謂 子 太 叔 曰"
+        ],
+        "phien_am_lines": [
+          "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :"
+        ],
+        "dich_nghia_lines": [
+          "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :"
+        ],
+        "dich_tho_lines": []
       }
     },
     {
@@ -6319,7 +7568,8 @@
           "Ta chết, con sẽ giữ chính-quyền.",
           "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
           "còn thì không gì bằng chính-sách mạnh."
-        ]
+        ],
+        "dich_tho_lines": []
       }
     },
     {
@@ -6919,11 +8169,18 @@
       "layout_summary": {
         "book_type": "HVTT",
         "page_num": 369,
-        "layout_mode": "odd_page_commentary_skipped",
+        "layout_mode": "odd_page_work_title",
         "interlinear_triplets": [],
-        "chu_han_lines": [],
-        "phien_am_lines": [],
-        "dich_nghia_lines": []
+        "chu_han_lines": [
+          "鄭 子 產 有 疾 謂 子 太 叔 曰"
+        ],
+        "phien_am_lines": [
+          "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :"
+        ],
+        "dich_nghia_lines": [
+          "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :"
+        ],
+        "dich_tho_lines": []
       }
     }
   ]

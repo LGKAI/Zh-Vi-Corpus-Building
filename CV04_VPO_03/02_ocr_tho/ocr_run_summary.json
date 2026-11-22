@@ -451,7 +451,7 @@
         "book_type": "TVLT2",
         "page_num": 19,
         "layout_mode": "two_column_poetry",
-        "stop_y": 520.0,
+        "stop_y": null,
         "chu_han_lines": [
           "風打松關月照庭，心期風景共淒清。",
           "箇中滋味無人識，付與山僧樂到明。"
@@ -463,6 +463,9 @@
         "dich_nghia_lines": [
           "Gió đập cổng thông, trăng sáng trước sân, Lòng hẹn với phong cảnh cùng trong sạch lặng lẽ.",
           "Bao nhiêu thú vị trong đó không ai hay, Mặc cho nhà sư trong núi vui đến sáng."
+        ],
+        "dich_tho_lines": [
+          "Gió đập cửa thông, trăng lấp loáng, Lòng đây, cảnh đấy cùng thanh sảng."
         ]
       }
     },
@@ -915,7 +918,7 @@
         "book_type": "TVLT2",
         "page_num": 20,
         "layout_mode": "two_column_poetry",
-        "stop_y": 520.0,
+        "stop_y": null,
         "chu_han_lines": [
           "風打松關月照庭，心期風景共淒清。",
           "箇中滋味無人識，付與山僧樂到明。"
@@ -927,6 +930,9 @@
         "dich_nghia_lines": [
           "Gió đập cổng thông, trăng sáng trước sân, Lòng hẹn với phong cảnh cùng trong sạch lặng lẽ.",
           "Bao nhiêu thú vị trong đó không ai hay, Mặc cho nhà sư trong núi vui đến sáng."
+        ],
+        "dich_tho_lines": [
+          "Gió đập cửa thông, trăng lấp loáng, Lòng đây, cảnh đấy cùng thanh sảng."
         ]
       }
     },
@@ -1379,7 +1385,7 @@
         "book_type": "TVLT2",
         "page_num": 22,
         "layout_mode": "two_column_poetry",
-        "stop_y": 520.0,
+        "stop_y": null,
         "chu_han_lines": [
           "風打松關月照庭，心期風景共淒清。",
           "箇中滋味無人識，付與山僧樂到明。"
@@ -1391,6 +1397,9 @@
         "dich_nghia_lines": [
           "Gió đập cổng thông, trăng sáng trước sân, Lòng hẹn với phong cảnh cùng trong sạch lặng lẽ.",
           "Bao nhiêu thú vị trong đó không ai hay, Mặc cho nhà sư trong núi vui đến sáng."
+        ],
+        "dich_tho_lines": [
+          "Gió đập cửa thông, trăng lấp loáng, Lòng đây, cảnh đấy cùng thanh sảng."
         ]
       }
     },
@@ -1843,7 +1852,7 @@
         "book_type": "TVLT2",
         "page_num": 23,
         "layout_mode": "two_column_poetry",
-        "stop_y": 520.0,
+        "stop_y": null,
         "chu_han_lines": [
           "風打松關月照庭，心期風景共淒清。",
           "箇中滋味無人識，付與山僧樂到明。"
@@ -1855,6 +1864,9 @@
         "dich_nghia_lines": [
           "Gió đập cổng thông, trăng sáng trước sân, Lòng hẹn với phong cảnh cùng trong sạch lặng lẽ.",
           "Bao nhiêu thú vị trong đó không ai hay, Mặc cho nhà sư trong núi vui đến sáng."
+        ],
+        "dich_tho_lines": [
+          "Gió đập cửa thông, trăng lấp loáng, Lòng đây, cảnh đấy cùng thanh sảng."
         ]
       }
     },
@@ -2307,7 +2319,7 @@
         "book_type": "TVLT2",
         "page_num": 24,
         "layout_mode": "two_column_poetry",
-        "stop_y": 520.0,
+        "stop_y": null,
         "chu_han_lines": [
           "風打松關月照庭，心期風景共淒清。",
           "箇中滋味無人識，付與山僧樂到明。"
@@ -2319,6 +2331,9 @@
         "dich_nghia_lines": [
           "Gió đập cổng thông, trăng sáng trước sân, Lòng hẹn với phong cảnh cùng trong sạch lặng lẽ.",
           "Bao nhiêu thú vị trong đó không ai hay, Mặc cho nhà sư trong núi vui đến sáng."
+        ],
+        "dich_tho_lines": [
+          "Gió đập cửa thông, trăng lấp loáng, Lòng đây, cảnh đấy cùng thanh sảng."
         ]
       }
     },
@@ -2771,7 +2786,7 @@
         "book_type": "TVLT2",
         "page_num": 26,
         "layout_mode": "two_column_poetry",
-        "stop_y": 520.0,
+        "stop_y": null,
         "chu_han_lines": [
           "風打松關月照庭，心期風景共淒清。",
           "箇中滋味無人識，付與山僧樂到明。"
@@ -2783,6 +2798,9 @@
         "dich_nghia_lines": [
           "Gió đập cổng thông, trăng sáng trước sân, Lòng hẹn với phong cảnh cùng trong sạch lặng lẽ.",
           "Bao nhiêu thú vị trong đó không ai hay, Mặc cho nhà sư trong núi vui đến sáng."
+        ],
+        "dich_tho_lines": [
+          "Gió đập cửa thông, trăng lấp loáng, Lòng đây, cảnh đấy cùng thanh sảng."
         ]
       }
     },
@@ -3235,7 +3253,7 @@
         "book_type": "TVLT2",
         "page_num": 38,
         "layout_mode": "two_column_poetry",
-        "stop_y": 520.0,
+        "stop_y": null,
         "chu_han_lines": [
           "風打松關月照庭，心期風景共淒清。",
           "箇中滋味無人識，付與山僧樂到明。"
@@ -3247,6 +3265,9 @@
         "dich_nghia_lines": [
           "Gió đập cổng thông, trăng sáng trước sân, Lòng hẹn với phong cảnh cùng trong sạch lặng lẽ.",
           "Bao nhiêu thú vị trong đó không ai hay, Mặc cho nhà sư trong núi vui đến sáng."
+        ],
+        "dich_tho_lines": [
+          "Gió đập cửa thông, trăng lấp loáng, Lòng đây, cảnh đấy cùng thanh sảng."
         ]
       }
     },
@@ -3699,7 +3720,7 @@
         "book_type": "TVLT2",
         "page_num": 40,
         "layout_mode": "two_column_poetry",
-        "stop_y": 520.0,
+        "stop_y": null,
         "chu_han_lines": [
           "風打松關月照庭，心期風景共淒清。",
           "箇中滋味無人識，付與山僧樂到明。"
@@ -3711,6 +3732,9 @@
         "dich_nghia_lines": [
           "Gió đập cổng thông, trăng sáng trước sân, Lòng hẹn với phong cảnh cùng trong sạch lặng lẽ.",
           "Bao nhiêu thú vị trong đó không ai hay, Mặc cho nhà sư trong núi vui đến sáng."
+        ],
+        "dich_tho_lines": [
+          "Gió đập cửa thông, trăng lấp loáng, Lòng đây, cảnh đấy cùng thanh sảng."
         ]
       }
     },
@@ -4163,7 +4187,7 @@
         "book_type": "TVLT2",
         "page_num": 42,
         "layout_mode": "two_column_poetry",
-        "stop_y": 520.0,
+        "stop_y": null,
         "chu_han_lines": [
           "風打松關月照庭，心期風景共淒清。",
           "箇中滋味無人識，付與山僧樂到明。"
@@ -4175,6 +4199,9 @@
         "dich_nghia_lines": [
           "Gió đập cổng thông, trăng sáng trước sân, Lòng hẹn với phong cảnh cùng trong sạch lặng lẽ.",
           "Bao nhiêu thú vị trong đó không ai hay, Mặc cho nhà sư trong núi vui đến sáng."
+        ],
+        "dich_tho_lines": [
+          "Gió đập cửa thông, trăng lấp loáng, Lòng đây, cảnh đấy cùng thanh sảng."
         ]
       }
     }

@@ -206,8 +206,10 @@
     }
   ],
   "layout_summary": {
-    "layout_mode": "odd_page_commentary_skipped",
-    "chu_han_lines": [],
+    "layout_mode": "odd_page_work_title",
+    "chu_han_lines": [
+      "鄭 子 產 有 疾 謂 子 太 叔 曰"
+    ],
     "interlinear_triplets": []
   }
 }

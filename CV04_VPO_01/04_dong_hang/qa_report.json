@@ -2,12 +2,12 @@
   "book_code": "VPO_01",
   "group_folder": "CV04_VPO_01",
   "qa_validation": {
-    "total_pairs": 26,
-    "valid_pairs": 26,
-    "valid_checked_pairs": 26,
+    "total_pairs": 32,
+    "valid_pairs": 32,
+    "valid_checked_pairs": 32,
     "error_pairs": 0,
     "num_error_pairs": 0,
-    "clean_pairs": 26,
+    "clean_pairs": 32,
     "error_rate": 0.0,
     "passes_acceptance_threshold": true,
     "passes_threshold_30pct": true,
@@ -41,12 +41,12 @@
     "warnings": []
   },
   "word_coverage": {
-    "total_pairs": 26,
-    "avg_confidence": 0.8192,
-    "avg_han_coverage_pct": 98.08,
-    "avg_viet_coverage_pct": 45.24,
-    "high_confidence_pairs": 7,
-    "medium_confidence_pairs": 18,
-    "low_confidence_pairs": 1
+    "total_pairs": 32,
+    "avg_confidence": 0.6686,
+    "avg_han_coverage_pct": 91.09,
+    "avg_viet_coverage_pct": 30.53,
+    "high_confidence_pairs": 0,
+    "medium_confidence_pairs": 12,
+    "low_confidence_pairs": 20
   }
 }

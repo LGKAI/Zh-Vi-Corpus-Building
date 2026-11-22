@@ -37,22 +37,22 @@
       "book_to_pdf_offset": 6,
       "pdf_to_book_offset": -6,
       "valid_range": {
-        "book_page_start": 2,
+        "book_page_start": 1,
         "book_page_end": 375,
-        "pdf_page_start": 8,
+        "pdf_page_start": 7,
         "pdf_page_end": 381,
         "step": 1,
         "parity": "all",
-        "valid_pdf_page_count": 374,
+        "valid_pdf_page_count": 375,
         "even_han_page_count": 187,
-        "description": "Book pages 2..375 (PDF pages 8..381) containing 4-column Hán - Dịch âm - Dịch nghĩa - Dịch thơ (including final work Thu dạ hoài ngâm at PDF 368..381 with empty Dịch nghĩa)."
+        "description": "Book pages 1..375 (PDF pages 7..381) containing 4-column Hán - Dịch âm - Dịch nghĩa - Dịch thơ (including title pages and final work Thu dạ hoài ngâm at PDF 367..381 with empty Dịch nghĩa)."
       },
       "excluded_ranges": [
         {
           "pdf_page_start": 1,
-          "pdf_page_end": 7,
-          "book_pages": "Front matter & p.1",
-          "reason": "Bìa, lời nói đầu và trang tiêu đề (không có nội dung song ngữ)."
+          "pdf_page_end": 6,
+          "book_pages": "Front matter (I..IV)",
+          "reason": "Bìa và lời nói đầu (không có nội dung song ngữ)."
         },
         {
           "pdf_page_start": 382,
@@ -62,8 +62,8 @@
           "reason": "Mục lục cuối sách."
         }
       ],
-      "pilot_pages": [8, 9, 10, 11, 12, 13, 50, 312, 326, 368, 369],
-      "pilot_book_pages": [2, 3, 4, 5, 6, 7, 44, 306, 320, 362, 363]
+      "pilot_pages": [7, 8, 9, 10, 11, 12, 13, 50, 312, 326, 367, 368, 369],
+      "pilot_book_pages": [1, 2, 3, 4, 5, 6, 7, 44, 306, 320, 361, 362, 363]
     },
     "VPO_02": {
       "book_id": "VPO_02",
@@ -123,8 +123,9 @@
           "reason": "Phụ lục tra cứu từ điệu, bảng thống kê, ảnh chụp chữ Hán và tài liệu tham khảo."
         }
       ],
-      "pilot_pages": [134, 135, 136, 137, 200, 300],
-      "pilot_book_pages": [127, 128, 129, 130, 193, 293]
+      "excluded_pdf_pages_in_valid_range": [378, 379, 380],
+      "pilot_pages": [134, 135, 136, 137, 138, 200, 300],
+      "pilot_book_pages": [127, 128, 129, 130, 131, 193, 293]
     },
     "VPO_03": {
       "book_id": "VPO_03",
