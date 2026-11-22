@@ -32,7 +32,7 @@
 * **Số cặp hợp lệ:** `15`
 * **Tỷ lệ lỗi QA:** `0.00%` (Đạt chuẩn nghiệm thu $\le 30\%$)
 * **Độ bao phủ Hán tự trung bình:** `85.2%`
-* **Điểm tin cậy dóng hàng trung bình:** `0.69 / 1.00`
+* **Điểm tin cậy dóng hàng trung bình:** `0.73 / 1.00`
 
 ---
 

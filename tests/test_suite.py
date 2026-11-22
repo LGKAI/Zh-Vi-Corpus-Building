@@ -19,7 +19,12 @@ ROOT_DIR = Path(__file__).resolve().parent.parent
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
-from src.aligner import align_work_sentences
+from src.aligner import (
+    align_hvtt_facing_dich_tho,
+    align_phien_am_to_han_chunks,
+    align_work_sentences,
+)
+from src.corpus_pipeline import run_corpus_from_ocr
 from src.exporter_and_qa import (
     export_tsv,
     export_xlsx_zero_dep,
@@ -32,7 +37,7 @@ from src.ocr_disambiguator import (
     levenshtein_align_han_phien_am,
 )
 from src.ocr_engine import build_mock_ocr_for_page, group_layout_blocks
-from src.pdf_extractor import parse_page_spec, render_pdf_pages_to_png
+from src.pdf_extractor import load_member_splits, parse_page_spec, render_pdf_pages_to_png
 from src.phonetic_verifier import (
     count_han_chars,
     project_punctuation_from_phien_am,
@@ -40,6 +45,7 @@ from src.phonetic_verifier import (
 )
 from src.pipeline_runner import run_pipeline
 from src.text_cleaner import clean_han_text
+from src.work_segmenter import segment_book_works
 
 
 class TestCV04PipelineSuite(unittest.TestCase):
@@ -148,6 +154,35 @@ class TestCV04PipelineSuite(unittest.TestCase):
             self.assertEqual(info["columns"], 4)
             self.assertEqual(info["error_rate"], 0.0)
             self.assertTrue(info["tsv_xlsx_identical"])
+
+    def test_mac_merged_modules_and_khanh_member_split(self) -> None:
+        # 1. Verify Khánh's exact 396-page split in config/member_splits.json
+        splits = load_member_splits(ROOT_DIR)
+        self.assertIn("khanh", splits["members"])
+        khanh_info = splits["members"]["khanh"]
+        self.assertEqual(khanh_info["total_pages"], 396)
+        self.assertEqual(khanh_info["books"]["VPO_01"]["page_count"], 94)
+        self.assertEqual(khanh_info["books"]["VPO_02"]["page_count"], 103)
+        self.assertEqual(khanh_info["books"]["VPO_03"]["page_count"], 199)
+
+        # 2. Verify align_hvtt_facing_dich_tho & align_phien_am_to_han_chunks from origin/mac
+        dt_aligned = align_hvtt_facing_dich_tho(
+            [{"han": "鄭子產有疾，", "dich_am": "Trịnh Tử Sản hữu tật,", "dich_nghia": "Tử Sản bệnh nặng,"}],
+            ["Tử-Sản bệnh, khó bề bình-phục,", "Bèn dặn con, Thái-Thúc, mấy lời :"],
+        )
+        self.assertEqual(len(dt_aligned), 1)
+        self.assertIn("Tử-Sản", dt_aligned[0])
+
+        pa_aligned = align_phien_am_to_han_chunks(
+            ["風打松關月照庭，", "心期風景共淒清。"],
+            ["Phong đả tùng quan nguyệt chiếu đình, Tâm kỳ phong cảnh cộng thê thanh."],
+        )
+        self.assertEqual(len(pa_aligned), 2)
+
+        # 3. Verify work_segmenter and corpus_pipeline run cleanly
+        ocr_summary = run_corpus_from_ocr(ROOT_DIR, pilot_only=True)
+        self.assertIn("VPO_01", ocr_summary["books"])
+        self.assertGreater(ocr_summary["total_pairs"], 0)
 
 
 if __name__ == "__main__":
