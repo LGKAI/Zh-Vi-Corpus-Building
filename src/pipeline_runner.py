@@ -619,7 +619,7 @@ def run_pipeline(
             "--input-dir", str(source_dir),
             "--output-dir", str(book_root),
             "--book-type", book_key,
-            "--max-pages", "20",
+            "--pilot-only",
             "--dry-run",
         ])
         if rc != 0:

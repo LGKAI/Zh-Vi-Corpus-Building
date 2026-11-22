@@ -28,3 +28,6 @@ Thumbs.db
 tmp/
 temp/
 staging/
+
+# Bulk extracted 300 DPI page PNGs (keep on local disk for submission; tracked pilot PNGs remain in Git)
+CV04_VPO_*/01_nguon/*.png

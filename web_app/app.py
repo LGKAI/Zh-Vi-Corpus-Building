@@ -10,6 +10,7 @@ Usage:
 
 from __future__ import annotations
 
+import html
 import json
 import os
 import sys
@@ -104,9 +105,84 @@ def run_streamlit_app() -> None:
 
     st.title("📜 CV04 — Hán–Việt Parallel Corpus Explorer & CAT Workbench")
     st.markdown(
-        "Nền tảng trực quan hóa, đối soát và hiệu đính ngữ liệu song ngữ Hán – Việt "
-        "theo quy chuẩn **Lab 2. Dóng hàng Hán-Việt.pdf** & hướng dẫn của **chị Lưu Như** (Nhóm `CV04`)."
+        "Nền tảng trực quan hóa, theo dõi tiến độ OCR, đối soát và hiệu đính ngữ liệu song ngữ Hán – Việt "
+        "theo quy chuẩn **Lab 2. Dóng hàng Hán-Việt.pdf** & hướng dẫn của **chị Lưu Như** (Nhóm `CV04` — Thành viên: **Lê Gia Khánh**)."
     )
+
+    # Live Progress Monitor for Khánh's 396 assigned pages
+    splits_file = ROOT_DIR / "config" / "member_splits.json"
+    khanh_books = {}
+    if splits_file.is_file():
+        try:
+            splits_data = json.loads(splits_file.read_text(encoding="utf-8"))
+            khanh_books = splits_data.get("members", {}).get("khanh", {}).get("books", {})
+        except Exception:
+            khanh_books = {}
+
+    with st.expander("📊 Theo dõi Tiến độ Chạy 396 Trang Phân công Của Lê Gia Khánh (Live Monitor)", expanded=True):
+        pcol1, pcol2, pcol3, pcol4 = st.columns(4)
+        total_assigned = 396
+        total_ocr_done = 0
+        total_pairs_all = 0
+        per_book_stat = {}
+
+        for b_idx, (b_code, b_meta) in enumerate(BOOK_METADATA.items()):
+            b_slice = khanh_books.get(b_code, {})
+            assigned_pages = set(int(p) for p in b_slice.get("pdf_pages", []))
+            n_assigned = len(assigned_pages) if assigned_pages else 0
+
+            png_dir = b_meta["img_dir"]
+            ocr_han_dir = b_meta["folder"] / "02_ocr_tho" / "han"
+            n_png = sum(1 for p in assigned_pages if (png_dir / f"{p:04d}.png").is_file()) if png_dir.is_dir() else 0
+            n_ocr = 0
+            if ocr_han_dir.is_dir():
+                for p in assigned_pages:
+                    jf = ocr_han_dir / f"{p:04d}.json"
+                    if jf.is_file():
+                        try:
+                            jmeta = json.loads(jf.read_text(encoding="utf-8"))
+                            if "mock" not in str(jmeta.get("engine", "")).lower():
+                                n_ocr += 1
+                        except Exception:
+                            pass
+            b_rows = load_book_rows(b_code)
+            total_ocr_done += n_ocr
+            total_pairs_all += len(b_rows)
+            per_book_stat[b_code] = (n_assigned, n_png, n_ocr, len(b_rows))
+
+        with pcol1:
+            st.metric(
+                "Tổng tiến độ OCR (Khánh)",
+                f"{total_ocr_done} / {total_assigned} trang",
+                f"{(total_ocr_done / max(1, total_assigned)) * 100:.1f}%",
+            )
+            st.progress(min(1.0, total_ocr_done / max(1, total_assigned)))
+        with pcol2:
+            a1, png1, ocr1, r1 = per_book_stat["VPO_01"]
+            st.metric("CV04_VPO_01 (94 trang)", f"OCR: {ocr1}/{a1} tr", f"Ảnh: {png1}/{a1} | {r1} cặp câu")
+            st.progress(min(1.0, ocr1 / max(1, a1)))
+        with pcol3:
+            a2, png2, ocr2, r2 = per_book_stat["VPO_02"]
+            st.metric("CV04_VPO_02 (103 trang)", f"OCR: {ocr2}/{a2} tr", f"Ảnh: {png2}/{a2} | {r2} cặp câu")
+            st.progress(min(1.0, ocr2 / max(1, a2)))
+        with pcol4:
+            a3, png3, ocr3, r3 = per_book_stat["VPO_03"]
+            st.metric("CV04_VPO_03 (199 trang)", f"OCR: {ocr3}/{a3} tr", f"Ảnh: {png3}/{a3} | {r3} cặp câu")
+            st.progress(min(1.0, ocr3 / max(1, a3)))
+
+        btn_c1, btn_c2 = st.columns(2)
+        with btn_c1:
+            if st.button("🔄 Làm mới Trạng thái Tiến độ", use_container_width=True):
+                st.rerun() if hasattr(st, "rerun") else None
+        with btn_c2:
+            if st.button("⚡ Chạy Dóng hàng 4 Cột từ JSON OCR thật (02_ocr_tho/)", use_container_width=True):
+                if total_ocr_done == 0:
+                    st.warning("Chưa có file JSON OCR thật nào cho 396 trang của Khánh (0/396). Hệ thống đang giữ nguyên bộ dữ liệu mẫu chuẩn để tránh ghi đè bằng dữ liệu giả lập (mock)!")
+                else:
+                    from src.corpus_pipeline import run_corpus_from_ocr
+                    run_corpus_from_ocr(ROOT_DIR, ROOT_DIR)
+                    st.success(f"Đã chạy xong Work Segmenter & Dóng hàng 4 cột từ {total_ocr_done} trang OCR thật!")
+                    st.rerun() if hasattr(st, "rerun") else None
 
     st.sidebar.header("Bộ lọc & Lựa chọn tư liệu")
     book_choice = st.sidebar.selectbox(
@@ -177,7 +253,32 @@ def run_streamlit_app() -> None:
                 "Độ tin cậy": badge,
             })
 
-    st.dataframe(table_data, use_container_width=True, height=450)
+    # Render zero-pyarrow scrollable HTML table (avoids pyarrow vs NumPy 1.26 ABI error)
+    if table_data:
+        headers = list(table_data[0].keys())
+        th_html = "".join(
+            f"<th style='position:sticky;top:0;background:#1e293b;color:#f8fafc;padding:10px 12px;"
+            f"border-bottom:2px solid #334155;text-align:left;font-weight:600;'>{html.escape(str(h))}</th>"
+            for h in headers
+        )
+        trs = []
+        for r_dict in table_data[:500]:
+            tds = "".join(
+                f"<td style='padding:8px 12px;border-bottom:1px solid #334155;vertical-align:top;'>"
+                f"{html.escape(str(r_dict.get(h, '')))}</td>"
+                for h in headers
+            )
+            trs.append(f"<tr>{tds}</tr>")
+        table_html = (
+            "<div style='max-height:460px;overflow-y:auto;border:1px solid #334155;border-radius:8px;'>"
+            f"<table style='width:100%;border-collapse:collapse;font-size:14px;'>"
+            f"<thead><tr>{th_html}</tr></thead>"
+            f"<tbody>{''.join(trs)}</tbody>"
+            "</table></div>"
+        )
+        st.markdown(table_html, unsafe_allow_html=True)
+    else:
+        st.info("Chưa có dữ liệu dóng hàng cho bộ lọc này.")
 
     # Download Buttons
     st.subheader("Xuất bản Dữ liệu Chuẩn")

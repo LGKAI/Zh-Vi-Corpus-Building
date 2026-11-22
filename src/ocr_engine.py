@@ -1400,6 +1400,113 @@ def build_mock_ocr_for_page(
     return han_items, viet_items
 
 
+class _VietOCRCudaSubprocessProxy:
+    """Lightweight persistent subprocess delegating VietOCR `predict_batch` to a CUDA-enabled Python."""
+
+    _WORKER_CODE = r'''
+import base64, contextlib, io, json, sys, torch
+from PIL import Image
+if not hasattr(Image, "ANTIALIAS"):
+    resampling = getattr(Image, "Resampling", Image)
+    Image.ANTIALIAS = getattr(resampling, "LANCZOS")
+orig_load = torch.load
+torch.load = lambda *a, **kw: orig_load(*a, **{**kw, "weights_only": False})
+from vietocr.tool.config import Cfg
+from vietocr.tool.predictor import Predictor
+with contextlib.redirect_stdout(sys.stderr):
+    cfg = Cfg.load_config_from_name("vgg_transformer")
+    cfg["cnn"]["pretrained"] = True
+    cfg["device"] = "cuda:0" if torch.cuda.is_available() else "cpu"
+    pred = Predictor(cfg)
+sys.stdout.write(json.dumps({"ready": True, "device": cfg["device"]}) + "\n")
+sys.stdout.flush()
+for line in sys.stdin:
+    line = line.strip()
+    if not line:
+        continue
+    req = json.loads(line)
+    if req.get("cmd") == "quit":
+        break
+    imgs = [Image.open(io.BytesIO(base64.b64decode(b))).convert("RGB") for b in req["crops_b64"]]
+    if not imgs:
+        sys.stdout.write(json.dumps({"results": []}) + "\n")
+        sys.stdout.flush()
+        continue
+    texts, probs = pred.predict_batch(imgs, return_prob=True)
+    out = [[str(t), float(p)] for t, p in zip(texts, probs)]
+    sys.stdout.write(json.dumps({"results": out}, ensure_ascii=False) + "\n")
+    sys.stdout.flush()
+'''
+
+    def __init__(self, python_exe: str) -> None:
+        env = dict(os.environ)
+        env.pop("VIRTUAL_ENV", None)
+        env.pop("PYTHONHOME", None)
+        self._proc = subprocess.Popen(
+            [python_exe, "-u", "-c", self._WORKER_CODE],
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            env=env,
+            text=True,
+            encoding="utf-8",
+        )
+        assert self._proc.stdout is not None
+        ready_line = ""
+        while True:
+            raw = self._proc.stdout.readline()
+            if not raw:
+                break
+            if raw.strip().startswith("{"):
+                ready_line = raw.strip()
+                break
+        if not ready_line:
+            err = self._proc.stderr.read() if self._proc.stderr else ""
+            self.close()
+            raise RuntimeError(f"VietOCR CUDA proxy failed to start: {err}")
+        info = json.loads(ready_line)
+        self.device = str(info.get("device", "cuda:0"))
+
+    def predict_batch(self, pil_images: List[Any], return_prob: bool = True) -> Tuple[List[str], List[float]]:
+        import base64
+        import io
+        if not pil_images:
+            return [], []
+        assert self._proc.stdin is not None and self._proc.stdout is not None
+        crops_b64: List[str] = []
+        for img in pil_images:
+            buf = io.BytesIO()
+            img.save(buf, format="PNG")
+            crops_b64.append(base64.b64encode(buf.getvalue()).decode("ascii"))
+        self._proc.stdin.write(json.dumps({"crops_b64": crops_b64}) + "\n")
+        self._proc.stdin.flush()
+        resp_line = self._proc.stdout.readline().strip()
+        if not resp_line:
+            raise RuntimeError("VietOCR CUDA proxy returned EOF")
+        res = json.loads(resp_line).get("results", [])
+        return [str(t) for t, _ in res], [float(p) for _, p in res]
+
+    def predict(self, pil_img: Any, return_prob: bool = True) -> Tuple[str, float]:
+        texts, probs = self.predict_batch([pil_img], return_prob=True)
+        return texts[0], probs[0]
+
+    def close(self) -> None:
+        proc = getattr(self, "_proc", None)
+        if proc is None:
+            return
+        try:
+            if proc.poll() is None and proc.stdin is not None:
+                proc.stdin.write(json.dumps({"cmd": "quit"}) + "\n")
+                proc.stdin.flush()
+                proc.wait(timeout=3)
+        except Exception:
+            try:
+                proc.kill()
+            except Exception:
+                pass
+        self._proc = None
+
+
 class KaggleDualOCREngine:
     """Wrapper around GPU PaddleOCR (`chinese_cht` / `vi`) and optional VietOCR (`vgg_transformer`).
 
@@ -1558,18 +1665,46 @@ class KaggleDualOCREngine:
 
             torch.load = _compat_torch_load  # type: ignore[assignment]
 
-            from vietocr.tool.config import Cfg  # type: ignore
-            from vietocr.tool.predictor import Predictor  # type: ignore
+            base_py = Path(sys.base_prefix) / ("python.exe" if os.name == "nt" else "bin/python")
+            if (
+                effective_gpu
+                and not torch.cuda.is_available()
+                and base_py.is_file()
+                and str(base_py.resolve()) != str(Path(sys.executable).resolve())
+            ):
+                try:
+                    probe = subprocess.call(
+                        [str(base_py), "-c", "import torch, vietocr; assert torch.cuda.is_available()"],
+                        stdout=subprocess.DEVNULL,
+                        stderr=subprocess.DEVNULL,
+                        timeout=15,
+                    )
+                    if probe == 0:
+                        self._viet_predictor = _VietOCRCudaSubprocessProxy(str(base_py))
+                        print(
+                            f"[ocr_pipeline_kaggle] Initialized VietOCR vgg_transformer via CUDA proxy ({self._viet_predictor.device}).",
+                            flush=True,
+                        )
+                except Exception as proxy_exc:
+                    print(
+                        f"[ocr_pipeline_kaggle] Notice: VietOCR CUDA proxy unavailable ({proxy_exc}); falling back in-process.",
+                        flush=True,
+                    )
+                    self._viet_predictor = None
 
-            cfg = Cfg.load_config_from_name("vgg_transformer")
-            cfg["cnn"]["pretrained"] = True
-            target_device = "cuda:0" if (effective_gpu and torch.cuda.is_available()) else "cpu"
-            cfg["device"] = target_device
-            self._viet_predictor = Predictor(cfg)
-            print(
-                f"[ocr_pipeline_kaggle] Initialized VietOCR vgg_transformer on {target_device}.",
-                flush=True,
-            )
+            if self._viet_predictor is None:
+                from vietocr.tool.config import Cfg  # type: ignore
+                from vietocr.tool.predictor import Predictor  # type: ignore
+
+                cfg = Cfg.load_config_from_name("vgg_transformer")
+                cfg["cnn"]["pretrained"] = True
+                target_device = "cuda:0" if (effective_gpu and torch.cuda.is_available()) else "cpu"
+                cfg["device"] = target_device
+                self._viet_predictor = Predictor(cfg)
+                print(
+                    f"[ocr_pipeline_kaggle] Initialized VietOCR vgg_transformer on {target_device}.",
+                    flush=True,
+                )
         except Exception as exc:
             print(
                 f"[ocr_pipeline_kaggle] Notice: VietOCR unavailable ({exc}); "
@@ -1617,6 +1752,58 @@ class KaggleDualOCREngine:
         except Exception:
             return fallback_text, fallback_conf
 
+    def _predict_viet_crops_batch(
+        self,
+        ocr_input: Any,
+        pending: Sequence[Dict[str, Any]],
+    ) -> List[Tuple[str, float]]:
+        """Run batched VietOCR inference for all pending `[cy1:cy2, cx1:cx2]` crops on a page."""
+        if not pending:
+            return []
+        if self._viet_predictor is None or Image is None or not hasattr(ocr_input, "shape"):
+            return [(str(p["fallback_text"]), float(p["fallback_conf"])) for p in pending]
+
+        pil_list: List[Any] = []
+        valid_indices: List[int] = []
+        outputs: List[Tuple[str, float]] = [
+            (str(p["fallback_text"]), float(p["fallback_conf"])) for p in pending
+        ]
+        for i, p in enumerate(pending):
+            cx1, cy1, cx2, cy2 = int(p["cx1"]), int(p["cy1"]), int(p["cx2"]), int(p["cy2"])
+            if cx2 <= cx1 or cy2 <= cy1:
+                continue
+            crop_patch = ocr_input[cy1:cy2, cx1:cx2]
+            if getattr(crop_patch, "size", 0) <= 0:
+                continue
+            pil_list.append(Image.fromarray(crop_patch[:, :, ::-1] if crop_patch.ndim == 3 else crop_patch))
+            valid_indices.append(i)
+
+        if not pil_list:
+            return outputs
+
+        try:
+            if hasattr(self._viet_predictor, "predict_batch"):
+                pred_out = self._viet_predictor.predict_batch(pil_list, return_prob=True)
+                texts, probs = pred_out
+                for idx_pos, txt, prb in zip(valid_indices, texts, probs):
+                    outputs[idx_pos] = (str(txt), float(prb))
+                return outputs
+        except Exception:
+            pass
+
+        for idx_pos in valid_indices:
+            p = pending[idx_pos]
+            outputs[idx_pos] = self._predict_viet_crop(
+                ocr_input,
+                int(p["cx1"]),
+                int(p["cy1"]),
+                int(p["cx2"]),
+                int(p["cy2"]),
+                fallback_text=str(p["fallback_text"]),
+                fallback_conf=float(p["fallback_conf"]),
+            )
+        return outputs
+
     def recognize_page(
         self,
         cropped_image: Any,
@@ -1652,6 +1839,7 @@ class KaggleDualOCREngine:
 
         if self._viet_predictor is not None:
             is_tvlt2 = book_type.upper().strip() == "TVLT2"
+            pending_viet_crops: List[Dict[str, Any]] = []
             for bbox_pts, raw_text, raw_conf in raw_han_lines:
                 x1, y1, x2, y2 = _box_bounds({"bbox": bbox_pts})
                 ix1 = max(0, min(img_w - 1, int(x1)))
@@ -1690,16 +1878,12 @@ class KaggleDualOCREngine:
                     vy1 = max(0, iy1 - pad_y)
                     vy2 = min(img_h, iy2 + pad_y)
                     v_bbox = [[vx1, iy1], [ix2, iy1], [ix2, iy2], [vx1, iy2]]
-                    recognized_text, v_conf = self._predict_viet_crop(
-                        ocr_input, vx1, vy1, ix2, vy2, fallback_text=raw_text, fallback_conf=float(raw_conf)
-                    )
-                    viet_items.append({
-                        "line_id": f"{page_id}_viet_{len(viet_items):03d}",
+                    pending_viet_crops.append({
+                        "cx1": vx1, "cy1": vy1, "cx2": ix2, "cy2": vy2,
                         "bbox": v_bbox,
-                        "bbox_original": _offset_bbox_to_original(v_bbox, crop_top_px),
                         "box_xyxy": [vx1, iy1, ix2, iy2],
-                        "text": unicodedata.normalize("NFC", recognized_text),
-                        "confidence": round(float(v_conf), 4),
+                        "fallback_text": raw_text,
+                        "fallback_conf": float(raw_conf),
                     })
                 elif cjk_cnt >= 1 and (latin_cnt == 0 or cjk_cnt >= 3 * latin_cnt):
                     han_items.append({
@@ -1726,17 +1910,25 @@ class KaggleDualOCREngine:
                     cy1 = max(0, iy1 - pad_y)
                     cx2 = min(img_w, ix2 + pad_x)
                     cy2 = min(img_h, iy2 + pad_y)
-                    recognized_text, v_conf = self._predict_viet_crop(
-                        ocr_input, cx1, cy1, cx2, cy2, fallback_text=raw_text, fallback_conf=float(raw_conf)
-                    )
-                    viet_items.append({
-                        "line_id": f"{page_id}_viet_{len(viet_items):03d}",
+                    pending_viet_crops.append({
+                        "cx1": cx1, "cy1": cy1, "cx2": cx2, "cy2": cy2,
                         "bbox": bbox_pts,
-                        "bbox_original": _offset_bbox_to_original(bbox_pts, crop_top_px),
                         "box_xyxy": [ix1, iy1, ix2, iy2],
-                        "text": unicodedata.normalize("NFC", recognized_text),
-                        "confidence": round(float(v_conf), 4),
+                        "fallback_text": raw_text,
+                        "fallback_conf": float(raw_conf),
                     })
+
+            batch_preds = self._predict_viet_crops_batch(ocr_input, pending_viet_crops)
+            for meta_crop, (recognized_text, v_conf) in zip(pending_viet_crops, batch_preds):
+                v_bbox = meta_crop["bbox"]
+                viet_items.append({
+                    "line_id": f"{page_id}_viet_{len(viet_items):03d}",
+                    "bbox": v_bbox,
+                    "bbox_original": _offset_bbox_to_original(v_bbox, crop_top_px),
+                    "box_xyxy": meta_crop["box_xyxy"],
+                    "text": unicodedata.normalize("NFC", recognized_text),
+                    "confidence": round(float(v_conf), 4),
+                })
             return han_items, viet_items
 
         # Fallback path when VietOCR is unavailable: populate han_items + PaddleOCR(`vi`)
@@ -2089,30 +2281,47 @@ def _write_jsonl_records(output_dir: Path, results: Sequence[Dict[str, Any]]) ->
                 f.write(json.dumps(item, ensure_ascii=False) + "\n")
 
 
+def _has_nvidia_cuda_runtime() -> bool:
+    """Return True if an NVIDIA GPU driver (`nvidia-smi` or `libcuda.so.1`) is available."""
+    try:
+        if subprocess.call(["nvidia-smi"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) == 0:
+            return True
+    except OSError:
+        pass
+    try:
+        import ctypes
+        ctypes.CDLL("libcuda.so.1")
+        return True
+    except OSError:
+        return False
+
+
 def _install_kaggle_dependencies_if_needed() -> None:
     """Install PaddlePaddle, PaddleOCR, and best-effort VietOCR inside a Kaggle kernel."""
     pip_base = [sys.executable, "-m", "pip", "install", "-q"]
     subprocess.check_call([*pip_base, "opencv-python-headless", "paddleocr"])
 
+    has_cuda = _has_nvidia_cuda_runtime()
     paddle_installed = subprocess.call(
         [sys.executable, "-c", "import paddle"],
         stdout=subprocess.DEVNULL,
         stderr=subprocess.DEVNULL,
     ) == 0
     if not paddle_installed:
-        gpu_indexes = [
-            "https://www.paddlepaddle.org.cn/packages/stable/cu126/",
-            "https://www.paddlepaddle.org.cn/packages/stable/cu118/",
-        ]
         installed = False
-        for idx_url in gpu_indexes:
-            if subprocess.call([*pip_base, "paddlepaddle-gpu", "-i", idx_url]) == 0:
+        if has_cuda:
+            gpu_indexes = [
+                "https://www.paddlepaddle.org.cn/packages/stable/cu126/",
+                "https://www.paddlepaddle.org.cn/packages/stable/cu118/",
+            ]
+            for idx_url in gpu_indexes:
+                if subprocess.call([*pip_base, "paddlepaddle-gpu", "-i", idx_url]) == 0:
+                    installed = True
+                    break
+            if not installed and subprocess.call([*pip_base, "paddlepaddle-gpu"]) == 0:
                 installed = True
-                break
-        if not installed and subprocess.call([*pip_base, "paddlepaddle-gpu"]) == 0:
-            installed = True
         if not installed:
-            print("[install] Falling back to CPU paddlepaddle wheel.", flush=True)
+            print("[install] Installing CPU paddlepaddle wheel.", flush=True)
             subprocess.check_call([*pip_base, "paddlepaddle"])
 
     verify_cmd = [
@@ -2120,23 +2329,13 @@ def _install_kaggle_dependencies_if_needed() -> None:
         "-c",
         "import paddle; from paddleocr import PaddleOCR",
     ]
-    if subprocess.call(verify_cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) != 0:
+    if subprocess.call(verify_cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) != 0 and has_cuda:
         print(
-            "[install] PaddleOCR import verification failed (likely NCCL/PyTorch mismatch); "
+            "[install] PaddleOCR import verification failed on GPU runtime (likely NCCL/CUDA mismatch); "
             "upgrading nvidia-nccl-cu12>=2.27.3...",
             flush=True,
         )
         subprocess.call([*pip_base, "--upgrade", "nvidia-nccl-cu12>=2.27.3"])
-        if subprocess.call(verify_cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) != 0:
-            # Some containers also need PyTorch aligned when modelscope pulls in torch.
-            torch_first_cmd = [
-                sys.executable,
-                "-c",
-                "import torch; import paddle; from paddleocr import PaddleOCR",
-            ]
-            if subprocess.call(torch_first_cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) != 0:
-                print("[install] Re-aligning torch with CUDA NCCL...", flush=True)
-                subprocess.call([*pip_base, "--upgrade", "torch", "nvidia-nccl-cu12>=2.27.3"])
 
     subprocess.check_call([*pip_base, "einops", "gdown"])
     vietocr_rc = subprocess.call([*pip_base, "--no-deps", "vietocr"])
@@ -2226,6 +2425,11 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         action="store_true",
         help="Run full corpus post-processing & alignment (`src.corpus_pipeline`) after OCR completes.",
     )
+    parser.add_argument(
+        "--skip-existing",
+        action="store_true",
+        help="Skip pages whose non-mock han/viet OCR JSON files already exist in output_dir.",
+    )
 
     args = parser.parse_args(argv)
     is_mock = bool(args.dry_run or args.mock)
@@ -2243,7 +2447,11 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             if cand_manifest.is_file():
                 m_data = json.loads(cand_manifest.read_text(encoding="utf-8"))
                 for b_k, b_cfg in m_data.get("books", {}).items():
-                    pilot_pages_map[b_k] = {int(p) for p in b_cfg.get("pilot_pages", [])}
+                    pset = {int(p) for p in b_cfg.get("pilot_pages", [])}
+                    pilot_pages_map[b_k] = pset
+                    layout_k = BOOK_ALIAS_TO_LAYOUT.get(b_k.upper())
+                    if layout_k:
+                        pilot_pages_map[layout_k] = pset
                 break
 
     engine = KaggleDualOCREngine(use_gpu=not is_mock, mock=is_mock)
@@ -2271,8 +2479,30 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     results: List[Dict[str, Any]] = []
 
     if filtered_files:
-        for img_file, inferred_book, page_num in filtered_files:
+        import time as _time
+        t_batch_start = _time.perf_counter()
+        total_pages = len(filtered_files)
+        for idx_page, (img_file, inferred_book, page_num) in enumerate(filtered_files, start=1):
             book_folder = _resolve_book_folder(inferred_book, img_file)
+            safe_stem = re.sub(r"\.(?:png|jpg|jpeg|tif|tiff|json)$", "", img_file.stem, flags=re.IGNORECASE)
+            if args.skip_existing and not is_mock:
+                chk_han_dir, chk_viet_dir = resolve_ocr_output_dirs(args.output_dir, book_folder=book_folder)
+                chk_han = chk_han_dir / f"{safe_stem}.json"
+                chk_viet = chk_viet_dir / f"{safe_stem}.json"
+                if chk_han.is_file() and chk_viet.is_file():
+                    try:
+                        existing_h = json.loads(chk_han.read_text(encoding="utf-8"))
+                        if "mock" not in str(existing_h.get("engine", "")).lower():
+                            if idx_page % 25 == 0 or idx_page == total_pages:
+                                print(
+                                    f"[ocr] [{idx_page}/{total_pages}] skipped existing {book_folder}/{img_file.name}",
+                                    flush=True,
+                                )
+                            continue
+                    except Exception:
+                        pass
+
+            t_page_start = _time.perf_counter()
             res = process_single_page(
                 engine=engine,
                 image_or_path=img_file,
@@ -2284,6 +2514,17 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                 book_folder=book_folder,
             )
             results.append(res)
+            page_sec = _time.perf_counter() - t_page_start
+            elapsed_total = _time.perf_counter() - t_batch_start
+            done_new = len(results)
+            avg_sec = elapsed_total / max(1, done_new)
+            eta_min = (total_pages - idx_page) * avg_sec / 60.0
+            print(
+                f"[ocr] [{idx_page}/{total_pages}] {book_folder}/{img_file.name} (p.{page_num}) | "
+                f"han={len(res.get('han_items', []))} viet={len(res.get('viet_items', []))} | "
+                f"{page_sec:.2f}s (avg {avg_sec:.2f}s/p, ETA {eta_min:.1f}m)",
+                flush=True,
+            )
     elif is_mock:
         # In dry-run/mock mode with no input images on disk, run sample pages for all requested books
         sample_books = list(BOOK_TYPES) if args.book_type == "ALL" else [args.book_type]
@@ -2308,6 +2549,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             results.append(res)
 
     out_dir_path = Path(args.output_dir)
+    if hasattr(engine._viet_predictor, "close"):
+        engine._viet_predictor.close()
     _write_jsonl_records(out_dir_path, results)
 
     run_mode_label = "mock" if is_mock else "kaggle_gpu"
