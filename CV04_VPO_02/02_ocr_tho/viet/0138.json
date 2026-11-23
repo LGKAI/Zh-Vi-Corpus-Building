@@ -6,598 +6,1078 @@
   "engine": "vietocr_vgg_transformer",
   "preprocess": {
     "book_type": "TLTVN",
-    "original_width": 1039,
-    "original_height": 1519,
-    "crop_top_px": 106,
+    "original_width": 1122,
+    "original_height": 1640,
+    "crop_top_px": 115,
     "header_ratio": 0.07,
     "footnote_separator_y_cropped": null,
     "footnote_separator_y_original": null,
-    "effective_width": 1039,
-    "effective_height": 1413
+    "effective_width": 1122,
+    "effective_height": 1525
   },
   "items": [
     {
       "line_id": "0138_viet_000",
       "bbox": [
         [
-          220,
-          410
+          136,
+          14
         ],
         [
-          900,
-          410
+          431,
+          14
         ],
         [
-          900,
-          450
+          431,
+          51
         ],
         [
-          220,
-          450
+          136,
+          51
         ]
       ],
       "bbox_original": [
         [
-          220,
-          516
+          136,
+          129
         ],
         [
-          900,
-          516
+          431,
+          129
         ],
         [
-          900,
-          556
+          431,
+          166
         ],
         [
-          220,
-          556
+          136,
+          166
         ]
       ],
       "box_xyxy": [
-        220,
-        410,
-        900,
-        450
+        136,
+        14,
+        431,
+        51
       ],
-      "text": "Phiên âm:",
-      "confidence": 0.995
+      "text": "Tâu vua ta tỏ tường",
+      "confidence": 0.9327
     },
     {
       "line_id": "0138_viet_001",
       "bbox": [
         [
-          220,
-          460
+          350,
+          139
         ],
         [
-          1500,
-          460
+          767,
+          139
         ],
         [
-          1500,
-          505
+          767,
+          179
         ],
         [
-          220,
-          505
+          350,
+          179
         ]
       ],
       "bbox_original": [
         [
-          220,
-          566
+          350,
+          254
         ],
         [
-          1500,
-          566
+          767,
+          254
         ],
         [
-          1500,
-          611
+          767,
+          294
         ],
         [
-          220,
-          611
+          350,
+          294
         ]
       ],
       "box_xyxy": [
-        220,
-        460,
-        1500,
-        505
+        350,
+        139,
+        767,
+        179
       ],
-      "text": "Tường quang phong hảo cẩm phàm trương, Thần tiên phục đế hương².",
-      "confidence": 0.986
+      "text": "LÝ ĐẠO TÁI (1254 ? 1334)",
+      "confidence": 0.9287
     },
     {
       "line_id": "0138_viet_002",
       "bbox": [
         [
-          220,
-          515
+          135,
+          213
         ],
         [
-          1500,
-          515
+          1040,
+          212
         ],
         [
-          1500,
-          560
+          1040,
+          253
         ],
         [
-          220,
-          560
+          135,
+          254
         ]
       ],
       "bbox_original": [
         [
-          220,
-          621
+          135,
+          328
         ],
         [
-          1500,
-          621
+          1040,
+          327
         ],
         [
-          1500,
-          666
+          1040,
+          368
         ],
         [
-          220,
-          666
+          135,
+          369
         ]
       ],
       "box_xyxy": [
-        220,
-        515,
-        1500,
-        560
+        135,
+        212,
+        1040,
+        254
       ],
-      "text": "Thiên trùng vạn lí¹ thiệp thương lương, Cửu thiên quy lộ trường.",
-      "confidence": 0.985
+      "text": "Lý Đạo Tái, pháp danh Huyền Quang, người hương Vạn Tải,",
+      "confidence": 0.9209
     },
     {
       "line_id": "0138_viet_003",
       "bbox": [
         [
-          220,
-          570
+          78,
+          258
         ],
         [
-          1500,
-          570
+          1041,
+          257
         ],
         [
-          1500,
-          615
+          1041,
+          295
         ],
         [
-          220,
-          615
+          78,
+          296
         ]
       ],
       "bbox_original": [
         [
-          220,
-          676
+          78,
+          373
         ],
         [
-          1500,
-          676
+          1041,
+          372
         ],
         [
-          1500,
-          721
+          1041,
+          410
         ],
         [
-          220,
-          721
+          78,
+          411
         ]
       ],
       "box_xyxy": [
-        220,
-        570,
-        1500,
-        615
+        78,
+        257,
+        1041,
+        296
       ],
-      "text": "Tình thảm thiết², Đối li thương, Phan luyến sứ tinh lang³.",
-      "confidence": 0.986
+      "text": "châu nam sách, lộ lạng giang (nay thuộc xã Thái Bảo, huyện",
+      "confidence": 0.9084
     },
     {
       "line_id": "0138_viet_004",
       "bbox": [
         [
-          220,
-          625
+          79,
+          301
         ],
         [
-          1500,
-          625
+          1048,
+          301
         ],
         [
-          1500,
-          670
+          1048,
+          338
         ],
         [
-          220,
-          670
+          79,
+          338
         ]
       ],
       "bbox_original": [
         [
-          220,
-          731
+          79,
+          416
         ],
         [
-          1500,
-          731
+          1048,
+          416
         ],
         [
-          1500,
-          776
+          1048,
+          453
         ],
         [
-          220,
-          776
+          79,
+          453
         ]
       ],
       "box_xyxy": [
-        220,
-        625,
-        1500,
-        670
+        79,
+        301,
+        1048,
+        338
       ],
-      "text": "Nguyện tương thâm ý vị Nam cương, Phân minh báo⁴ ngã hoàng.",
-      "confidence": 0.985
+      "text": "Gia Bình, tỉnh Bắc Ninh), Tương truyền thuở nhỏ ông thông minh,",
+      "confidence": 0.9238
     },
     {
       "line_id": "0138_viet_005",
       "bbox": [
         [
-          220,
-          690
+          77,
+          341
         ],
         [
-          900,
-          690
+          1042,
+          341
         ],
         [
-          900,
-          730
+          1042,
+          380
         ],
         [
-          220,
-          730
+          77,
+          380
         ]
       ],
       "bbox_original": [
         [
-          220,
-          796
+          77,
+          456
         ],
         [
-          900,
-          796
+          1042,
+          456
         ],
         [
-          900,
-          836
+          1042,
+          495
         ],
         [
-          220,
-          836
+          77,
+          495
         ]
       ],
       "box_xyxy": [
-        220,
-        690,
-        900,
-        730
+        77,
+        341,
+        1042,
+        380
       ],
-      "text": "Dịch nghĩa:",
-      "confidence": 0.994
+      "text": "từng đỗ đầu thi hội, rồi tham gia bộ máy quan liêu, nhưng không",
+      "confidence": 0.9255
     },
     {
       "line_id": "0138_viet_006",
       "bbox": [
         [
-          220,
-          740
+          77,
+          386
         ],
         [
-          1580,
-          740
+          1041,
+          384
         ],
         [
-          1580,
-          790
+          1041,
+          421
         ],
         [
-          220,
-          790
+          77,
+          423
         ]
       ],
       "bbox_original": [
         [
-          220,
-          846
+          77,
+          501
         ],
         [
-          1580,
-          846
+          1041,
+          499
         ],
         [
-          1580,
-          896
+          1041,
+          536
         ],
         [
-          220,
-          896
+          77,
+          538
         ]
       ],
       "box_xyxy": [
-        220,
-        740,
-        1580,
-        790
+        77,
+        384,
+        1041,
+        423
       ],
-      "text": "Ánh sáng tốt lành, gió thuận, căng cánh buồm gấm, Thần tiên trở về quê hương của hoàng đế⁵.",
-      "confidence": 0.983
+      "text": "bao lâu sau thì xuất gia tu hành, được Trần Nhân Tông rất yêu",
+      "confidence": 0.9305
     },
     {
       "line_id": "0138_viet_007",
       "bbox": [
         [
-          220,
-          800
+          76,
+          426
         ],
         [
-          1580,
-          800
+          1043,
+          425
         ],
         [
-          1580,
-          850
+          1043,
+          466
         ],
         [
-          220,
-          850
+          76,
+          467
         ]
       ],
       "bbox_original": [
         [
-          220,
-          906
+          76,
+          541
         ],
         [
-          1580,
-          906
+          1043,
+          540
         ],
         [
-          1580,
-          956
+          1043,
+          581
         ],
         [
-          220,
-          956
+          76,
+          582
         ]
       ],
       "box_xyxy": [
-        220,
-        800,
-        1580,
-        850
+        76,
+        425,
+        1043,
+        467
       ],
-      "text": "Nghìn trùng muôn dặm vượt qua những làn sóng xanh, Đường qua về chín tầng trời¹.",
-      "confidence": 0.982
+      "text": "mến sau khi thiền sư Pháp Loa mất, ông kế tiếp, thành vị tổ thứ",
+      "confidence": 0.9163
     },
     {
       "line_id": "0138_viet_008",
       "bbox": [
         [
-          220,
-          860
+          77,
+          471
         ],
         [
-          1580,
-          860
+          1042,
+          470
         ],
         [
-          1580,
-          910
+          1042,
+          507
         ],
         [
-          220,
-          910
+          77,
+          508
         ]
       ],
       "bbox_original": [
         [
-          220,
-          966
+          77,
+          586
         ],
         [
-          1580,
-          966
+          1042,
+          585
         ],
         [
-          1580,
-          1016
+          1042,
+          622
         ],
         [
-          220,
-          1016
+          77,
+          623
         ]
       ],
       "box_xyxy": [
-        220,
-        860,
-        1580,
-        910
+        77,
+        470,
+        1042,
+        508
       ],
-      "text": "Tình thảm thiết, Đối diện với chén rượu biệt li, Yêu mến vin lấy chàng sứ giả.",
-      "confidence": 0.983
+      "text": "ba của Thiền phái Trúc Lâm. Sáng tác của Lý Đạo Tái hiện còn",
+      "confidence": 0.9259
     },
     {
       "line_id": "0138_viet_009",
       "bbox": [
         [
-          220,
-          920
+          76,
+          512
         ],
         [
-          1580,
-          920
+          1049,
+          510
         ],
         [
-          1580,
-          970
+          1049,
+          550
         ],
         [
-          220,
-          970
+          76,
+          552
         ]
       ],
       "bbox_original": [
         [
-          220,
-          1026
+          76,
+          627
         ],
         [
-          1580,
-          1026
+          1049,
+          625
         ],
         [
-          1580,
-          1076
+          1049,
+          665
         ],
         [
-          220,
-          1076
+          76,
+          667
         ]
       ],
       "box_xyxy": [
-        220,
-        920,
-        1580,
-        970
+        76,
+        510,
+        1049,
+        552
       ],
-      "text": "Xin hãy đem cái ý sâu xa vì biên cương phía Nam, Báo rõ cho nhà vua của chúng ta.",
-      "confidence": 0.984
+      "text": "hơn 20 bài thơ chép trong Toàn Việt thi lục và một số tài liệu khác,",
+      "confidence": 0.931
     },
     {
       "line_id": "0138_viet_010",
       "bbox": [
         [
-          220,
-          990
+          79,
+          557
         ],
         [
-          900,
-          990
+          1040,
+          557
         ],
         [
-          900,
-          1030
+          1040,
+          594
         ],
         [
-          220,
-          1030
+          79,
+          594
         ]
       ],
       "bbox_original": [
         [
-          220,
-          1096
+          79,
+          672
         ],
         [
-          900,
-          1096
+          1040,
+          672
         ],
         [
-          900,
-          1136
+          1040,
+          709
         ],
         [
-          220,
-          1136
+          79,
+          709
         ]
       ],
       "box_xyxy": [
-        220,
-        990,
-        900,
-        1030
+        79,
+        557,
+        1040,
+        594
       ],
-      "text": "Dịch theo nguyên điệu:",
-      "confidence": 0.991
+      "text": "được đánh giá là \"tinh tế cao siêu\" (Lê Quý Đôn), \"bay bướm,",
+      "confidence": 0.9102
     },
     {
       "line_id": "0138_viet_011",
       "bbox": [
         [
-          220,
-          1040
+          77,
+          600
         ],
         [
-          1400,
-          1040
+          556,
+          599
         ],
         [
-          1400,
-          1085
+          556,
+          636
         ],
         [
-          220,
-          1085
+          77,
+          637
         ]
       ],
       "bbox_original": [
         [
-          220,
-          1146
+          77,
+          715
         ],
         [
-          1400,
-          1146
+          556,
+          714
         ],
         [
-          1400,
-          1191
+          556,
+          751
         ],
         [
-          220,
-          1191
+          77,
+          752
         ]
       ],
       "box_xyxy": [
-        220,
-        1040,
-        1400,
-        1085
+        77,
+        599,
+        556,
+        637
       ],
-      "text": "Trời trong gió mát cánh buồm giương, Thần tiên về đế hương.",
-      "confidence": 0.98
+      "text": "phóng khoáng? (Phan Huy Chú)",
+      "confidence": 0.9078
+    },
+    {
+      "line_id": "0138_viet_012",
+      "bbox": [
+        [
+          137,
+          641
+        ],
+        [
+          1043,
+          644
+        ],
+        [
+          1043,
+          687
+        ],
+        [
+          137,
+          684
+        ]
+      ],
+      "bbox_original": [
+        [
+          137,
+          756
+        ],
+        [
+          1043,
+          759
+        ],
+        [
+          1043,
+          802
+        ],
+        [
+          137,
+          799
+        ]
+      ],
+      "box_xyxy": [
+        137,
+        641,
+        1043,
+        687
+      ],
+      "text": "Về từ, ông còn một bài duy nhất làm theo điệu Tây giang",
+      "confidence": 0.9295
+    },
+    {
+      "line_id": "0138_viet_013",
+      "bbox": [
+        [
+          77,
+          689
+        ],
+        [
+          717,
+          686
+        ],
+        [
+          717,
+          726
+        ],
+        [
+          77,
+          729
+        ]
+      ],
+      "bbox_original": [
+        [
+          77,
+          804
+        ],
+        [
+          717,
+          801
+        ],
+        [
+          717,
+          841
+        ],
+        [
+          77,
+          844
+        ]
+      ],
+      "box_xyxy": [
+        77,
+        686,
+        717,
+        729
+      ],
+      "text": "nguyệt, chép trong Tam tổ thực lục (A.786).",
+      "confidence": 0.9274
+    },
+    {
+      "line_id": "0138_viet_014",
+      "bbox": [
+        [
+          136,
+          1005
+        ],
+        [
+          296,
+          1003
+        ],
+        [
+          297,
+          1048
+        ],
+        [
+          137,
+          1051
+        ]
+      ],
+      "bbox_original": [
+        [
+          136,
+          1120
+        ],
+        [
+          296,
+          1118
+        ],
+        [
+          297,
+          1163
+        ],
+        [
+          137,
+          1166
+        ]
+      ],
+      "box_xyxy": [
+        136,
+        1003,
+        297,
+        1051
+      ],
+      "text": "1.00.000",
+      "confidence": 0.3221
+    },
+    {
+      "line_id": "0138_viet_015",
+      "bbox": [
+        [
+          136,
+          1053
+        ],
+        [
+          298,
+          1053
+        ],
+        [
+          298,
+          1092
+        ],
+        [
+          136,
+          1092
+        ]
+      ],
+      "bbox_original": [
+        [
+          136,
+          1168
+        ],
+        [
+          298,
+          1168
+        ],
+        [
+          298,
+          1207
+        ],
+        [
+          136,
+          1207
+        ]
+      ],
+      "box_xyxy": [
+        136,
+        1053,
+        298,
+        1092
+      ],
+      "text": "Phiến âm:",
+      "confidence": 0.8926
+    },
+    {
+      "line_id": "0138_viet_016",
+      "bbox": [
+        [
+          153,
+          1105
+        ],
+        [
+          417,
+          1105
+        ],
+        [
+          417,
+          1143
+        ],
+        [
+          153,
+          1143
+        ]
+      ],
+      "bbox_original": [
+        [
+          153,
+          1220
+        ],
+        [
+          417,
+          1220
+        ],
+        [
+          417,
+          1258
+        ],
+        [
+          153,
+          1258
+        ]
+      ],
+      "box_xyxy": [
+        153,
+        1105,
+        417,
+        1143
+      ],
+      "text": "Tây giang nguyệt",
+      "confidence": 0.9315
+    },
+    {
+      "line_id": "0138_viet_017",
+      "bbox": [
+        [
+          152,
+          1153
+        ],
+        [
+          574,
+          1153
+        ],
+        [
+          574,
+          1189
+        ],
+        [
+          152,
+          1189
+        ]
+      ],
+      "bbox_original": [
+        [
+          152,
+          1268
+        ],
+        [
+          574,
+          1268
+        ],
+        [
+          574,
+          1304
+        ],
+        [
+          152,
+          1304
+        ]
+      ],
+      "box_xyxy": [
+        152,
+        1153,
+        574,
+        1189
+      ],
+      "text": "Bạch thước thị hà ứng triệu?",
+      "confidence": 0.9338
+    },
+    {
+      "line_id": "0138_viet_018",
+      "bbox": [
+        [
+          152,
+          1201
+        ],
+        [
+          584,
+          1199
+        ],
+        [
+          584,
+          1236
+        ],
+        [
+          152,
+          1238
+        ]
+      ],
+      "bbox_original": [
+        [
+          152,
+          1316
+        ],
+        [
+          584,
+          1314
+        ],
+        [
+          584,
+          1351
+        ],
+        [
+          152,
+          1353
+        ]
+      ],
+      "box_xyxy": [
+        152,
+        1199,
+        584,
+        1238
+      ],
+      "text": "Tường lai đình hộ hoán minh",
+      "confidence": 0.9318
+    },
+    {
+      "line_id": "0138_viet_019",
+      "bbox": [
+        [
+          152,
+          1244
+        ],
+        [
+          613,
+          1246
+        ],
+        [
+          613,
+          1287
+        ],
+        [
+          152,
+          1285
+        ]
+      ],
+      "bbox_original": [
+        [
+          152,
+          1359
+        ],
+        [
+          613,
+          1361
+        ],
+        [
+          613,
+          1402
+        ],
+        [
+          152,
+          1400
+        ]
+      ],
+      "box_xyxy": [
+        152,
+        1244,
+        613,
+        1287
+      ],
+      "text": "Cổ xưng hiếu tử hữu Tăng Sâm,",
+      "confidence": 0.9188
+    },
+    {
+      "line_id": "0138_viet_020",
+      "bbox": [
+        [
+          153,
+          1296
+        ],
+        [
+          537,
+          1296
+        ],
+        [
+          537,
+          1332
+        ],
+        [
+          153,
+          1332
+        ]
+      ],
+      "bbox_original": [
+        [
+          153,
+          1411
+        ],
+        [
+          537,
+          1411
+        ],
+        [
+          537,
+          1447
+        ],
+        [
+          153,
+          1447
+        ]
+      ],
+      "box_xyxy": [
+        153,
+        1296,
+        537,
+        1332
+      ],
+      "text": "Tam túc chi điều quan chỉ.",
+      "confidence": 0.9078
+    },
+    {
+      "line_id": "0138_viet_021",
+      "bbox": [
+        [
+          983,
+          1430
+        ],
+        [
+          1043,
+          1430
+        ],
+        [
+          1043,
+          1470
+        ],
+        [
+          983,
+          1470
+        ]
+      ],
+      "bbox_original": [
+        [
+          983,
+          1545
+        ],
+        [
+          1043,
+          1545
+        ],
+        [
+          1043,
+          1585
+        ],
+        [
+          983,
+          1585
+        ]
+      ],
+      "box_xyxy": [
+        983,
+        1430,
+        1043,
+        1470
+      ],
+      "text": "131",
+      "confidence": 0.9244
     }
   ],
   "layout_summary": {
     "layout_mode": "sequential_han_phien_dich",
     "phien_am_lines": [
-      "Tường quang phong hảo cẩm phàm trương, Thần tiên phục đế hương².",
-      "Thiên trùng vạn lí¹ thiệp thương lương, Cửu thiên quy lộ trường.",
-      "Tình thảm thiết², Đối li thương, Phan luyến sứ tinh lang³.",
-      "Nguyện tương thâm ý vị Nam cương, Phân minh báo⁴ ngã hoàng."
+      "Tâu vua ta tỏ tường",
+      "LÝ ĐẠO TÁI (1254 ? 1334)",
+      "Lý Đạo Tái, pháp danh Huyền Quang, người hương Vạn Tải,",
+      "châu nam sách, lộ lạng giang (nay thuộc xã Thái Bảo, huyện",
+      "Gia Bình, tỉnh Bắc Ninh), Tương truyền thuở nhỏ ông thông minh,",
+      "từng đỗ đầu thi hội, rồi tham gia bộ máy quan liêu, nhưng không",
+      "bao lâu sau thì xuất gia tu hành, được Trần Nhân Tông rất yêu",
+      "mến sau khi thiền sư Pháp Loa mất, ông kế tiếp, thành vị tổ thứ",
+      "ba của Thiền phái Trúc Lâm. Sáng tác của Lý Đạo Tái hiện còn",
+      "hơn 20 bài thơ chép trong Toàn Việt thi lục và một số tài liệu khác,",
+      "được đánh giá là \"tinh tế cao siêu\" (Lê Quý Đôn), \"bay bướm,",
+      "phóng khoáng? (Phan Huy Chú)",
+      "Về từ, ông còn một bài duy nhất làm theo điệu Tây giang",
+      "nguyệt, chép trong Tam tổ thực lục (A.786).",
+      "1.00.000",
+      "Tây giang nguyệt",
+      "Bạch thước thị hà ứng triệu?",
+      "Tường lai đình hộ hoán minh",
+      "Cổ xưng hiếu tử hữu Tăng Sâm,",
+      "Tam túc chi điều quan chỉ.",
+      "131"
     ],
-    "dich_nghia_lines": [
-      "Ánh sáng tốt lành, gió thuận, căng cánh buồm gấm, Thần tiên trở về quê hương của hoàng đế⁵.",
-      "Nghìn trùng muôn dặm vượt qua những làn sóng xanh, Đường qua về chín tầng trời¹.",
-      "Tình thảm thiết, Đối diện với chén rượu biệt li, Yêu mến vin lấy chàng sứ giả.",
-      "Xin hãy đem cái ý sâu xa vì biên cương phía Nam, Báo rõ cho nhà vua của chúng ta."
-    ],
-    "dich_tho_lines": [
-      "Trời trong gió mát cánh buồm giương, Thần tiên về đế hương."
-    ],
+    "dich_nghia_lines": [],
+    "dich_tho_lines": [],
     "interlinear_triplets": []
   }
 }

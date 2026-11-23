@@ -1,165 +1,73 @@
 # Dóng Hàng Hán – Việt (Nhóm CV04)
 
-Xây dựng kho ngữ liệu song ngữ văn học Hán – Việt (thơ ca & văn xuôi) ở cấp câu/đoạn phục vụ đồ án giữa kỳ môn **Xử lý Ngôn ngữ Tự nhiên (NLP)**.
+Xây dựng kho ngữ liệu song ngữ văn học Hán – Việt (thơ ca & văn xuôi) cấp câu/đoạn cho đồ án giữa kỳ môn **Xử lý Ngôn ngữ Tự nhiên (NLP)**.
 
-- **Mã nhóm / Đề tài**: `CV04`
-- **Thành viên nhóm**:
-  1. **Trần Trung Hiếu** *(Nhóm trưởng)* — Nhánh `hieu` (`397` trang phân công)
-  2. **Lê Gia Khánh** — Nhánh `khanh` (`396` trang phân công)
-  3. **Phạm Chấn Khoa** — Nhánh `khoa` / `mac` (`397` trang phân công)
-  4. **Cái Hoàng Bảo Kin** — Nhánh `kin` (`393` trang phân công)
-- **Giảng viên / Trợ giảng hướng dẫn**: Chị **Lưu Như**
-- **Hạn nộp bài**: `30/11`
+- **Mã nhóm**: `CV04` — Trần Trung Hiếu *(Nhóm trưởng)*, Lê Gia Khánh, Phạm Chấn Khoa, Cái Hoàng Bảo Kin
+- **Hướng dẫn**: Chị **Lưu Như** | **Hạn nộp**: `30/11`
 
 ---
 
-## 1. Phạm Vi Tư Liệu & Phân Công Thực Hiện
+## 1. Kết Quả Hợp Nhất Toàn Nhóm (`main` — Đủ 4 Thành Viên)
 
-Từ **1.996 trang PDF scan gốc** của 3 bộ sách trong `raw_data/`, nhóm `CV04` đã kiểm kê và xác định **1.584 trang hợp lệ** trong [`config/book_manifest.json`](config/book_manifest.json) (trong đó **1.583 trang** được chia đều cho 4 thành viên trong [`config/member_splits.json`](config/member_splits.json) và [`docs/3_PHAN_CONG_4_NGUOI.md`](docs/3_PHAN_CONG_4_NGUOI.md); trang chênh lệch là `PDF 0007` — trang tiêu đề bài 1 của `VPO_01` nằm trong tập `pilot_pages`):
+Toàn bộ **1.584 trang hợp lệ** từ 3 bộ PDF scan gốc (`1.996` trang PDF) đã được 4 thành viên OCR GPU (`PaddleOCR chinese_cht` + `VietOCR vgg_transformer`), gộp chung vào `CV04_VPO_01..03/` và dóng hàng 4 cột (`Hán` – `Dịch âm` – `Dịch nghĩa` – `Dịch thơ`):
 
-| Mã thư mục / Mã sách | Tên tác phẩm & Tác giả | Tổng PDF | Phạm vi hợp lệ & Quy đổi trang | Ghi chú xử lý đặc thù |
-| :--- | :--- | :---: | :--- | :--- |
-| **`CV04_VPO_01`** (`VPO_01` / `HVTT`) | *Hán Văn Tinh Túy* — Lãng Nhân (Phùng Tất Đắc) | `386` | Sách `1..375` (`PDF 7..381`, `375` tr; phân công `374` tr `PDF 8..381`)<br>`pdf_page = book_page + 6` | Trang chẵn in xen kẽ `Hán + Phiên âm + Dịch nghĩa`, trang lẻ đối diện in `Dịch thơ` (riêng các trang lẻ đầu bài như `0007, 0017...` là trang tiêu đề). Bài *Thạch Hào lại* (`PDF 100`) và bài cuối *Thu dạ hoài ngâm* (`PDF 367..381`) để trống cột `Dịch nghĩa` (`""`). |
-| **`CV04_VPO_02`** (`VPO_02` / `TLTVN`) | *Thể loại từ Việt Nam thời trung đại* — Phạm Văn Ánh / Nguyễn Xuân Diện – Nguyễn Quảng Tuân | `645` | **Phần Ba** sách `127..540` (`PDF 134..547`, phân công `414` tr; trừ 3 trang khuyết gốc `378..380` còn `411` tr khi dóng hàng)<br>`pdf_page = book_page + 7` | Bỏ qua lớp text PDF bị mất chữ Hán, OCR toàn bộ ảnh 300 DPI (cắt 7% running header + tách đường kẻ ngang chú thích chân trang). Đưa *Phiên âm* $\rightarrow$ `Dịch âm`, *Dịch nghĩa* $\rightarrow$ `Dịch nghĩa`, *Dịch theo nguyên điệu* $\rightarrow$ `Dịch thơ`. Chi tiết bài khuyết gốc & Phụ lục 3 tại [`docs/2_THONG_KE_BO_SUNG.md`](docs/2_THONG_KE_BO_SUNG.md). |
-| **`CV04_VPO_03`** (`VPO_03` / `TVLT2`) | *Thơ văn Lý – Trần (Tập II – Quyển Thượng)* — Nguyễn Huệ Chi chủ biên | `965` | Sách `19..863` (`PDF 17..861`, `795` tr hợp lệ)<br>`book_page = pdf_page + 2` *(từ PDF 7)* | Loại trang trắng `PDF 25` và **4 tác phẩm Chữ Nôm** (`PDF 493..525`, `688..703`, `862..873`). Tích hợp bản dịch nghĩa bài 3 (*Thiền tông chỉ nam tự*) của chị Lưu Như tại [`CV04_VPO_03/01_nguon/bai_03_thien_tong_chi_nam_tu_dich_nghia.txt`](CV04_VPO_03/01_nguon/bai_03_thien_tong_chi_nam_tu_dich_nghia.txt). Thơ/kệ điền đủ 4 cột; văn xuôi để trống `Dịch thơ = ""`. |
-
----
-
-## 2. Trạng Thái Dữ Liệu Hiện Tại & So Sánh Các Nhánh Git
-
-> **Trạng thái nhánh hiện tại (`windows/khanh-kin`)**: Đã **hợp nhất toàn bộ kết quả OCR GPU (`02_ocr_tho/`) của cả Khánh (`396` trang) và Kin (`393` trang)** cùng bộ trang pilot ngoài shard (`24` trang) thành **813 trang OCR GPU duy nhất** (`810` trang được dóng hàng sau khi loại `378..380` của `VPO_02`), và chạy lại `python main.py align --book ALL` để nối liền ranh giới giữa hai shard tại `CV04_VPO_01..03/`.
-
-1. **Nhánh `windows/khanh-kin` *(đã gộp Khánh + Kin)* — Tổng `3.722` dòng dóng hàng**:
-   - **`01_nguon/*.png`** (ảnh bulk 300 DPI không track trên Git theo `.gitignore`, chỉ track ảnh pilot): Trên ổ đĩa local đã có **đầy đủ 813 ảnh 300 DPI** của Khánh + Kin + pilot (`194` ở `VPO_01`, `213` ở `VPO_02`, `406` ở `VPO_03` + file `.txt` bổ sung bài 3).
-   - **`02_ocr_tho/`**: Đầy đủ JSON OCR GPU (`paddleocr_chinese_cht` + `vietocr_vgg_transformer`), `ocr_results.jsonl` và `ocr_run_summary.json` cho **813 trang** (`194` ở `VPO_01`, `213` ở `VPO_02`, `406` ở `VPO_03`).
-   - **`03_text_sach/` & `04_dong_hang/`**: Đã tái xuất đồng bộ sau khi gộp Khánh + Kin, nối liền các tác phẩm ở ranh giới giữa Khánh và Kin (`3.722` dòng, `247` dòng tiêu đề, `2.139` dòng có `Dịch thơ`, lỗi QA tổng `6.66%`, `MISSING = 0`, `TSV == XLSX`).
-2. **Các nhánh thành viên riêng lẻ trên `origin`**:
-   - **`khanh`**: Lưu riêng kết quả OCR GPU & dóng hàng của **Khánh (`396` trang + pilot)** = `1.796` dòng (`7.41%` QA).
-   - **`kin`**: Lưu riêng kết quả OCR GPU & dóng hàng của **Kin (`393` trang + pilot)** = `1.995` dòng (`5.86%` QA).
-   - **`khoa` / `mac`**: Hoàn thành OCR GPU & dóng hàng cho shard `khoa` (`397` trang phân công; trên nhánh `origin/khoa` lưu tại `outputs/khoa/` với `2.488` dòng từ `398` trang OCR, lỗi QA `5.67%`).
-   - **`hieu`**: Đã có kết quả OCR GPU cho shard `hieu` (`397` trang phân công) trong cấu trúc thư mục cũ `deliverables/` (`109 + 115 + 212` JSON), chờ gộp tiếp vào bộ chung để đủ 4 thành viên.
-
-### Bảng số liệu chi tiết đã kiểm chứng trên `windows/khanh-kin` (gộp Khánh + Kin)
-
-| Thư mục / Tác phẩm | Trang OCR GPU | Trang dóng hàng | Dòng dóng hàng | Dòng tiêu đề | Dòng có `Dịch thơ` | Lỗi QA *(ngưỡng $\le 30\%$)* | `MISSING` / `FORMAT_ERROR` | `TSV == XLSX` |
+| Thư mục / Tác phẩm | Trang OCR GPU | Trang dóng hàng | Tổng dòng | Dòng tiêu đề | Dòng có `Dịch thơ` | Lỗi QA *(ngưỡng $\le 30\%$)* | `MISSING` / `FORMAT_ERROR` | `TSV == XLSX` |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| `CV04_VPO_01` (`94` Khánh + `92` Kin + `8` pilot) | `194` | `194` | `712` | `11` | `605` | `3.23%` (`23` cảnh báo) | `0` / `0` | Khớp 100% |
-| `CV04_VPO_02` (`103` Khánh + `103` Kin + `7` pilot) | `213` | `210` *(trừ `378..380`)* | `1.017` | `79` | `643` | `3.64%` (`37` cảnh báo) | `0` / `0` | Khớp 100% |
-| `CV04_VPO_03` (`199` Khánh + `198` Kin + `9` pilot) | `406` | `406` | `1.993` | `157` | `891` | `9.43%` (`188` cảnh báo) | `0` / `0` | Khớp 100% |
-| **Tổng `windows/khanh-kin`** | **`813`** | **`810`** | **`3.722`** | **`247`** | **`2.139`** | **`6.66%` (`248/3.722`)** | **`0` / `0`** | **100%** |
+| [`CV04_VPO_01`](CV04_VPO_01/README.md) — *Hán Văn Tinh Túy* | `375` (`PDF 7..381`) | `375` | `1.377` | `36` | `1.111` | `9.59%` (`132`) | `0` / `0` | 100% |
+| [`CV04_VPO_02`](CV04_VPO_02/README.md) — *Thể loại từ VN trung đại* | `414` (`PDF 134..547`) | `411` *(trừ `378..380`)* | `1.925` | `178` | `1.213` | `6.18%` (`119`) | `0` / `0` | 100% |
+| [`CV04_VPO_03`](CV04_VPO_03/README.md) — *Thơ văn Lý – Trần Tập II* | `795` (`PDF 17..861`) | `795` | `4.334` | `318` | `1.250` | `9.67%` (`419`) | `0` / `0` | 100% |
+| **Tổng toàn nhóm `CV04`** | **`1.584`** | **`1.581`** | **`7.636`** | **`532`** | **`3.574`** | **`8.77%` (`670/7.636`)** | **`0` / `0`** | **100%** |
+
+> **Phân công đóng góp**: Khoa `398` trang (`origin/khoa`), Hiếu `397` trang (`origin/hieu`), Khánh `396` trang (`khanh`), Kin `393` trang (`kin`). Chi tiết tại [`docs/3_PHAN_CONG_4_NGUOI.md`](docs/3_PHAN_CONG_4_NGUOI.md).
 
 ---
 
-## 3. Cấu Trúc Thư Mục Hiện Tại Của Mã Nguồn & Dữ Liệu
+## 2. Cấu Trúc Thư Mục
 
 ```text
-Project0_Zh-Vi-Corpus-Building/
-├── .gitignore                        # Bỏ qua raw_data/, staging/, .venv/, và ảnh PNG bulk trong 01_nguon/
-├── main.py                           # CLI trung tâm (extract, stage, ocr, align, run, validate, web)
-├── requirements.txt                  # PyMuPDF, openpyxl, Pillow, streamlit (+ ghi chú gói GPU/neural)
-├── README.md
+.
+├── main.py                           # CLI: extract, stage, ocr, align, run, validate, web
+├── requirements.txt                  # PyMuPDF, openpyxl, Pillow, streamlit (+ tùy chọn GPU)
 ├── config/
-│   ├── book_manifest.json            # Ánh xạ VPO_01/02/03, công thức lệch trang, phạm vi hợp lệ & loại trừ
-│   └── member_splits.json            # Bảng chia 1.583 trang cho 4 thành viên (khoa, hieu, khanh, kin)
-├── raw_data/                         # (git-ignored) 3 file PDF gốc, Thông tin dữ liệu.png, Thiền Tông Chỉ Nam Tự.txt
-├── CV04_VPO_01/                      # Hồ sơ cuốn 1: Hán Văn Tinh Túy
-│   ├── 01_nguon/                     # Ảnh PNG 300 DPI theo số trang PDF (0007.png, 0008.png...)
-│   ├── 02_ocr_tho/                   # han/*.json, viet/*.json, ocr_results.jsonl, ocr_run_summary.json
-│   ├── 03_text_sach/                 # han.txt, viet.txt (UTF-8 NFC)
-│   ├── 04_dong_hang/                 # VPO_01_parallel.tsv, VPO_01_parallel.xlsx, qa_report.json, word_coverage_report.json
-│   └── README.md
-├── CV04_VPO_02/                      # Hồ sơ cuốn 2: Thể loại từ VN thời trung đại (Phần Ba)
-│   └── ...                           # (tương tự: 01_nguon/, 02_ocr_tho/, 03_text_sach/, 04_dong_hang/, README.md)
-├── CV04_VPO_03/                      # Hồ sơ cuốn 3: Thơ văn Lý – Trần (Tập II – Quyển Thượng)
-│   ├── 01_nguon/                     # Ảnh PNG 300 DPI + bai_03_thien_tong_chi_nam_tu_dich_nghia.txt (bù trang 25)
-│   └── ...                           # (02_ocr_tho/, 03_text_sach/, 04_dong_hang/, README.md)
-├── src/
-│   ├── __init__.py
-│   ├── pdf_extractor.py              # Trích xuất PDF -> PNG 300 DPI bằng PyMuPDF & đóng gói Kaggle (stage)
-│   ├── ocr_engine.py                 # Pipeline OCR 2 luồng (PaddleOCR chinese_cht + VietOCR vgg_transformer) & phân tích bố cục
-│   ├── ocr_disambiguator.py          # Khử nhầm nét chữ Hán (105 cụm tương tự, 24 chữ đa âm) + M.E.D. Levenshtein (S1 ∩ S2)
-│   ├── text_cleaner.py               # Làm sạch UTF-8 NFC, lọc header/footer/chú thích, bảo toàn [MASK] & □
-│   ├── phonetic_verifier.py          # Từ điển CORE_HAN_VIET_DICT (764 chữ Hán / 630 âm đọc) & phóng chiếu dấu câu
-│   ├── work_segmenter.py             # Máy trạng thái phân đoạn tác phẩm & tiểu phẩm (WorkRecord, SubPoem) cho VPO_02/03
-│   ├── aligner.py                    # DP Gale-Church + neo từ vựng/số đếm, dóng hàng Dịch thơ đối diện & 4 cột
-│   ├── poetic_aligner.py             # Tiện ích nhận diện thể thơ & gom cặp Lục bát 6-8 (module mở rộng độc lập)
-│   ├── semantic_scorer.py            # Điểm tương đồng ngữ nghĩa (hỗ trợ sentence-transformers hoặc offline anchors)
-│   ├── word_aligner.py               # Đánh giá độ bao phủ Hán tự và điểm tin cậy dóng hàng ở mức từ
-│   ├── exporter_and_qa.py            # Kiểm định QA 6 loại lỗi, xuất .tsv & .xlsx 2 sheet (thuần stdlib) + đối chiếu 100%
-│   ├── workbench_editor.py           # Hàm edit/split/merge/delete/insert dòng & tái xuất bản đồng bộ TSV/XLSX/QA
-│   ├── corpus_pipeline.py            # Điều phối dóng hàng 4 cột từ JSON OCR thật (lệnh `python main.py align`)
-│   └── pipeline_runner.py            # Bộ chạy dữ liệu mẫu Pilot 32/8/15 dòng (lệnh `python main.py run`)
-├── web_app/
-│   └── app.py                        # Giao diện Streamlit CAT Workbench & Live Monitor tiến độ 4 thành viên
-├── docs/
-│   ├── 1_KIEM_KE_NGUON.md            # Báo cáo kiểm kê nguồn Bước 1 & Bước 2
-│   ├── 2_THONG_KE_BO_SUNG.md         # Thống kê 4 bài khuyết gốc, 3 bài tàn khuyết & Phụ lục 3 (VPO_02)
-│   ├── 3_PHAN_CONG_4_NGUOI.md        # Bảng phân chia 1.583 trang cho 4 thành viên & quy chuẩn 22/11
-│   ├── Hướng dẫn dóng hàng Hán-Việt.pdf
-│   ├── Hướng dẫn dóng hàng dịch âm.docx
-│   └── reference/                    # Bộ mẫu tham khảo CV03_VPR_14 (01_nguon..04_dong_hang + README.md)
-└── tests/
-    └── test_suite.py                 # 8 unit & integration tests (unittest)
+│   ├── book_manifest.json            # Ánh xạ VPO_01..03, lệch trang, phạm vi hợp lệ & loại trừ
+│   └── member_splits.json            # Bảng chia 1.583 trang cho 4 thành viên (+ PDF 7 ở VPO_01)
+├── raw_data/                         # (git-ignored) 3 PDF gốc, Thông tin dữ liệu.png, Thiền Tông Chỉ Nam Tự.txt
+├── CV04_VPO_01/                      # 01_nguon/, 02_ocr_tho/, 03_text_sach/, 04_dong_hang/, README.md
+├── CV04_VPO_02/                      # (tương tự, Phần Ba PDF 134..547)
+├── CV04_VPO_03/                      # (tương tự + bai_03_thien_tong_chi_nam_tu_dich_nghia.txt bù trang 25)
+├── src/                              # 14 module pipeline: pdf_extractor, ocr_engine, ocr_disambiguator,
+│                                     # text_cleaner, phonetic_verifier, work_segmenter, aligner,
+│                                     # poetic_aligner, semantic_scorer, word_aligner, exporter_and_qa,
+│                                     # workbench_editor, corpus_pipeline, pipeline_runner
+├── web_app/app.py                    # Streamlit CAT Workbench (xem tiến độ, sửa/ghép/xóa, đối soát ảnh)
+├── docs/                             # 1_KIEM_KE_NGUON.md, 2_THONG_KE_BO_SUNG.md, 3_PHAN_CONG_4_NGUOI.md,
+│                                     # Hướng dẫn dóng hàng Hán-Việt.pdf, Hướng dẫn dóng hàng dịch âm.docx, reference/
+└── tests/test_suite.py               # 8 unit & integration tests
 ```
 
 ---
 
-## 4. Tuân Thủ Quy Định Đề Bài & Phản Hồi Của Chị Lưu Như
+## 3. Quy Chuẩn Kỹ Thuật & 5 Tiêu Chí Phương Pháp (Mục 9)
 
-Đối chiếu với [`docs/Hướng dẫn dóng hàng Hán-Việt.pdf`](docs/H%C6%B0%E1%BB%9Bng%20d%E1%BA%ABn%20d%C3%B3ng%20h%C3%A0ng%20H%C3%A1n-Vi%E1%BB%87t.pdf), [`docs/Hướng dẫn dóng hàng dịch âm.docx`](docs/H%C6%B0%E1%BB%9Bng%20d%E1%BA%ABn%20d%C3%B3ng%20h%C3%A0ng%20d%E1%BB%8Bch%20%C3%A2m.docx) và góp ý demo của chị **Lưu Như**:
-
-1. **Định dạng 4 cột thống nhất & dòng tiêu đề riêng**:
-   - Toàn bộ 3 bộ sách xuất cấu trúc **4 cột**: `Hán` – `Dịch âm` – `Dịch nghĩa` – `Dịch thơ`.
-   - Trước nội dung chính mỗi bài thơ/văn/tiểu phẩm đều tách **1 dòng tiêu đề riêng** với các thành phần Hán, Dịch âm, Dịch nghĩa đặt đúng cột; tác phẩm nào khuyết cột (ví dụ *Thu dạ hoài ngâm* thiếu `Dịch nghĩa`, văn xuôi thiếu `Dịch thơ`) thì ô đó để chuỗi rỗng `""`.
-   - File `.tsv` ghi UTF-8 phân tách bằng đúng 1 ký tự `\t`, **không có dòng tiêu đề cột**; file `.xlsx` có sheet `DONG_HANG` (hàng 1 là tiêu đề `Hán | Dịch âm | Dịch nghĩa | Dịch thơ`, từ hàng 2 khớp 100% với từng dòng `.tsv`, không gộp ô/công thức/cột STT) và sheet thống kê `THONG_KE`.
-2. **Tổ chức `01_nguon/` & `03_text_sach/`**:
-   - **Về `01_nguon/`**: Do cả 3 tài liệu đầu vào đều là sách song ngữ in chung Hán – Việt trong cùng file PDF (hoặc 2 trang đối diện ở `VPO_01`), ảnh trang scan 300 DPI được đánh số theo trang PDF (`0007.png`...) trực tiếp trong `01_nguon/`, sau đó tách hai bản Hán/Việt tại `02_ocr_tho/{han,viet}/`.
-   - **Về `03_text_sach/{han,viet}.txt`**: Toàn bộ tác phẩm của mỗi cuốn được gộp chung vào một cặp file `han.txt` và `viet.txt` (UTF-8 NFC).
-     - Khi chạy pipeline OCR thật (`python main.py align` qua `src/corpus_pipeline.py`), `han.txt` và `viet.txt` được xuất **đồng bộ 1-1 theo từng dòng** với `04_dong_hang/*_parallel.tsv` (mỗi bài mở đầu bằng dòng tiêu đề riêng, không chèn ký tự `=== ... ===`; `viet.txt` ưu tiên `Dịch nghĩa`, fallback sang `Dịch thơ` rồi `Dịch âm`).
-     - Khi chạy bộ mẫu Pilot (`python main.py run` qua `src/pipeline_runner.py`), các bài được ngăn cách tường minh bằng dòng `=== Tiêu đề bài ===`.
-3. **Bảo toàn chữ mờ/khuyết (`[MASK]` / `□`)**:
-   - Các module `text_cleaner.py`, `phonetic_verifier.py`, `aligner.py` và `exporter_and_qa.py` đều hỗ trợ giữ nguyên token `[MASK]` và ký hiệu ô vuông khuyết chữ `□`/`■`.
-   - Lưu ý: trong JSON OCR thô hiện tại từ PaddleOCR, chữ khắc khuyết thường được nhận dạng thành `□` hoặc `口` (ví dụ trong `VPO_03`), cần rà soát đổi sang `[MASK]` trong bước hậu kiểm cuối trước khi nộp bài.
-4. **Hành động còn lại trước hạn nộp `30/11` (Hợp nhất đủ 4 thành viên)**:
-   - **Gộp thêm phần của Khoa (`khoa`/`mac`) và Hiếu (`hieu`)**: Hiện tại nhánh `windows/khanh-kin` đã gộp xong phần **Khánh + Kin (`3.722` dòng)**; cần copy tiếp `02_ocr_tho/{han,viet}/*.json` từ `khoa` và `hieu` vào `CV04_VPO_01..03/` và chạy `python main.py align --book ALL` để nối liền toàn bộ `1.584` trang và đạt chỉ tiêu toàn nhóm $\ge 8.000$ cặp hợp lệ.
-   - **Hậu kiểm & Báo cáo cuối (Mục 8 & Mục 9)**: Rà soát các dòng cảnh báo QA (`OMISSION`, `ADDITION`, `NUMBER_MISMATCH`), chuẩn hóa `[MASK]`, cập nhật lại số liệu tổng hợp 4 người vào `CV04_VPO_01..03/README.md`, lập báo cáo hậu kiểm tổng kết nhóm trong `docs/` và dọn sạch file tạm trước khi đóng gói.
+- **Định dạng 4 cột chuẩn**: `Hán` | `Dịch âm` | `Dịch nghĩa` | `Dịch thơ`. Mỗi bài có **1 dòng tiêu đề riêng** trước thân bài; cột khuyết ở nguyên bản để `""` (như *Thu dạ hoài ngâm* thiếu `Dịch nghĩa`, văn xuôi thiếu `Dịch thơ`).
+- **Đồng bộ tệp bàn giao**: `.tsv` (UTF-8, không header, phân tách `\t`) khớp 100% với sheet `DONG_HANG` (hàng 1 là tiêu đề 4 cột) của `.xlsx` kèm sheet `THONG_KE`. `03_text_sach/{han,viet}.txt` chuẩn `UTF-8 NFC`, đồng bộ 1-1 theo dòng với `.tsv` (khi chạy `align`).
+- **5 tiêu chí phương pháp đề xuất**:
+  1. *Lý do chọn*: `PyMuPDF` (300 DPI đa nền tảng), `PaddleOCR chinese_cht` + `VietOCR vgg_transformer`, khử nhầm nét Hán bằng `Phiên âm` (`M.E.D. Levenshtein` $S_1 \cap S_2$, `105` cụm nhầm nét, `764` mục từ điển Hán–Việt lõi) và DP Gale-Church + neo từ vựng/số đếm.
+  2. *Đầu vào / Đầu ra*: 3 PDF scan (`raw_data/`) + bản dịch trang 25 `VPO_03` $\rightarrow$ 3 thư mục `CV04_VPO_01..03/` (`01_nguon`, `02_ocr_tho`, `03_text_sach`, `04_dong_hang`).
+  3. *Kiểm chứng*: `validate_pairs` (6 loại cờ lỗi, tỷ lệ lỗi tổng `8.77% <= 30%`), kiểm tra `TSV == XLSX`, độ phủ Hán tự (`word_aligner.py`), `tests/test_suite.py` (`8/8` pass) và hậu kiểm trực quan trên `web_app/app.py`.
+  4. *Rủi ro & dự phòng*: Cắt header 7%, lọc đường kẻ chú thích (`VPO_02`), bù trang trắng `PDF 25` (`VPO_03`), hỗ trợ bảo toàn `[MASK]`/`□` và chỉnh sửa tay qua CAT Workbench.
+  5. *Tái lập*: Cấu hình tập trung ở `config/`, xuất `.xlsx` thuần thư viện chuẩn Python (zero-dependency), chạy lại qua `main.py`.
 
 ---
 
-## 5. Giải Trình 5 Tiêu Chí Phương Pháp Đề Xuất (Mục 9 Hướng Dẫn)
-
-1. **Lý do lựa chọn**: Kết hợp `PyMuPDF` (trích xuất 300 DPI đa nền tảng trên Windows), `PaddleOCR chinese_cht` + `VietOCR vgg_transformer` (tối ưu riêng cho chữ Hán phồn thể và tiếng Việt có dấu), thuật toán khử nhầm nét Hán dựa trên `Phiên âm` (`M.E.D. Levenshtein` $S_1 \cap S_2$ + 105 cụm tương tự) và Quy hoạch động Gale-Church + neo từ vựng/số đếm để đạt độ chính xác cao khi dóng hàng 4 cột mà không phụ thuộc API trả phí.
-2. **Dữ liệu đầu vào & đầu ra**: Đầu vào là 3 bộ PDF scan gốc (`raw_data/*.pdf`) + bản dịch bổ sung trang 25 `VPO_03`; đầu ra là 3 thư mục chuẩn `CV04_VPO_01`, `CV04_VPO_02`, `CV04_VPO_03` gồm `01_nguon/*.png`, `02_ocr_tho/{han,viet}/*.json`, `03_text_sach/{han,viet}.txt`, `04_dong_hang/VPO_0*_parallel.{tsv,xlsx}` và `qa_report.json`.
-3. **Cách kiểm chứng**: Đối soát tự động qua `validate_pairs` (6 nhóm cờ lỗi; tỷ lệ lỗi QA sau khi gộp Khánh + Kin đạt `6.66%`, sâu dưới ngưỡng `<= 30%`), kiểm tra khớp 100% giữa `.tsv` và sheet `DONG_HANG` trong `.xlsx`, đánh giá độ phủ từ vựng (`word_aligner.py`), hậu kiểm trực quan qua Streamlit CAT Workbench và chạy bộ test `tests/test_suite.py` (`8/8` pass).
-4. **Rủi ro & phương án dự phòng**: Rủi ro OCR nhầm nét Hán cổ, lẫn chú thích chân trang hoặc mất chữ ở trang scan mờ/trắng $\rightarrow$ khắc phục bằng cắt header 7%, lọc đường kẻ chân trang (`TLTVN`), khử nhầm nét theo `Phiên âm`, đánh dấu `[MASK]`, bổ sung văn bản trang 25 (`VPO_03`), và hỗ trợ sửa/ghép/xóa dòng thủ công trên `web_app/app.py`. Khi không có GPU cục bộ, có sẵn chế độ `--mock` và bộ đóng gói chạy Kaggle GPU (`stage`).
-5. **Khả năng tái lập bởi người khác**: Toàn bộ cấu hình chia trang/sách nằm trong `config/`, pipeline chạy lại hoàn toàn bằng CLI `python main.py` (không yêu cầu thư viện `pandas`/`openpyxl` để xuất `.xlsx` nhờ bộ ghi OpenXML thuần chuẩn Python), có sẵn kiểm thử tự động trong `tests/test_suite.py`.
-
----
-
-## 6. Hướng Dẫn Sử Dụng CLI & Kiểm Thử
+## 4. Lệnh Chạy Nhanh
 
 ```powershell
-# 1. Trích xuất ảnh PNG 300 DPI từ PDF theo phân công thành viên (khoa, hieu, khanh, kin) hoặc dải trang
-python main.py extract --member khanh --dpi 300
-python main.py extract --book VPO_02 --pages 134-145 --dpi 300
-
-# 2. Đóng gói ảnh + src/ + config/ vào staging/kaggle_<member> để chạy OCR GPU trên Kaggle
-python main.py stage --member khanh --kaggle-user <kaggle_username>
-
-# 3. Chạy OCR cục bộ (cần paddleocr/vietocr hoặc thêm --mock để chạy giả lập kiểm tra luồng)
-python main.py ocr --book ALL --mock --max-pages 5
-
-# 4. Dóng hàng 4 cột từ toàn bộ JSON OCR thật trong 02_ocr_tho/ (tạo 03_text_sach/ và 04_dong_hang/)
-python main.py align --book ALL
-
-# 5. Kiểm định chất lượng QA & đối chiếu TSV == XLSX trên CV04_VPO_01..03
-python main.py validate
-
-# 6. Chạy bộ kiểm thử tự động (8 unit & integration tests, chạy trong thư mục tạm cô lập)
-python -m unittest discover -s tests -v
-
-# 7. Mở giao diện Streamlit CAT Workbench (xem tiến độ, sửa/ghép/xóa dòng, đối soát ảnh gốc)
-python main.py web
+python main.py extract --member khanh --dpi 300   # Trích xuất ảnh 300 DPI theo thành viên (khoa/hieu/khanh/kin)
+python main.py align --book ALL                   # Dóng hàng 4 cột từ toàn bộ JSON trong 02_ocr_tho/
+python main.py validate                           # Kiểm định QA & đối chiếu TSV == XLSX trên CV04_VPO_01..03
+python -m unittest discover -s tests -v           # Chạy 8 bài test tự động (cô lập trong thư mục tạm)
+python main.py web                                # Mở giao diện Streamlit CAT Workbench
 ```
 
-> **Cảnh báo về `python main.py run`**: Lệnh `python main.py run` chạy bộ dữ liệu mẫu Pilot cố định (`VPO_01/02/03_PILOT_BLOCKS`, `32/8/15` cặp) và sẽ **ghi đè** lên `03_text_sach/`, `04_dong_hang/` và `README.md` của cả 3 thư mục `CV04_VPO_01..03` nếu chạy trực tiếp trên thư mục gốc. Chỉ dùng `python main.py align --book ALL` khi làm việc với dữ liệu OCR thật.
+> **Lưu ý**: Không chạy `python main.py run` trên thư mục gốc vì lệnh này ghi đè `CV04_VPO_01..03/` bằng bộ dữ liệu mẫu Pilot (`32/8/15` dòng).

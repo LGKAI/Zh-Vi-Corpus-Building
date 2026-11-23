@@ -6,203 +6,203 @@
   "engine": "vietocr_vgg_transformer",
   "preprocess": {
     "book_type": "HVTT",
-    "original_width": 1100,
-    "original_height": 1600,
-    "crop_top_px": 112,
+    "original_width": 1188,
+    "original_height": 1728,
+    "crop_top_px": 121,
     "header_ratio": 0.07,
     "footnote_separator_y_cropped": null,
     "footnote_separator_y_original": null,
-    "effective_width": 1100,
-    "effective_height": 1488
+    "effective_width": 1188,
+    "effective_height": 1607
   },
   "items": [
     {
       "line_id": "0007_viet_000",
       "bbox": [
         [
-          308,
-          240
+          297,
+          397
         ],
         [
-          726,
-          240
+          879,
+          397
         ],
         [
-          726,
-          285
+          879,
+          449
         ],
         [
-          308,
-          285
+          297,
+          449
         ]
       ],
       "bbox_original": [
         [
-          308,
-          352
+          297,
+          518
         ],
         [
-          726,
-          352
+          879,
+          518
         ],
         [
-          726,
-          397
+          879,
+          570
         ],
         [
-          308,
-          397
+          297,
+          570
         ]
       ],
       "box_xyxy": [
-        308,
-        240,
-        726,
-        285
+        297,
+        397,
+        879,
+        449
       ],
-      "text": "TỬ-SẢN LUẬN CHÍNH",
-      "confidence": 0.988
+      "text": "TỬ-SẢN THỤ CHÍNH THÁI-THÚC",
+      "confidence": 0.995
     },
     {
       "line_id": "0007_viet_001",
       "bbox": [
         [
-          286,
-          310
+          285,
+          501
         ],
         [
-          748,
-          310
+          902,
+          501
         ],
         [
-          748,
-          355
+          902,
+          552
         ],
         [
-          286,
-          355
+          285,
+          552
         ]
       ],
       "bbox_original": [
         [
-          286,
-          422
+          285,
+          622
         ],
         [
-          748,
-          422
+          902,
+          622
         ],
         [
-          748,
-          467
+          902,
+          673
         ],
         [
-          286,
-          467
+          285,
+          673
         ]
       ],
       "box_xyxy": [
-        286,
-        310,
-        748,
-        355
+        285,
+        501,
+        902,
+        552
       ],
-      "text": "Tử-Sản bàn về việc chính-trị.",
-      "confidence": 0.985
+      "text": "TỬ SẢN DẶN CON PHÉP TRỊ DÂN",
+      "confidence": 0.995
     },
     {
       "line_id": "0007_viet_002",
       "bbox": [
         [
           748,
-          485
+          673
         ],
         [
-          946,
-          485
+          986,
+          673
         ],
         [
-          946,
-          530
+          986,
+          708
         ],
         [
           748,
-          530
+          708
         ]
       ],
       "bbox_original": [
         [
           748,
-          597
+          794
         ],
         [
-          946,
-          597
+          986,
+          794
         ],
         [
-          946,
-          642
+          986,
+          829
         ],
         [
           748,
-          642
+          829
         ]
       ],
       "box_xyxy": [
         748,
-        485,
-        946,
-        530
+        673,
+        986,
+        708
       ],
       "text": "Tả Khâu Minh",
-      "confidence": 0.984
+      "confidence": 0.995
     },
     {
       "line_id": "0007_viet_003",
       "bbox": [
         [
-          154,
-          610
+          190,
+          950
         ],
         [
-          946,
-          610
+          997,
+          950
         ],
         [
-          946,
-          655
+          997,
+          1002
         ],
         [
-          154,
-          655
+          190,
+          1002
         ]
       ],
       "bbox_original": [
         [
-          154,
-          722
+          190,
+          1071
         ],
         [
-          946,
-          722
+          997,
+          1071
         ],
         [
-          946,
-          767
+          997,
+          1123
         ],
         [
-          154,
-          767
+          190,
+          1123
         ]
       ],
       "box_xyxy": [
-        154,
-        610,
-        946,
-        655
+        190,
+        950,
+        997,
+        1002
       ],
-      "text": "TIỂU-DẪN. — Tả Khâu-Minh là sử-quan nước Lỗ đời Xuân-Thu.",
-      "confidence": 0.981
+      "text": "TIỂU DẪN. — Tả Khâu Minh làm thái-sử nước Lỗ,",
+      "confidence": 0.99
     }
   ],
   "layout_summary": {
@@ -210,12 +210,6 @@
     "phien_am_lines": [],
     "dich_nghia_lines": [],
     "dich_tho_lines": [],
-    "interlinear_triplets": [],
-    "title_block": {
-      "chu_han": "子 產 論 政",
-      "phien_am": "TỬ-SẢN LUẬN CHÍNH",
-      "dich_nghia": "Tử-Sản bàn về việc chính-trị."
-    },
-    "dich_tho_y_centers": []
+    "interlinear_triplets": []
   }
 }

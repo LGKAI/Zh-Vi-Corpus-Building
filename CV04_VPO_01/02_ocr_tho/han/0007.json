@@ -6,114 +6,116 @@
   "engine": "paddleocr_chinese_cht",
   "preprocess": {
     "book_type": "HVTT",
-    "original_width": 1100,
-    "original_height": 1600,
-    "crop_top_px": 112,
+    "original_width": 1188,
+    "original_height": 1728,
+    "crop_top_px": 121,
     "header_ratio": 0.07,
     "footnote_separator_y_cropped": null,
     "footnote_separator_y_original": null,
-    "effective_width": 1100,
-    "effective_height": 1488
+    "effective_width": 1188,
+    "effective_height": 1607
   },
   "items": [
     {
       "line_id": "0007_han_000",
       "bbox": [
         [
-          352,
-          140
+          403,
+          328
         ],
         [
-          682,
-          140
+          843,
+          328
         ],
         [
-          682,
-          210
+          843,
+          380
         ],
         [
-          352,
-          210
+          403,
+          380
         ]
       ],
       "bbox_original": [
         [
-          352,
-          252
+          403,
+          449
         ],
         [
-          682,
-          252
+          843,
+          449
         ],
         [
-          682,
-          322
+          843,
+          501
         ],
         [
-          352,
-          322
+          403,
+          501
         ]
       ],
       "box_xyxy": [
-        352,
-        140,
-        682,
-        210
+        403,
+        328,
+        843,
+        380
       ],
-      "text": "子 產 論 政",
-      "confidence": 0.992
+      "text": "子產授政太叔",
+      "confidence": 0.995
     },
     {
       "line_id": "0007_han_001",
       "bbox": [
         [
-          748,
-          420
+          772,
+          604
         ],
         [
-          946,
-          420
+          962,
+          604
         ],
         [
-          946,
-          470
+          962,
+          656
         ],
         [
-          748,
-          470
+          772,
+          656
         ]
       ],
       "bbox_original": [
         [
-          748,
-          532
+          772,
+          725
         ],
         [
-          946,
-          532
+          962,
+          725
         ],
         [
-          946,
-          582
+          962,
+          777
         ],
         [
-          748,
-          582
+          772,
+          777
         ]
       ],
       "box_xyxy": [
-        748,
-        420,
-        946,
-        470
+        772,
+        604,
+        962,
+        656
       ],
-      "text": "左 丘 明",
-      "confidence": 0.99
+      "text": "左丘明",
+      "confidence": 0.995
     }
   ],
   "layout_summary": {
     "layout_mode": "odd_title_page",
-    "chu_han_lines": [],
+    "chu_han_lines": [
+      "子產授政太叔"
+    ],
     "interlinear_triplets": []
   }
 }

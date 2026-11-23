@@ -652,6 +652,8 @@ def _align_verse_unit(
 
     if not pa_clean:
         pa_aligned = [""] * len(aligned)
+    elif not dn_clean and not dt_clean and target_viet is pa_clean:
+        pa_aligned = [it["viet"] for it in aligned]
     elif len(pa_clean) == len(h_clean):
         pa_aligned = [
             clean_viet_text(" ".join(pa_clean[i] for i in it["han_indices"] if i < len(pa_clean)))
@@ -685,7 +687,11 @@ def _align_verse_unit(
         ]
         dt_aligned = align_hvtt_facing_dich_tho(backbone, dt_clean)
 
-    return list(zip(h_chunks, pa_aligned, dn_aligned, dt_aligned))
+    return [
+        row
+        for row in zip(h_chunks, pa_aligned, dn_aligned, dt_aligned)
+        if row[0].strip() and any(re.search(r"[A-Za-zÀ-ỹà-ỹ]", c) for c in row[1:])
+    ]
 
 
 def _align_prose_unit(
@@ -1014,7 +1020,7 @@ def _align_sequential_book_from_ocr(
             dn_title = clean_viet_text(dn_lines.pop(0))
 
         han_title = clean_han_text(han_title_raw)
-        if han_title and (pa_title or dn_title):
+        if han_title and any(re.search(r"[A-Za-zÀ-ỹà-ỹ]", t) for t in (pa_title, dn_title)):
             all_pairs.append((han_title, pa_title, dn_title, ""))
             title_rows_count += 1
 

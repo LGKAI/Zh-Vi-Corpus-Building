@@ -20,439 +20,439 @@
       "line_id": "0012_han_000",
       "bbox": [
         [
-          180,
-          120
+          246,
+          130
         ],
         [
-          1620,
-          120
+          571,
+          130
         ],
         [
-          1620,
-          175
+          571,
+          178
         ],
         [
-          180,
-          175
+          246,
+          178
         ]
       ],
       "bbox_original": [
         [
-          180,
-          241
+          246,
+          251
         ],
         [
-          1620,
-          241
+          571,
+          251
         ],
         [
-          1620,
-          296
+          571,
+          299
         ],
         [
-          180,
-          296
+          246,
+          299
         ]
       ],
       "box_xyxy": [
-        180,
-        120,
-        1620,
-        175
+        246,
+        130,
+        571,
+        178
       ],
-      "text": "政 寬 則 民 慢",
-      "confidence": 0.992
+      "text": "政寬則民慢",
+      "confidence": 0.9992
     },
     {
       "line_id": "0012_han_001",
       "bbox": [
         [
-          180,
-          300
+          245,
+          297
         ],
         [
-          1620,
-          300
+          642,
+          297
         ],
         [
-          1620,
-          355
+          642,
+          345
         ],
         [
-          180,
-          355
+          245,
+          345
         ]
       ],
       "bbox_original": [
         [
-          180,
-          421
+          245,
+          418
         ],
         [
-          1620,
-          421
+          642,
+          418
         ],
         [
-          1620,
-          476
+          642,
+          466
         ],
         [
-          180,
-          476
+          245,
+          466
         ]
       ],
       "box_xyxy": [
-        180,
-        300,
-        1620,
-        355
+        245,
+        297,
+        642,
+        345
       ],
-      "text": "慢 則 糾 之 以 猛",
-      "confidence": 0.99
+      "text": "慢則糾之以猛",
+      "confidence": 0.9994
     },
     {
       "line_id": "0012_han_002",
       "bbox": [
         [
-          180,
-          480
+          240,
+          469
         ],
         [
-          1620,
-          480
+          920,
+          469
         ],
         [
-          1620,
-          535
+          920,
+          516
         ],
         [
-          180,
-          535
+          240,
+          516
         ]
       ],
       "bbox_original": [
         [
-          180,
-          601
+          240,
+          590
         ],
         [
-          1620,
-          601
+          920,
+          590
         ],
         [
-          1620,
-          656
+          920,
+          637
         ],
         [
-          180,
-          656
+          240,
+          637
         ]
       ],
       "box_xyxy": [
-        180,
-        480,
-        1620,
-        535
+        240,
+        469,
+        920,
+        516
       ],
-      "text": "猛 則 民 殘 殘 則 施 之 以 寬",
-      "confidence": 0.989
+      "text": "猛則民殘殘則施之以寬",
+      "confidence": 0.9959
     },
     {
       "line_id": "0012_han_003",
       "bbox": [
         [
-          180,
-          660
+          245,
+          637
         ],
         [
-          1620,
-          660
+          781,
+          637
         ],
         [
-          1620,
-          715
+          781,
+          685
         ],
         [
-          180,
-          715
+          245,
+          685
         ]
       ],
       "bbox_original": [
         [
-          180,
-          781
+          245,
+          758
         ],
         [
-          1620,
-          781
+          781,
+          758
         ],
         [
-          1620,
-          836
+          781,
+          806
         ],
         [
-          180,
-          836
+          245,
+          806
         ]
       ],
       "box_xyxy": [
-        180,
-        660,
-        1620,
-        715
+        245,
+        637,
+        781,
+        685
       ],
-      "text": "寬 以 濟 猛 猛 以 濟 寬",
-      "confidence": 0.991
+      "text": "寬以濟猛猛以濟寬",
+      "confidence": 0.9851
     },
     {
       "line_id": "0012_han_004",
       "bbox": [
         [
-          180,
-          840
+          244,
+          810
         ],
         [
-          1620,
-          840
+          499,
+          810
         ],
         [
-          1620,
-          895
+          499,
+          855
         ],
         [
-          180,
-          895
+          244,
+          855
         ]
       ],
       "bbox_original": [
         [
-          180,
-          961
+          244,
+          931
         ],
         [
-          1620,
-          961
+          499,
+          931
         ],
         [
-          1620,
-          1016
+          499,
+          976
         ],
         [
-          180,
-          1016
+          244,
+          976
         ]
       ],
       "box_xyxy": [
-        180,
-        840,
-        1620,
-        895
+        244,
+        810,
+        499,
+        855
       ],
-      "text": "政 是 以 和",
-      "confidence": 0.992
+      "text": "政是以和",
+      "confidence": 1.0
     },
     {
       "line_id": "0012_han_005",
       "bbox": [
         [
-          180,
-          1020
+          240,
+          970
         ],
         [
-          1620,
-          1020
+          919,
+          972
         ],
         [
-          1620,
-          1075
+          919,
+          1024
         ],
         [
-          180,
-          1075
+          240,
+          1021
         ]
       ],
       "bbox_original": [
         [
-          180,
-          1141
+          240,
+          1091
         ],
         [
-          1620,
-          1141
+          919,
+          1093
         ],
         [
-          1620,
-          1196
+          919,
+          1145
         ],
         [
-          180,
-          1196
+          240,
+          1142
         ]
       ],
       "box_xyxy": [
-        180,
-        1020,
-        1620,
-        1075
+        240,
+        970,
+        919,
+        1024
       ],
-      "text": "詩 曰 民 亦 勞 止 汔 可 小 康",
-      "confidence": 0.988
+      "text": "詩曰民亦勞止汽可小康",
+      "confidence": 0.998
     },
     {
       "line_id": "0012_han_006",
       "bbox": [
         [
-          180,
-          1260
+          244,
+          1144
         ],
         [
-          1620,
-          1260
+          777,
+          1144
         ],
         [
-          1620,
-          1315
+          777,
+          1192
         ],
         [
-          180,
-          1315
+          244,
+          1192
         ]
       ],
       "bbox_original": [
         [
-          180,
-          1381
+          244,
+          1265
         ],
         [
-          1620,
-          1381
+          777,
+          1265
         ],
         [
-          1620,
-          1436
+          777,
+          1313
         ],
         [
-          180,
-          1436
+          244,
+          1313
         ]
       ],
       "box_xyxy": [
-        180,
-        1260,
-        1620,
-        1315
+        244,
+        1144,
+        777,
+        1192
       ],
-      "text": "惠 此 中 國 以 綏 四 方",
-      "confidence": 0.989
+      "text": "惠此中國以綏四方",
+      "confidence": 0.997
     },
     {
       "line_id": "0012_han_007",
       "bbox": [
         [
-          180,
-          1500
+          239,
+          1313
         ],
         [
-          1620,
-          1500
+          570,
+          1313
         ],
         [
-          1620,
-          1555
+          570,
+          1358
         ],
         [
-          180,
-          1555
+          239,
+          1358
         ]
       ],
       "bbox_original": [
         [
-          180,
-          1621
+          239,
+          1434
         ],
         [
-          1620,
-          1621
+          570,
+          1434
         ],
         [
-          1620,
-          1676
+          570,
+          1479
         ],
         [
-          180,
-          1676
+          239,
+          1479
         ]
       ],
       "box_xyxy": [
-        180,
-        1500,
-        1620,
-        1555
+        239,
+        1313,
+        570,
+        1358
       ],
-      "text": "施 之 以 寬 也",
-      "confidence": 0.991
+      "text": "施之以寬也",
+      "confidence": 0.9991
     }
   ],
   "layout_summary": {
     "layout_mode": "interlinear_3line_even_page",
     "chu_han_lines": [
-      "政 寬 則 民 慢",
-      "慢 則 糾 之 以 猛",
-      "猛 則 民 殘 殘 則 施 之 以 寬",
-      "寬 以 濟 猛 猛 以 濟 寬",
-      "政 是 以 和",
-      "詩 曰 民 亦 勞 止 汔 可 小 康",
-      "惠 此 中 國 以 綏 四 方",
-      "施 之 以 寬 也"
+      "政寬則民慢",
+      "慢則糾之以猛",
+      "猛則民殘殘則施之以寬",
+      "寬以濟猛猛以濟寬",
+      "政是以和",
+      "詩曰民亦勞止汽可小康",
+      "惠此中國以綏四方",
+      "施之以寬也"
     ],
     "interlinear_triplets": [
       {
         "triplet_index": 0,
-        "chu_han": "政 寬 則 民 慢",
+        "chu_han": "政寬則民慢",
         "phien_am": "Chính khoan tắc dân mạn,",
-        "dich_nghia_gloss": "Chính sách khoan hòa dân nhờn,"
+        "dich_nghia_gloss": "Chính sách khoan hòa dân nhờn"
       },
       {
         "triplet_index": 1,
-        "chu_han": "慢 則 糾 之 以 猛",
-        "phien_am": "mạn tắc củ chi dĩ mãnh.",
-        "dich_nghia_gloss": "nhờn thì lấy « mạnh » (thẳng tay) mà đàn áp."
+        "chu_han": "慢則糾之以猛",
+        "phien_am": "mạn tắc củ chi dĩ mãnh",
+        "dich_nghia_gloss": "nhờn thì lây a mạnh - (thắng tay) mà đàn áp."
       },
       {
         "triplet_index": 2,
-        "chu_han": "猛 則 民 殘 殘 則 施 之 以 寬",
-        "phien_am": "Mãnh tắc dân tàn, tàn tắc thi chi dĩ khoan.",
-        "dich_nghia_gloss": "Mạnh tất dân hại, hại thì lại lấy khoan mà thi-hành."
+        "chu_han": "猛則民殘殘則施之以寬",
+        "phien_am": "Mãnh tắc dân tàn, tàn tắc thi chi di khoan",
+        "dich_nghia_gloss": "mạnh tất dân hại, hại thì lại lây khoan mà thi-hành"
       },
       {
         "triplet_index": 3,
-        "chu_han": "寬 以 濟 猛 猛 以 濟 寬",
-        "phien_am": "Khoan dĩ tế mãnh, mãnh dĩ tế khoan.",
-        "dich_nghia_gloss": "Khoan để đỡ mạnh, mạnh để đỡ khoan."
+        "chu_han": "寬以濟猛猛以濟寬",
+        "phien_am": "Khoan di tẽ mãnh, mũnh di tẽ khoan",
+        "dich_nghia_gloss": "Khoan đề đỡ mạnh, mạnh đề đờ khoan"
       },
       {
         "triplet_index": 4,
-        "chu_han": "政 是 以 和",
-        "phien_am": "Chính thị dĩ hòa.",
-        "dich_nghia_gloss": "Chính sự sẽ hòa."
+        "chu_han": "政是以和",
+        "phien_am": "Chính thị dĩ hòa",
+        "dich_nghia_gloss": "chính sự sẽ hòa."
       },
       {
         "triplet_index": 5,
-        "chu_han": "詩 曰 民 亦 勞 止 汔 可 小 康",
-        "phien_am": "Thi viết : dân diệc lao chỉ, ngật khả tiểu-khang.",
-        "dich_nghia_gloss": "Kinh thi nói : dân đỡ vất-vả, để tạm yên vui."
+        "chu_han": "詩曰民亦勞止汽可小康",
+        "phien_am": "Thi viết: dân diệc lao chì, ngật khả tiều-khang",
+        "dich_nghia_gloss": "Kinh thi nói: dân đữ vật-và, để tạm yên vui"
       },
       {
         "triplet_index": 6,
-        "chu_han": "惠 此 中 國 以 綏 四 方",
-        "phien_am": "Huệ thử trung-quốc, dĩ tuy tứ phương.",
-        "dich_nghia_gloss": "Ra ơn trong nước, để yên bốn phương."
+        "chu_han": "惠此中國以綏四方",
+        "phien_am": "Huệ thử trung-quốc, đi tuy tứ phương",
+        "dich_nghia_gloss": "Ra ơn trong nước, để yên bồn phương"
       },
       {
         "triplet_index": 7,
-        "chu_han": "施 之 以 寬 也",
-        "phien_am": "Thi chi dĩ khoan dã.",
-        "dich_nghia_gloss": "Ấy là lấy « khoan » mà thi-hành vậy."
+        "chu_han": "施之以寬也",
+        "phien_am": "thi chi di khoan dã",
+        "dich_nghia_gloss": "ây là lầy a khoan . mà thi-hành vậy"
       }
     ]
   }

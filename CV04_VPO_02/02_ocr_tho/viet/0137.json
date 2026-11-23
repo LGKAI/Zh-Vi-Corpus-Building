@@ -20,584 +20,673 @@
       "line_id": "0137_viet_000",
       "bbox": [
         [
-          220,
-          410
+          144,
+          0
         ],
         [
-          900,
-          410
+          575,
+          0
         ],
         [
-          900,
-          450
+          575,
+          34
         ],
         [
-          220,
-          450
+          144,
+          34
         ]
       ],
       "bbox_original": [
         [
-          220,
-          525
+          144,
+          115
         ],
         [
-          900,
-          525
+          575,
+          115
         ],
         [
-          900,
-          565
+          575,
+          149
         ],
         [
-          220,
-          565
+          144,
+          149
         ]
       ],
       "box_xyxy": [
-        220,
-        410,
-        900,
-        450
+        144,
+        0,
+        575,
+        34
       ],
-      "text": "Phiên âm:",
-      "confidence": 0.995
+      "text": "Đường qua về chín tâng trời",
+      "confidence": 0.931
     },
     {
       "line_id": "0137_viet_001",
       "bbox": [
         [
-          220,
-          460
+          144,
+          91
         ],
         [
-          1500,
-          460
+          380,
+          91
         ],
         [
-          1500,
-          505
+          380,
+          132
         ],
         [
-          220,
-          505
+          144,
+          132
         ]
       ],
       "bbox_original": [
         [
-          220,
-          575
+          144,
+          206
         ],
         [
-          1500,
-          575
+          380,
+          206
         ],
         [
-          1500,
-          620
+          380,
+          247
         ],
         [
-          220,
-          620
+          144,
+          247
         ]
       ],
       "box_xyxy": [
-        220,
-        460,
-        1500,
-        505
+        144,
+        91,
+        380,
+        132
       ],
-      "text": "Tường quang phong hảo cẩm phàm trương, Thần tiên phục đế hương².",
-      "confidence": 0.986
+      "text": "Tình thảm thiết,",
+      "confidence": 0.9255
     },
     {
       "line_id": "0137_viet_002",
       "bbox": [
         [
-          220,
-          515
+          143,
+          139
         ],
         [
-          1500,
-          515
+          586,
+          143
         ],
         [
-          1500,
-          560
+          586,
+          184
         ],
         [
-          220,
-          560
+          142,
+          179
         ]
       ],
       "bbox_original": [
         [
-          220,
-          630
+          143,
+          254
         ],
         [
-          1500,
-          630
+          586,
+          258
         ],
         [
-          1500,
-          675
+          586,
+          299
         ],
         [
-          220,
-          675
+          142,
+          294
         ]
       ],
       "box_xyxy": [
-        220,
-        515,
-        1500,
-        560
+        142,
+        139,
+        586,
+        184
       ],
-      "text": "Thiên trùng vạn lí¹ thiệp thương lương, Cửu thiên quy lộ trường.",
-      "confidence": 0.985
+      "text": "Đối diện với chén rượu biệt li,",
+      "confidence": 0.9314
     },
     {
       "line_id": "0137_viet_003",
       "bbox": [
         [
-          220,
-          570
+          144,
+          189
         ],
         [
-          1500,
-          570
+          587,
+          193
         ],
         [
-          1500,
-          615
+          587,
+          234
         ],
         [
-          220,
-          615
+          143,
+          230
         ]
       ],
       "bbox_original": [
         [
-          220,
-          685
+          144,
+          304
         ],
         [
-          1500,
-          685
+          587,
+          308
         ],
         [
-          1500,
-          730
+          587,
+          349
         ],
         [
-          220,
-          730
+          143,
+          345
         ]
       ],
       "box_xyxy": [
-        220,
-        570,
-        1500,
-        615
+        143,
+        189,
+        587,
+        234
       ],
-      "text": "Tình thảm thiết², Đối li thương, Phan luyến sứ tinh lang³.",
-      "confidence": 0.986
+      "text": "Yêu mến vin lấy chàng sứ giả.",
+      "confidence": 0.9139
     },
     {
       "line_id": "0137_viet_004",
       "bbox": [
         [
-          220,
-          625
+          141,
+          243
         ],
         [
-          1500,
-          625
+          880,
+          245
         ],
         [
-          1500,
-          670
+          879,
+          284
         ],
         [
-          220,
-          670
+          141,
+          282
         ]
       ],
       "bbox_original": [
         [
-          220,
-          740
+          141,
+          358
         ],
         [
-          1500,
-          740
+          880,
+          360
         ],
         [
-          1500,
-          785
+          879,
+          399
         ],
         [
-          220,
-          785
+          141,
+          397
         ]
       ],
       "box_xyxy": [
-        220,
-        625,
-        1500,
-        670
+        141,
+        243,
+        880,
+        284
       ],
-      "text": "Nguyện tương thâm ý vị Nam cương, Phân minh báo⁴ ngã hoàng.",
-      "confidence": 0.985
+      "text": "Xin hãy đem cái ý sâu xa vì biên cương phía Nam,",
+      "confidence": 0.9232
     },
     {
       "line_id": "0137_viet_005",
       "bbox": [
         [
-          220,
-          690
+          141,
+          293
         ],
         [
-          900,
-          690
+          628,
+          297
         ],
         [
-          900,
-          730
+          628,
+          334
         ],
         [
-          220,
-          730
+          141,
+          330
         ]
       ],
       "bbox_original": [
         [
-          220,
-          805
+          141,
+          408
         ],
         [
-          900,
-          805
+          628,
+          412
         ],
         [
-          900,
-          845
+          628,
+          449
         ],
         [
-          220,
-          845
+          141,
+          445
         ]
       ],
       "box_xyxy": [
-        220,
-        690,
-        900,
-        730
+        141,
+        293,
+        628,
+        334
       ],
-      "text": "Dịch nghĩa:",
-      "confidence": 0.994
+      "text": "Báo rõ cho nhà vua của chúng ta.",
+      "confidence": 0.9177
     },
     {
       "line_id": "0137_viet_006",
       "bbox": [
         [
-          220,
-          740
+          143,
+          346
         ],
         [
-          1580,
-          740
+          497,
+          346
         ],
         [
-          1580,
-          790
+          497,
+          384
         ],
         [
-          220,
-          790
+          143,
+          384
         ]
       ],
       "bbox_original": [
         [
-          220,
-          855
+          143,
+          461
         ],
         [
-          1580,
-          855
+          497,
+          461
         ],
         [
-          1580,
-          905
+          497,
+          499
         ],
         [
-          220,
-          905
+          143,
+          499
         ]
       ],
       "box_xyxy": [
-        220,
-        740,
-        1580,
-        790
+        143,
+        346,
+        497,
+        384
       ],
-      "text": "Ánh sáng tốt lành, gió thuận, căng cánh buồm gấm, Thần tiên trở về quê hương của hoàng đế⁵.",
-      "confidence": 0.983
+      "text": "Dịch theo nguyên điệu:",
+      "confidence": 0.9313
     },
     {
       "line_id": "0137_viet_007",
       "bbox": [
         [
-          220,
-          800
+          142,
+          393
         ],
         [
-          1580,
-          800
+          699,
+          395
         ],
         [
-          1580,
-          850
+          699,
+          436
         ],
         [
-          220,
-          850
+          142,
+          434
         ]
       ],
       "bbox_original": [
         [
-          220,
-          915
+          142,
+          508
         ],
         [
-          1580,
-          915
+          699,
+          510
         ],
         [
-          1580,
-          965
+          699,
+          551
         ],
         [
-          220,
-          965
+          142,
+          549
         ]
       ],
       "box_xyxy": [
-        220,
-        800,
-        1580,
-        850
+        142,
+        393,
+        699,
+        436
       ],
-      "text": "Nghìn trùng muôn dặm vượt qua những làn sóng xanh, Đường qua về chín tầng trời¹.",
-      "confidence": 0.982
+      "text": "Trời trong gió mát cánh buồm giương,",
+      "confidence": 0.9291
     },
     {
       "line_id": "0137_viet_008",
       "bbox": [
         [
-          220,
-          860
+          142,
+          440
         ],
         [
-          1580,
-          860
+          479,
+          442
         ],
         [
-          1580,
-          910
+          479,
+          486
         ],
         [
-          220,
-          910
+          142,
+          484
         ]
       ],
       "bbox_original": [
         [
-          220,
-          975
+          142,
+          555
         ],
         [
-          1580,
-          975
+          479,
+          557
         ],
         [
-          1580,
-          1025
+          479,
+          601
         ],
         [
-          220,
-          1025
+          142,
+          599
         ]
       ],
       "box_xyxy": [
-        220,
-        860,
-        1580,
-        910
+        142,
+        440,
+        479,
+        486
       ],
-      "text": "Tình thảm thiết, Đối diện với chén rượu biệt li, Yêu mến vin lấy chàng sứ giả.",
-      "confidence": 0.983
+      "text": "Thần tiên về đế hương",
+      "confidence": 0.9332
     },
     {
       "line_id": "0137_viet_009",
       "bbox": [
         [
-          220,
-          920
+          141,
+          493
         ],
         [
-          1580,
-          920
+          733,
+          496
         ],
         [
-          1580,
-          970
+          733,
+          537
         ],
         [
-          220,
-          970
+          141,
+          533
         ]
       ],
       "bbox_original": [
         [
-          220,
-          1035
+          141,
+          608
         ],
         [
-          1580,
-          1035
+          733,
+          611
         ],
         [
-          1580,
-          1085
+          733,
+          652
         ],
         [
-          220,
-          1085
+          141,
+          648
         ]
       ],
       "box_xyxy": [
-        220,
-        920,
-        1580,
-        970
+        141,
+        493,
+        733,
+        537
       ],
-      "text": "Xin hãy đem cái ý sâu xa vì biên cương phía Nam, Báo rõ cho nhà vua của chúng ta.",
-      "confidence": 0.984
+      "text": "Muôn trùng sóng biếc vượt trùng dương",
+      "confidence": 0.9302
     },
     {
       "line_id": "0137_viet_010",
       "bbox": [
         [
-          220,
-          990
+          141,
+          543
         ],
         [
-          900,
-          990
+          538,
+          547
         ],
         [
-          900,
-          1030
+          538,
+          588
         ],
         [
-          220,
-          1030
+          140,
+          584
         ]
       ],
       "bbox_original": [
         [
-          220,
-          1105
+          141,
+          658
         ],
         [
-          900,
-          1105
+          538,
+          662
         ],
         [
-          900,
-          1145
+          538,
+          703
         ],
         [
-          220,
-          1145
+          140,
+          699
         ]
       ],
       "box_xyxy": [
-        220,
-        990,
-        900,
-        1030
+        140,
+        543,
+        538,
+        588
       ],
-      "text": "Dịch theo nguyên điệu:",
-      "confidence": 0.991
+      "text": "Đường về bao dặm trường",
+      "confidence": 0.9296
     },
     {
       "line_id": "0137_viet_011",
       "bbox": [
         [
-          220,
-          1040
+          142,
+          643
         ],
         [
-          1400,
-          1040
+          374,
+          643
         ],
         [
-          1400,
-          1085
+          374,
+          684
         ],
         [
-          220,
-          1085
+          142,
+          684
         ]
       ],
       "bbox_original": [
         [
-          220,
-          1155
+          142,
+          758
         ],
         [
-          1400,
-          1155
+          374,
+          758
         ],
         [
-          1400,
-          1200
+          374,
+          799
         ],
         [
-          220,
-          1200
+          142,
+          799
         ]
       ],
       "box_xyxy": [
-        220,
-        1040,
-        1400,
-        1085
+        142,
+        643,
+        374,
+        684
       ],
-      "text": "Trời trong gió mát cánh buồm giương, Thần tiên về đế hương.",
-      "confidence": 0.98
+      "text": "Tình thảm thiết;",
+      "confidence": 0.9108
+    },
+    {
+      "line_id": "0137_viet_012",
+      "bbox": [
+        [
+          141,
+          694
+        ],
+        [
+          396,
+          696
+        ],
+        [
+          395,
+          737
+        ],
+        [
+          141,
+          735
+        ]
+      ],
+      "bbox_original": [
+        [
+          141,
+          809
+        ],
+        [
+          396,
+          811
+        ],
+        [
+          395,
+          852
+        ],
+        [
+          141,
+          850
+        ]
+      ],
+      "box_xyxy": [
+        141,
+        694,
+        396,
+        737
+      ],
+      "text": "Chén đưa đường,",
+      "confidence": 0.9012
+    },
+    {
+      "line_id": "0137_viet_013",
+      "bbox": [
+        [
+          142,
+          745
+        ],
+        [
+          463,
+          748
+        ],
+        [
+          463,
+          785
+        ],
+        [
+          142,
+          783
+        ]
+      ],
+      "bbox_original": [
+        [
+          142,
+          860
+        ],
+        [
+          463,
+          863
+        ],
+        [
+          463,
+          900
+        ],
+        [
+          142,
+          898
+        ]
+      ],
+      "box_xyxy": [
+        142,
+        745,
+        463,
+        785
+      ],
+      "text": "Yêu sứ, níu vin chàng.",
+      "confidence": 0.8947
     }
   ],
   "layout_summary": {
     "layout_mode": "sequential_han_phien_dich",
     "phien_am_lines": [
-      "Tường quang phong hảo cẩm phàm trương, Thần tiên phục đế hương².",
-      "Thiên trùng vạn lí¹ thiệp thương lương, Cửu thiên quy lộ trường.",
-      "Tình thảm thiết², Đối li thương, Phan luyến sứ tinh lang³.",
-      "Nguyện tương thâm ý vị Nam cương, Phân minh báo⁴ ngã hoàng."
+      "Đường qua về chín tâng trời",
+      "Tình thảm thiết,",
+      "Đối diện với chén rượu biệt li,",
+      "Yêu mến vin lấy chàng sứ giả.",
+      "Xin hãy đem cái ý sâu xa vì biên cương phía Nam,",
+      "Báo rõ cho nhà vua của chúng ta."
     ],
-    "dich_nghia_lines": [
-      "Ánh sáng tốt lành, gió thuận, căng cánh buồm gấm, Thần tiên trở về quê hương của hoàng đế⁵.",
-      "Nghìn trùng muôn dặm vượt qua những làn sóng xanh, Đường qua về chín tầng trời¹.",
-      "Tình thảm thiết, Đối diện với chén rượu biệt li, Yêu mến vin lấy chàng sứ giả.",
-      "Xin hãy đem cái ý sâu xa vì biên cương phía Nam, Báo rõ cho nhà vua của chúng ta."
-    ],
-    "dich_tho_lines": [
-      "Trời trong gió mát cánh buồm giương, Thần tiên về đế hương."
-    ],
+    "dich_nghia_lines": [],
+    "dich_tho_lines": [],
     "interlinear_triplets": []
   }
 }
