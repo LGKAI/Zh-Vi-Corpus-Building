@@ -4,7 +4,7 @@
 **Mã nhóm:** `CV04` (Trần Trung Hiếu, Lê Gia Khánh, Phạm Chấn Khoa, Cái Hoàng Bảo Kin)  
 **Mã tác phẩm:** `VPO_01` (`CV04_VPO_01`)  
 **Tác phẩm:** *Hán Văn Tinh Túy* — Lãng Nhân (Phùng Tất Đắc)  
-**Phạm vi dữ liệu trên nhánh `khanh`:** `94` trang phân công của Khánh (`PDF 196..289`) + `13` trang pilot (`PDF 7..13, 50, 312, 326, 367..369`) = `107` trang OCR GPU.
+**Phạm vi dữ liệu trên nhánh `windows/khanh-kin`:** Gộp đầy đủ **`94` trang của Khánh (`PDF 196..289`) + `92` trang của Kin (`PDF 290..381`) + `8` trang pilot ngoài shard (`PDF 7..13, 50`)** = **`194` trang OCR GPU**.
 
 ---
 
@@ -15,7 +15,7 @@
 * **Nhận dạng ký tự quang học (`02_ocr_tho/`):**
   * Chữ Hán phồn thể: **PaddleOCR (`chinese_cht`)** kết hợp hiệu chỉnh nhập nhằng thị giác qua neo ngữ âm Hán–Việt (`src/ocr_disambiguator.py`).
   * Chữ Quốc ngữ (Phiên âm, Dịch nghĩa, Dịch thơ): **VietOCR (`vgg_transformer`)** (với PaddleOCR phát hiện vùng dòng văn bản).
-  * Kết quả OCR thô từng trang lưu tại `02_ocr_tho/han/*.json`, `02_ocr_tho/viet/*.json`, kèm `ocr_results.jsonl` và `ocr_run_summary.json`.
+  * Kết quả OCR thô từng trang lưu tại `02_ocr_tho/han/*.json`, `02_ocr_tho/viet/*.json`, kèm `ocr_results.jsonl` và `ocr_run_summary.json` (`194` trang).
 * **Làm sạch và Chuẩn hóa văn bản (`03_text_sach/`):**
   * Chuẩn hóa bảng mã Unicode **UTF-8 NFC**, lọc bỏ header/footer, số trang và ký hiệu chú thích (`[1]`, `1*`, `(1)`), bảo toàn token `[MASK]` / `□` (`src/text_cleaner.py`).
   * Phóng chiếu dấu câu từ bản Dịch âm sang chữ Hán (`src/phonetic_verifier.py`). Toàn bộ tác phẩm của cuốn sách lưu chung trong `han.txt` và `viet.txt`, xuất đồng bộ từng dòng với `04_dong_hang/VPO_01_parallel.tsv` (mở đầu mỗi bài bằng dòng tiêu đề riêng).
@@ -26,14 +26,14 @@
 
 ---
 
-### 2. Thống kê Chất lượng Kiểm định (QA Report — Nhánh `khanh`)
+### 2. Thống kê Chất lượng Kiểm định (QA Report — Gộp Khánh + Kin)
 
-* **Tổng số dòng dóng hàng (4 cột `Hán - Dịch âm - Dịch nghĩa - Dịch thơ`):** `405` *(gồm `7` dòng tiêu đề, `331` dòng có `Dịch thơ`)*
-* **Số cặp hợp lệ:** `405`
-* **Số cặp cảnh báo QA:** `22` (`OMISSION: 19`, `ADDITION: 2`, `NUMBER_MISMATCH: 1`; `MISSING = 0`, `FORMAT_ERROR = 0`, `LEFTOVER_MARKER = 0`)
-* **Tỷ lệ lỗi QA:** `5.43%` (Đạt chuẩn nghiệm thu $\le 30\%$ và mục tiêu nội bộ $\le 20\%$)
-* **Độ bao phủ Hán tự trung bình:** `68.16%`
-* **Điểm tin cậy dóng hàng trung bình:** `0.63 / 1.00` (`0.6264`)
+* **Tổng số dòng dóng hàng (4 cột `Hán - Dịch âm - Dịch nghĩa - Dịch thơ`):** `712` *(gồm `11` dòng tiêu đề, `605` dòng có `Dịch thơ`)*
+* **Số cặp hợp lệ:** `712`
+* **Số cặp cảnh báo QA:** `23` (`OMISSION: 20`, `ADDITION: 2`, `NUMBER_MISMATCH: 1`; `MISSING = 0`, `FORMAT_ERROR = 0`, `LEFTOVER_MARKER = 0`)
+* **Tỷ lệ lỗi QA:** `3.23%` (Đạt chuẩn nghiệm thu $\le 30\%$ và mục tiêu nội bộ $\le 20\%$)
+* **Độ bao phủ Hán tự trung bình:** `64.66%`
+* **Điểm tin cậy dóng hàng trung bình:** `0.61 / 1.00` (`0.6081`)
 * **Khớp 100% `VPO_01_parallel.tsv` == `VPO_01_parallel.xlsx` (`DONG_HANG`):** Đạt
 
 ---

@@ -1,4 +1,4 @@
-﻿# Dóng Hàng Hán – Việt (Nhóm CV04)
+# Dóng Hàng Hán – Việt (Nhóm CV04)
 
 Xây dựng kho ngữ liệu song ngữ văn học Hán – Việt (thơ ca & văn xuôi) ở cấp câu/đoạn phục vụ đồ án giữa kỳ môn **Xử lý Ngôn ngữ Tự nhiên (NLP)**.
 
@@ -25,31 +25,28 @@ Từ **1.996 trang PDF scan gốc** của 3 bộ sách trong `raw_data/`, nhóm 
 
 ---
 
-## 2. Trạng Thái Hiện Tại Trên Các Nhánh Git & Máy Local
+## 2. Trạng Thái Dữ Liệu Hiện Tại & So Sánh Các Nhánh Git
 
-> **Lưu ý quan trọng về trạng thái dữ liệu hiện tại**: Toàn bộ mã nguồn (`src/`, `web_app/`, `tests/`, `config/`, `main.py`, `docs/`) đồng bộ giữa nhánh **`khanh`** và **`kin`**, trong khi thư mục dữ liệu **`CV04_VPO_01..03/` trên mỗi nhánh đang lưu riêng kết quả OCR & dóng hàng của thành viên đó** (chưa hợp nhất chung cả 4 thành viên vào 1 bộ tổng):
+> **Trạng thái nhánh hiện tại (`windows/khanh-kin`)**: Đã **hợp nhất toàn bộ kết quả OCR GPU (`02_ocr_tho/`) của cả Khánh (`396` trang) và Kin (`393` trang)** cùng bộ trang pilot ngoài shard (`24` trang) thành **813 trang OCR GPU duy nhất** (`810` trang được dóng hàng sau khi loại `378..380` của `VPO_02`), và chạy lại `python main.py align --book ALL` để nối liền ranh giới giữa hai shard tại `CV04_VPO_01..03/`.
 
-1. **Trên máy local hiện tại (`01_nguon/` & nhánh `khanh`)**:
-   - **`01_nguon/*.png`** (các ảnh bulk 300 DPI được `.gitignore` loại trừ khỏi Git, chỉ track các ảnh `pilot_pages`): Trên ổ đĩa local hiện có **đầy đủ ảnh 300 DPI của cả Khánh (`396` trang) lẫn Kin (`393` trang)** cùng các trang pilot (`CV04_VPO_01`: `194` ảnh; `CV04_VPO_02`: `213` ảnh; `CV04_VPO_03`: `406` ảnh + file `.txt` bổ sung bài 3).
-   - **`02_ocr_tho/`, `03_text_sach/`, `04_dong_hang/` trên nhánh `khanh`**: Lưu **toàn bộ kết quả OCR GPU (`paddleocr_chinese_cht` + `vietocr_vgg_transformer`) và dóng hàng 4 cột của Khánh (`396/396` trang phân công)** cùng bộ trang `pilot_pages` (lưu ý `CV04_VPO_01` có 5 trang pilot `312, 326, 367, 368, 369` thuộc dải trang Kin do nằm trong `pilot_pages` của `book_manifest.json`). **Không** chứa toàn bộ dữ liệu OCR/dóng hàng của Kin.
-2. **Trên nhánh `kin`**:
-   - **`02_ocr_tho/`, `03_text_sach/`, `04_dong_hang/`**: Lưu **toàn bộ kết quả OCR GPU (`paddleocr_chinese_cht` + `vietocr_vgg_transformer`) và dóng hàng 4 cột của Kin (`393/393` trang phân công)** cùng các trang `pilot_pages` ngoài shard (`8` trang ở `VPO_01`, `7` trang ở `VPO_02`, `9` trang ở `VPO_03`). *(Ghi chú: trong `CV04_VPO_01/02_ocr_tho/ocr_run_summary.json` của nhánh `kin` chỉ ghi log `69` trang của lượt chạy `308..381`, nhưng toàn bộ `92/92` trang `0290..0381` đều đã có đủ file JSON GPU trong `02_ocr_tho/{han,viet}/`.)*
-3. **Các nhánh khác trên `origin`**:
+1. **Nhánh `windows/khanh-kin` *(đã gộp Khánh + Kin)* — Tổng `3.722` dòng dóng hàng**:
+   - **`01_nguon/*.png`** (ảnh bulk 300 DPI không track trên Git theo `.gitignore`, chỉ track ảnh pilot): Trên ổ đĩa local đã có **đầy đủ 813 ảnh 300 DPI** của Khánh + Kin + pilot (`194` ở `VPO_01`, `213` ở `VPO_02`, `406` ở `VPO_03` + file `.txt` bổ sung bài 3).
+   - **`02_ocr_tho/`**: Đầy đủ JSON OCR GPU (`paddleocr_chinese_cht` + `vietocr_vgg_transformer`), `ocr_results.jsonl` và `ocr_run_summary.json` cho **813 trang** (`194` ở `VPO_01`, `213` ở `VPO_02`, `406` ở `VPO_03`).
+   - **`03_text_sach/` & `04_dong_hang/`**: Đã tái xuất đồng bộ sau khi gộp Khánh + Kin, nối liền các tác phẩm ở ranh giới giữa Khánh và Kin (`3.722` dòng, `247` dòng tiêu đề, `2.139` dòng có `Dịch thơ`, lỗi QA tổng `6.66%`, `MISSING = 0`, `TSV == XLSX`).
+2. **Các nhánh thành viên riêng lẻ trên `origin`**:
+   - **`khanh`**: Lưu riêng kết quả OCR GPU & dóng hàng của **Khánh (`396` trang + pilot)** = `1.796` dòng (`7.41%` QA).
+   - **`kin`**: Lưu riêng kết quả OCR GPU & dóng hàng của **Kin (`393` trang + pilot)** = `1.995` dòng (`5.86%` QA).
    - **`khoa` / `mac`**: Hoàn thành OCR GPU & dóng hàng cho shard `khoa` (`397` trang phân công; trên nhánh `origin/khoa` lưu tại `outputs/khoa/` với `2.488` dòng từ `398` trang OCR, lỗi QA `5.67%`).
-   - **`hieu`**: Đã có kết quả OCR GPU cho shard `hieu` (`397` trang phân công) trong cấu trúc thư mục cũ `deliverables/` (`109 + 115 + 212` JSON), chờ hợp nhất sang `CV04_VPO_01..03`.
+   - **`hieu`**: Đã có kết quả OCR GPU cho shard `hieu` (`397` trang phân công) trong cấu trúc thư mục cũ `deliverables/` (`109 + 115 + 212` JSON), chờ gộp tiếp vào bộ chung để đủ 4 thành viên.
 
-### Số liệu đã kiểm chứng trên nhánh `khanh` và nhánh `kin`
+### Bảng số liệu chi tiết đã kiểm chứng trên `windows/khanh-kin` (gộp Khánh + Kin)
 
-| Nhánh | Thư mục / Tác phẩm | JSON OCR (`han`/`viet`) | Dòng dóng hàng | Dòng tiêu đề | Dòng có `Dịch thơ` | Lỗi QA *(ngưỡng $\le 30\%$)* | `MISSING` / `FORMAT_ERROR` | `TSV == XLSX` |
-| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **`khanh`** | `CV04_VPO_01` (`94` tr Khánh + `13` pilot) | `107` | `405` | `7` | `331` | `5.43%` (`22` cảnh báo) | `0` / `0` | Khớp 100% |
-| **`khanh`** | `CV04_VPO_02` (`103` tr Khánh + `7` pilot) | `110` | `535` | `42` | `353` | `4.11%` (`22` cảnh báo) | `0` / `0` | Khớp 100% |
-| **`khanh`** | `CV04_VPO_03` (`199` tr Khánh + `9` pilot) | `208` | `856` | `76` | `453` | `10.40%` (`89` cảnh báo) | `0` / `0` | Khớp 100% |
-| **`khanh`** | **Tổng nhánh `khanh`** | **`425`** | **`1.796`** | **`125`** | **`1.137`** | **`7.41%` (`133/1.796`)** | **`0` / `0`** | **100%** |
-| **`kin`** | `CV04_VPO_01` (`92` tr Kin + `8` pilot) | `100` | `359` | `6` | `280` | `0.28%` (`1` cảnh báo) | `0` / `0` | Khớp 100% |
-| **`kin`** | `CV04_VPO_02` (`103` tr Kin + `7` pilot) | `110` | `499` | `36` | `297` | `3.41%` (`17` cảnh báo) | `0` / `0` | Khớp 100% |
-| **`kin`** | `CV04_VPO_03` (`198` tr Kin + `9` pilot) | `207` | `1.137` | `81` | `438` | `8.71%` (`99` cảnh báo) | `0` / `0` | Khớp 100% |
-| **`kin`** | **Tổng nhánh `kin`** | **`417`** | **`1.995`** | **`123`** | **`1.015`** | **`5.86%` (`117/1.995`)** | **`0` / `0`** | **100%** |
+| Thư mục / Tác phẩm | Trang OCR GPU | Trang dóng hàng | Dòng dóng hàng | Dòng tiêu đề | Dòng có `Dịch thơ` | Lỗi QA *(ngưỡng $\le 30\%$)* | `MISSING` / `FORMAT_ERROR` | `TSV == XLSX` |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `CV04_VPO_01` (`94` Khánh + `92` Kin + `8` pilot) | `194` | `194` | `712` | `11` | `605` | `3.23%` (`23` cảnh báo) | `0` / `0` | Khớp 100% |
+| `CV04_VPO_02` (`103` Khánh + `103` Kin + `7` pilot) | `213` | `210` *(trừ `378..380`)* | `1.017` | `79` | `643` | `3.64%` (`37` cảnh báo) | `0` / `0` | Khớp 100% |
+| `CV04_VPO_03` (`199` Khánh + `198` Kin + `9` pilot) | `406` | `406` | `1.993` | `157` | `891` | `9.43%` (`188` cảnh báo) | `0` / `0` | Khớp 100% |
+| **Tổng `windows/khanh-kin`** | **`813`** | **`810`** | **`3.722`** | **`247`** | **`2.139`** | **`6.66%` (`248/3.722`)** | **`0` / `0`** | **100%** |
 
 ---
 
@@ -123,9 +120,9 @@ Project0_Zh-Vi-Corpus-Building/
 3. **Bảo toàn chữ mờ/khuyết (`[MASK]` / `□`)**:
    - Các module `text_cleaner.py`, `phonetic_verifier.py`, `aligner.py` và `exporter_and_qa.py` đều hỗ trợ giữ nguyên token `[MASK]` và ký hiệu ô vuông khuyết chữ `□`/`■`.
    - Lưu ý: trong JSON OCR thô hiện tại từ PaddleOCR, chữ khắc khuyết thường được nhận dạng thành `□` hoặc `口` (ví dụ trong `VPO_03`), cần rà soát đổi sang `[MASK]` trong bước hậu kiểm cuối trước khi nộp bài.
-4. **Hành động còn lại trước hạn nộp `30/11` (Hợp nhất toàn nhóm CV04)**:
-   - **Gộp 4 thành viên (`>= 8.000` cặp)**: Thu thập `02_ocr_tho/{han,viet}/*.json` từ đủ 4 nhánh (`khoa`, `hieu`, `khanh`, `kin`) vào chung bộ `CV04_VPO_01..03/` và chạy `python main.py align --book ALL` để nối liền các bài ở ranh giới chia shard và đạt tổng $\ge 8.000$ cặp hợp lệ toàn nhóm *(hiện từng nhánh riêng lẻ như `khanh` đạt `1.796` cặp và `kin` đạt `1.995` cặp do mật độ câu không đều giữa các phần sách, trong khi `khoa` đạt `2.488` cặp)*.
-   - **Hậu kiểm & Báo cáo cuối (Mục 8 & Mục 9)**: Rà soát các dòng cảnh báo QA (`OMISSION`, `ADDITION`, `NUMBER_MISMATCH`), chuẩn hóa `[MASK]`, cập nhật lại số liệu tổng hợp toàn nhóm vào `CV04_VPO_01..03/README.md`, lập báo cáo hậu kiểm tổng kết nhóm (hiện chưa tạo file báo cáo tổng kết cuối trong `docs/`), và dọn sạch file tạm trước khi đóng gói.
+4. **Hành động còn lại trước hạn nộp `30/11` (Hợp nhất đủ 4 thành viên)**:
+   - **Gộp thêm phần của Khoa (`khoa`/`mac`) và Hiếu (`hieu`)**: Hiện tại nhánh `windows/khanh-kin` đã gộp xong phần **Khánh + Kin (`3.722` dòng)**; cần copy tiếp `02_ocr_tho/{han,viet}/*.json` từ `khoa` và `hieu` vào `CV04_VPO_01..03/` và chạy `python main.py align --book ALL` để nối liền toàn bộ `1.584` trang và đạt chỉ tiêu toàn nhóm $\ge 8.000$ cặp hợp lệ.
+   - **Hậu kiểm & Báo cáo cuối (Mục 8 & Mục 9)**: Rà soát các dòng cảnh báo QA (`OMISSION`, `ADDITION`, `NUMBER_MISMATCH`), chuẩn hóa `[MASK]`, cập nhật lại số liệu tổng hợp 4 người vào `CV04_VPO_01..03/README.md`, lập báo cáo hậu kiểm tổng kết nhóm trong `docs/` và dọn sạch file tạm trước khi đóng gói.
 
 ---
 
@@ -133,7 +130,7 @@ Project0_Zh-Vi-Corpus-Building/
 
 1. **Lý do lựa chọn**: Kết hợp `PyMuPDF` (trích xuất 300 DPI đa nền tảng trên Windows), `PaddleOCR chinese_cht` + `VietOCR vgg_transformer` (tối ưu riêng cho chữ Hán phồn thể và tiếng Việt có dấu), thuật toán khử nhầm nét Hán dựa trên `Phiên âm` (`M.E.D. Levenshtein` $S_1 \cap S_2$ + 105 cụm tương tự) và Quy hoạch động Gale-Church + neo từ vựng/số đếm để đạt độ chính xác cao khi dóng hàng 4 cột mà không phụ thuộc API trả phí.
 2. **Dữ liệu đầu vào & đầu ra**: Đầu vào là 3 bộ PDF scan gốc (`raw_data/*.pdf`) + bản dịch bổ sung trang 25 `VPO_03`; đầu ra là 3 thư mục chuẩn `CV04_VPO_01`, `CV04_VPO_02`, `CV04_VPO_03` gồm `01_nguon/*.png`, `02_ocr_tho/{han,viet}/*.json`, `03_text_sach/{han,viet}.txt`, `04_dong_hang/VPO_0*_parallel.{tsv,xlsx}` và `qa_report.json`.
-3. **Cách kiểm chứng**: Đối soát tự động qua `validate_pairs` (6 nhóm cờ lỗi, tỷ lệ lỗi QA toàn nhánh hiện ở mức `5.86%–7.41%`, sâu dưới ngưỡng `<= 30%`), kiểm tra khớp 100% giữa `.tsv` và sheet `DONG_HANG` trong `.xlsx`, đánh giá độ phủ từ vựng (`word_aligner.py`), hậu kiểm trực quan qua Streamlit CAT Workbench và chạy bộ test `tests/test_suite.py` (`8/8` pass).
+3. **Cách kiểm chứng**: Đối soát tự động qua `validate_pairs` (6 nhóm cờ lỗi; tỷ lệ lỗi QA sau khi gộp Khánh + Kin đạt `6.66%`, sâu dưới ngưỡng `<= 30%`), kiểm tra khớp 100% giữa `.tsv` và sheet `DONG_HANG` trong `.xlsx`, đánh giá độ phủ từ vựng (`word_aligner.py`), hậu kiểm trực quan qua Streamlit CAT Workbench và chạy bộ test `tests/test_suite.py` (`8/8` pass).
 4. **Rủi ro & phương án dự phòng**: Rủi ro OCR nhầm nét Hán cổ, lẫn chú thích chân trang hoặc mất chữ ở trang scan mờ/trắng $\rightarrow$ khắc phục bằng cắt header 7%, lọc đường kẻ chân trang (`TLTVN`), khử nhầm nét theo `Phiên âm`, đánh dấu `[MASK]`, bổ sung văn bản trang 25 (`VPO_03`), và hỗ trợ sửa/ghép/xóa dòng thủ công trên `web_app/app.py`. Khi không có GPU cục bộ, có sẵn chế độ `--mock` và bộ đóng gói chạy Kaggle GPU (`stage`).
 5. **Khả năng tái lập bởi người khác**: Toàn bộ cấu hình chia trang/sách nằm trong `config/`, pipeline chạy lại hoàn toàn bằng CLI `python main.py` (không yêu cầu thư viện `pandas`/`openpyxl` để xuất `.xlsx` nhờ bộ ghi OpenXML thuần chuẩn Python), có sẵn kiểm thử tự động trong `tests/test_suite.py`.
 

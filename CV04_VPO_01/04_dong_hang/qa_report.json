@@ -1,11 +1,11 @@
 {
-  "total_pairs": 405,
-  "valid_pairs": 405,
-  "valid_checked_pairs": 405,
-  "error_pairs": 22,
-  "num_error_pairs": 22,
-  "clean_pairs": 383,
-  "error_rate": 0.054321,
+  "total_pairs": 712,
+  "valid_pairs": 712,
+  "valid_checked_pairs": 712,
+  "error_pairs": 23,
+  "num_error_pairs": 23,
+  "clean_pairs": 689,
+  "error_rate": 0.032303,
   "passes_acceptance_threshold": true,
   "passes_threshold_30pct": true,
   "passes_internal_target": true,
@@ -13,7 +13,7 @@
   "is_valid": true,
   "error_counts_by_type": {
     "MISSING": 0,
-    "OMISSION": 19,
+    "OMISSION": 20,
     "ADDITION": 2,
     "FORMAT_ERROR": 0,
     "LEFTOVER_MARKER": 0,
@@ -21,14 +21,14 @@
   },
   "error_breakdown": {
     "MISSING": 0,
-    "OMISSION": 19,
+    "OMISSION": 20,
     "ADDITION": 2,
     "FORMAT_ERROR": 0,
     "LEFTOVER_MARKER": 0,
     "NUMBER_MISMATCH": 1
   },
   "missing_count": 0,
-  "omission_count": 19,
+  "omission_count": 20,
   "addition_count": 2,
   "format_error_count": 0,
   "leftover_marker_count": 0,
@@ -209,6 +209,14 @@
       "reason": "Length ratio 0.67 < 0.7 (6 Viet words / 9 Han chars).",
       "han": "莫大之患也。前世之禍",
       "viet": "Còn bệnh nào to hơn nữ"
+    },
+    {
+      "row_index": 636,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
+      "han": "秋吟秋飲情中者誰？",
+      "viet": "ai chung tình với ta?"
     }
   ],
   "errors": [],
@@ -388,6 +396,14 @@
       "reason": "Length ratio 0.67 < 0.7 (6 Viet words / 9 Han chars).",
       "han": "莫大之患也。前世之禍",
       "viet": "Còn bệnh nào to hơn nữ"
+    },
+    {
+      "row_index": 636,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
+      "han": "秋吟秋飲情中者誰？",
+      "viet": "ai chung tình với ta?"
     }
   ]
 }

@@ -4,7 +4,7 @@
 **Mã nhóm:** `CV04` (Trần Trung Hiếu, Lê Gia Khánh, Phạm Chấn Khoa, Cái Hoàng Bảo Kin)  
 **Mã tác phẩm:** `VPO_02` (`CV04_VPO_02`)  
 **Tác phẩm:** *Thể loại từ Việt Nam thời trung đại* — Phạm Văn Ánh / Nguyễn Xuân Diện – Nguyễn Quảng Tuân  
-**Phạm vi dữ liệu trên nhánh `khanh`:** `103` trang phân công của Khánh ở Phần Ba (`PDF 342..444`, trừ 3 trang khuyết gốc `378..380` khi dóng hàng) + `7` trang pilot (`PDF 134..138, 200, 300`) = `110` trang OCR GPU.
+**Phạm vi dữ liệu trên nhánh `windows/khanh-kin`:** Gộp đầy đủ **`103` trang của Khánh (`PDF 342..444`, trừ 3 trang khuyết gốc `378..380` khi dóng hàng) + `103` trang của Kin (`PDF 445..547`) + `7` trang pilot (`PDF 134..138, 200, 300`)** = **`213` trang OCR GPU** (`210` trang được dóng hàng).
 
 ---
 
@@ -15,24 +15,24 @@
 * **Nhận dạng ký tự quang học (`02_ocr_tho/`):**
   * Chữ Hán phồn thể: **PaddleOCR (`chinese_cht`)** kết hợp hiệu chỉnh nhập nhằng thị giác qua neo ngữ âm Hán–Việt (`src/ocr_disambiguator.py`).
   * Chữ Quốc ngữ (Phiên âm, Dịch nghĩa, Dịch theo nguyên điệu): **VietOCR (`vgg_transformer`)** có cắt bỏ 7% running header trên cùng và phát hiện đường kẻ ngang để loại bỏ khối chú thích chân trang.
-  * Kết quả OCR thô từng trang lưu tại `02_ocr_tho/han/*.json`, `02_ocr_tho/viet/*.json`, kèm `ocr_results.jsonl` và `ocr_run_summary.json`.
+  * Kết quả OCR thô từng trang lưu tại `02_ocr_tho/han/*.json`, `02_ocr_tho/viet/*.json`, kèm `ocr_results.jsonl` và `ocr_run_summary.json` (`213` trang).
 * **Làm sạch và Chuẩn hóa văn bản (`03_text_sach/`):**
   * Chuẩn hóa bảng mã Unicode **UTF-8 NFC**, lọc bỏ header/footer, số trang và ký hiệu chú thích (`[1]`, `1*`, `(1)`), bảo toàn ký hiệu `[MASK]` / `□` (`src/text_cleaner.py`).
   * Toàn bộ các bài từ được gộp chung trong `han.txt` và `viet.txt`, xuất đồng bộ từng dòng với `04_dong_hang/VPO_02_parallel.tsv` (mỗi bài và tiểu phẩm liên hoàn từ bắt đầu bằng dòng tiêu đề riêng).
 * **Dóng hàng song ngữ 4 cột (`04_dong_hang/`):**
-  * Phân đoạn tác phẩm xuyên trang bằng `src/work_segmenter.py`, gán `Phiên âm` $\rightarrow$ `Dịch âm`, `Dịch nghĩa` $\rightarrow$ `Dịch nghĩa`, và *Dịch theo nguyên điệu* $\rightarrow$ `Dịch thơ` bằng thuật toán Quy hoạch động Gale-Church + neo từ vựng (`src/aligner.py`, `src/corpus_pipeline.py`).
+  * Phân đoạn tác phẩm xuyên trang liên tục từ `PDF 342..547` bằng `src/work_segmenter.py`, gán `Phiên âm` $\rightarrow$ `Dịch âm`, `Dịch nghĩa` $\rightarrow$ `Dịch nghĩa`, và *Dịch theo nguyên điệu* $\rightarrow$ `Dịch thơ` bằng thuật toán Quy hoạch động Gale-Church + neo từ vựng (`src/aligner.py`, `src/corpus_pipeline.py`).
   * Xuất đồng bộ 2 định dạng chuẩn: `VPO_02_parallel.tsv` (UTF-8, không header) và `VPO_02_parallel.xlsx` (2 sheet `DONG_HANG` & `THONG_KE`), kèm `qa_report.json` và `word_coverage_report.json`.
 
 ---
 
-### 2. Thống kê Chất lượng Kiểm định (QA Report — Nhánh `khanh`)
+### 2. Thống kê Chất lượng Kiểm định (QA Report — Gộp Khánh + Kin)
 
-* **Tổng số dòng dóng hàng (4 cột `Hán - Dịch âm - Dịch nghĩa - Dịch thơ`):** `535` *(gồm `42` dòng tiêu đề, `353` dòng có `Dịch thơ`)*
-* **Số cặp hợp lệ:** `535`
-* **Số cặp cảnh báo QA:** `22` (`OMISSION: 12`, `ADDITION: 8`, `NUMBER_MISMATCH: 3` trên `22` dòng; `MISSING = 0`, `FORMAT_ERROR = 0`, `LEFTOVER_MARKER = 0`)
-* **Tỷ lệ lỗi QA:** `4.11%` (Đạt chuẩn nghiệm thu $\le 30\%$ và mục tiêu nội bộ $\le 20\%$)
-* **Độ bao phủ Hán tự trung bình:** `50.98%`
-* **Điểm tin cậy dóng hàng trung bình:** `0.53 / 1.00` (`0.5254`)
+* **Tổng số dòng dóng hàng (4 cột `Hán - Dịch âm - Dịch nghĩa - Dịch thơ`):** `1.017` *(gồm `79` dòng tiêu đề, `643` dòng có `Dịch thơ`)*
+* **Số cặp hợp lệ:** `1.017`
+* **Số cặp cảnh báo QA:** `37` (`OMISSION: 23`, `ADDITION: 12`, `NUMBER_MISMATCH: 3` trên `37` dòng; `MISSING = 0`, `FORMAT_ERROR = 0`, `LEFTOVER_MARKER = 0`)
+* **Tỷ lệ lỗi QA:** `3.64%` (Đạt chuẩn nghiệm thu $\le 30\%$ và mục tiêu nội bộ $\le 20\%$)
+* **Độ bao phủ Hán tự trung bình:** `51.69%`
+* **Điểm tin cậy dóng hàng trung bình:** `0.53 / 1.00` (`0.5296`)
 * **Khớp 100% `VPO_02_parallel.tsv` == `VPO_02_parallel.xlsx` (`DONG_HANG`):** Đạt
 
 ---

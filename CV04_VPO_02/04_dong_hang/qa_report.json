@@ -1,11 +1,11 @@
 {
-  "total_pairs": 535,
-  "valid_pairs": 535,
-  "valid_checked_pairs": 535,
-  "error_pairs": 22,
-  "num_error_pairs": 22,
-  "clean_pairs": 513,
-  "error_rate": 0.041121,
+  "total_pairs": 1017,
+  "valid_pairs": 1017,
+  "valid_checked_pairs": 1017,
+  "error_pairs": 37,
+  "num_error_pairs": 37,
+  "clean_pairs": 980,
+  "error_rate": 0.036382,
   "passes_acceptance_threshold": true,
   "passes_threshold_30pct": true,
   "passes_internal_target": true,
@@ -13,23 +13,23 @@
   "is_valid": true,
   "error_counts_by_type": {
     "MISSING": 0,
-    "OMISSION": 12,
-    "ADDITION": 8,
+    "OMISSION": 23,
+    "ADDITION": 12,
     "FORMAT_ERROR": 0,
     "LEFTOVER_MARKER": 0,
     "NUMBER_MISMATCH": 3
   },
   "error_breakdown": {
     "MISSING": 0,
-    "OMISSION": 12,
-    "ADDITION": 8,
+    "OMISSION": 23,
+    "ADDITION": 12,
     "FORMAT_ERROR": 0,
     "LEFTOVER_MARKER": 0,
     "NUMBER_MISMATCH": 3
   },
   "missing_count": 0,
-  "omission_count": 12,
-  "addition_count": 8,
+  "omission_count": 23,
+  "addition_count": 12,
   "format_error_count": 0,
   "leftover_marker_count": 0,
   "number_mismatch_count": 3,
@@ -217,6 +217,126 @@
       "reason": "Length ratio 6.20 > 4.5 (31 Viet words / 5 Han chars).",
       "han": "仍作當年想。",
       "viet": "Về từ, trong minh mệnh ngự chế văn (97, tp 41) 2, tập 2, kí hiệu A.118, bản chụp kí hiệu VHc.2796) có 1 bài từ viết theo điệu"
+    },
+    {
+      "row_index": 563,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 14.25 > 4.5 (171 Viet words / 12 Han chars).",
+      "han": "謝眞長之知我，洵子夏之起予。",
+      "viet": "Tác phẩm có Thuỷ nhạc thuyết, Nhận xét về tác phẩm này, từ gia Nguyên Hiếu Vấn thời Kim cho là: \"Thử xem Thuỷ nhạc thuyết của Nguyên Kết thời Đường: vốn chẳng có âm hưởng của Cung, Chuy, nhưng cũng tự thành thứ nhã nhạc tự nhiên giữa khoảng mây núi? 5 Hứa Hữu Phu: Từ gia thời Nguyên, cùng Hứa Hữu Nhâm soạn sách Khuê Đường Khoản nãi tập (Điề (k 73 4,2 quyền) Ở Chân Trường: Tức Lưu Chân Trường, Thể thuyết Tân ngữ (1% M Min is) dẫn lời của Vương Trọng Tổ nói: \"Chân Trường hiểu ta, còn hơn ta tự hiều về mình\" Thiên Bát dật sách Luận ngữ ghi: Từ Hạ hỏi [Khống Tủ]: Nét cười tươi quyến rũ, cặp mắt đẹp rang ngời, trên nền tráng vẽ nên bức hoạ nhiều màu sặc sỡ, là nghĩa thế nào 2 Khổng Tử đáp: Phải có nến trăng rồi sau mới vẽ nên bức tranh Thưa: 'Y nói] Lễ là cái có sau chăng?"
+    },
+    {
+      "row_index": 594,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.44 < 0.7 (4 Viet words / 9 Han chars).",
+      "han": "銀瓶風，裊裊檀心剛吐。",
+      "viet": "Thần thái rạng đẹp,"
+    },
+    {
+      "row_index": 596,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
+      "han": "竟似陸郎眉宇。",
+      "viet": "Thị nữ hầu rượu,"
+    },
+    {
+      "row_index": 611,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
+      "han": "祇此花，瀟灑重陽。",
+      "viet": "Làm bạn với tùng,"
+    },
+    {
+      "row_index": 616,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
+      "han": "美人睡起（望江南）",
+      "viet": "NGƯỜI Đẹp NGÙ DẬY"
+    },
+    {
+      "row_index": 649,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 4.57 > 4.5 (32 Viet words / 7 Han chars).",
+      "han": "銀燭金樽湖上宴",
+      "viet": "Đuốc bạc, chén vàng, mở yến tiệc trên hồ, Phách ngà màu hồng, tay áo màu tía, thổi tiêu trong đêm trăng, Đứng hững hờ trên chiếc cầu lan can màu đỏ."
+    },
+    {
+      "row_index": 652,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 11.33 > 4.5 (34 Viet words / 3 Han chars).",
+      "han": "江南憶，",
+      "viet": "Nhớ Giang Nam Để tiêu tan mùa ha, làm bài về cảnh sống thanh nhàn Nhãn chín đầy bên hồ giục khách mở tiệc, Hoa nở bên dường dẫn xe của mẹ hiền đến,"
+    },
+    {
+      "row_index": 748,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.50 < 0.7 (3 Viet words / 6 Han chars).",
+      "han": "花前月底孤吟，",
+      "viet": "Nhớ tri âm"
+    },
+    {
+      "row_index": 763,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.17 < 0.7 (1 Viet words / 6 Han chars).",
+      "han": "水仙花（憶漢月）",
+      "viet": "TITHTION"
+    },
+    {
+      "row_index": 868,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
+      "han": "叮寧少年心事，",
+      "viet": "Lạnh lạnh, thanh thanh"
+    },
+    {
+      "row_index": 942,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.61 < 0.7 (81 Viet words / 133 Han chars).",
+      "han": "奏曰：奉交出詞總幷批示各理云云，欽此欽遵，臣竊惟：塡詞，詩之苗裔，詩詞即樂之表裏原夫聖人作樂，以養性情，育人材，事神祇，和上下，用之祝頌，用之宴賞，用之邦國，其体式功效最為廣大深切乃詩篇樂章配於五音六律諸書，汗牛充棟又參以風運算數，銖秤寸度，如宋新樂圖記，司馬光則主阮逸胡瑗之論，范鎮則主房庶之說，相爭莫已。",
+      "viet": "Tâu rằng: Vâng giao ra sách Từ tổng', đồng thời phê thị các điều vân vân. kính vâng theo đó, kính noi theo đó, thần trộm nghĩ rằng: Điền từ là hậu duệ của thơ. Thơ từ chính là sự hô ứng của âm nhạc. vốn dĩ thánh nhân chế tác ra âm nhạc, là để hàm dưỡng tính tình, giáo dục nhân tài, thờ quỷ thần, hoà hợp trên dưới, dùng khi chúc tụng, dùng khi sự vụ quốc gia."
+    },
+    {
+      "row_index": 986,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.64 < 0.7 (49 Viet words / 76 Han chars).",
+      "han": "如蘇軾念奴嬌詞，有大江東去句，而後此詞一名為大江東去，則從來詞家時以為詞中大手，而平仄句讀未嘗印定，又千古風流人物，在五物部一尊，還酹江月，在六月部，則韻亦可協，如五古詩耳。",
+      "viet": "(Thiên cổ phong lưu nhân vật), thuộc vào bộ vận thứ chữ vật? (ngũ vật), câu? Lại rót rượu xuống sông trăng? (Hoàn lỗi giang nguyệt) lại thuộc bộ vận thứ chữ nguyệt (lục nguyệt)\", thế mà vẫn có thể gieo vần, như thơ ngũ ngôn cổ thể vậy."
+    },
+    {
+      "row_index": 994,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.62 < 0.7 (15 Viet words / 24 Han chars).",
+      "han": "經之餘，唯及古文，嘗謂古來僉邪之士，或有工於詩者，以其冥",
+      "viet": "vào thanh sắc, duyên tình, phù hoa là vì vậy. Đến như các văn học"
+    },
+    {
+      "row_index": 1002,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.62 < 0.7 (15 Viet words / 24 Han chars).",
+      "han": "之，其音已熟，興之所至，偶一拈豪，猶不甚費力。今我乃按字之",
+      "viet": "hay hát từ, âm đã thuần thục, khi có hứng đến, tình cờ cất bút,"
+    },
+    {
+      "row_index": 1013,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 8.62 > 4.5 (112 Viet words / 13 Han chars).",
+      "han": "致諸大儒多不導守此說，非韙也。",
+      "viet": "Nhưng những kẻ sĩ khinh bạc, mỗi khi phóng túng ở nơi ca lâu kĩ quán, vờ thác lời về niềm nhớ vua nhớ bạn, thì cái tội lỗi về văn chương còn quá với thanh âm [dâm bôn] của nước Trịnh vậy, Thế nên, thần đổi với các từ gia không phế bỏ cả, nhưng cũng không dám lạm vậy. xxx CÁC ĐIỆU TỪ ĐÃ ĐƯỢC CÁC TÁC GIẢ VIỆT NAM THỜI TRUNG ĐẠI SỬ DỤNG VÀ VỊ TRÍ TỒN BẢN VỊ TRÍ TỒN BẢN TÁC PHẨM TỪ VIỆT NAM THỜI TRUNG ĐẠI STT (Quy Tên sách Kí hiệu ước) Tên Sách Kí hiệu (Quy ước) Mai dịch trâu dư A."
     }
   ],
   "errors": [],
@@ -404,6 +524,126 @@
       "reason": "Length ratio 6.20 > 4.5 (31 Viet words / 5 Han chars).",
       "han": "仍作當年想。",
       "viet": "Về từ, trong minh mệnh ngự chế văn (97, tp 41) 2, tập 2, kí hiệu A.118, bản chụp kí hiệu VHc.2796) có 1 bài từ viết theo điệu"
+    },
+    {
+      "row_index": 563,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 14.25 > 4.5 (171 Viet words / 12 Han chars).",
+      "han": "謝眞長之知我，洵子夏之起予。",
+      "viet": "Tác phẩm có Thuỷ nhạc thuyết, Nhận xét về tác phẩm này, từ gia Nguyên Hiếu Vấn thời Kim cho là: \"Thử xem Thuỷ nhạc thuyết của Nguyên Kết thời Đường: vốn chẳng có âm hưởng của Cung, Chuy, nhưng cũng tự thành thứ nhã nhạc tự nhiên giữa khoảng mây núi? 5 Hứa Hữu Phu: Từ gia thời Nguyên, cùng Hứa Hữu Nhâm soạn sách Khuê Đường Khoản nãi tập (Điề (k 73 4,2 quyền) Ở Chân Trường: Tức Lưu Chân Trường, Thể thuyết Tân ngữ (1% M Min is) dẫn lời của Vương Trọng Tổ nói: \"Chân Trường hiểu ta, còn hơn ta tự hiều về mình\" Thiên Bát dật sách Luận ngữ ghi: Từ Hạ hỏi [Khống Tủ]: Nét cười tươi quyến rũ, cặp mắt đẹp rang ngời, trên nền tráng vẽ nên bức hoạ nhiều màu sặc sỡ, là nghĩa thế nào 2 Khổng Tử đáp: Phải có nến trăng rồi sau mới vẽ nên bức tranh Thưa: 'Y nói] Lễ là cái có sau chăng?"
+    },
+    {
+      "row_index": 594,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.44 < 0.7 (4 Viet words / 9 Han chars).",
+      "han": "銀瓶風，裊裊檀心剛吐。",
+      "viet": "Thần thái rạng đẹp,"
+    },
+    {
+      "row_index": 596,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
+      "han": "竟似陸郎眉宇。",
+      "viet": "Thị nữ hầu rượu,"
+    },
+    {
+      "row_index": 611,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
+      "han": "祇此花，瀟灑重陽。",
+      "viet": "Làm bạn với tùng,"
+    },
+    {
+      "row_index": 616,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
+      "han": "美人睡起（望江南）",
+      "viet": "NGƯỜI Đẹp NGÙ DẬY"
+    },
+    {
+      "row_index": 649,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 4.57 > 4.5 (32 Viet words / 7 Han chars).",
+      "han": "銀燭金樽湖上宴",
+      "viet": "Đuốc bạc, chén vàng, mở yến tiệc trên hồ, Phách ngà màu hồng, tay áo màu tía, thổi tiêu trong đêm trăng, Đứng hững hờ trên chiếc cầu lan can màu đỏ."
+    },
+    {
+      "row_index": 652,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 11.33 > 4.5 (34 Viet words / 3 Han chars).",
+      "han": "江南憶，",
+      "viet": "Nhớ Giang Nam Để tiêu tan mùa ha, làm bài về cảnh sống thanh nhàn Nhãn chín đầy bên hồ giục khách mở tiệc, Hoa nở bên dường dẫn xe của mẹ hiền đến,"
+    },
+    {
+      "row_index": 748,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.50 < 0.7 (3 Viet words / 6 Han chars).",
+      "han": "花前月底孤吟，",
+      "viet": "Nhớ tri âm"
+    },
+    {
+      "row_index": 763,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.17 < 0.7 (1 Viet words / 6 Han chars).",
+      "han": "水仙花（憶漢月）",
+      "viet": "TITHTION"
+    },
+    {
+      "row_index": 868,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
+      "han": "叮寧少年心事，",
+      "viet": "Lạnh lạnh, thanh thanh"
+    },
+    {
+      "row_index": 942,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.61 < 0.7 (81 Viet words / 133 Han chars).",
+      "han": "奏曰：奉交出詞總幷批示各理云云，欽此欽遵，臣竊惟：塡詞，詩之苗裔，詩詞即樂之表裏原夫聖人作樂，以養性情，育人材，事神祇，和上下，用之祝頌，用之宴賞，用之邦國，其体式功效最為廣大深切乃詩篇樂章配於五音六律諸書，汗牛充棟又參以風運算數，銖秤寸度，如宋新樂圖記，司馬光則主阮逸胡瑗之論，范鎮則主房庶之說，相爭莫已。",
+      "viet": "Tâu rằng: Vâng giao ra sách Từ tổng', đồng thời phê thị các điều vân vân. kính vâng theo đó, kính noi theo đó, thần trộm nghĩ rằng: Điền từ là hậu duệ của thơ. Thơ từ chính là sự hô ứng của âm nhạc. vốn dĩ thánh nhân chế tác ra âm nhạc, là để hàm dưỡng tính tình, giáo dục nhân tài, thờ quỷ thần, hoà hợp trên dưới, dùng khi chúc tụng, dùng khi sự vụ quốc gia."
+    },
+    {
+      "row_index": 986,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.64 < 0.7 (49 Viet words / 76 Han chars).",
+      "han": "如蘇軾念奴嬌詞，有大江東去句，而後此詞一名為大江東去，則從來詞家時以為詞中大手，而平仄句讀未嘗印定，又千古風流人物，在五物部一尊，還酹江月，在六月部，則韻亦可協，如五古詩耳。",
+      "viet": "(Thiên cổ phong lưu nhân vật), thuộc vào bộ vận thứ chữ vật? (ngũ vật), câu? Lại rót rượu xuống sông trăng? (Hoàn lỗi giang nguyệt) lại thuộc bộ vận thứ chữ nguyệt (lục nguyệt)\", thế mà vẫn có thể gieo vần, như thơ ngũ ngôn cổ thể vậy."
+    },
+    {
+      "row_index": 994,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.62 < 0.7 (15 Viet words / 24 Han chars).",
+      "han": "經之餘，唯及古文，嘗謂古來僉邪之士，或有工於詩者，以其冥",
+      "viet": "vào thanh sắc, duyên tình, phù hoa là vì vậy. Đến như các văn học"
+    },
+    {
+      "row_index": 1002,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.62 < 0.7 (15 Viet words / 24 Han chars).",
+      "han": "之，其音已熟，興之所至，偶一拈豪，猶不甚費力。今我乃按字之",
+      "viet": "hay hát từ, âm đã thuần thục, khi có hứng đến, tình cờ cất bút,"
+    },
+    {
+      "row_index": 1013,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 8.62 > 4.5 (112 Viet words / 13 Han chars).",
+      "han": "致諸大儒多不導守此說，非韙也。",
+      "viet": "Nhưng những kẻ sĩ khinh bạc, mỗi khi phóng túng ở nơi ca lâu kĩ quán, vờ thác lời về niềm nhớ vua nhớ bạn, thì cái tội lỗi về văn chương còn quá với thanh âm [dâm bôn] của nước Trịnh vậy, Thế nên, thần đổi với các từ gia không phế bỏ cả, nhưng cũng không dám lạm vậy. xxx CÁC ĐIỆU TỪ ĐÃ ĐƯỢC CÁC TÁC GIẢ VIỆT NAM THỜI TRUNG ĐẠI SỬ DỤNG VÀ VỊ TRÍ TỒN BẢN VỊ TRÍ TỒN BẢN TÁC PHẨM TỪ VIỆT NAM THỜI TRUNG ĐẠI STT (Quy Tên sách Kí hiệu ước) Tên Sách Kí hiệu (Quy ước) Mai dịch trâu dư A."
     }
   ]
 }
