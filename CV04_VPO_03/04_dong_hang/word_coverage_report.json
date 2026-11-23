@@ -1,9 +1,9 @@
 {
-  "total_pairs": 56,
-  "avg_confidence": 0.7668,
-  "avg_han_coverage_pct": 76.93,
-  "avg_viet_coverage_pct": 56.88,
-  "high_confidence_pairs": 8,
-  "medium_confidence_pairs": 36,
-  "low_confidence_pairs": 12
+  "total_pairs": 856,
+  "avg_confidence": 0.4756,
+  "avg_han_coverage_pct": 43.49,
+  "avg_viet_coverage_pct": 16.21,
+  "high_confidence_pairs": 10,
+  "medium_confidence_pairs": 53,
+  "low_confidence_pairs": 793
 }

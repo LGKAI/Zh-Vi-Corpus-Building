@@ -1,11 +1,11 @@
 {
-  "total_pairs": 28,
-  "valid_pairs": 28,
-  "valid_checked_pairs": 28,
-  "error_pairs": 0,
-  "num_error_pairs": 0,
-  "clean_pairs": 28,
-  "error_rate": 0.0,
+  "total_pairs": 535,
+  "valid_pairs": 535,
+  "valid_checked_pairs": 535,
+  "error_pairs": 22,
+  "num_error_pairs": 22,
+  "clean_pairs": 513,
+  "error_rate": 0.041121,
   "passes_acceptance_threshold": true,
   "passes_threshold_30pct": true,
   "passes_internal_target": true,
@@ -13,27 +13,397 @@
   "is_valid": true,
   "error_counts_by_type": {
     "MISSING": 0,
-    "OMISSION": 0,
-    "ADDITION": 0,
+    "OMISSION": 12,
+    "ADDITION": 8,
     "FORMAT_ERROR": 0,
     "LEFTOVER_MARKER": 0,
-    "NUMBER_MISMATCH": 0
+    "NUMBER_MISMATCH": 3
   },
   "error_breakdown": {
     "MISSING": 0,
-    "OMISSION": 0,
-    "ADDITION": 0,
+    "OMISSION": 12,
+    "ADDITION": 8,
     "FORMAT_ERROR": 0,
     "LEFTOVER_MARKER": 0,
-    "NUMBER_MISMATCH": 0
+    "NUMBER_MISMATCH": 3
   },
   "missing_count": 0,
-  "omission_count": 0,
-  "addition_count": 0,
+  "omission_count": 12,
+  "addition_count": 8,
   "format_error_count": 0,
   "leftover_marker_count": 0,
-  "number_mismatch_count": 0,
-  "issues": [],
+  "number_mismatch_count": 3,
+  "issues": [
+    {
+      "row_index": 43,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
+      "han": "道是奉部堂鈞旨。",
+      "viet": "Trải xem non nước,"
+    },
+    {
+      "row_index": 61,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 9.33 > 4.5 (28 Viet words / 3 Han chars).",
+      "han": "臨江仙",
+      "viet": "ĐÔNG QUÁ TỪ LĂNG TRỊ VÂN ÂM KÍNH CẢM TÁC MÙA ĐÔNG, QUA LĂNG MÀU THẦN, ĐÚNG LUC MÂY CHE, KÍNH CẦN CẢM TÁC (Điệu Lâm giang tiên)"
+    },
+    {
+      "row_index": 70,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.50 < 0.7 (5 Viet words / 10 Han chars).",
+      "han": "霾霧開紅日，青岑散暝陰。",
+      "viet": "Núi xanh hết tối giăng"
+    },
+    {
+      "row_index": 171,
+      "category": "NUMBER_MISMATCH",
+      "severity": "warning",
+      "reason": "Hán number(s) ['七'] not reflected in Việt translation.",
+      "han": "七感集歌（柳梢青）",
+      "viet": "THÁT CẢM TẬP CA (Điệu liễu sao thanh)"
+    },
+    {
+      "row_index": 183,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.17 < 0.7 (1 Viet words / 6 Han chars).",
+      "han": "秋月詞（浣溪沙）",
+      "viet": "BAITUTRANGIHU"
+    },
+    {
+      "row_index": 190,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.46 < 0.7 (6 Viet words / 13 Han chars).",
+      "han": "檳榔詞，奉呈南策府東堂裴貴台",
+      "viet": "Đất này có cây cau tốt,"
+    },
+    {
+      "row_index": 191,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
+      "han": "浪淘沙此地好檳榔，",
+      "viet": "Mùi vị tựa quỳnh tương"
+    },
+    {
+      "row_index": 217,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.67 < 0.7 (8 Viet words / 12 Han chars).",
+      "han": "此日鏗鏗鳴鳳，今日斷腸聲送。",
+      "viet": "Ngày nay tiễn bằng tiếng buồn đứt ruột"
+    },
+    {
+      "row_index": 307,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 4.67 > 4.5 (14 Viet words / 3 Han chars).",
+      "han": "賀聖朝",
+      "viet": "SOẠN TRƯỚC CÁC BÀI TỨ CHỨC MÙNG TIẾT VẠN THỌ' Điệu Hạ thánh triều"
+    },
+    {
+      "row_index": 308,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.33 < 0.7 (1 Viet words / 3 Han chars).",
+      "han": "賀聖朝",
+      "viet": "II."
+    },
+    {
+      "row_index": 312,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 6.00 > 4.5 (24 Viet words / 4 Han chars).",
+      "han": "上堂紳珮，",
+      "viet": "Xuống dưới nhà tiếng sáo tiếng ca. Cảnh tinh xuất hiện cùng áng mây lành, Mong [bệ hạ thọ] như tuổi rùa tuổi hạc?"
+    },
+    {
+      "row_index": 327,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 6.00 > 4.5 (18 Viet words / 3 Han chars).",
+      "han": "一剪梅",
+      "viet": "BÀI TỪ CHÚC MỪNG QUAN TRẤN THỦ LẠNG SƠN, TƯỚC PHONG KIÊN TRUNG HÂU (Điệu Nhất tiễn mai)"
+    },
+    {
+      "row_index": 341,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.33 < 0.7 (1 Viet words / 3 Han chars).",
+      "han": "南歌子",
+      "viet": "II."
+    },
+    {
+      "row_index": 357,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 8.60 > 4.5 (43 Viet words / 5 Han chars).",
+      "han": "未熟黄粱頃。",
+      "viet": "trên gỗ, hiện treo ở nhà thờ Đại tôn dòng họ Nguyễn Huy ở xã Trường Lộc, huyện Can Lộc, tỉnh Hà Tĩnh, Trên bảng gỗ không ghi tác giả và niên đại. Theo nội dung, các bài từ này được viết để"
+    },
+    {
+      "row_index": 367,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.59 < 0.7 (10 Viet words / 17 Han chars).",
+      "han": "今歸棹溯洄，初三冬届候：潦水盡而寒潭清；",
+      "viet": "nay quay chèo ngược về, đúng vào đầu mùa đông:"
+    },
+    {
+      "row_index": 367,
+      "category": "NUMBER_MISMATCH",
+      "severity": "warning",
+      "reason": "Hán number(s) ['三'] not reflected in Việt translation.",
+      "han": "今歸棹溯洄，初三冬届候：潦水盡而寒潭清；",
+      "viet": "nay quay chèo ngược về, đúng vào đầu mùa đông:"
+    },
+    {
+      "row_index": 386,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.50 < 0.7 (6 Viet words / 12 Han chars).",
+      "han": "迢遞九江煙浪，滄茫千里湖山。",
+      "viet": "Mênh mông núi hô ngàn dặm"
+    },
+    {
+      "row_index": 455,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.60 < 0.7 (6 Viet words / 10 Han chars).",
+      "han": "序歷三時久，人從萬里歸。",
+      "viet": "Người từ muôn dặm trở về"
+    },
+    {
+      "row_index": 478,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
+      "han": "時對兒童作遣。",
+      "viet": "Giá bút ống thơ,"
+    },
+    {
+      "row_index": 489,
+      "category": "NUMBER_MISMATCH",
+      "severity": "warning",
+      "reason": "Hán number(s) ['百'] not reflected in Việt translation.",
+      "han": "百爾仙仗，",
+      "viet": "Vẫn ngỡ như năm nào. Đó là chuyện đã qua,"
+    },
+    {
+      "row_index": 491,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 17.67 > 4.5 (53 Viet words / 3 Han chars).",
+      "han": "馥也蠢，",
+      "viet": "Ông là con trai thứ tư của hoàng đế gia Long, lên ngôi Hoàng đế năm 1820, là vị Hoàng đế thứ hai của triều Nguyễn, tại vị từ năm 1820 đến năm 1841, lấy niên hiệu là minh mạng (Mệnh), nên thường được gọi là hoàng đế minh mạng. Ông là vị"
+    },
+    {
+      "row_index": 492,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 19.00 > 4.5 (57 Viet words / 3 Han chars).",
+      "han": "不知量。",
+      "viet": "Hoàng đế có hùng tài đại lược và có tài năng về văn chương. Sáng tác hiện còn của ông rất phong phú: về thơ có Ngự chế thi tập, gồm 6 quyền với khoảng trên dưới 3 nghìn bài, về văn có minh Mệnh ngự chế văn với hàng ngàn bài theo nhiều thể loại khác"
+    },
+    {
+      "row_index": 494,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 6.20 > 4.5 (31 Viet words / 5 Han chars).",
+      "han": "仍作當年想。",
+      "viet": "Về từ, trong minh mệnh ngự chế văn (97, tp 41) 2, tập 2, kí hiệu A.118, bản chụp kí hiệu VHc.2796) có 1 bài từ viết theo điệu"
+    }
+  ],
   "errors": [],
-  "warnings": []
+  "warnings": [
+    {
+      "row_index": 43,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
+      "han": "道是奉部堂鈞旨。",
+      "viet": "Trải xem non nước,"
+    },
+    {
+      "row_index": 61,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 9.33 > 4.5 (28 Viet words / 3 Han chars).",
+      "han": "臨江仙",
+      "viet": "ĐÔNG QUÁ TỪ LĂNG TRỊ VÂN ÂM KÍNH CẢM TÁC MÙA ĐÔNG, QUA LĂNG MÀU THẦN, ĐÚNG LUC MÂY CHE, KÍNH CẦN CẢM TÁC (Điệu Lâm giang tiên)"
+    },
+    {
+      "row_index": 70,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.50 < 0.7 (5 Viet words / 10 Han chars).",
+      "han": "霾霧開紅日，青岑散暝陰。",
+      "viet": "Núi xanh hết tối giăng"
+    },
+    {
+      "row_index": 171,
+      "category": "NUMBER_MISMATCH",
+      "severity": "warning",
+      "reason": "Hán number(s) ['七'] not reflected in Việt translation.",
+      "han": "七感集歌（柳梢青）",
+      "viet": "THÁT CẢM TẬP CA (Điệu liễu sao thanh)"
+    },
+    {
+      "row_index": 183,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.17 < 0.7 (1 Viet words / 6 Han chars).",
+      "han": "秋月詞（浣溪沙）",
+      "viet": "BAITUTRANGIHU"
+    },
+    {
+      "row_index": 190,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.46 < 0.7 (6 Viet words / 13 Han chars).",
+      "han": "檳榔詞，奉呈南策府東堂裴貴台",
+      "viet": "Đất này có cây cau tốt,"
+    },
+    {
+      "row_index": 191,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
+      "han": "浪淘沙此地好檳榔，",
+      "viet": "Mùi vị tựa quỳnh tương"
+    },
+    {
+      "row_index": 217,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.67 < 0.7 (8 Viet words / 12 Han chars).",
+      "han": "此日鏗鏗鳴鳳，今日斷腸聲送。",
+      "viet": "Ngày nay tiễn bằng tiếng buồn đứt ruột"
+    },
+    {
+      "row_index": 307,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 4.67 > 4.5 (14 Viet words / 3 Han chars).",
+      "han": "賀聖朝",
+      "viet": "SOẠN TRƯỚC CÁC BÀI TỨ CHỨC MÙNG TIẾT VẠN THỌ' Điệu Hạ thánh triều"
+    },
+    {
+      "row_index": 308,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.33 < 0.7 (1 Viet words / 3 Han chars).",
+      "han": "賀聖朝",
+      "viet": "II."
+    },
+    {
+      "row_index": 312,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 6.00 > 4.5 (24 Viet words / 4 Han chars).",
+      "han": "上堂紳珮，",
+      "viet": "Xuống dưới nhà tiếng sáo tiếng ca. Cảnh tinh xuất hiện cùng áng mây lành, Mong [bệ hạ thọ] như tuổi rùa tuổi hạc?"
+    },
+    {
+      "row_index": 327,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 6.00 > 4.5 (18 Viet words / 3 Han chars).",
+      "han": "一剪梅",
+      "viet": "BÀI TỪ CHÚC MỪNG QUAN TRẤN THỦ LẠNG SƠN, TƯỚC PHONG KIÊN TRUNG HÂU (Điệu Nhất tiễn mai)"
+    },
+    {
+      "row_index": 341,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.33 < 0.7 (1 Viet words / 3 Han chars).",
+      "han": "南歌子",
+      "viet": "II."
+    },
+    {
+      "row_index": 357,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 8.60 > 4.5 (43 Viet words / 5 Han chars).",
+      "han": "未熟黄粱頃。",
+      "viet": "trên gỗ, hiện treo ở nhà thờ Đại tôn dòng họ Nguyễn Huy ở xã Trường Lộc, huyện Can Lộc, tỉnh Hà Tĩnh, Trên bảng gỗ không ghi tác giả và niên đại. Theo nội dung, các bài từ này được viết để"
+    },
+    {
+      "row_index": 367,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.59 < 0.7 (10 Viet words / 17 Han chars).",
+      "han": "今歸棹溯洄，初三冬届候：潦水盡而寒潭清；",
+      "viet": "nay quay chèo ngược về, đúng vào đầu mùa đông:"
+    },
+    {
+      "row_index": 367,
+      "category": "NUMBER_MISMATCH",
+      "severity": "warning",
+      "reason": "Hán number(s) ['三'] not reflected in Việt translation.",
+      "han": "今歸棹溯洄，初三冬届候：潦水盡而寒潭清；",
+      "viet": "nay quay chèo ngược về, đúng vào đầu mùa đông:"
+    },
+    {
+      "row_index": 386,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.50 < 0.7 (6 Viet words / 12 Han chars).",
+      "han": "迢遞九江煙浪，滄茫千里湖山。",
+      "viet": "Mênh mông núi hô ngàn dặm"
+    },
+    {
+      "row_index": 455,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.60 < 0.7 (6 Viet words / 10 Han chars).",
+      "han": "序歷三時久，人從萬里歸。",
+      "viet": "Người từ muôn dặm trở về"
+    },
+    {
+      "row_index": 478,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
+      "han": "時對兒童作遣。",
+      "viet": "Giá bút ống thơ,"
+    },
+    {
+      "row_index": 489,
+      "category": "NUMBER_MISMATCH",
+      "severity": "warning",
+      "reason": "Hán number(s) ['百'] not reflected in Việt translation.",
+      "han": "百爾仙仗，",
+      "viet": "Vẫn ngỡ như năm nào. Đó là chuyện đã qua,"
+    },
+    {
+      "row_index": 491,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 17.67 > 4.5 (53 Viet words / 3 Han chars).",
+      "han": "馥也蠢，",
+      "viet": "Ông là con trai thứ tư của hoàng đế gia Long, lên ngôi Hoàng đế năm 1820, là vị Hoàng đế thứ hai của triều Nguyễn, tại vị từ năm 1820 đến năm 1841, lấy niên hiệu là minh mạng (Mệnh), nên thường được gọi là hoàng đế minh mạng. Ông là vị"
+    },
+    {
+      "row_index": 492,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 19.00 > 4.5 (57 Viet words / 3 Han chars).",
+      "han": "不知量。",
+      "viet": "Hoàng đế có hùng tài đại lược và có tài năng về văn chương. Sáng tác hiện còn của ông rất phong phú: về thơ có Ngự chế thi tập, gồm 6 quyền với khoảng trên dưới 3 nghìn bài, về văn có minh Mệnh ngự chế văn với hàng ngàn bài theo nhiều thể loại khác"
+    },
+    {
+      "row_index": 494,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 6.20 > 4.5 (31 Viet words / 5 Han chars).",
+      "han": "仍作當年想。",
+      "viet": "Về từ, trong minh mệnh ngự chế văn (97, tp 41) 2, tập 2, kí hiệu A.118, bản chụp kí hiệu VHc.2796) có 1 bài từ viết theo điệu"
+    }
+  ]
 }

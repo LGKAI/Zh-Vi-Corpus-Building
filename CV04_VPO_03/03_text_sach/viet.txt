@@ -1,56 +1,856 @@
-Gió đập cổng thông, trăng sáng trước sân, Lòng hẹn với phong cảnh cùng trong sạch lặng lẽ.
-Bao nhiêu thú vị trong đó không ai hay, Mặc cho nhà sư trong núi vui đến sáng.
-Nghĩ không có ngọc quỳnh đáp lại, lòng tự thẹn. Trên bờ sông nhìn xa mãi xiết bao bùi ngùi.
-Gió thu trước đầu ngựa thổi vào thanh gươm, Ánh trăng lọt qua rường nhà dọi vào phòng sách.
-Màn trống khó ngăn chim én về phương Bắc, Đất ấm buồn nghe chim nhạn biệt phương Nam.
-Lần đi này chưa biết ngày nào mới có dịp nghiêng lọng, Xin vì cuộc chuyện trò tao nhã mà có một bài thơ.
-Trẫm thiết vị: Phật vô Nam Bắc, quân khả tu cầu; tính hữu trí ngu, đồng tư giác ngộ.
-Thị dĩ dụ quần mê chi phương-tiện, minh sinh tử chi tiệp kính giả, ngã Phật chi đại giáo dã;
-nhậm thùy thế chi quyền hành, tác tương lai chi quỹ phạm giả, tiên thánh chi trọng trách dã.
-Cố Lục Tổ hữu ngôn vân: Tiên đại thánh nhân dữ đại sư vô biệt, tắc tri ngã Phật chi giáo hựu giả tiên thánh nhân dĩ truyền ư thế dã.
-Kim trẫm yên khả bất dĩ tiên thánh chi nhậm vi kỷ chi nhậm, ngã Phật chi giáo vi kỷ chi giáo tai!
-Thả trẫm ư hài đồng hữu thức chi niên, sảo văn Thiền sư chi huấn, tắc trừng tư tức lự, khái nhiên thanh tịnh, hữu tâm hồ nội giáo, tham cứu ư Thiền tông, hư kỷ cầu sư, tinh thành mộ đạo.
-Tuy hồi hướng chi ý dĩ manh, nhi cảm xúc chi cơ vị đạt.
-Sư viết: Sơn bản vô Phật, duy tồn hồ tâm.
-Tâm tịch nhi tri, thị danh Chân Phật.
-Kim Bệ hạ nhược ngộ thử tâm, tắc lập địa thành Phật, vô khổ ngoại cầu dã.
-Trẫm văn thị ngôn, nãi mệnh công khải tả, sắc lệnh khai ấn, phi đặc dĩ vi hậu thế chỉ mê, cái dục kế tiên đại thánh nhân chi công quảng, nhân tự vi tự vân.
-Trẫm thiết vị: Phật vô Nam Bắc, quân khả tu cầu; tính hữu trí ngu, đồng tư giác ngộ.
-Thị dĩ dụ quần mê chi phương-tiện, minh sinh tử chi tiệp kính giả, ngã Phật chi đại giáo dã;
-nhậm thùy thế chi quyền hành, tác tương lai chi quỹ phạm giả, tiên thánh chi trọng trách dã.
-Cố Lục Tổ hữu ngôn vân: Tiên đại thánh nhân dữ đại sư vô biệt, tắc tri ngã Phật chi giáo hựu giả tiên thánh nhân dĩ truyền ư thế dã.
-Kim trẫm yên khả bất dĩ tiên thánh chi nhậm vi kỷ chi nhậm, ngã Phật chi giáo vi kỷ chi giáo tai!
-Thả trẫm ư hài đồng hữu thức chi niên, sảo văn Thiền sư chi huấn, tắc trừng tư tức lự, khái nhiên thanh tịnh, hữu tâm hồ nội giáo, tham cứu ư Thiền tông, hư kỷ cầu sư, tinh thành mộ đạo.
-Tuy hồi hướng chi ý dĩ manh, nhi cảm xúc chi cơ vị đạt.
-Sư viết: Sơn bản vô Phật, duy tồn hồ tâm.
-Tâm tịch nhi tri, thị danh Chân Phật.
-Kim Bệ hạ nhược ngộ thử tâm, tắc lập địa thành Phật, vô khổ ngoại cầu dã.
-Trẫm văn thị ngôn, nãi mệnh công khải tả, sắc lệnh khai ấn, phi đặc dĩ vi hậu thế chỉ mê, cái dục kế tiên đại thánh nhân chi công quảng, nhân tự vi tự vân.
-Trẫm thiết vị: Phật vô Nam Bắc, quân khả tu cầu; tính hữu trí ngu, đồng tư giác ngộ.
-Thị dĩ dụ quần mê chi phương-tiện, minh sinh tử chi tiệp kính giả, ngã Phật chi đại giáo dã;
-nhậm thùy thế chi quyền hành, tác tương lai chi quỹ phạm giả, tiên thánh chi trọng trách dã.
-Cố Lục Tổ hữu ngôn vân: Tiên đại thánh nhân dữ đại sư vô biệt, tắc tri ngã Phật chi giáo hựu giả tiên thánh nhân dĩ truyền ư thế dã.
-Kim trẫm yên khả bất dĩ tiên thánh chi nhậm vi kỷ chi nhậm, ngã Phật chi giáo vi kỷ chi giáo tai!
-Thả trẫm ư hài đồng hữu thức chi niên, sảo văn Thiền sư chi huấn, tắc trừng tư tức lự, khái nhiên thanh tịnh, hữu tâm hồ nội giáo, tham cứu ư Thiền tông, hư kỷ cầu sư, tinh thành mộ đạo.
-Tuy hồi hướng chi ý dĩ manh, nhi cảm xúc chi cơ vị đạt.
-Sư viết: Sơn bản vô Phật, duy tồn hồ tâm.
-Tâm tịch nhi tri, thị danh Chân Phật.
-Kim Bệ hạ nhược ngộ thử tâm, tắc lập địa thành Phật, vô khổ ngoại cầu dã.
-Trẫm văn thị ngôn, nãi mệnh công khải tả, sắc lệnh khai ấn, phi đặc dĩ vi hậu thế chỉ mê, cái dục kế tiên đại thánh nhân chi công quảng, nhân tự vi tự vân.
-Trẫm thiết vị: Phật vô Nam Bắc, quân khả tu cầu; tính hữu trí ngu, đồng tư giác ngộ.
-Thị dĩ dụ quần mê chi phương-tiện, minh sinh tử chi tiệp kính giả, ngã Phật chi đại giáo dã;
-nhậm thùy thế chi quyền hành, tác tương lai chi quỹ phạm giả, tiên thánh chi trọng trách dã.
-Cố Lục Tổ hữu ngôn vân: Tiên đại thánh nhân dữ đại sư vô biệt, tắc tri ngã Phật chi giáo hựu giả tiên thánh nhân dĩ truyền ư thế dã.
-Kim trẫm yên khả bất dĩ tiên thánh chi nhậm vi kỷ chi nhậm, ngã Phật chi giáo vi kỷ chi giáo tai!
-Thả trẫm ư hài đồng hữu thức chi niên, sảo văn Thiền sư chi huấn, tắc trừng tư tức lự, khái nhiên thanh tịnh, hữu tâm hồ nội giáo, tham cứu ư Thiền tông, hư kỷ cầu sư, tinh thành mộ đạo.
-Tuy hồi hướng chi ý dĩ manh, nhi cảm xúc chi cơ vị đạt.
-Sư viết: Sơn bản vô Phật, duy tồn hồ tâm.
-Tâm tịch nhi tri, thị danh Chân Phật.
-Kim Bệ hạ nhược ngộ thử tâm, tắc lập địa thành Phật, vô khổ ngoại cầu dã.
-Trẫm văn thị ngôn, nãi mệnh công khải tả, sắc lệnh khai ấn, phi đặc dĩ vi hậu thế chỉ mê, cái dục kế tiên đại thánh nhân chi công quảng, nhân tự vi tự vân.
-Gió đập cổng thông, trăng sáng trước sân, Lòng hẹn với phong cảnh cùng trong sạch lặng lẽ.
-Bao nhiêu thú vị trong đó không ai hay, Mặc cho nhà sư trong núi vui đến sáng.
-Gió đập cổng thông, trăng sáng trước sân, Lòng hẹn với phong cảnh cùng trong sạch lặng lẽ.
-Bao nhiêu thú vị trong đó không ai hay, Mặc cho nhà sư trong núi vui đến sáng.
-Gió đập cổng thông, trăng sáng trước sân, Lòng hẹn với phong cảnh cùng trong sạch lặng lẽ.
-Bao nhiêu thú vị trong đó không ai hay, Mặc cho nhà sư trong núi vui đến sáng.
+BÀN VỀ TÌNH NGHĨA ANH EM TRONG HOÀNG TỘC
+Nước nhà, là: nước nhà của tố tông truyền lại.
+Người thừa kế cơ nghiệp của tồ tông nên cùng với anh em trong dòng họ cùng hưởng phú quy, Tuy bề - ngoài là cả thiên hạ phụng sự một người tôn quý, nhưng bên trong thì lạ cùng các khanh là đồng bào ruột thịt, lo thì cùng lo, vui thì cũng vui. Các khanh nên đemi mấy lời này mà truyền cho con cháu, đề nhờ mãi dừng quên. ấy là phúc muôn đời của tòng miếu xã tắc vậy.
+TỰA THIỀN TÔNG CHỈ NAM
+Mang tơi đội nón ở chốn Ngũ-hồ vinh dự hơn đeo ấn,
+Dâu gai đầy nơi đông nội sướng hơn được phong hầu.
+THƠ QUÝ HƠN VĂNG (I)
+Xưa nay vật gì mà chẳng hóa thành đất 7
+Sau khi chết, chỉ có thơ đề lại là quý hơn vàng.
+VIẾNG VĂN HIẾN HẦU (I)
+Núi há nữ chôn hòn ngọc đã mài dùa thành đồ vật?
+Trăng luống soi dọi mảnh hồn của kê thiếu niên
+PHÒ GIÁ VỀ KINH (I)
+Bến Chương-dương cướp giáo giặc,
+Cửa Hàm-tử bắt quân Hồ.
+Buổi thái bình nên đốc toàn sức lực,
+Thì non sông này muôn đời dài lâu.
+TIỀN SỨ BẮC SÀI TRANG KHANH
+Tiễn ông trở về riêng những bằng khuảng
+Ngựa xăm xăm nhằm thắng néo quê hương nhà vuâ.
+Nỗi lòng kẻ Nam người Bắc vẫn liru luyến trên ngọn cờ về,
+Tình khách chủ dạt dào trong chén rượu ly biệt
+Vừa nói cười đó mà thoắt đã ngậm ngùi chia tay.
+Cùng nhau xtưởng họa tiếc những lúc hai giường đối diện
+Chưa biết bao giờ lại được găp mặt.
+Đề cầm tay ân cần tỏ nỗi hàn huyên
+TẶNG SỬ BẮC SÀI TRÁNG KHANH, LÝ CHẤN VĂN ()
+Một phòng chiếu phượng từ sân trời ban xuống,
+Nhà vua trao trách nhiệm sứ giả cho òng đi ngoài vạo dặm.
+Các bậc áo mũ ở Bắc triều tranh nhau tiễn người lên đường.
+Cây có ở Nam giao đều biết danh tiếng ông.
+Nói lời oai phúc, ông thay nhà vua mà khen chê,
+Thân mang sự an nguy quan hệ đến việc trọng khinh của nhà nước.
+Dám mong bốn vị sứ giả tài giỏi (o) có lòng yêu thương công
+bằng rộng lớn,
+Hãy che chở cho thương sinh nước việt
+ĐỀ ĐỀN BẠCH-MÃ
+Xưa kịa nghe người ta nói đến oai linh của đại vương,
+Ngày nay mới biết là mã quỷ phải khiếp kinh
+Ba khu lửa cháy, không cháy được tới đền,
+Một trận gió bui lay chuyển cũng không nghiêng đồ.
+Chỉ huy ba ngàn quân yêu quải.
+Trần áp trăm vạn quân ma quỳ
+Xin nhờ dư oai [của thần] đề phá tan giặc bắc,
+Trong chốc lát làm cho đất nước thanh bình
+TỐI LINH TỪ
+TTTPHT: Đề Bạch-mũ đại vương tir TTPHT: mị XX TTTPHT: ngự 52: Long đỗ tối linh tir.bác ITTPHT: khu BE TTTPHT và Long đỗ tối linh từ: tận TTPHT và Long-đỗ tối lịnh tír: tà TTTPHT. 13
+ĐỀ THƠ Ở BIỆT THỰ ĐỒNG QUÊ
+Biệt thự ở dòng quê vừa làm xong, cảnh vật mới mẻ,
+Đào lý thơm tho bốn mùa lươi tốt.
+Một tiếng sáo trẻ chăn trâu làm xanh ảnh trăng trên lầu,
+Mấy mảnh áo tơi nhà nông biếc đám mây dưới lũng
+Đường quanh co như ruột dễ thông với đường vùng ngoại kính kỳ,
+Khe xòe đuôi én ngăn cách đám bụi đỏ.
+Quỷ thần thầm nói với nhau trong chỗ kin đáo:
+Một giải phong quang này có thể làm nơi ần dật cho nhà ngươi.
+VƯỜN PHÚC HƯNG
+Một dòng nước chảy bao quảnh vườn Phúc-hưng. Ở giữa là một khu vườn bằng phẳng rộng đến vài, mẫu. Bờ: mai, khi, tuyết tan, nụ lòng lánh hạt châu,
+Đình trúc, lúc mây cuốn, là xanh cành biếc (a). Nắng lên, mời khách, pha chén trà,
+Mưa tạnh, gọi gia đồng sửa lại giàn thuốc. Trông về phía Nam không còn khỏi lang bốc lên nữa,
+Thành thơi trên giường, yên tâm với giấc mơ riêng.
+BẾN ĐÒ LƯU-GIA
+Bến đò Lưu-gia cày cao ngất trời, Xưa phò giá sang Đông, từng đỗ thuyền nơi đây
+Tháp cũ đình xira, trên dòng sông thu.
+Đền hoang mộ cồ, trước dãy làn đá Bản đồ phủ Thái-bình rộng tới gàn nghìn dặm.
+Non sông nhà Lý trài hai trăm năm.
+Khách thơ trở lại nơi đây đầu đã bạc.
+Hoa mai như tuyết soi bóng xuống dòng sông, trong
+CẢM HỨNG NGÀY XUÂN
+Mưa muốn làm tươi tốt cày mai nên gòi ướt cành tơ, Đóng cửa, ngồi sừng sững một con người nghiện sách Nửa phần sắc xuân đã hờ hững trôi đi, Năm mươi tuổi tự biết mình suy yếu Tấm lòng cố hương mỏi mệt theo cánh chim bay, Ơn vua như biển rộng, nên còn chầu chữ như con cả giương vày. Riêng chí dũng cảm lúc bình sinh vân còn nguyên đó, Say ngà nghiêng trước giô Đông, ngàm một bải thơ. ii Bóng trăng mờ mờ, đêm đã gần làn Gió Đông đột ngột khơi dậy cái rét mùa xuân Bay múa trên không, tơ liễu dinh vào gác cao, Tỉnh mộng. cảnh trúc đập vào lan can chạm vẽ Cảnh vật thêm lươi nhờ trận mira ngoài trời, Lòng kinh sợ sắc mặt hồng hào thời xưa đã phai. Tiêu sầu nhờ có vài chén rượu, Võ kiếm, vời vợi nhớ non xưa.
+Sương lạc thiên nhai điều đạo hoang. Giang lưu bất
+chuyền thị Cù-đường.
+Tinh kỳ cố lũy nhàn thu thảo, Cồ
+giốc không sơn tổng tịch
+dương Thiên địa hữu thủy cùng
+biến diệt. Bút đoan vô khầu ngữ hưng vương (vong)
+Khả liên nhất phiến tây nam cảnh
+Sương phủ nghìn đèo núi, đường chim bay hoàng vu.
+Sông trôi mà núi non không chuyện. ấy là Ci-đường. Cơ xi quanh lũy cũ chỉ còn lợ thơ đám có mùa thu. Trong, tù và trên núi hoang tiễn bóng chiều Trong trời đất có ai hiểu thấu lễ biến diệt?
+Ngọn bút không có miệng vẫn nói chuyện hưng vong Bảng thương một vùng quang. cảnh lây nam ấy Trải gió mưa tiêu diều, chỉ còn lại bức tường hoa.
+VĂN BIA THỜ CÔNG CHÚA PHỤNG DƯƠNG
+Còng chúa họ Trần, lên là - tên được ban là phùng dương. cha.
+là tường quốc Thái sưr, mẹ là phu nhân Tuệ Chân.
+Khi còn ibé, công chúa được khen là hiền hậu và thông minh, vua Thái Tông yêu quý, nuôi:
+làm con.
+Đến khi gả cho Thượng tưởng Thái sư, vua xuống chiếu ban cho xe và quần áo theo như con gải vua.
+Đó là nghi, thức khi công chúa đi lấy chòng.
+Bấy giờ Thái sir có một người thiếp yêu nên đối với công chúa không đắm thắm.
+Tướng quốc và phu nhân Tuệ Chân ngăn cản, định không cho Thải sư làm theo ý mình.
+Công chúa cho là không nêu, thưa với cha mẹ.
+- Con đã về làm vợ Thải sử, được hòa hợp hay không là do mệnh mà thôi
+Y của cha mẹ, con cái cố nhiên không được cường lại, nhưng còn cải nghĩa clớn phải theo chồng v thì làm thế nào?
+Tưởng quốc và phu nhân Tuệ Chân nghe vậy, bèn thói.
+Đó là lòng trình tiết của công chúa.
+Công chúa thờ chồng một lòng kinh thuận, đối với thứ thiếp của chồng một lòng khoan thứ.
+Nếu có người nào, làm cho Thái sư giận la mắng, tht công chùa lấy lời lễ nhẹ nhàng giảng giải, khiến họ không phản nàn oán hện.
+Công chúa cư xử như thế, các bậc liệt phụ thời xưa cũng không hơn được.
+Đến việc Thái sư lựa chọn, khen thưởng các nhân vật trong triều đinh.
+công chúa tự coi đó không phải là phận sự của đàn bà, nên chưa từng vì cử gần gũi mà tự liện xen vào những việc quan trọng.
+Đó là đức tốt của công chúa.
+Tướng quốc Thái sư ổm, công chúa chăm no m thuốc thang, phung dưỡng cơn cháo, suốt một năm trời, đến mỗi áo chẳng kịp cởi, nằm không yên giác.
+Đó là cách công chúa hầu hạ cha khi đau yếu.
+Tướng quốc Thái sư mặt, công chìa đề tang hết lễ, xót thương đau đớn đến hầu như muốn chết, người trong nước tròng thấy, không ai cầm đư,7c nước mắt.
+Đó là công chúa giữ lễ khi cir tang.
+Phu nhân Tuệ Chân ở góa hơn hai mươi năm, công chúa sớm hôm vín an, địch thân bầu hạ cơm nước, không chút trễ nải
+Gặp khi phu nhân có điều gì quở trách, còng chúa khúm núm nhân lỗi, không dám tự, coi mình cao sang mà ra vẻ.
+Đó là công chúa thờ mẹ một lòng hiếu thảo Khi phu nhàn Tuệ Chân mất, công chúa héo hon gầy giộc, ai thấy cũng khen
+Sản nghiệp của của mẹ đế lại, công chúa chia đều cho anh em, còn mình không một chút tơ bào.
+Lại dốc cả gia sản đề hồ thi cho sưr và cũng Phật, kè đói thì cho ăn, kẻ rét thì cho mặc
+Đem của cải cầu phúc cho cha mẹ, đó là - việc công chúa chu đáo với việc sau, như ơn những người trước.
+Thái sư ở cương vị Tướng quốc, hằng ngày rất hận, chẳng có thì giờ đoái hoài đến việc nhà, ông ủy thác cho còng chúa khu xị với kè già, người trẻ, trông nom sắp xếp lài sản.
+Mọi việc còng chúa làm không điều gì không vừa ý Thái sư.
+Đó là cách thức công chúa trông nom cai quản việc nhà.
+Việc kim chỉ vá may, muối mơ nấu nướng, tài nội trợ của còng ciniz càng giỏi.
+người đàn bà tàm thường không thể nèo sánh được.
+Đó là công chúa thành thạo việc nội trợ.
+Đối với nô tỳ, công chúa không to tiếng, chỉ sai bảo bằng nét mặt
+Nếu kẻ nào lỡ lấy trộm vật gì công chia chỉ tùy tiện truy hỏi mà không nữ đề lộ điều xấu xa của chúng
+Đó là lòng nhân của công chúa Ngày thường, những khi rỗi rãi, đối với đám tù ho, cỏng chúa thường thăm hỏi, an ủi, chưa từng dùng roi vọt, cho nên những kẻ xấu cũng cảm phục.
+Đó là lòng khoan thứ của công chúa.
+Công chúa về làm dân nhà tướng từ tuổi còn nhỏ, công việc bận rộn, chưa từng có lúc rành rang đề học hỏi.
+Đến khi về giả, công chúa đặc biệt - thích đọc sách nhà Phật
+Tuy chưa hiều cặn kẽ từng cầu từng chữ, nhưng nét - đại quát về cái tâm a đại giác n căng đã biểu được, ngoài ra những giới luật lặi vặt thì không câu nệ.
+Đó là còng chùa đã thông về tâm và tỉnh vậy.
+NGÀY XUÂN THĂM CHIÊU-LĂNG
+Quân thị vệ như hùm gấu, trước nghìn cửa đứng nghiêm túc,
+Áo mũ các quan đủ cả bảy phầm
+Người lính già đầu bạc còn đến ngày nay
+Thường kễ lại chuyện đời Nguyên Phong
+BUỒI SỚM MÙA XUÂN
+Ngù dậy mở cánh cửa sờ,
+Không ngờ mùa xuân đã về
+Một đôi bướm trắng
+Phần phật cảnh, bay đến với hoa.
+ĐỀ CHÙA LÀNG HƯƠNG CỒ CHÂU ()
+Số đời hoàn toàn mờ mịt,
+Tình người đồi thay qua đỏi mắt.
+Khi cung ma bị quản chặt.
+Thì cõi Phải tràn ngập màu xuân
+Quang cảnh hồ Động-thiên,
+Hoa có kém về xuân tươi.
+Thượng đế thương hiu quạnh,
+Thính thoảng điềm một tiếng chuông giữa tầng biếc.
+Đất hẻo lánh, đài thêm cồ kính,
+Theo thời tiết, mùa xuân về chưa lâu
+Núi mây như xa, như gần
+Ngõ hoa nửa rợp, nửa nắng
+Muôn việc như nước tuôn nước,
+Trăm năm lòng lại nhủ lòng
+Tựa lan can nâng ngang chiếc sáo ngọc,
+Anh trăng sáng chan hòa trước ngực
+TẶNG BÁNH NGÀY: XUÂN CHO TRƯƠNG HIỀN KHANH
+Mùa giá chi xong, thứ tấm áo ngày xuân
+Huống nữa hôm nay lại găp tiết mông ba tháng Ba (-).
+Bánh rau mùa xuân, như ngọc hồng bầy đày mâm
+Đó là phong tục của nước An-nam xửa nay.
+Ao Linh-trì thăm thẩm, bữa tiệc tiễn đưa ấm áp.
+Gió xuân không cách nào giữ lại ngọn roi trên đường về
+Chẳng hay phúc lành của hai ngôi sao sử thần
+Còn vắng vặc soi trời Việt được mấy đêm nữa
+Trong khóm hoa dương liễu rậm, chim hót chậm rãi,
+Dưới bóng thềm ngôi nhà chạm vẽ, mây chiều lướt bay.
+Khách đến chơi không bỏi việc đời,
+Cũng đứng tựa lan can ngắm màu xanh mờ mịt ở chân trời.
+ĐÊM MƯỜI MỘT THÁNG HAI
+Chén rượu rửa sầu có phong vị đậm đà.
+Chiếc chiếu đào sinh yên ồn trên giường rồng
+Trời trong như nước, trăng sáng như ban ngày
+Bóng hoa trần ngập cửa sồ, giác mộng đêm xuân triên miên.
+NIÊM OÁN HẬN CỦA NGƯỜI KHUÊ PHỤ
+Ngũ dậy, cuốn mành xem cánh hồng rụng, Chim oanh vàng bặt tiếng, oán gió Đòng Không dưng mặt trời lặn phía ngoài lầu tây
+Đầu cành bóng hoa đều hướng về phía Đông CÂY MAI Gan đạ sắt đá vượi lên tuyết buổi sáng.
+Quần lua mộc, khăn lua trắng đỏn gió động.
+[Như] Hán Văn Đế: là người tiết kiệm, mộc mạc trong nhân gian,
+TVà) Đường Thái Tông là bậc anh hùng trong thiên hạ.
+XUÂN MUỘN
+Thuở trẻ chưa từng hiểu rõ a sắc v. với a không v,
+Mỗi khi xuân đến vẫn gửi lòng trong trăm hoà
+Ngày nay đã khám phá được bộ mặt chúa: xuân,
+Ngôi trên nệm cò (P) giữa tâm: phản nhà: chùa ingắm cánh hoa rụng
+NGẰM CẢNH CHIỀU Ở THIÊN-TRƯỜNG
+Trước thôn, sau thôn đều mờ mờ như khói phủ, Bên bóng chiều [cảnh vật] nửa như có, nửa như không
+Trong tiếng sáo, mục đông lùa trâu về hếi,
+Từng đôi cò trắng hạ cánh xuống đồng
+Xông hết nghìn nén hương, khắp nhà thủy tạ thơm ngào ngạt,
+Dòng nước mới dâng không lạnh lầm
+Dưới bóng đa già. cổng chủa đóng im im.
+Một tiếng ve đầu tiên, tử thu man mác
+Chiếc cầu chạni về đảo bóng vất ngang dòng suối,
+Một vệt nắng chiều rực sáng bên ngoài ngăn nước. Nghìn núi lặng tờ, là đó rơi,
+Mây trút giăng như mộng, tiếng chuông xa vắng. CẢNH CHIỀU Ở CHÂU LẠNG
+Ngôi chùa cồ lạnh lêo sau lớp khỏi mùa thu, Thuyền câu hiu quạnh, chuông chiều hắt đầu điềm
+Nước trong, núi lặng, chim âu trắng bay qua, Gió im, mây nhởn nhơ, cây lơ thơ lá đỏ.
+MẠN HỨNG Ở SƠN PHÒNG
+Ai trói buộc mà phải tim phương giải thoát,
+(Phầm cách) chẳng phàm tục cần gi tim thần tiên
+Vượn nhàn, ngựa mỏi, người cũng đã già,
+Vẫn một chiếc giường thiền ở am máy cũ
+Niềm thị phi rụng theo hoa buồi sớm,
+Lòng danh lợi lạnh theo trận mưa đêm.
+Hoa rung hết, mưa đã tạnh, mũi non tịch mịch,
+Một tiếng chim kêu, lại cảnh xuân tản
+HOA MAI SỚM
+I Năm cánh hoa tròn nhị điềm vàng,
+[Như] bóng san hồ chìm. [như] vây cá biền nồi.
+Cành hoa trắng xóa suốt trong ba tháng đông.
+Sang đầu xuân chỉ còn loáng thoáng một vài cánh thơm nhẹ.
+Móc ngọt chảy mùi thơm làm chú hướm si.ngày tỉnh giác,
+Ánh sáng ban đêm như nước khiến con chim khát buồn rầu.
+Nếu Hằng Nga biết được về đẹp thanh nhã của hoa mai,
+Thì có ưa/gì cây quế với cung thiềm lanh lẽo.
+II
+Chỉ năm ngày sợ rét lười ra khỏi cửa, Mà gió xuân đã sớm đến với gốc cây có đơn.
+Bóng ngà trên mặt nước, băng giá bắt đầu tan, Hoa trìu nặng đầu cành, hơi âm chưa định rõ.
+Giọng ca Thủy vũ lắng chìm mặt trăng xóm núi. Tiếng sáo Họa long âm ưới đám mậy ngọc quan.
+Một cành hoa lạc vào giấc mộng cố nhân, Tỉnh dậy, không thể đếm tặng anh được.
+PHỦ THIÊN TRƯỜNG Màu xanh sẫm, màu đó thưa, cảnh thêm vắng vẻ,
+Mây quang, mưa tạnh ngấn bùn đất cũng mất sạch. Trên trai đường, giảng kinh xong, các sư về viện.
+Quán bên sông, mới canh đầu trấng đã lên cầu. Ba mươi cung tiên đặt giường ngủ la liệt. Tám nghìn ngọn tháp thơm khua động nước triều mùa xuân Phong cảnh chúa Phổ-minh vẫn như trước,
+Phảng phất trong chiêm bao hình dáng vua cha như trông tường thấy bóng, ăn canh thấy hình.
+Ơn nhà Ilán nhur mưa móc trần trẻ khắp nơi,
+Chimi phượng ngàm tờ chiếu đô xuất hiện nơi đám máy hòng
+Mánh đất mới mở rộng cũng có hòa khí.
+Kéo sông Thiên-hà rửa sạch bui chiến tranh:
+Mọi người đều hảo tờ chiến ban xuống chỉ có mươi hàng.
+Nhưng hơn hận tiếng hòa âm của chiếc đàn càm năm dày.
+Trời dất vốn một lòng yêu thương không phân biệt nam, Bắc.
+Còn lo gì gặp biríc gian truân gió mira sâm sél.
+TRÊN ĐƯỜNG TÂY CHINH
+Buồm gúm nhẹ nhàng lướt tới, hoa sóng nồ tung,
+Dưới mui thuyền, tiề oải không muốn ngầng đầu
+Núi Tam-giáp lơ lừng máy chiều, không nhạn lới,
+Chóu Cửu-than trăng sáng vắng vặc. có rồng bơi lại.
+Cảnh đi đường lạnh lẽo lại thêm giác mộng cung đình vấn vương.
+Mối sầu vơ vần đến với chén rượu.
+Hán Vũi Đế. lại chuốc lấy lời chê a chng binh độc vũ x.
+Thế thi nam nhi lật đật về việc chinh chiến làm gì?
+Bước chân sứ giả phơi phởi như áng mày ngàn bay về phương Nam,
+Mùa xuân vừa đến, hoa mai chỉ lác đác vài ba nụ.
+Thương yêu mọi người như nhau là án đức của thiên tử.
+Sống mà không giúp gĩ cho đời là điều dáng thẹn của kẻ trượng phu.
+Gió tuyết trước đầu ngưa. người lại trỏ: về,
+Non sông đầy trong đáy mắt. hãy dừng ngưa lại chốc lát.
+Ngày mai đã qua sông Lô mênh mông khỏi nước,
+Xin cạn chên rượu bồ dáo non tười để rưới mát tấm lòng.
+TIỀN SỨ BẮC MA HỢP, KIỀU NGUYÊN LÃNG
+Hai ngôi sao sứ thần chiếu xuống trời nam,
+Ánh sáng dẫn theo cung độ mỗi đêm diễu quanh ba vòng.
+Ơn thượng quốc sâu sắc dễ cảm tình người.
+Phong tục nước nhỏ đơu giảu thẹn lễ nghi - sơ suất.
+Cờ tiết mao vượt qua lam chướng, ngài vẫn bình an.
+Ngọn roi quất trong gió xuân, ingựa có ngựa kệm.
+Xin hãy ôn lại lời nói a chuông vạc s trong tờ chiếu năm Trung Thống
+Đề tránh cho nhau khỏi mối phiền clo nước s luôn luôn nung đốt trong lòng.
+CHÙA THẦN-QUANG TRÊN NÚI ĐẠI-LÂM
+Chua Thần-quang vắng làng, hứng thủ có nét u nhã riêng,
+Chở ngọc thỏ, cười kim ô du ngoạn trên bầu trời.
+Mười hai tòa lâu đài mở ra bức về.
+Ba nghìn thế giới.thu vào mắt: thơ.
+Thói đời nhiều thay đồi như mây trắng hóa chó xanh.
+Cây thông chẳng biết đến năm tháng, nhà sir đầu đã bạc Ngoài việc thắp hương tham thiền ra
+Mọi điều suy nghĩ đều cho qua đi hết. NGƯỜI NÊN NHỚ
+Việc cũ ở cối-kê ngươi nên nhớ, Châu Hoạn, châu Ái đăng còn hàng chục vạn quân
+TỨC SỰ ()
+Trên nền xã tắc hai lần ngựa đá phải mệt nhọc, Nhưng núi sông nghìn đời được đặt vững như âu vàng BÀI MINH ĐỀ TRÚC NÔ () Trải tuyết lạnh mà tâm thông suốt,
+Dầu giải trong sương mà đốt cứng cỏi Mượn ngươi làm tôi đỏi, Sợ rằng trải với tinh tự nhiên của nhà ngươi.
+CA NGỢI THƯỢNG SĨ TUỆ TRUNG
+Nhìn lên càng thấy cao
+Khoan vào càng thấy cứng
+Bồng nhiên ở phía sau.
+Nhìn lại thấy ở phía trước. Cái đó gọi là
+Đạo Thiền của Thượng Sĩ.
+CÂU HỮU CÂU VÔ (I)
+Câu hữu câu vô,
+Như cây đồ, dây leo héo khô.
+Mấy gã thày tăng. Đập đầu mẻ trán
+Câu hữu câu vô,
+Như thân thể lộ ra trước gió thủ
+Vồ số cát sông hằng,
+Phạm vào kiếm, bị thương vì mũi nhọn
+Câu hữu câu vô,
+Lập tổng phái, ý chỉ
+Gìng là dùi rúa, đập ngỏi.
+Trèn núi lội sông.
+Gần hữu cậu vộ,
+ẻ
+Chẳng phải hữu, chẳng phải vô.
+Khác nào anh chàng khắc mạn thuyền mò gươm.
+Theo tranh vẽ đi tìm ngựa ký. e
+Câu hữu câu vô,
+Tác động qua lại, chẳng tác động qua lại.
+Chòng tan như tuyết làm nón, như hoa làm hải.
+Uồng công ôm gốc cây đợi thỏ
+Câu hữu câu vò,
+Từ xưa đến nay.
+Chỉ a chấp s ngón tay mà quên vàng trăng.
+Thế là chết duối trên đất bằng.
+Cầu hữu cầu vó.
+Như thế như thế 1
+Tám chữ mở ra rồi
+Hoàn toàn không còn điều gì lớn nữa.
+Câu hữu câu vô,
+Quay bên phải, ngoái bên trái
+Thuyết lý ầm 1,
+Ôn ào tranh cãi.
+Câu hữu câu vô.
+Khiến người rầu rĩ.
+Cắt đứt imọi duyên quấn quít như dây leo,
+Thi hữu và vò đều hoàn toàn thông suốt.
+Ex SƯ ĐỆ VẤN ĐÁP Vấn:
+Tích tăng vấn Lang Da hòa thượng:
+a Thanh tịnh bản nhiện, vân hà hốt sinh sơn hà đại địa 9 2.Ý chỉ:
+thị như hà?
+Viết Đại tự ngư thuyền xuất hải.
+Tiến vân:
+Thử ý như hà Viết:
+Thùy tri viễn yên lãng biệt hữu hảo thương lường?
+Vấn Như hà thị quá khứ Phật gia phong?
+Vấn:
+Như hà thị hiện lại phật gia phong?
+Viết:
+Nhữ hà thị vị lai Phật gia phong?
+Viết:
+Hải phố đãi triều thiên dục nguyệt,
+Ngư thôn văn địch khách tự gia.
+Tiến vân:
+Như hà thị hòa thượng gia phong?
+Viết:
+Phú nap ủng vân triêu khiết chúc.
+Cồ bình tả nguyệt da tiên trà.
+Viết:
+Tự khai, lự tạ tùy thời liết,
+Văn trước Đông quân tồng bất tri.
+Thiệu Ngường Sơn 117 th, làm đầu,
+Còn dòng Thanh-nguyên thi đến đầu thế kỷ X mới xuất Trong Giời Thì Hiệu
+Động Sơn 3,6, L Làm tờ,
+Rái:
+Hai, thế kỷ sau khi phái này ra đời,
+lại tách Trong Hội 75 lệ hiệu Đương Kỹ,
+Mảng:
+Truyện Kiều: (Mảng lin xiết nổi kinh hoàng x.
+Khuếch nhiên:
+như tuyệt nhiên Nghĩa 2 về:
+chùa xây tháp không có công đức,
+Giơ:
+Hoàng Xuân Hãn đọc gia, thích nghĩa là dân,
+trái lại có chữ giơ viết khu Vậy tạm là giơ nghĩa ià giơ lên Nghĩa 2 về: Tổ Đạt Ma người nước Thiên-trúc K 25 mắt ở chùa Thiếu-làm 45 là mộ giá.
+bòng là đài gương sáng.
+Kệ.
+ông cầm con mèo lên hỏi:
+không nói được thì chêm bù.
+Thiền sir bên chém con mèo.
+Đến chiều, Thiền sư 14 22 (xem Cht.
+5, bài Phổ thuyết hưởng thượng nhất lụ,
+Vương lão lại đem việc đó ra hỏi,
+Lạt trầy:
+đến tham thiên, vừa vèn rêm vào,
+thiên sư quát: v Xem ghó 2.
+tức con chú.
+Nghĩa 2 về:
+trả lời được điều thày bỏi;
+trư.
+lại cùng không đối xiếng dược với về đười:
+nhủ trơn hết tấc. Các hai
+ĐẮC THÚ LÂM TUYÊN THÀNH ĐẠO CA (BÀI CA ĐƯỢC THÚ LÂM TUYÊN THÀNH ĐẠO)
+Sống yên giữa cảnh iặng long không Gió mát hia hìu lọt bóng thông. Dưới gốc. giường thiền, kinh một quyền, Thanh nhân hai chữ, đáng muôn đồng.; illệ cin
+HÀNH TRẠNG CỦA THƯỢNG SĨ TUỆ TRUNG
+Thượng sĩ là con trai đầu lòng của Khảm minh từ thiện thái vương và anh cả của Nguyễn Thành Thiên Cảm Hoàng thái hậu.
+Khi Thái. vương mất Hoàng đế Trần Thái Tòng cảm nghĩa phong cho Thượng sĩ tước Hưng ninh vương Thủa nhỏ
+Thượng sĩ bàm tính thanh cao, nổi tiếng thuần háu
+Được cử trấu giữ quân dân ở lộ Hồng.
+Hai lần giặc Bắc xâm lãng, có công vời nước, làn hồi được thăng chuyền giữ chức Tiết độ sử vùng biền trại Thái-bình.
+Về cốt cách Thượng sĩ là người khi lượng thàm tràm.
+phong thần nhàu nhã.
+Ngay từ còn đề chóm đà hàm mộ cửa không
+Đến tham vấn Thiện Sư Tiêu Đao ở Phúc-đường, người đã lãnh hội được yếu chỉ, bèn dốc đồng thì, làm thầy
+Ngày ngày chỉ lấy việc hứng thú - với Thiền học lành vùi, không hề bận tâm đến công danh sự nghiệp.
+Rội người lui về sống ở phong ấp Tinh-bang, và đồi tên lại là hương Vạu-niên Thượng sĩ trộn lẫn cùng thể tục, hòa cùng ánh sảng, chử không trái bắn với người đời.
+Nhờ đó mà:
+nổi theo được hạt giống pháp, và diu dất được kê sở cơ
+Người nào tìm đến hỏi ban, người cũng chỉ bảo cho biết điều cương yêu.
+khiến họ trụ được cái tâm, mặc tính hành tàng, không rơi vào danh hay thực.
+Vua Dụ lăng mộ tiếng người từ:
+lâu nên sài sứ với vào cửa khuyết.
+Phảm những lới hầu chuyện nhà vua đều là lời siêu tục, do đó vua suy tôn người là sir huynh và ban cho tên hiệu hiện nay Ngày kia
+Thái hậu làm tiệc lớn đãi người.
+Người dự tiệc. gấp thịt cứ án.
+Thái hậu lấy làm lạ, hỏi rằng:
+(Anh tn Thiên mà ăn thịt thì thành Phật sao được s.
+Thượng sĩ cười đáp:
+ở Phật là Phật, anh là anh.
+Anh chẳng cần làm Phật
+Phật cũng - chẳng cần làm anh
+Cô chẳng nghe các bậc cồ đức nói cơ Văn thú là Văn thù, giải thoát là giải thoát v đó sao?
+Khi Thái hậu qua đời, vua Dụ lăng thết cơm chay các vị sư ở cung căm.
+Nhân khi vào tiệc lần lượt mời các bậc danh tăng bốn phương mỏi người làm một bài kệ ngắn đề bay tỏ, kiến giải của minh.
+Nhưng kết quá bài nào cũng ự ngàu bùn sũng nước 3, chưa:
+lỗ ngộ được
+Dụ lăng bêu đem giấy đến cho Thượng sĩ.
+Thượng sĩ bèn viết một hoi bài tụng tự thuật như sau Kiến giải bày kiến giải
+Như dụi mắi lâm quái.
+Dụi mắt làm quái rồi.
+Sáng sủa thường tự tại.
+Vưa Dụ lăng đọc xong liền viết tiếp Sáng sủa thường tự tai Cũng dụi mắt làm quái Thấy quải không thấy quải.
+Quái kià liền tự hoại.
+Thượng sĩ rất tâm phục bài kệ ấy Khi vua Dụ Iăng ốm.
+Thượng sĩ viết thự hỏi thăm.
+Vụa mở rà xem
+Bài kệ trả lời của Dụ lãng như sau Oi nồng hầm hập mồ hỏi mưới;
+Quần mẹ sinh ta thắm được đâu.
+Thượng sĩ đọc bài kệ tban thờ giảy lầu.
+Đếu khi vua Dụ lăng trở bệnh nặng
+Thượng sĩ tất tả tới cửa khuyết thì nhà vua đã quy tiên rồi Nay ta cũng nguyện đội ơn đạy dỗ của Thượng sĩ.
+Trước đây, khi ta chưa xuất gia, gặp lúc cư tay
+Nguyên Thánh mẫu hội, nhân đó.
+có đi thinh Thượng sĩ.
+Người trao cho hải bộ ngữ lúc của Tuyết Đậu và Da Iiêu.
+Tà cho rằng quá tàm thường, sinh ngờ vực, bên làm ra vô ngày thơ hồi Thượng sĩ rằng:
+a Chúng sinh quen cái nghiệp uống rượu và ăn thịt, thì làm sao tránh được tội báo....
+Thượng sĩ liên giáng giải rằng:
+- Giả, thứ có một người đứng quay lưng lại, thình linh có nhà vua đi qua phía sau, người kia, không biết hoặc còn ném vật gì vào người vua, người ấy có sợ chăng 7 Ông vua có giân dữ chăng?
+Như thế thì biết rằng hai việc không liên quan gì đến nhau vậy m Nói rồi Thượng sĩ đọc hai bài kệ Mọi pháp đều biến diệt.
+Tâm ngờ tội liền sinh Xưa nay không một vật
+Màm mống hỏi đâu thành Ngày ngày khi đối cảnh Cảnh cảnh tứ lâm ra.
+Cảnh tâm không có thật.
+Chốn chốn ba-la-mật.
+Ta lĩnh y, giây làu bện nói:
+a Tuy là như thế, nhưng tội phúc đã rõ ràng thì làm thế nào s.
+Thượng sĩ lại đọc tiếp bài kệ đề chỉ bảo:
+Ấn thịi và ăn cỏ.
+Tùy theo từng loài đó.
+Xuân về cây cỏ sinh
+Họa phúc nào đầu có.
+Ta nói:
+ơ Nếu vậy thì công phu giữ giới trong sạch không chút xao lãng là đề làm gi s.
+Thượng sĩ chỉ cười mà không đáp.
+Ta cố nài. Thượng:
+sĩ lại đọc tiếp hai bài kệ đề ăn chứng cho ta Trì giới và nhẫn nhục.
+Chuốc tội chẳng chuốc phúc.
+Muốn biết không tội phúc.
+Điang trì giới nhẫn nhục Như khi người leo cây Đang yên tự lim nguy Không trèo lên cây nữa
+Trăng gió làm được gì.
+Đoạn người đặn kin ta's a Chờ có bảo cho người không đáng bảo n.
+Vì vậy ta biết môn phong của Thượng sĩ thật là siêu việt Một ngày kia, ta hỏi người về cải gốc của tòn chỉ Thiền.
+Thượng sĩ ứng khẩu đáp:
+- Hây quay nhìn lại cải gốc của mình chứ không tim đầu khác được 9
+Ta bồng bừng tỉnh con đường phải đi, bèn xóc áo thờ, người làm thầy.
+Ôi 1 Thượng sĩ là người thần thái nghiêm trang, cử chỉ đĩnh đạc.
+Khi người đàm luân về cái lệ cao siêu huyền diệu thì, như gió mất trăng thanh.
+Đương thời các bậc đạo cao đức-trọng đâu đâu cũng đều tồn trọng, cho Thượng sĩ là người atia sâu biết rõ 2, ngược xuôi thật khó mà lường được.
+Sau, người nhuốm bệnh ở trang Dưỡng-chân, không nằm ở phòng riêng mà cho kê một chiếc giường gỗ giữa ngôi nhà bỏ trống, và nằm theo phép a cát tường 1, nhằm mắt mà tịch.
+Người hầu hạ và thế thiếp trong nhà khóc rống lèn.
+Thượng sĩ mở mắt ngồi dậy, gọi người lấy nước rửa tay, súc miệng, đoạn quở nhẹ rằng:
+- Sóng chết là lẽ thường, làm gì phải xót thương quyền luyền làm rối chần tính của ta 7.
+Dứt lời người êm thấm mà tịch.
+Bấy giờ là ngày mồng một tháng Tư năm Tân mão, niên hiệu Trùng Hưng năm thứ bảy, hưởng thọ 62 tuổi.
+Ta thân đến nhà làm lễ viếng và làm bài Thiêu hương báo án tụng nhưng không chép ra đây.
+Sau khi nổi đạo, những lúc lên đàn thuyết pháp, ta tự nghĩ có bốn điều ân nặng, sửa pháp khó đền, nên sai thợ về bức chân dung của người đề dâng cúng, và tự làm bài tụng như sau Đây bậc cồ chùy
+Đặt tên dầu dề.
+Thước góc Lương hoàng (? o) Mõ chuông Thái đế.
+Vuông tròn đều hay
+Mỏng dầy đủ vẻ. Biền pháp một ngươi
+Rừng Thiền ba phía.
+BIỆN GIẢI VIỆC TỪ CHỐI SANG CHẦU ()
+Nước, tòi quy pùu a Thiên triều v ha mươi năm nay, lòng thờ a thượng quốc.
+chưa ngày nào có chút xao nhãng, lễ công hàng năm cũng chưa thiếu sỏi bao giờ, kể từ đời ông, đời cha cho đến ngày nay, trước sau đều noi theo một lối Nhiều lần tiếp được chiếu vời, chỉ vì đau yếu không thể vào chầu, đến nỗi Thánh thượng nổi giận, đây quân sáng đánh, khiến cho sinh linh nước tôi bị giết hại, lăng mộ bị bởi đào, chùa chiến bị đốt phá, cây cối bị chặt đẫn không sao kê xiết
+Nước tôi chẳng có tội tinh gì mà phải chịu nạn lớn như vậy.
+Chiếu thư của ở Thiên tử ip lần nào cũng nói nước tôi có tội giết quốc thúc, đuồi sử gia, chống cự quân (Thiên triều 9, tội ấy đến nay chưa thể tha.
+Nhưng quốc thúc tôi, vốn do tiền virong tòi sai, sang chầu a Thiên tử a đề thay mặt giải bày, - Thiên từ 3 lại phong quốc, thúc làm vương, khiến cho quốc thúc tôi tự lấy làm sợ hãi không biết tránh đi đầu.
+Chẳng phải nước tôi bại quốc thức mà quốc thúc tự trốn ra-miền Hải-nam, người trong tông tộc cầm quân nghênh chiến.
+điều ấy quả thực tôi không hề biết vậy Duy một việc không sang chần thì không có cờ gì khác, thực là vi tbam sống sợ chết, xa ngoài vạn dăm, đường đất gian nguy, chường khí núi non, không quen thủy thổ:
+nếu chết ở giữa đường, phỏng có ích gì cho ơ thượng quốc ss đầu 7 Liền mấy năm nay, lễ cống không thiểu sót, cần thận thờ người trên, phỏng có thiệt gì cho ở thượng quốc x đậu ý Tấm tình đó, của người dưới chưa từng được thấu đạt đến người trên vậy.
+Nay Thiên sứ sang đây, mong được kể rõ nỗi oan của nước chúng tôi đề ngài về kinh tâu bày trước ơ Thiên tử v.
+a Xhắp cả gầm trời, chẳng đâu không phải đất nhà vua: khắp các, bến bờ trên côi đất, chẳng ai không phải bề tòi nhà vua v.
+Cả nước Nam này đã là dân của ơ Thiên tử n thì lại càng không có chỉ gì khác.
+ơ Thiên tử 10 coi bốn bế là nhà, nước tòi tuy không sang chàu được thì cũng vẫn ở trong lãnh vực ấy, vẫn là bồ tòi của xã tắc, điều này dùy có trời biết cho vậy.
+ĐỀ TẶNG, THIÊN SƯ PHỒ MINH Ở CHÙA AN-LÃNG (I)
+ân cư, khộng ở nơi rùng suối mới là đại ân.
+Tu hành ngay tại ngỏi chùa nhà mời thực châu iu.
+Hóm nay được tham văn đạo Thiên, như người trong mộng chọt, tỉnh,
+Đừng đem việc đã qua mà trách ông Thứ sử Trào-châu.
+HẦU TIỆC THƯỢNG HOÀNG (Í)
+Môn quy cước bóc rồi đó mọng. Món mã yên nường xong vàng thơm.
+Vị str ông trên núi cao giữ điều răn về chay tịnh;
+Tuy ngồi cùng bàn vẫn khác thức ăn
+PHÒ GIÁ NHÀ VUA CHINH PHẠT PHÍA TÂY,
+BÁI YẾT ĐỀN THỜ TẢN-VIÊN
+Núi cao như trời, thần núi linh thiêng,
+Một nên hương lòng vừa củi đầu khấn đã nghe tiếng vọng. My Nương nếu là vị thần đầy đủ ny nghi,
+Thì hãy phù hộ kẻ thư sinh trong chuyến đi này
+PHÒ GIÁ NHÀ VUA ĐI CHINH PHẠT PHÍA TÂY,
+BÁI YẾT ĐỀN HIỀN UY VƯƠNG Ở SỐNG BẠCH-HẶC(I)
+Lưng đeo bùa ấn hình cá, hình rùa,
+Việc cầu khấn này phó thác cho quan và tưởng.
+Kẻ học trò yếu đuổi không có ước vọng gì. Dưới đền chỉ xin khấn chữ bình an
+ĐỀ MIẾU BẠCH-HẠC (T)
+Mười vại quân linh hìng dũng như hụm beo làm nổi bật uy linh của nhà vua,
+Khi thế áp sát thịnh tri giặc, phía ngoài biên giới cối, vận-nam.
+Bo bo một vùng bên tả sông: đó là - khi phách gì 7
+Gió rít. hạc kêu làm chấn động quản Tần
+THUẬT NỔI LÒNG
+Cắp ngang ngọn giáo gìn giữ non sông đã mấy thu, Ba quân như gấu hồ, át cả sao ngưu.
+Thân nam nhi nếu chưa trà xong nợ công danh. Ất thẹn, thùng khi nghe người đời xế chuyện và hầu (-)
+VIÊNG THƯỢNG TƯỚNG QUỐC CÔNG
+PHƯNG ĐẠO ĐẠI VƯƠNG
+Tiếng chuông cung Trường-lạc, một.hồi vạng lên,
+Gió thu hiu hắt, đau. thương khôn xiết
+Tăm gương sáng của cửn trùng nay đũ mất rồi,
+Bức trường thành vạn dặm ai làm cho sụp tiồ?
+Mưa phủ kin sông dài, luống tuôn lệ máu,
+Mây sa xuống đường: sạn đạo nhiu hàng mi sầu.
+Ngườc xem văn chương lời lời có đúc,
+Tình sâu cá nước đã hiện ra ở lời thơ vịnh.
+BAN CHO HỮU GIÁN NGHỊ ĐẠI PHU TRẦN THÌ KIẾN
+BÀI MINH KHẮC TRÊN HỐT Thải-sơn rất cao, Hốt ngà rất cứng
+Trãi thiêng dâng sừng. Làm hốt khó gắy.
+CHÙA ĐÔNG-SƠN
+Gió lay gày thần tích, tiếng vc mùa thu im vắng,
+Trăng tài ánh sáng xuống bình nước (f), dòng suối hạn đêm lạnh lẽo.
+Đừng nhọc lòng mơ tưởng đến núi ngũ-đài làm gì.
+Xem trong thiên bị được mấy cảnh Đông-sơn?
+Vẽ màu xanh, tô màu thủy, thiên nhiên đẽo gọt nên chỏm nùi
+tạnh sáng
+Lâu đài của phủ tia dựa vào lưng chừng trời.
+Cây bích đào máy lần đã kết quả trước,
+Gió xuân, thồi khắp ha mươi sáu động trời.
+HÁN CAO TỒ ()
+Đánh Tần, diệt Hạng, cứu dân chúng
+Chế ngự anh hùng, hoàn thành sự nghiệp lớn.
+Chẳng phải ơn đức của Cao Tồ mỏng mạnh.
+Mà rốt cuộc do hàn, bành tự hại hàn, bành.
+KHÁN VĂN ĐẾ
+Bỏ hình phạt, nhẹ tô thuế cũng la ông vua rất nhân hậu,
+Xây đắp nên cơ nghiệp bốn, trăn năm của nhà Hán
+Mặc áo sồi thàm đạt được đức thanh kiệm cho riêng minh,
+Nhưng không xa phi cho công thần mà xa phí cho kẻ bề tôi lộng hành
+BAN VŨ ĐẾ
+Lọc sức theo duổi việc chinh chiến liên miên, lại bày chuyện xây
+cung điện
+Dẫm theo vết xe đồ của nhà Tần mà không bị sup đồ như nhà Tần.
+Hạt móc ở cung Cam-tuyền làm lạnh tay người tiên.
+Cò xanh um tùm che rợp mậu-lăng.
+HÁN QUANG VŨ
+Mừng cho cơ nghiệp họ Liru được gây dựng lại, Xuống xe. trước hết lo việc tiếp đãi người hiền tài.
+Thể mà lạnh lẽo nội Sân không ai hỏi tơi,
+Đành để tiếng cnhàn v rơi xuống chốn đài câu.
+ĐƯỜNG TÚC TÔNG
+Tòi gian, vợ ác mệ hoặc sàu xã,
+Luống khiến nước mắt người con chỉ hiếu thấm ướt vạt áo.
+Đành rằng cung Nam-nội lạnh lễo là có duyên cử,
+Nhưng việc lên ngôi ở đất Linh-vũ hà phải là vô tâm?
+TỔNG ĐỘ TÔNG Q
+Gió nơi biên thùy vi vút làm người giá lạnh.
+Chính là lúc nhà vua mặc sức say stra trong gió đông
+Một ngày quyền binh về tay sư tưởng.
+Thời a thái bình 5, thiên từ nhàn rối mười năm.
+AM VẬN-TIÊU
+Chiếc lọng báu sừng sứng cao chạm từng mây.
+Là cung khuyết Kim liên (â) không gợn chúi bụi trần
+Trên đinh tột vời lại có người học đạo Phật,
+Cùng kết bạn xóm giềng với giú mát trăng trong. Gió mát thồi quanb mặt đất không lúc nào.ngừng
+Trăng trong lợ lửng trèn không sáng như, bằng tuyết
+Gió ấy, trăng ấy. với người ây
+Hợp thành ba thứ kỳ thyệt trong thiên hụ.
+VATT, TVTL2: VÓ
+1- TVTL2, TVTL3: phan TVTL2: phong TVTL1: học liên TVTL2, TVTL3: hạo Áiry G% VATT. TVTL1: CẦU
+TIỄN SỨ BẮC AN LỖ UY, LÝ CẢNH SƠN
+Ánh sáng sao sử thần tu lại rọi tới ven biên,
+Gạt hai hàng nước mắt, nhìn thấy rồng bay (ây.
+Cũng liệu biết lời tâu bày từ miền nông nực này còn nhiều xa cách.
+Dâu dám oản giận ánh sáng mùa xuân soi tới chậm
+Núi Ngũ-lĩnh cao, người chưa vượt qua,
+Sông Tam-tương mênh mông, chim nhạn đã về bảo tin trước
+Có cánh thái bình là nhờ ông nói giúp,
+Niềm vui mứng của tôi tràn ngập sắc mặt nét máy.
+ĐÁNH CHÊM THÀNH VỀ, ĐẬU THUYỀN Ở CỬA BIỀN PHÚC.THÀNH (V)
+Thuyền kéo bằng giây gấm trở về buộc dưới gốc cây đa già.
+Sương sờm nặng hạt làm ướt đặm mui thuyền.
+Xóm núi dưới chân mira, vầng trăng trên sagọn thông xanh.
+Làng chài ở đầu ngọn thủy triều, gió lướt bãi răm đỏ.
+Muôn đội cờ xi sáng rực mặt biển,
+Năm canh tiếng kèn trồng rơi từ irên cung trời xuống.
+Gối đầu bến cửa số thuyền, lòng giang hồ ấm: lại,
+Bóng màn tướng không còn đi vài giác mơ aửa.
+Mọi vật đều hư ảo,
+Không cách nào năm được.
+Như con mắt đau ôm nảy hoa,
+Phân biệt bừa thành nam và bắc
+Cũng chẳng gây điều ác
+Cũng không làm điều thiện
+Buồn ngủ thì đi ngù,
+Đói bung thì ăn cơm.
+Mặc nó cá rối loan,
+Mặc nó cứ bộn bề.
+Vốn xưa vẫn thế,
+Là chủ của vũ trụ bao la. II Tâm thán hìr ảo dùu vững chắc cũng chẳng đáng lo,
+Như mấy trời khi hợp khi tan, như hột nước nổi.
+Nghĩ thấy đạo Phải mông manh như sợi tơ,
+Một mình trước ngọn đên lạnh, nước mắt thầm rơi
+BÀN VỀ TÌNH VÀ LÝ TRONG XỬ KIỆNG)
+Xét lê thì tên Hộc đã gian lại xảo như thế, mà ngục quan không biết cản nhắc đến cũng giữa lý và tình.
+Tỉnh ngay lý gian thì không thể lấy lý mà bỏ tình, Tình và lý đều phải dùng đến, không hác bỏ lẫn nhau, thì đó mới tà người xử kiện giỏi.
+Nếu biết rằng tình không gian trá thì cứ lý mà làm là thỏa đáng, Còn nếu tình quả gian trá thì lại phải xem xét chồ thắng, cong của lý, thì tinh trạng gian trá tự khắc hiện ra, càng không uên tách tỉnh lý làm hai mài xét.
+NGÔN HOÀI
+TỔ NỖI LÒNG Thần trượng phu đội trời đạp đất.
+Chí khi phải cao vượt ngtrời cùng lửa.
+Võ kiếm không chịu bó huộc như mựu sĩ nước Tề,
+Ra roi nên nói theo hề tôi giỏi nhà Tấn (r).
+Cơ mưu giấu nơi lửa mườc Cử và tuyết sông hoài,
+Công iao nổi giữa khỏi đời Đường và mây triều Hán.
+Đề lại được tiết tháo trang nghĩa cùng trời đất,
+Thì đời sau còn nói chuyện cao nhà về con người toàn vẹn nghìn xưa.
+TẶNG NGHĨA XUYÊN CÔNG ()
+Là người tàm phúc trong công hầu, lại là người bảo vệ đất nước, Địa vị cao, công cao lớn, người đời lấy làm vẻ vang. Lười đem tài tướng mưu làm mồi cầu lợi lộc, Khi nhàn dắt theo người vợ tiên tổ bày tình cảm phong nhã. Làm mẫu-mực cho cháu con giữ trọn khí tiết cao cả Dấy lên cho đời sau lòng mộ tiếng nghĩa thơm thó Được thơm danh là người giỏi của nước mà nhà cũng thỏa chi, Một thân khi tại triều, lúc về quê đều, trong sạch như nhau II Năm xưa ở triều đình được nhàn nhà, Ngày nay về với vườn, đồi vì nhớ bài khảo bùn. Đã biến con đường đáng sợ thành thú vui, Chẳng chịu ràng buộc tiết tháo trong sạch vào sử đời phức tạp. Phong vị núi sông tuy thỏa được tình cảm. Nhưng giấc mộng đạt công lớn cho nước, cho người thân bắn chưa tàn. Từ đây đến Thăng-long có mấy dặm đàu, Cách Cối-Xuyên gang tấc là Trường-an
+VỊNH HOA CÚC
+ỉ Tuổi trẻ chở phu cải danh tao khách, Thử đem ngọn cờ tướng trồng ở bãi hoa. Đi vào giác mơ, tuyệt không có câu thơ a có xuận sệt). Vịnh hương thơm, mừng có hài thơ hoa cúc. II Tiết trùng dương hái nhì, họ Đào ủ men say, chiều thu ngậm cánh hoa, họ khuất yêu hương ngát. Phong độ bai ông già đã nghìn năm xa rồi, Nay trời trao chức, hoa cúc ần dật phải ra gánh vác.
+LỜI BẠT BỘ SÁCH THƯƠNG SĨ NGỮ LỤC
+Thương sĩ ià ngọn đèn tồ của
+Phật hoàng, lấy tâm đề truyền tâm.
+Xưa kia Đức Phật bỏ ngôi vương giá, rời cố xe vạng, đến ngôi đười góc bồ-đề (f), khai điển phép vô thượng thừa, cửu độ vô lương (), chúng sinh, lâm bậc thầy ở cỗi người và côi trời
+Thượng sĩ thực đã mở mang lĩnh ngô được phép Thiền ấy.
+Với tư cách một vị bồ-sát tại gia
+Thượng sĩ làm phần phát lại ngọn gió lãnh của nhà Phật, đề xưởng những châm ngòn.
+đề dẫn đất lớp người hậu học đi tời vàng sáng trác việt
+Phật boàng thực đã làm cho sự;
+nghiệp đó của người được thành tựu Đối với việc kế lục cái chi của Phật Thích Ca, tiếp nhận lời ký thác của Phật Nhiên Đăng mà trở thành đạo chính giác thì Phật hoàng thực đã phát huy được.
+Còn đối với việc ghi chép lời Bác Lăng varong hỏi Dung Thiên sư mà đạt đến chỗ tột cùng của tri tuệ thì Thượng sĩ đã phát huy được.
+Bởi vì tâm của Phật hoàng khởi nguyên từ bờ vực của Phật tổ, mà lời của Thượng sĩ lại thấu suốt đến chỗ cội nguồn của tâm tính.
+Nếu không có Thượng sĩ thì không thành được đại báo của Phật hoàng, mà Phật hoàng hà có thể lên đến chỗ uyên áo của Thượng sĩ sao Ý Làm cho người:
+mù lại tò mài, người điếc lại sáng tai, độ là công lớn đối với Phật giáo vậy] Một ngày kia
+Phật hoàng sai người đem tập Ngữ lục đếu, bảo rằng:
+Tu Duy trì Phật pháp là nghĩa vụ của quốc vương đại thần.
+Các khanh hãy tim người viết một bài tựa khác và cho khắc bản, hầu làm sáng tỏ ý nghĩa kru truyền bộ sách v.
+Đức Hoàng đế đương kim bèn sai thần là Khắc Chung viết bài bạt ở cuối sách, nơi théo vàng Ngân-bà chói lọi treo rở ràng ở phía trước vậy.
+Thầu Khắc Chúng, vài nhận bộ Ngữ lục, đốt hương củi đọc, mới đầu như say, kế đó như tỉnh, rồi cuối cùng lòng và mắt đền sáng bừng mà không tự biết vì sao lại như vậy.
+Thần bèn kinh cần đặt bùi viết lời bạt này
+ĐỀ TỰA SÁCH VẠN-KIẾP TÔNG BÍ TRUYỀN THƯ
+Phàm người khéo cầm quần thì không cần bày trận.
+Khéo bày trận thì không cần giao chiến.
+Khéo giao chiến thị không thể thất bại.
+Khéo thất bại thi không thương vong Xưa kía
+Cao Dao làm chức sĩ sư mà mọi người không dám trái mệnh;
+Văn Vương và Vũ Vương nhà Chu là bậc thầy về văn và về vỗ, ngầm ngầm sửa đức để khuynh loát quyền binh của nhà Thương mà dấy nghiệp vương.
+Đó đều có thể gọi là những người giỏi cầm quân, không cần bày trận vậy
+Vua Thuấn múa là mộc và lông trì mà họ Hữu Miêu tự mình: tim đến (I);
+Tôn Vũ nước Ngô đem mỹ nhân, trong cung thứ tập trận mà phía Tậy phá nước Sở hùng cường, phía Bắc ra uy với nước Tần nước Tấn, nổi tiếng khắp chư hầu.
+Đó đều có thể gọi là những người giỏi bày trận:
+không cần giao chiến vậy.
+Cho đến Mã Ngập nước Tấn dựa vào bát trận đồ, chuyền đánh nghìn dặm, phá được Thụ Cơ Năng mà lấy lại Lương-châu.
+Thế gọi là người giỏi giao chiến không bao giờ thất bại vậy Cho nên, trận nghĩa là bày ra, là khéo léo.
+ngày xưa, vua Hiên Viên lập ra phép a tỉnh điền v đề đặt binh chế;
+Gia Cát Lượng xếp đá bên sông để làm bát trận:
+Vệ Công sửa lại làm trận Lục hoa;
+Hoàn Ôn định ra trận xà thế, trước sau đều có trận đồ nổi tiếng, trinh bay tuần tự, thành phép tắc rõ ràng
+Nhưng người đương, thời ít ai thông hiếu, muôn vàn đầu mối nhìn vào đường như rối loạn, chưa từng nắm được lễ biến dịch bên trong ('?)
+. Vi như những phép tắc và suy luận của Lý Thuyên ('?)
+, người sau không ai hiều nghĩa là gì. Vì thế
+Quốc công ta bèn so sánh, kê tửu trận đồ và binh pháp của các nhà, tồng hợp lại thành một bộ sách.
+Tuy chép cả những điều chi tiết, nhưng người sử dụng thì nên bỏ hớt những chỗ rướm, tóm lấy thực chắt.
+Rồi lấy năm hành ứng với nhau, chín cung (+) cân với nhau, phổi hợp cương và "n.
+... xoay vần chẫn và lè, không làm hỗn loạn âm, dương i và thần sát, phương lợi và sao tốt, hung thần và ác tướng, lia cái và năm hung...
+Việc nào việc ấy thực phân minh rõ rệt.
+Quốc công lại còn thêm hớt với chiến thuật của thời Tam đại, nhờ đó trăm trận trăm thắng
+Cho nên đượng thời phía Bắc làm chọ Hung-nô phải sợ, phía Tây làm cho Lâm-ấp phải kinh
+Rồi ông đem sách này dạy bảo con, em làm gia truyền, không tiết lộ cho người ngoài biết
+Lại có lời dặn rằng:
+aSau này con chán và bề tôi phò tá của ta có liọc được bi thuật này thì nên lấy đầu óc sáng suốt, linh hoạt mà thực hành và sắp.
+đặt nó, chữ không nên lấy đần óc cứng nhắc, tối tăm mà cắt giữ và lưu truyền.
+Nếu trái điều đó thì sẽ mang vạ vào thần, lại hại lây đến cả con cháu.
+Đó gọi là tiết lậu cơ. trời vậy 2.
+Khoác áo dứng một mình ở bên sông,
+Ai đã đem sắc mùa thu đến ngay bên mắt.
+Chim nhạn đi xa, từng hàng bay qua bến nọ,
+Buồm khách từng chấm, rơi giữa trời quang.
+Chùa Phật ở đầu khe dựa vào lùm là hồng.
+Nhà dân ngoài rặng trúc cách làn khói nhạt.
+Ngày trở chiều ai biết nơi ta đang thìn chăm chủ,
+Mây biếc che tối đông nội, nhìn thấy vảnh được mùa.
+ĐÊ ĐAM-ĐAM VŨ
+Sao phải làm phiền vua Hán đến xem sóng Hồ-tử (-).
+Trách nhiệm đắp đê trị thủy cốt ở kẻ hiền tài,
+Nếu sớm biết việc người phải dùng sức đến chai tay,
+Thi phải phòng bị thiên tai thường xây ra hạn ủng.
+Giữa mùa hè oi bức đầu từng không mưa dầm nước lũ,
+Thế sao còn chưa đề phòng cần thận từ đầu xuân?
+Nay thánh hoàng hết sức lo lầng cho dân
+Nên có kẻ bề tôi chạy việc cứu đói.
+SAU CƠN MỮA TỨC CẢNH ĐỀ CHỖ Ở MỚI
+Tan mưa bừng nắng mấy lượt rồi,
+Sáng nay mới bước ra khỏi cửa
+Cỏ mọc ở lối đi quanh như đội mày đang khép;
+Nước dềnh lên ao vuông như một con mắt mở.
+Không quét được đám bùn ở sân lẫn với lá rùng.
+Muốn dọi đồng đá trước thêm có rêu bám vào
+Cảnh thủ trong lúc nhàn hồn nbiên như thế,
+Bảo với ông láng giềng chờ có cười khảy.
+ÔNG GIÀ CÂU CÁ
+Sóng cá đồn đầy nước triều iên dòng thác biếc,
+Tiếng mái chèo đưa hời lạnh vào máy xanh.
+Đã bao lần coi nhẹ miếng mồi treo chuông vạc.
+Mồi ấy đầu có nặng bằng chiếc cần câu bên sông Đồng
+TRƯỜNG-AN HOÀI GỒ
+Sông núi rốt cuộc vẫn còn mà nước cũ đã đồi khác Mấy hàng bách trồng trên gò đứng phơi lưng dưới nắng chiều
+Khi đế vương triều xưa chôn vũi dưới có mùa thu,
+Mưa chiều hịu hắt bướm nội bay.
+ĐỀ CHIẾC QUẠT VỀ PHONG CẢNH
+DO LIÊU NGUYÊN LONG TẶNG
+Phong cảnh nước Nam khó có thể đưa vào tranh vẽ,
+Trong ao bến quán Tân-ancò năn, cỏ lác mọc.
+Hàng năm thâu lượm cảnh trăng gió thành thơi.
+Ngoài rặng trúc, một tiếng chìm đa đa kêu
+CHÙA HOANG Ở XÓM MAI
+Ngôi chùa của triều đại trước lẫn giữa đám có hoang.
+Bãi chiến trường xưa đang phơi mình trước gió thu.
+Tấm bia tàu chìm trong mưa chiều,
+Pho tượng cồ nằm phơi bóng xẽ.
+Tấm áo mây đã cất trong ngôi nhà đá;
+Mùi hương đồng nội dâng lên đài hoa
+Ứng thân không có chỗ nhất định,
+Với đời cũng hưng vong
+VIẾT TRÊN ĐƯỜNG HOÀNG-CHÂU
+Đường đi đà núi trơn Mây ngàn lẫn với khỏi lam chướng
+Cánh buôm khách ngoài trời mra thu,
+Ngôi chùa trên núi trong bóng chiều tà.
+Mầu xanh chẻ rợp đất dâu gai,
+Mầu hồng chiếu sảng trời quýt bưởi.
+Lên xê luống những nhớ nhung
+Ý trở về lại, thêm man mác
+ĐỂ CHÙA GIA-LÂM
+Lòng nguội lạnh với giấc mơ sừng con sên,
+Dạo bước đến cửa thiền Xuân muộn, dáng hoa mỏng mảnh
+Rừng sâu, tiếng ve ngần dài.
+Mưa tạnh, trời xanh biếc một màu,
+Ao trong, trăng mát dịu tỏa xuống.
+Khách ra về, sư chẳng nói,
+Mặt đất thơm ngát mùi hoa thông.
+TỨC CẢNH KHI QUAY THUYỀN VỀ
+Nghĩ đến những cuộc gặp gỡ giả đối lòng càng coi nhẹ.
+Cho nên giấc mộng về cử vương vấn mãi.
+Chim kêu khuất trong đám cây lồng khói,
+Cảnh buồm đị mang theo bóng chiều tà.
+Hợi thu đềo gầy dáng núi,
+Triều lên, mặt nước như gương sáng
+Ông già say vẫn chưa tính,
+Lá đỏ rơi đầy thành ven sông.
+TỨC CẢNH XÓM BÊN SÔNG
+Ngõ xóm Tây cách với xóm Đông
+Tiếng gà gáy chó sủa vọng sang nhau gần bến sông chính
+Dưới ánh trời tà, én biền là là hay giờn bóng.
+Trong làn gió nhẹ, hoa bên sông xa xa hưởng theo người.
+Lúa gặp mưa mai. chin liền đến chân mây.
+Tâm đến mùa dàu, theo lá mà đối khác.
+Buồn cười cho nhà thơ mái ngắm cảnh đẹp.
+Đi thuyền về kinh sir đã trọn tuầu.
+QUÁ AN LONG
+Gió nhẹ sóng hồ hợp ý người, Ánh tà đưa tiễn chén đầy vơi.
+Hoa lau xào xạc, dâng triều ngập Cánh nhạn chim mũy, biếc sắc trời.
+Đêm lạnh chèo khua lan bên nước. Chuông ngân khói tỏa ngút thuyền ai.
+Kinh đỏ nghìn dăm tình vương vấn, Thuyền đậu trên sông, ánh đầu ngời.
+Ua người sông nước gió háy hây,
+Đưa tiễn chiều tàn cạn chén say. Xào xạc hoa lau triều lút bãi,
+Làng lâng trời biếc nhan chim mây
+Khói chiều ngang bên chuông đém vằng
+Bọi lái xô ghềnh khí lạnh bay.
+Muôn dặm ngọc kinh tình bịn rịn Nhìn sao, Giang Hán đỗ thuyền đây
+ĐỀ NHÀ THỜ PHÚC-THÀNH
+Mây bay man mác năm tháng lầu rồi,
+Hai bên nhà thờ cây bách um tùm
+Những hạt mưa đêm đọng lại trên hoa như nghìn hàng lệ,
+Mặt trăng in xuống đăm lạnh như một mảnh lòng.
+Dưới đài, có rẽ thành lối đi ngày nay,
+Trong cây thông, chim hạc nhờ cung đàn thuở trước.
+Đêm đến ghi nhớ giấc mộng trước đèn
+Nhưng trời cao biểu rộng biết tìm đâu?
+UỐNG RƯỢU MỘT MÃNH TRONG THUYỀN
+Thu về đầy thành núi, càng khiến hiu quạnh bội phần
+Thư nhà không đến miền biền xa xăm này
+Tình người thưa nhặt như mưa gõ mui thuyền
+Thói đời lên xuống như nước triều vỗ bờ.
+Tùng cúc bạn cũ, than ôi, nay đã khặc nẽo,
+Tuổi già đèn sách, mừng rằng hợp điệu
+Biết bao nỗi niềm chồng chất trong lòng.
+Hãy thử giải khuây trước chén rượu xem sao.
+BÀI KÝ CHUÔNG QUÁN THÔNG THÁNH Ở: BẠCH-HẠC()
+Xét sách Giao-châu ký của Triệu công có nói rằng:
+Giữa niên hiệu Vĩnh Huy đời Đường
+Nguyễn Thường Minh làm
+Đô đốc - Phong-châu, thấy xứ Bạch-hạc đắt đái nghin dặm, sông núi như đai vạt bao quanh, bên xây quản Thông-thánh, đặt tượng tạm thanh để làm một cảnh quan kỳ vĩ.
+Lại riêng mở hai dải vũ trước sau, định tô tượng thần hộ vệ quán, nhưng chưa rõ vị nào limb thiêng nên đốt hương khấn rằng:
+ơ Các vị thần trời, thần đất ở đày, nếu có vị nào linh thiêng, xin sớm hiện hình cho tòi biết đề tạc tượng n.
+Đêm đến mộng thấy hai dị nhân, đáng mạo cò quái, đều đem, theo bộ thuộc, mằng mỏ chen lán nhau rào đến chỗ Thường Minh, tranh được ở quản trước.
+Thường Minh hỏi họ:
+Các ngài tên, tự là gì?
+Một người xưng là Thồ Lệnh, một người xưng là Thạch Khanh. Thường Minh nói:
+Xin thử tài nghệ.
+Ai thắng sẽ được ở trước.
+Thạch Khanh nhảy một, bước đến bên kia sông, hỗng thấy Thồ Lệnh đã đứng bèn kia sông rồi.
+Thạch Khanh lại nhầy một bước sang bến này sông, lại thấy Thồ Lệnh dã đứng bên này trước
+Vì vậy Thổ Lệnh được ở đảy
+Đó tức là vị thần mà ngày uay được sắc phong Vũ phú trung dực ủy hiền vương.
+Từ đời Đường đến nay, đã ngoài hàng trăm, hàng nghin năm
+Nơi đây đất qui.
+thần thiêng.
+cầu đào được báo ứng, xưa nay đều như vậy.
+Trước đây vào đời Thái Tông hoàng đế, vị vua, thứ hai triều Trần, khoảng năm Binh tỷ, trị nước thái bình, bốn phương theo giáo hóa
+Lúc đó có đạo sĩ hứa tông đạo, người lý hải-đàn, hương thải-bình, huyện phúc-thanh, thuộc Phúc-châu, lộ Phúc-kiến, nước đại Tổng, cùng người trong - tông, phái, cao hứng đáp thuyền đến nước Nam Bấy giờ, con thứ sáu của Thái Tông hoàng đế là Chiêu văn vương, nay làm nhập nội kiểm hiệu thái ủy hình chương sự, đô nguyện súy ở phủ lộ Thanh-hóa, được ban túi kim ngư, tước Thượng trụ quốc khai quốc vương, có lòng mộ đại đạo, tính thường coi trọng người Tổng, nện đã lưu Tông Đạo ở môn tường, mong mở mang đạo giáo.
+VĂN BIA CHÙA HƯNG-PHÚC
+(Bài minh kèm theo lời tựa bia chúa Hưng-phúc, hương An-duyên.
+phú Thanh-hóa) (i) Noi theo chi người trước làm sáng tỏ ở đời sau, họ không gọi là hiếu vui bố thí của liên, sáng lập ruộng phúc đạo Phật la gọi là từ.
+Oi, hiếu và từ, hà chẳng phải là bản tàm của con người hay sao.
+Vậy nên đóc lòng hiếu để báo cải ơn, vô cùng, rộng điều từ đề cần phúc cõi âm.
+mờ mịt.
+khiến cho đời đời con cháu nhớ ưn mưa móc, cảm sắc khói hương, mỗi lần chiêm ngưỡng lễ bải lại một lần dậy niềm hiểu kính, gây nền phúc lâu dài về sau.
+Đấy chẳng phải là ruộng phúc của sự viên giác ư 2 Phủ Thanh-hóa, hương An-duyên có chùa Hưng-phúc.
+Tiên tồ Thượng tưởng minh tự Lê Công An, vợ họ Quách, sinh được Đại toát Lê Bào Tử,
+BÀI KÝ VỀ VIỆC KHẮC LẠI BIA TƯỚNG CÔNG
+CỦA VŨ HỘI THÔN TRƯỜNG-TÂN Phảm, người có công đức ất được thờ tự.
+Hương An-duyên xưa của áp ta duy tường công họ Lê là bậc tài tuấn, được núi sông cbung đúc, nối dài nghiệp nhà, bảo vệ đất nước;
+một nhà cha con anh em kế nhau làm tường, đủng là đấng anh kiệt đi trước mừ đường cho ấp ta vậy.
+Con tốt, tôi trung, công nghiệp to lớn, người ngàn năm sau nhờ bia Hưng-phúc này mà có thể tưởng nhớ điến được
+Gần sáu trăm năm, đời xa dầu mờ, rêu phủ đá mòn, mọi người đều coi là chuyện tầm thường Năm Binh ngọ, niên hiệu Thiệu Trị thứ 6 (1817), triều Nguyễn xuống chiếu rằng:
+phảm những chùa cồ, bia cồ, những nơi võ tường văn thần lập công, phải sao lục cần thận tàu lên.
+Bấy giờ có phó tồng Đỗ Danh:
+Quán xem được bài bia khắc sự tích quan.
+Thượng tướng minh tự nha Trần người thốn ta là Lê Công An, sinh con là Đại toát Lê Bảo Từ
+Đại toát Lê Bằng, đến đời thứ tư là Đại toát đại liêu ban phục Lê Công:
+Mạnh cùng hai anh làt Đại toát kỳ ban Lê Nam Tử
+Lê Quảng, ông mừng như bắt được của báu.
+Mùa xuân Mậu thân, niên hiệu Tự Đức năm đầu (1848) ông cùng người trong thôn là Tù tài Trần Thế Lộc
+Thư lại-Lâm Văn Thụy
+Lý trường Lê Doãn Sử
+Trùm trưởng Lê Đình Thống
+Lý trường Hoàng Trọng Tiến
+Nhiêu-học Lương Sĩ Quản
+Đỗ Thạch Điển
+Lý trưởng Phạm Văn Oánh
+Lè Doãn Chuần
+Nguyễn Như Hợi thành lập Vũ hội, cúng ruộng đặt lệ tế, hàng năm mùa xuân lễ khai hạ, mùa thú cũng cơm, mới
+Đến mùa xuân năm Canh
+VÀO CỐI TỤC TIẾC NON XANH
+Rặng núi gày mảnh in bóng xuống đáy nước, nùa thu,
+Đỉnh núi chót vót dưới ánh mặt trời.
+Ngàng đầu: lên nhìn thấy không cùng
+Con đường đi tới lại càng lắm ngả
+THỊ TỊCH
+Cắt đứt vạn duyên, một thân nhàu hạ,
+Hơn bốn chục năm qua chỉ là trong ảo mộng.
+Trân trọng nhắn mọi người đừng gạn hỏi,
+Trăng gió ở thế giới bên kia lại cảng mênh mòng
+CA NGỢI TUỆ TRUNG THƯỢNG SĨ
+Ôi
+Thép rồng rèn được;
+Gang sống đúc nên
+Thước trời gang đất.
+Trăng sáng gió trong.
+Quát 1

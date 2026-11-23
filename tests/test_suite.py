@@ -10,6 +10,8 @@ Verifies:
 
 from __future__ import annotations
 
+import json
+import shutil
 import sys
 import tempfile
 import unittest
@@ -145,15 +147,34 @@ class TestCV04PipelineSuite(unittest.TestCase):
                 self.assertEqual(out[0].name, "0008.png")
 
     def test_full_pipeline_deliverables(self) -> None:
-        summary = run_pipeline(ROOT_DIR, four_col_all=True)
-        books = summary.get("books", {})
-        for code in ("VPO_01", "VPO_02", "VPO_03"):
-            self.assertIn(code, books)
-            info = books[code]
-            self.assertGreater(info["pair_count"], 0)
-            self.assertEqual(info["columns"], 4)
-            self.assertEqual(info["error_rate"], 0.0)
-            self.assertTrue(info["tsv_xlsx_identical"])
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_root = Path(tmp)
+            (tmp_root / "config").mkdir(parents=True, exist_ok=True)
+            manifest_src = ROOT_DIR / "config" / "book_manifest.json"
+            shutil.copy2(manifest_src, tmp_root / "config" / "book_manifest.json")
+            manifest = json.loads(manifest_src.read_text(encoding="utf-8"))
+            for cfg in manifest.get("books", {}).values():
+                src_dir = ROOT_DIR / cfg["source_dir"]
+                dst_dir = tmp_root / cfg["source_dir"]
+                dst_dir.mkdir(parents=True, exist_ok=True)
+                for p_num in cfg.get("pilot_pages", []):
+                    png_src = src_dir / f"{int(p_num):04d}.png"
+                    if png_src.is_file():
+                        shutil.copy2(png_src, dst_dir / png_src.name)
+            supp_src = ROOT_DIR / "CV04_VPO_03" / "01_nguon" / "bai_03_thien_tong_chi_nam_tu_dich_nghia.txt"
+            if supp_src.is_file():
+                (tmp_root / "CV04_VPO_03" / "01_nguon").mkdir(parents=True, exist_ok=True)
+                shutil.copy2(supp_src, tmp_root / "CV04_VPO_03" / "01_nguon" / supp_src.name)
+
+            summary = run_pipeline(tmp_root, four_col_all=True)
+            books = summary.get("books", {})
+            for code in ("VPO_01", "VPO_02", "VPO_03"):
+                self.assertIn(code, books)
+                info = books[code]
+                self.assertGreater(info["pair_count"], 0)
+                self.assertEqual(info["columns"], 4)
+                self.assertEqual(info["error_rate"], 0.0)
+                self.assertTrue(info["tsv_xlsx_identical"])
 
     def test_mac_merged_modules_and_khanh_member_split(self) -> None:
         # 1. Verify Khánh's exact 396-page split in config/member_splits.json
@@ -179,10 +200,22 @@ class TestCV04PipelineSuite(unittest.TestCase):
         )
         self.assertEqual(len(pa_aligned), 2)
 
-        # 3. Verify work_segmenter and corpus_pipeline run cleanly
-        ocr_summary = run_corpus_from_ocr(ROOT_DIR, pilot_only=True)
-        self.assertIn("VPO_01", ocr_summary["books"])
-        self.assertGreater(ocr_summary["total_pairs"], 0)
+        # 3. Verify work_segmenter and corpus_pipeline run cleanly in an isolated workspace
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp_root = Path(tmp)
+            supp_src = ROOT_DIR / "CV04_VPO_03" / "01_nguon" / "bai_03_thien_tong_chi_nam_tu_dich_nghia.txt"
+            if supp_src.is_file():
+                (tmp_root / "CV04_VPO_03" / "01_nguon").mkdir(parents=True, exist_ok=True)
+                shutil.copy2(supp_src, tmp_root / "CV04_VPO_03" / "01_nguon" / supp_src.name)
+
+            ocr_summary = run_corpus_from_ocr(
+                workspace_root=tmp_root,
+                ocr_root=ROOT_DIR,
+                manifest_path=ROOT_DIR / "config" / "book_manifest.json",
+                pilot_only=True,
+            )
+            self.assertIn("VPO_01", ocr_summary["books"])
+            self.assertGreater(ocr_summary["total_pairs"], 0)
 
 
 if __name__ == "__main__":
