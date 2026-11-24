@@ -1,6 +1,8 @@
-# Dóng Hàng Hán – Việt (Nhóm CV04)
+# Zh-Vi Corpus Building
 
-Xây dựng kho ngữ liệu song ngữ văn học Hán – Việt (thơ ca & văn xuôi) cấp câu/đoạn cho đồ án giữa kỳ môn **Xử lý Ngôn ngữ Tự nhiên (NLP)**.
+Đồ án Xử lý ngôn ngữ tự nhiên
+
+Xây dựng kho ngữ liệu song ngữ văn học Hán – Việt (thơ ca & văn xuôi) cấp câu/đoạn (dóng hàng Hán - Việt).
 
 - **Mã nhóm**: `CV04` — Trần Trung Hiếu *(Nhóm trưởng)*, Lê Gia Khánh, Phạm Chấn Khoa, Cái Hoàng Bảo Kin
 - **Hướng dẫn**: Chị **Lưu Như** | **Hạn nộp**: `30/11`
@@ -71,3 +73,43 @@ python main.py web                                # Mở giao diện Streamlit C
 ```
 
 > **Lưu ý**: Không chạy `python main.py run` trên thư mục gốc vì lệnh này ghi đè `CV04_VPO_01..03/` bằng bộ dữ liệu mẫu Pilot (`32/8/15` dòng).
+
+---
+
+## 5. Định Dạng Bài Nộp
+
+### 5.1. Nộp gì?
+
+| Hạng mục | Nội dung |
+| :--- | :--- |
+| **3 thư mục dữ liệu** | `CV04_VPO_01/`, `CV04_VPO_02/`, `CV04_VPO_03/` (mỗi mã tác phẩm 1 thư mục) |
+| **Mã nguồn tái lập** | `src/`, `config/`, `web_app/`, `tests/`, `main.py`, `requirements.txt` (hoặc link GitHub) |
+| **Tài liệu** | `README.md` (gốc + từng thư mục), `docs/` (kiểm kê nguồn, thống kê bổ sung, phân công) |
+
+### 5.2. Cấu trúc bắt buộc mỗi thư mục `CV04_VPO_0x/`
+
+```text
+CV04_VPO_0x/
+├── 01_nguon/        # Ảnh scan gốc (PNG 300 DPI, đặt tên theo số trang PDF)
+├── 02_ocr_tho/      # Kết quả OCR thô: han/*.json, viet/*.json
+├── 03_text_sach/    # han.txt, viet.txt (UTF-8 NFC, mọi bài chung 1 file, có tiêu đề bài)
+├── 04_dong_hang/    # VPO_0x_parallel.tsv + VPO_0x_parallel.xlsx (+ qa_report.json)
+└── README.md        # Phương pháp, công cụ, số liệu thống kê
+```
+
+### 5.3. Yêu cầu file dóng hàng (`04_dong_hang/`)
+
+- **Tên file**: `<MA_TAC_PHAM>_parallel.tsv` và `<MA_TAC_PHAM>_parallel.xlsx`.
+- **4 cột cố định**: `Hán` | `Dịch âm` | `Dịch nghĩa` | `Dịch thơ`; cột nào nguyên bản không có thì để trống.
+- **Tiêu đề bài**: Mỗi bài có 1 dòng tiêu đề riêng ngay trước nội dung, các thành phần đặt đúng cột.
+- **`.tsv`**: UTF-8, mỗi cặp 1 dòng, phân tách đúng 1 ký tự TAB, không dòng tiêu đề cột.
+- **`.xlsx`**: Sheet `DONG_HANG` (hàng 1 là tên 4 cột), nội dung khớp 100% với `.tsv`; không gộp ô, không dòng trống, không cột STT.
+- **Chữ mờ/khuyết**: Đánh dấu `[MASK]`, không tự đoán chữ.
+
+### 5.4. Chỉ tiêu & quy tắc đóng gói
+
+- **Số lượng**: $\ge 8.000$ cặp hợp lệ toàn nhóm (tài liệu cần OCR) — hiện đạt **`8.194`**.
+- **Chất lượng**: Tỷ lệ lỗi QA $\le 30\%$ — hiện đạt **`8.21%`**.
+- **Không chứa**: mật khẩu, token/API key (`kaggle.json`, `.env`), thư mục tạm (`.venv/`, `staging/`, `__pycache__/`).
+- **Không đặt tên** kiểu `final`, `final2`, `final_new`.
+- **Hạn nộp**: `30/11`.
