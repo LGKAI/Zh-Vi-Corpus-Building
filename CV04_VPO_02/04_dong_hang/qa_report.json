@@ -1,11 +1,11 @@
 {
-  "total_pairs": 1925,
-  "valid_pairs": 1925,
-  "valid_checked_pairs": 1925,
-  "error_pairs": 119,
-  "num_error_pairs": 119,
-  "clean_pairs": 1806,
-  "error_rate": 0.061818,
+  "total_pairs": 1935,
+  "valid_pairs": 1935,
+  "valid_checked_pairs": 1935,
+  "error_pairs": 122,
+  "num_error_pairs": 122,
+  "clean_pairs": 1813,
+  "error_rate": 0.063049,
   "passes_acceptance_threshold": true,
   "passes_threshold_30pct": true,
   "passes_internal_target": true,
@@ -13,26 +13,26 @@
   "is_valid": true,
   "error_counts_by_type": {
     "MISSING": 0,
-    "OMISSION": 85,
+    "OMISSION": 86,
     "ADDITION": 22,
     "FORMAT_ERROR": 0,
     "LEFTOVER_MARKER": 0,
-    "NUMBER_MISMATCH": 17
+    "NUMBER_MISMATCH": 19
   },
   "error_breakdown": {
     "MISSING": 0,
-    "OMISSION": 85,
+    "OMISSION": 86,
     "ADDITION": 22,
     "FORMAT_ERROR": 0,
     "LEFTOVER_MARKER": 0,
-    "NUMBER_MISMATCH": 17
+    "NUMBER_MISMATCH": 19
   },
   "missing_count": 0,
-  "omission_count": 85,
+  "omission_count": 86,
   "addition_count": 22,
   "format_error_count": 0,
   "leftover_marker_count": 0,
-  "number_mismatch_count": 17,
+  "number_mismatch_count": 19,
   "issues": [
     {
       "row_index": 4,
@@ -851,7 +851,7 @@
       "viet": "nay quay chèo ngược về, đúng vào đầu mùa đông:"
     },
     {
-      "row_index": 1294,
+      "row_index": 1296,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.50 < 0.7 (6 Viet words / 12 Han chars).",
@@ -859,7 +859,7 @@
       "viet": "Mênh mông núi hô ngàn dặm"
     },
     {
-      "row_index": 1363,
+      "row_index": 1365,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.60 < 0.7 (6 Viet words / 10 Han chars).",
@@ -867,7 +867,7 @@
       "viet": "Người từ muôn dặm trở về"
     },
     {
-      "row_index": 1386,
+      "row_index": 1388,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -875,7 +875,7 @@
       "viet": "Giá bút ống thơ,"
     },
     {
-      "row_index": 1397,
+      "row_index": 1399,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['百'] not reflected in Việt translation.",
@@ -883,7 +883,7 @@
       "viet": "Vẫn ngỡ như năm nào. Đó là chuyện đã qua,"
     },
     {
-      "row_index": 1399,
+      "row_index": 1401,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 17.67 > 4.5 (53 Viet words / 3 Han chars).",
@@ -891,7 +891,7 @@
       "viet": "Ông là con trai thứ tư của hoàng đế gia Long, lên ngôi Hoàng đế năm 1820, là vị Hoàng đế thứ hai của triều Nguyễn, tại vị từ năm 1820 đến năm 1841, lấy niên hiệu là minh mạng (Mệnh), nên thường được gọi là hoàng đế minh mạng. Ông là vị"
     },
     {
-      "row_index": 1400,
+      "row_index": 1402,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 19.00 > 4.5 (57 Viet words / 3 Han chars).",
@@ -899,7 +899,7 @@
       "viet": "Hoàng đế có hùng tài đại lược và có tài năng về văn chương. Sáng tác hiện còn của ông rất phong phú: về thơ có Ngự chế thi tập, gồm 6 quyền với khoảng trên dưới 3 nghìn bài, về văn có minh Mệnh ngự chế văn với hàng ngàn bài theo nhiều thể loại khác"
     },
     {
-      "row_index": 1402,
+      "row_index": 1404,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 6.20 > 4.5 (31 Viet words / 5 Han chars).",
@@ -907,15 +907,39 @@
       "viet": "Về từ, trong minh mệnh ngự chế văn (97, tp 41) 2, tập 2, kí hiệu A.118, bản chụp kí hiệu VHc.2796) có 1 bài từ viết theo điệu"
     },
     {
-      "row_index": 1471,
+      "row_index": 1457,
       "category": "ADDITION",
       "severity": "warning",
-      "reason": "Length ratio 14.25 > 4.5 (171 Viet words / 12 Han chars).",
-      "han": "謝眞長之知我，洵子夏之起予。",
-      "viet": "Tác phẩm có Thuỷ nhạc thuyết, Nhận xét về tác phẩm này, từ gia Nguyên Hiếu Vấn thời Kim cho là: \"Thử xem Thuỷ nhạc thuyết của Nguyên Kết thời Đường: vốn chẳng có âm hưởng của Cung, Chuy, nhưng cũng tự thành thứ nhã nhạc tự nhiên giữa khoảng mây núi? 5 Hứa Hữu Phu: Từ gia thời Nguyên, cùng Hứa Hữu Nhâm soạn sách Khuê Đường Khoản nãi tập (Điề (k 73 4,2 quyền) Ở Chân Trường: Tức Lưu Chân Trường, Thể thuyết Tân ngữ (1% M Min is) dẫn lời của Vương Trọng Tổ nói: \"Chân Trường hiểu ta, còn hơn ta tự hiều về mình\" Thiên Bát dật sách Luận ngữ ghi: Từ Hạ hỏi [Khống Tủ]: Nét cười tươi quyến rũ, cặp mắt đẹp rang ngời, trên nền tráng vẽ nên bức hoạ nhiều màu sặc sỡ, là nghĩa thế nào 2 Khổng Tử đáp: Phải có nến trăng rồi sau mới vẽ nên bức tranh Thưa: 'Y nói] Lễ là cái có sau chăng?"
+      "reason": "Length ratio 6.00 > 4.5 (78 Viet words / 13 Han chars).",
+      "han": "客有謂：娥皇檢譜，猶尋天寶遺聲；",
+      "viet": "Cái gọi là phép quá phiên (có chỗ ghi là quá biến), chọn xoang, lời phú tình, dụng sự, thanh khứ cao cần phải kìm rồi mới lên, thanh nhập dồn dập quý ở chỗ đứt rồi lại nối, chưa hắn thảy đều là một tắc đến trời, hay thảy toàn là thùng rồng kêu to-(iz431), thì sao không kiểu mã tử hâu truyền rộng mãi sự đông điệu về sau, cùng nhau hoà nhịp, ngõ hầu:"
     },
     {
-      "row_index": 1502,
+      "row_index": 1462,
+      "category": "NUMBER_MISMATCH",
+      "severity": "warning",
+      "reason": "Hán number(s) ['百'] not reflected in Việt translation.",
+      "han": "此外則宋元語業數百家，明清粹乃衡陽巾箱，頗盈卷帙。但後：廣寧善笛，江夏工琴。",
+      "viet": "Không thể thì hãy có một lời, hoặc cử noi theo tiền lệ, Từ xưa thơ coi tiếng sáo của âm Nam là đẹp, đã không hề tiếm sai, lấy sao Dực này làm sao chủ cho Nhạc phủ', lại theo sự phân dã của nó, ví như thảy đều không phải thước tròn thước vuông 3, thì cũng đáng để lúc nhớ lúc không vậy."
+    },
+    {
+      "row_index": 1465,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.63 < 0.7 (37 Viet words / 59 Han chars).",
+      "han": "所謂過片一作變擇腔之法，賦情用事之言，去亢宜抑而後揚，入促貴斷而後續，未必舉皆河漢，全是葫蘆，奚不試賣和成績之癡符，彊作馬子侯之解事。",
+      "viet": "Cảm tạ Chân Trường hiểu lòng ta', tin rằng Tử Hạ phát khởi được ý ta? Vội phạt một Trường phát trong phần Thương tụng của Kĩnh Thi: \"Ngoại đại quốc thị cương/ Bức viên kí trường?"
+    },
+    {
+      "row_index": 1470,
+      "category": "NUMBER_MISMATCH",
+      "severity": "warning",
+      "reason": "Hán number(s) ['三'] not reflected in Việt translation.",
+      "han": "柳三變之曉風殘月，左與言之滴粉搓酥。",
+      "viet": "Nguyên là \"Vực bốc\", nghĩa là cây vực mọc thành bụi đan xen vào nhau, cũng là tên một bài trong phần Đại nhã của Kinh Thi, ca ngợi thịnh đức của vua Văn Vương nhà Chu, cũng có khi dùng chỉ hiền tài đông đúc."
+    },
+    {
+      "row_index": 1512,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.44 < 0.7 (4 Viet words / 9 Han chars).",
@@ -923,7 +947,7 @@
       "viet": "Thần thái rạng đẹp,"
     },
     {
-      "row_index": 1504,
+      "row_index": 1514,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -931,7 +955,7 @@
       "viet": "Thị nữ hầu rượu,"
     },
     {
-      "row_index": 1519,
+      "row_index": 1529,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
@@ -939,7 +963,7 @@
       "viet": "Làm bạn với tùng,"
     },
     {
-      "row_index": 1524,
+      "row_index": 1534,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
@@ -947,7 +971,7 @@
       "viet": "NGƯỜI Đẹp NGÙ DẬY"
     },
     {
-      "row_index": 1557,
+      "row_index": 1567,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 4.57 > 4.5 (32 Viet words / 7 Han chars).",
@@ -955,7 +979,7 @@
       "viet": "Đuốc bạc, chén vàng, mở yến tiệc trên hồ, Phách ngà màu hồng, tay áo màu tía, thổi tiêu trong đêm trăng, Đứng hững hờ trên chiếc cầu lan can màu đỏ."
     },
     {
-      "row_index": 1560,
+      "row_index": 1570,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 11.33 > 4.5 (34 Viet words / 3 Han chars).",
@@ -963,7 +987,7 @@
       "viet": "Nhớ Giang Nam Để tiêu tan mùa ha, làm bài về cảnh sống thanh nhàn Nhãn chín đầy bên hồ giục khách mở tiệc, Hoa nở bên dường dẫn xe của mẹ hiền đến,"
     },
     {
-      "row_index": 1656,
+      "row_index": 1666,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.50 < 0.7 (3 Viet words / 6 Han chars).",
@@ -971,7 +995,7 @@
       "viet": "Nhớ tri âm"
     },
     {
-      "row_index": 1671,
+      "row_index": 1681,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.17 < 0.7 (1 Viet words / 6 Han chars).",
@@ -979,7 +1003,7 @@
       "viet": "TITHTION"
     },
     {
-      "row_index": 1776,
+      "row_index": 1786,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -987,7 +1011,7 @@
       "viet": "Lạnh lạnh, thanh thanh"
     },
     {
-      "row_index": 1850,
+      "row_index": 1860,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.61 < 0.7 (81 Viet words / 133 Han chars).",
@@ -995,7 +1019,7 @@
       "viet": "Tâu rằng: Vâng giao ra sách Từ tổng', đồng thời phê thị các điều vân vân. kính vâng theo đó, kính noi theo đó, thần trộm nghĩ rằng: Điền từ là hậu duệ của thơ. Thơ từ chính là sự hô ứng của âm nhạc. vốn dĩ thánh nhân chế tác ra âm nhạc, là để hàm dưỡng tính tình, giáo dục nhân tài, thờ quỷ thần, hoà hợp trên dưới, dùng khi chúc tụng, dùng khi sự vụ quốc gia."
     },
     {
-      "row_index": 1894,
+      "row_index": 1904,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.64 < 0.7 (49 Viet words / 76 Han chars).",
@@ -1003,7 +1027,7 @@
       "viet": "(Thiên cổ phong lưu nhân vật), thuộc vào bộ vận thứ chữ vật? (ngũ vật), câu? Lại rót rượu xuống sông trăng? (Hoàn lỗi giang nguyệt) lại thuộc bộ vận thứ chữ nguyệt (lục nguyệt)\", thế mà vẫn có thể gieo vần, như thơ ngũ ngôn cổ thể vậy."
     },
     {
-      "row_index": 1902,
+      "row_index": 1912,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (15 Viet words / 24 Han chars).",
@@ -1011,7 +1035,7 @@
       "viet": "vào thanh sắc, duyên tình, phù hoa là vì vậy. Đến như các văn học"
     },
     {
-      "row_index": 1910,
+      "row_index": 1920,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (15 Viet words / 24 Han chars).",
@@ -1019,7 +1043,7 @@
       "viet": "hay hát từ, âm đã thuần thục, khi có hứng đến, tình cờ cất bút,"
     },
     {
-      "row_index": 1921,
+      "row_index": 1931,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 8.62 > 4.5 (112 Viet words / 13 Han chars).",
@@ -1846,7 +1870,7 @@
       "viet": "nay quay chèo ngược về, đúng vào đầu mùa đông:"
     },
     {
-      "row_index": 1294,
+      "row_index": 1296,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.50 < 0.7 (6 Viet words / 12 Han chars).",
@@ -1854,7 +1878,7 @@
       "viet": "Mênh mông núi hô ngàn dặm"
     },
     {
-      "row_index": 1363,
+      "row_index": 1365,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.60 < 0.7 (6 Viet words / 10 Han chars).",
@@ -1862,7 +1886,7 @@
       "viet": "Người từ muôn dặm trở về"
     },
     {
-      "row_index": 1386,
+      "row_index": 1388,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -1870,7 +1894,7 @@
       "viet": "Giá bút ống thơ,"
     },
     {
-      "row_index": 1397,
+      "row_index": 1399,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['百'] not reflected in Việt translation.",
@@ -1878,7 +1902,7 @@
       "viet": "Vẫn ngỡ như năm nào. Đó là chuyện đã qua,"
     },
     {
-      "row_index": 1399,
+      "row_index": 1401,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 17.67 > 4.5 (53 Viet words / 3 Han chars).",
@@ -1886,7 +1910,7 @@
       "viet": "Ông là con trai thứ tư của hoàng đế gia Long, lên ngôi Hoàng đế năm 1820, là vị Hoàng đế thứ hai của triều Nguyễn, tại vị từ năm 1820 đến năm 1841, lấy niên hiệu là minh mạng (Mệnh), nên thường được gọi là hoàng đế minh mạng. Ông là vị"
     },
     {
-      "row_index": 1400,
+      "row_index": 1402,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 19.00 > 4.5 (57 Viet words / 3 Han chars).",
@@ -1894,7 +1918,7 @@
       "viet": "Hoàng đế có hùng tài đại lược và có tài năng về văn chương. Sáng tác hiện còn của ông rất phong phú: về thơ có Ngự chế thi tập, gồm 6 quyền với khoảng trên dưới 3 nghìn bài, về văn có minh Mệnh ngự chế văn với hàng ngàn bài theo nhiều thể loại khác"
     },
     {
-      "row_index": 1402,
+      "row_index": 1404,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 6.20 > 4.5 (31 Viet words / 5 Han chars).",
@@ -1902,15 +1926,39 @@
       "viet": "Về từ, trong minh mệnh ngự chế văn (97, tp 41) 2, tập 2, kí hiệu A.118, bản chụp kí hiệu VHc.2796) có 1 bài từ viết theo điệu"
     },
     {
-      "row_index": 1471,
+      "row_index": 1457,
       "category": "ADDITION",
       "severity": "warning",
-      "reason": "Length ratio 14.25 > 4.5 (171 Viet words / 12 Han chars).",
-      "han": "謝眞長之知我，洵子夏之起予。",
-      "viet": "Tác phẩm có Thuỷ nhạc thuyết, Nhận xét về tác phẩm này, từ gia Nguyên Hiếu Vấn thời Kim cho là: \"Thử xem Thuỷ nhạc thuyết của Nguyên Kết thời Đường: vốn chẳng có âm hưởng của Cung, Chuy, nhưng cũng tự thành thứ nhã nhạc tự nhiên giữa khoảng mây núi? 5 Hứa Hữu Phu: Từ gia thời Nguyên, cùng Hứa Hữu Nhâm soạn sách Khuê Đường Khoản nãi tập (Điề (k 73 4,2 quyền) Ở Chân Trường: Tức Lưu Chân Trường, Thể thuyết Tân ngữ (1% M Min is) dẫn lời của Vương Trọng Tổ nói: \"Chân Trường hiểu ta, còn hơn ta tự hiều về mình\" Thiên Bát dật sách Luận ngữ ghi: Từ Hạ hỏi [Khống Tủ]: Nét cười tươi quyến rũ, cặp mắt đẹp rang ngời, trên nền tráng vẽ nên bức hoạ nhiều màu sặc sỡ, là nghĩa thế nào 2 Khổng Tử đáp: Phải có nến trăng rồi sau mới vẽ nên bức tranh Thưa: 'Y nói] Lễ là cái có sau chăng?"
+      "reason": "Length ratio 6.00 > 4.5 (78 Viet words / 13 Han chars).",
+      "han": "客有謂：娥皇檢譜，猶尋天寶遺聲；",
+      "viet": "Cái gọi là phép quá phiên (có chỗ ghi là quá biến), chọn xoang, lời phú tình, dụng sự, thanh khứ cao cần phải kìm rồi mới lên, thanh nhập dồn dập quý ở chỗ đứt rồi lại nối, chưa hắn thảy đều là một tắc đến trời, hay thảy toàn là thùng rồng kêu to-(iz431), thì sao không kiểu mã tử hâu truyền rộng mãi sự đông điệu về sau, cùng nhau hoà nhịp, ngõ hầu:"
     },
     {
-      "row_index": 1502,
+      "row_index": 1462,
+      "category": "NUMBER_MISMATCH",
+      "severity": "warning",
+      "reason": "Hán number(s) ['百'] not reflected in Việt translation.",
+      "han": "此外則宋元語業數百家，明清粹乃衡陽巾箱，頗盈卷帙。但後：廣寧善笛，江夏工琴。",
+      "viet": "Không thể thì hãy có một lời, hoặc cử noi theo tiền lệ, Từ xưa thơ coi tiếng sáo của âm Nam là đẹp, đã không hề tiếm sai, lấy sao Dực này làm sao chủ cho Nhạc phủ', lại theo sự phân dã của nó, ví như thảy đều không phải thước tròn thước vuông 3, thì cũng đáng để lúc nhớ lúc không vậy."
+    },
+    {
+      "row_index": 1465,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.63 < 0.7 (37 Viet words / 59 Han chars).",
+      "han": "所謂過片一作變擇腔之法，賦情用事之言，去亢宜抑而後揚，入促貴斷而後續，未必舉皆河漢，全是葫蘆，奚不試賣和成績之癡符，彊作馬子侯之解事。",
+      "viet": "Cảm tạ Chân Trường hiểu lòng ta', tin rằng Tử Hạ phát khởi được ý ta? Vội phạt một Trường phát trong phần Thương tụng của Kĩnh Thi: \"Ngoại đại quốc thị cương/ Bức viên kí trường?"
+    },
+    {
+      "row_index": 1470,
+      "category": "NUMBER_MISMATCH",
+      "severity": "warning",
+      "reason": "Hán number(s) ['三'] not reflected in Việt translation.",
+      "han": "柳三變之曉風殘月，左與言之滴粉搓酥。",
+      "viet": "Nguyên là \"Vực bốc\", nghĩa là cây vực mọc thành bụi đan xen vào nhau, cũng là tên một bài trong phần Đại nhã của Kinh Thi, ca ngợi thịnh đức của vua Văn Vương nhà Chu, cũng có khi dùng chỉ hiền tài đông đúc."
+    },
+    {
+      "row_index": 1512,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.44 < 0.7 (4 Viet words / 9 Han chars).",
@@ -1918,7 +1966,7 @@
       "viet": "Thần thái rạng đẹp,"
     },
     {
-      "row_index": 1504,
+      "row_index": 1514,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -1926,7 +1974,7 @@
       "viet": "Thị nữ hầu rượu,"
     },
     {
-      "row_index": 1519,
+      "row_index": 1529,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
@@ -1934,7 +1982,7 @@
       "viet": "Làm bạn với tùng,"
     },
     {
-      "row_index": 1524,
+      "row_index": 1534,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
@@ -1942,7 +1990,7 @@
       "viet": "NGƯỜI Đẹp NGÙ DẬY"
     },
     {
-      "row_index": 1557,
+      "row_index": 1567,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 4.57 > 4.5 (32 Viet words / 7 Han chars).",
@@ -1950,7 +1998,7 @@
       "viet": "Đuốc bạc, chén vàng, mở yến tiệc trên hồ, Phách ngà màu hồng, tay áo màu tía, thổi tiêu trong đêm trăng, Đứng hững hờ trên chiếc cầu lan can màu đỏ."
     },
     {
-      "row_index": 1560,
+      "row_index": 1570,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 11.33 > 4.5 (34 Viet words / 3 Han chars).",
@@ -1958,7 +2006,7 @@
       "viet": "Nhớ Giang Nam Để tiêu tan mùa ha, làm bài về cảnh sống thanh nhàn Nhãn chín đầy bên hồ giục khách mở tiệc, Hoa nở bên dường dẫn xe của mẹ hiền đến,"
     },
     {
-      "row_index": 1656,
+      "row_index": 1666,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.50 < 0.7 (3 Viet words / 6 Han chars).",
@@ -1966,7 +2014,7 @@
       "viet": "Nhớ tri âm"
     },
     {
-      "row_index": 1671,
+      "row_index": 1681,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.17 < 0.7 (1 Viet words / 6 Han chars).",
@@ -1974,7 +2022,7 @@
       "viet": "TITHTION"
     },
     {
-      "row_index": 1776,
+      "row_index": 1786,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -1982,7 +2030,7 @@
       "viet": "Lạnh lạnh, thanh thanh"
     },
     {
-      "row_index": 1850,
+      "row_index": 1860,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.61 < 0.7 (81 Viet words / 133 Han chars).",
@@ -1990,7 +2038,7 @@
       "viet": "Tâu rằng: Vâng giao ra sách Từ tổng', đồng thời phê thị các điều vân vân. kính vâng theo đó, kính noi theo đó, thần trộm nghĩ rằng: Điền từ là hậu duệ của thơ. Thơ từ chính là sự hô ứng của âm nhạc. vốn dĩ thánh nhân chế tác ra âm nhạc, là để hàm dưỡng tính tình, giáo dục nhân tài, thờ quỷ thần, hoà hợp trên dưới, dùng khi chúc tụng, dùng khi sự vụ quốc gia."
     },
     {
-      "row_index": 1894,
+      "row_index": 1904,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.64 < 0.7 (49 Viet words / 76 Han chars).",
@@ -1998,7 +2046,7 @@
       "viet": "(Thiên cổ phong lưu nhân vật), thuộc vào bộ vận thứ chữ vật? (ngũ vật), câu? Lại rót rượu xuống sông trăng? (Hoàn lỗi giang nguyệt) lại thuộc bộ vận thứ chữ nguyệt (lục nguyệt)\", thế mà vẫn có thể gieo vần, như thơ ngũ ngôn cổ thể vậy."
     },
     {
-      "row_index": 1902,
+      "row_index": 1912,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (15 Viet words / 24 Han chars).",
@@ -2006,7 +2054,7 @@
       "viet": "vào thanh sắc, duyên tình, phù hoa là vì vậy. Đến như các văn học"
     },
     {
-      "row_index": 1910,
+      "row_index": 1920,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (15 Viet words / 24 Han chars).",
@@ -2014,7 +2062,7 @@
       "viet": "hay hát từ, âm đã thuần thục, khi có hứng đến, tình cờ cất bút,"
     },
     {
-      "row_index": 1921,
+      "row_index": 1931,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 8.62 > 4.5 (112 Viet words / 13 Han chars).",

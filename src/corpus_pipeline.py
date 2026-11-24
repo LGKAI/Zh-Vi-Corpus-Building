@@ -694,6 +694,32 @@ def _align_verse_unit(
     ]
 
 
+def _split_clauses_with_min_words(
+    seg: str,
+    pattern: re.Pattern[str],
+    min_words: int = 5,
+) -> List[str]:
+    """Split `seg` by `pattern` while merging fragments shorter than `min_words`."""
+    raw_parts = [clean_viet_text(p) for p in pattern.split(seg) if clean_viet_text(p)]
+    if len(raw_parts) <= 1:
+        return [seg]
+    merged: List[str] = []
+    buf = ""
+    for part in raw_parts:
+        cand = f"{buf}, {part}" if buf else part
+        if count_viet_words(cand) >= min_words:
+            merged.append(cand)
+            buf = ""
+        else:
+            buf = cand
+    if buf:
+        if merged:
+            merged[-1] = f"{merged[-1]}, {buf}"
+        else:
+            merged.append(buf)
+    return merged
+
+
 def _align_prose_unit(
     han_lines: List[str],
     pa_lines: List[str],
@@ -710,7 +736,21 @@ def _align_prose_unit(
         han_sents = [han_joined]
 
     pa_cleaned_lines = [clean_viet_text(ln) for ln in pa_lines if clean_viet_text(ln) and re.search(r"[A-Za-zÀ-ỹà-ỹ]", ln)]
-    dn_joined = clean_viet_text("\n".join(dn_lines)) if dn_lines else ""
+
+    # Preserve dialogue-dash sentence breaks across OCR lines before joining
+    norm_dn_lines: List[str] = []
+    for ln in dn_lines:
+        s = ln.strip()
+        if not s:
+            continue
+        if (
+            norm_dn_lines
+            and re.match(r"^[-–—]\s*[A-ZĐÀ-Ỹ]", s)
+            and not re.search(r"[.?!;:]$", norm_dn_lines[-1])
+        ):
+            norm_dn_lines[-1] = norm_dn_lines[-1] + "."
+        norm_dn_lines.append(s)
+    dn_joined = clean_viet_text("\n".join(norm_dn_lines)) if norm_dn_lines else ""
 
     dn_sents = split_viet_sentences(dn_joined, mode="sent") if dn_joined else []
     dn_sents = [s for s in dn_sents if re.search(r"[A-Za-zÀ-ỹà-ỹ]", s)]
@@ -721,21 +761,50 @@ def _align_prose_unit(
         if not pa_cleaned_lines:
             return []
         pa_aligned = align_phien_am_to_han_chunks(han_sents, pa_cleaned_lines)
-        return [(h, pa, "", "") for h, pa in zip(han_sents, pa_aligned) if pa]
+        return [
+            (h, pa, "", "")
+            for h, pa in zip(han_sents, pa_aligned)
+            if pa and re.search(r"[A-Za-zÀ-ỹà-ỹ]", pa)
+        ]
 
-    # Recover VietOCR `,` -> `.` sentence runs when sentence count is far below Hán clause count
-    if len(han_sents) >= 4 and len(dn_sents) < 0.65 * len(han_sents):
-        dn_clause = split_viet_sentences(dn_joined, mode="clause_or_sent")
+    # Step 1: split on `;` and `:` when Vietnamese sentences are fewer than Hán sentences
+    if len(han_sents) >= 2 and len(dn_sents) < 0.95 * len(han_sents):
+        dn_clause = [
+            s
+            for s in split_viet_sentences(dn_joined, mode="clause_or_sent")
+            if re.search(r"[A-Za-zÀ-ỹà-ỹ]", s)
+        ]
         if len(dn_clause) > len(dn_sents):
             dn_sents = dn_clause
-        if len(dn_sents) < 0.60 * len(han_sents):
-            expanded: List[str] = []
-            cap_split_re = re.compile(r",\s+(?=[A-ZĐÀÁẢÃẠĂẰẮẲẴẶÂẦẤẨẪẬÈÉẺẼẸÊỀẾỂỄỆÌÍỈĨỊÒÓỎÕỌÔỒỐỔỖỘƠỜỚỞỠỢÙÚỦŨỤƯỪỨỬỮỰỲÝỶỸỴ])")
+
+    # Step 2: recover VietOCR `.` -> `,` before Uppercase (>= 4 words per side)
+    if len(han_sents) >= 2 and len(dn_sents) < 0.95 * len(han_sents):
+        cap_split_re = re.compile(
+            r",\s+(?=[A-ZĐÀÁẢÃẠĂẰẮẲẴẶÂẦẤẨẪẬÈÉẺẼẸÊỀẾỂỄỆÌÍỈĨỊÒÓỎÕỌÔỒỐỔỖỘƠỜỚỞỠỢÙÚỦŨỤƯỪỨỬỮỰỲÝỶỸỴ])"
+        )
+        expanded: List[str] = []
+        for seg in dn_sents:
+            expanded.extend(_split_clauses_with_min_words(seg, cap_split_re, min_words=4))
+        if len(expanded) > len(dn_sents):
+            dn_sents = expanded
+
+    # Step 3: for parallel prose (biền ngẫu) where Hán punctuates each parallel clause with `。`,
+    # split long Vietnamese sentences (>= 12 words) on `, ` into balanced clauses (>= 5 words each),
+    # bounded by a budget so `dn_sents` tracks `han_sents` closely without over-fragmenting.
+    if len(han_sents) >= 3 and len(dn_sents) < 0.90 * len(han_sents):
+        comma_re = re.compile(r",\s+")
+        budget = int(round(1.02 * len(han_sents))) - len(dn_sents)
+        if budget > 0:
+            balanced: List[str] = []
             for seg in dn_sents:
-                parts = [clean_viet_text(p) for p in cap_split_re.split(seg) if clean_viet_text(p)]
-                expanded.extend(parts if parts else [seg])
-            if len(expanded) > len(dn_sents):
-                dn_sents = expanded
+                if budget > 0 and count_viet_words(seg) >= 12 and "," in seg:
+                    parts = _split_clauses_with_min_words(seg, comma_re, min_words=5)
+                    if len(parts) > 1 and (len(parts) - 1) <= budget + 2:
+                        balanced.extend(parts)
+                        budget -= len(parts) - 1
+                        continue
+                balanced.append(seg)
+            dn_sents = balanced
 
     # If Hán sentences are still >3x Vietnamese sentences, group ultra-short Hán clauses with neighbors
     if len(han_sents) > 3 * len(dn_sents) and len(han_sents) >= 6:
@@ -766,7 +835,11 @@ def _align_prose_unit(
         if pa_c:
             phonetic_checks.append(verify_han_phien_am_pair(h_c, pa_c))
 
-    return [(h, pa, dn, "") for h, pa, dn in zip(h_chunks, pa_aligned, dn_chunks)]
+    return [
+        (h, pa, dn, "")
+        for h, pa, dn in zip(h_chunks, pa_aligned, dn_chunks)
+        if h.strip() and any(re.search(r"[A-Za-zÀ-ỹà-ỹ]", c) for c in (pa, dn))
+    ]
 
 
 def _split_at_ke_marker(lines: List[str], pattern: re.Pattern[str]) -> Optional[Tuple[List[str], List[str]]]:

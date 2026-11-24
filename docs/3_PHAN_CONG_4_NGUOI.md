@@ -8,7 +8,7 @@ Toàn bộ **1.583 trang phân công** (cộng trang tiêu đề pilot `PDF 7` c
 | **Trần Trung Hiếu** | `hieu` | `94` tr (`PDF 102..195`) | `104` tr (`PDF 238..341`) | `199` tr (`PDF 217..415`) | `397` | Đã gộp `main` |
 | **Lê Gia Khánh** | `khanh` | `94` tr (`PDF 196..289`) | `103` tr (`PDF 342..444`) | `199` tr (`PDF 416..647`) | `396` | Đã gộp `main` |
 | **Cái Hoàng Bảo Kin** | `kin` | `92` tr (`PDF 290..381`) | `103` tr (`PDF 445..547`) | `198` tr (`PDF 648..861`) | `393` | Đã gộp `main` |
-| **Tổng hợp nhất (`main`)** | **`main`** | **`375` tr $\rightarrow$ `1.377` dòng** | **`414` tr (`411` align) $\rightarrow$ `1.925` dòng** | **`795` tr $\rightarrow$ `4.334` dòng** | **`1.584` tr** | **`7.636` dòng (`8.77%` QA)** |
+| **Tổng hợp nhất (`main`)** | **`main`** | **`375` tr $\rightarrow$ `1.377` cặp** | **`414` tr (`411` align) $\rightarrow$ `1.935` cặp** | **`795` tr $\rightarrow$ `4.882` cặp** | **`1.584` tr** | **`8.194` cặp (`8.21%` QA)** |
 
 ## Quy Chuẩn Áp Dụng (Theo Góp Ý Chị Lưu Như)
 - **Dòng tiêu đề riêng**: Mỗi bài thơ/văn/tiểu phẩm có 1 dòng tiêu đề riêng trước nội dung chính, đặt đúng 4 cột.
