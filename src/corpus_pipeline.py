@@ -33,7 +33,13 @@ from src.exporter_and_qa import (
     validate_pairs,
 )
 from src.ocr_disambiguator import correct_han_line_with_phien_am
-from src.phonetic_verifier import project_punctuation_from_phien_am, verify_han_phien_am_pair
+from src.phonetic_verifier import (
+    CORE_HAN_VIET_DICT,
+    normalize_viet_syllable,
+    project_punctuation_from_phien_am,
+    tokenize_phien_am,
+    verify_han_phien_am_pair,
+)
 from src.text_cleaner import (
     clean_han_text,
     clean_viet_text,
@@ -414,6 +420,83 @@ _NATIVE_VIET_PROSE_CUE_RE = re.compile(
     r"ngọn|mảnh|đám|suốt|khắp|vẫn|chưa|đang|rồi|lại|cũng|rất|lắm|cha\s+mẹ|vợ\s+con)\b",
     flags=re.IGNORECASE,
 )
+_EDITORIAL_COMMENTARY_LINE_RE = re.compile(
+    r"(?:Hoàng\s+Xuân\s+Hãn|Đào\s+Duy\s+Anh|Truyện\s+Kiều|Nghĩa\s+2\s+v[ếề]\s*:|"
+    r"xem\s+Cht\.|xem\s+b[ảà]ng\s+Ph[ảà]\s+hệ|"
+    r"Thật\s+ra,\s+tất\s+cả\s+những\s+điều\s+(?:ghi|khi)\s+chép\s+trên\s+đây\s+chỉ\s+là\s+truyền\s+thuyết|"
+    r"và\s+nhà\s+nho\s+nhiều\s+đời,\s+h[âà]m\s+mộ\s+Mạc\s+Đ[ĩị]nh\s+Ch[ỉị]|"
+    r"đã\s+g[ắầ]n\s+ghép\s+thêm\s+thơ\s+văn\s+người\s+này|"
+    r"thống\s+và\s+tr[ởờ]\s+n[êề]n\s+đẹp\s+đ[ẽè]\.\s*Do\s+đó,\s+những\s+thơ\s+văn\s+trên\s+đây|"
+    r"nguyên\s+họ\s+Ph[íi]\s+ý?\s*được\s+vua\s+Tr[ầậ]n\s+Nhân\s+T[ôộ]ng)",
+    flags=re.IGNORECASE,
+)
+
+
+def _phonetic_line_similarity(h_line: str, pa_line: str) -> float:
+    """Compute Sino-Vietnamese phonetic and meter similarity between a Hán line and Phiên âm line."""
+    h_chars = [ch for ch in h_line if "\u3400" <= ch <= "\u9fff" or "\uf900" <= ch <= "\ufaff"]
+    pa_syls = [normalize_viet_syllable(s) for s in tokenize_phien_am(pa_line, preserve_case=False)]
+    if not h_chars or not pa_syls:
+        return -2.0
+    pa_set = set(pa_syls)
+    known = 0
+    matched = 0.0
+    pos_matched = 0
+    for idx, ch in enumerate(h_chars):
+        rds = [normalize_viet_syllable(r) for r in CORE_HAN_VIET_DICT.get(ch, ())]
+        if not rds:
+            continue
+        known += 1
+        if idx < len(pa_syls) and pa_syls[idx] in rds:
+            pos_matched += 1
+            matched += 1.0
+        elif any(r in pa_set for r in rds):
+            matched += 0.7
+    phon_ratio = (matched / float(known)) if known > 0 else 0.3
+    len_diff = abs(len(h_chars) - len(pa_syls))
+    return 4.0 * phon_ratio + 0.5 * pos_matched - 0.55 * len_diff
+
+
+def _phonetic_dp_align_verse(
+    h_list: Sequence[str],
+    pa_list: Sequence[str],
+) -> List[Tuple[str, int, int]]:
+    """Monotonic phonetic + meter DP alignment between `h_list` and `pa_list` with gap handling."""
+    n, m = len(h_list), len(pa_list)
+    gap_pen = -0.60
+    dp = [[0.0] * (m + 1) for _ in range(n + 1)]
+    back: List[List[Optional[Tuple[str, int, int]]]] = [[None] * (m + 1) for _ in range(n + 1)]
+    for i in range(1, n + 1):
+        dp[i][0] = i * gap_pen
+        back[i][0] = ("skip_h", i - 1, 0)
+    for j in range(1, m + 1):
+        dp[0][j] = j * gap_pen
+        back[0][j] = ("skip_p", 0, j - 1)
+    for i in range(1, n + 1):
+        for j in range(1, m + 1):
+            sim = _phonetic_line_similarity(h_list[i - 1], pa_list[j - 1])
+            sm = dp[i - 1][j - 1] + sim
+            sh = dp[i - 1][j] + gap_pen
+            sp = dp[i][j - 1] + gap_pen
+            best = max(sm, sh, sp)
+            dp[i][j] = best
+            if best == sm and sim >= 0.10:
+                back[i][j] = ("match", i - 1, j - 1)
+            elif sh >= sp:
+                back[i][j] = ("skip_h", i - 1, j)
+            else:
+                back[i][j] = ("skip_p", i, j - 1)
+    ops: List[Tuple[str, int, int]] = []
+    i, j = n, m
+    while i > 0 or j > 0:
+        step = back[i][j]
+        if step is None:
+            break
+        op, pi, pj = step
+        ops.append((op, pi, pj))
+        i, j = pi, pj
+    ops.reverse()
+    return ops
 
 
 def _recover_unlabeled_dich_nghia(
@@ -644,12 +727,85 @@ def _align_verse_unit(
 ) -> List[Tuple[str, str, str, str]]:
     """Align a poem, từ, or kệ unit into 4-column `(Hán, Dịch âm, Dịch nghĩa, Dịch thơ)` rows."""
     h_clean = [clean_han_text(ln) for ln in han_lines if clean_han_text(ln)]
-    pa_clean = [clean_viet_text(ln) for ln in pa_lines if clean_viet_text(ln) and re.search(r"[A-Za-zÀ-ỹà-ỹ]", ln)]
-    dn_clean = [clean_viet_text(ln) for ln in dn_lines if clean_viet_text(ln) and re.search(r"[A-Za-zÀ-ỹà-ỹ]", ln)]
-    dt_clean = [clean_viet_text(ln) for ln in dt_lines if clean_viet_text(ln) and re.search(r"[A-Za-zÀ-ỹà-ỹ]", ln)]
+    pa_clean = [
+        clean_viet_text(ln)
+        for ln in pa_lines
+        if clean_viet_text(ln)
+        and re.search(r"[A-Za-zÀ-ỹà-ỹ]", ln)
+        and not _EDITORIAL_COMMENTARY_LINE_RE.search(ln)
+    ]
+    dn_clean = [
+        clean_viet_text(ln)
+        for ln in dn_lines
+        if clean_viet_text(ln)
+        and re.search(r"[A-Za-zÀ-ỹà-ỹ]", ln)
+        and not _EDITORIAL_COMMENTARY_LINE_RE.search(ln)
+    ]
+    dt_clean = [
+        clean_viet_text(ln)
+        for ln in dt_lines
+        if clean_viet_text(ln)
+        and re.search(r"[A-Za-zÀ-ỹà-ỹ]", ln)
+        and not _EDITORIAL_COMMENTARY_LINE_RE.search(ln)
+    ]
 
     if not h_clean or (not pa_clean and not dn_clean and not dt_clean):
         return []
+
+    # When Hán and Phiên âm match 1:1 and Dịch nghĩa has 1 extra trailing orphan line (e.g. VPO_03 W1
+    # where Hán & PA line 4 were missed by OCR while DN & DT kept line 4), trim the orphan tail line
+    if (
+        len(h_clean) >= 2
+        and len(h_clean) == len(pa_clean)
+        and len(dn_clean) == len(h_clean) + 1
+        and all(_phonetic_line_similarity(h_clean[i], pa_clean[i]) >= 1.2 for i in range(len(h_clean)))
+    ):
+        dn_clean = dn_clean[: len(h_clean)]
+        if len(dt_clean) == len(h_clean) + 1:
+            dt_clean = dt_clean[: len(h_clean)]
+
+    # Use phonetic + meter DP when PA & DN are paired 1:1 (or DN is empty) and there is a dropped line
+    # or mid-poem shift between Hán and PA (e.g. VPO_02 W1 Nguyễn lang quy, VPO_03 W2 Trương Hiền Khanh)
+    if (
+        pa_clean
+        and (not dn_clean or len(pa_clean) == len(dn_clean))
+        and 3 <= len(h_clean) <= 30
+        and 0 <= abs(len(h_clean) - len(pa_clean)) <= 4
+    ):
+        has_shift = len(h_clean) != len(pa_clean) or sum(
+            1 for h_l, p_l in zip(h_clean, pa_clean) if _phonetic_line_similarity(h_l, p_l) < 0.0
+        ) >= 2
+        if has_shift:
+            ops = _phonetic_dp_align_verse(h_clean, pa_clean)
+            matched_cnt = sum(1 for op, _, _ in ops if op == "match")
+            if matched_cnt >= max(2, min(len(h_clean), len(pa_clean)) - 2):
+                dp_rows: List[Tuple[str, str, str, str]] = []
+                for op, hi, pj in ops:
+                    if op == "match":
+                        h_val, _ = correct_han_line_with_phien_am(h_clean[hi], pa_clean[pj])
+                        h_val = clean_han_text(h_val) or h_clean[hi]
+                        phonetic_checks.append(verify_han_phien_am_pair(h_val, pa_clean[pj]))
+                        pa_val = pa_clean[pj]
+                        dn_val = dn_clean[pj] if pj < len(dn_clean) else ""
+                        if len(dt_clean) == len(pa_clean) and pj < len(dt_clean):
+                            dt_val = dt_clean[pj]
+                        elif len(dt_clean) == len(h_clean) and hi < len(dt_clean):
+                            dt_val = dt_clean[hi]
+                        else:
+                            dt_val = ""
+                        dp_rows.append((h_val, pa_val, dn_val, dt_val))
+                    elif op == "skip_h":
+                        h_val = h_clean[hi]
+                        dt_val = dt_clean[hi] if len(dt_clean) == len(h_clean) and hi < len(dt_clean) else ""
+                        if dt_val:
+                            dp_rows.append((h_val, "", "", dt_val))
+                if dp_rows:
+                    # If dt_clean was not length-locked to h_clean or pa_clean, align it across dp_rows
+                    if dt_clean and len(dt_clean) not in (len(h_clean), len(pa_clean)):
+                        backbone = [{"han": r[0], "dich_am": r[1], "dich_nghia": r[2]} for r in dp_rows]
+                        dt_aligned = align_hvtt_facing_dich_tho(backbone, dt_clean)
+                        dp_rows = [(r[0], r[1], r[2], dt_v) for r, dt_v in zip(dp_rows, dt_aligned)]
+                    return dp_rows
 
     # Run phonetic correction / verification when line counts match 1:1
     if len(h_clean) == len(pa_clean):
@@ -777,17 +933,44 @@ def _align_prose_unit(
     if not h_cleaned_lines:
         return []
     han_joined = "".join(h_cleaned_lines)
-    han_sents = split_han_sentences(han_joined, mode="clause_or_sent")
-    if not han_sents:
-        han_sents = [han_joined]
+    raw_han_sents = split_han_sentences(han_joined, mode="clause_or_sent")
+    if not raw_han_sents:
+        raw_han_sents = [han_joined]
 
-    pa_cleaned_lines = [clean_viet_text(ln) for ln in pa_lines if clean_viet_text(ln) and re.search(r"[A-Za-zÀ-ỹà-ỹ]", ln)]
+    # Split compound Hán prose sentences (>= 16 chars with internal commas `，`) into balanced clauses (>= 6 chars)
+    han_sents: List[str] = []
+    for hs in raw_han_sents:
+        if count_han_chars(hs) >= 16 and "，" in hs:
+            parts = [p.strip() for p in re.split(r"(?<=，)", hs) if p.strip()]
+            buf_h = ""
+            for p in parts:
+                cand_h = f"{buf_h}{p}" if buf_h else p
+                if count_han_chars(cand_h) >= 6:
+                    han_sents.append(cand_h)
+                    buf_h = ""
+                else:
+                    buf_h = cand_h
+            if buf_h:
+                if han_sents:
+                    han_sents[-1] = f"{han_sents[-1]}{buf_h}"
+                else:
+                    han_sents.append(buf_h)
+        else:
+            han_sents.append(hs)
+
+    pa_cleaned_lines = [
+        clean_viet_text(ln)
+        for ln in pa_lines
+        if clean_viet_text(ln)
+        and re.search(r"[A-Za-zÀ-ỹà-ỹ]", ln)
+        and not _EDITORIAL_COMMENTARY_LINE_RE.search(ln)
+    ]
 
     # Preserve dialogue-dash sentence breaks across OCR lines before joining
     norm_dn_lines: List[str] = []
     for ln in dn_lines:
         s = ln.strip()
-        if not s:
+        if not s or _EDITORIAL_COMMENTARY_LINE_RE.search(s):
             continue
         if (
             norm_dn_lines
@@ -799,7 +982,7 @@ def _align_prose_unit(
     dn_joined = clean_viet_text("\n".join(norm_dn_lines)) if norm_dn_lines else ""
 
     dn_sents = split_viet_sentences(dn_joined, mode="sent") if dn_joined else []
-    dn_sents = [s for s in dn_sents if re.search(r"[A-Za-zÀ-ỹà-ỹ]", s)]
+    dn_sents = [s for s in dn_sents if re.search(r"[A-Za-zÀ-ỹà-ỹ]", s) and not _EDITORIAL_COMMENTARY_LINE_RE.search(s)]
     if not dn_sents and dn_joined and re.search(r"[A-Za-zÀ-ỹà-ỹ]", dn_joined):
         dn_sents = [dn_joined]
 
@@ -818,7 +1001,7 @@ def _align_prose_unit(
         dn_clause = [
             s
             for s in split_viet_sentences(dn_joined, mode="clause_or_sent")
-            if re.search(r"[A-Za-zÀ-ỹà-ỹ]", s)
+            if re.search(r"[A-Za-zÀ-ỹà-ỹ]", s) and not _EDITORIAL_COMMENTARY_LINE_RE.search(s)
         ]
         if len(dn_clause) > len(dn_sents):
             dn_sents = dn_clause
@@ -834,16 +1017,16 @@ def _align_prose_unit(
         if len(expanded) > len(dn_sents):
             dn_sents = expanded
 
-    # Step 3: for parallel prose (biền ngẫu) where Hán punctuates each parallel clause with `。`,
-    # split long Vietnamese sentences (>= 12 words) on `, ` into balanced clauses (>= 5 words each),
-    # bounded by a budget so `dn_sents` tracks `han_sents` closely without over-fragmenting.
-    if len(han_sents) >= 3 and len(dn_sents) < 0.90 * len(han_sents):
+    # Step 3: for parallel prose (biền ngẫu) where Hán punctuates each parallel clause,
+    # split long compound Vietnamese sentences (>= 16 words) on `, ` into balanced clauses (>= 5 words each),
+    # bounded by a budget so `dn_sents` tracks `han_sents` closely without splitting single 12-15 word sentences.
+    if len(han_sents) >= 3 and len(dn_sents) < 0.92 * len(han_sents):
         comma_re = re.compile(r",\s+")
         budget = int(round(1.02 * len(han_sents))) - len(dn_sents)
         if budget > 0:
             balanced: List[str] = []
             for seg in dn_sents:
-                if budget > 0 and count_viet_words(seg) >= 12 and "," in seg:
+                if budget > 0 and count_viet_words(seg) >= 16 and "," in seg:
                     parts = _split_clauses_with_min_words(seg, comma_re, min_words=5)
                     if len(parts) > 1 and (len(parts) - 1) <= budget + 2:
                         balanced.extend(parts)

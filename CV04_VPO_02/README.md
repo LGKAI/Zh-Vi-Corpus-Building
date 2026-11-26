@@ -10,7 +10,7 @@
 - **`04_dong_hang/`**: Phân đoạn bài & chùm liên hoàn từ bằng `src/work_segmenter.py`, dóng hàng 4 cột (`Hán` – `Dịch âm` – `Dịch nghĩa` – `Dịch thơ` [*Dịch theo nguyên điệu*]) kèm dòng tiêu đề mỗi bài (`src/corpus_pipeline.py`).
 
 ## 2. Thống Kê QA (Toàn Bộ Phần Ba)
-- **Tổng dòng dóng hàng**: `2.059` (`174` dòng tiêu đề, `1.321` dòng có `Dịch thơ`)
-- **Số cặp hợp lệ**: `2.059` (`MISSING = 0`, `FORMAT_ERROR = 0`, `LEFTOVER_MARKER = 0`)
-- **Cảnh báo QA**: `95` (`OMISSION: 66`, `ADDITION: 16`, `NUMBER_MISMATCH: 17`) $\rightarrow$ **Tỷ lệ lỗi: `4.61%`** (đạt $\le 30\%$)
-- **Độ phủ Hán tự**: `47.22%` | **Điểm tin cậy**: `0.50 / 1.00` (`0.5037`) | **`TSV == XLSX`**: Khớp 100%
+- **Tổng dòng dóng hàng**: `2.158` (`174` dòng tiêu đề, `1.321` dòng có `Dịch thơ`)
+- **Số cặp hợp lệ**: `2.158` (`MISSING = 0`, `FORMAT_ERROR = 0`, `LEFTOVER_MARKER = 0`)
+- **Cảnh báo QA**: `98` (`OMISSION: 74`, `ADDITION: 13`, `NUMBER_MISMATCH: 13`) $\rightarrow$ **Tỷ lệ lỗi: `4.54%`** (đạt $\le 30\%$)
+- **Độ phủ Hán tự**: `48.27%` | **Điểm tin cậy**: `0.51 / 1.00` (`0.5108`) | **`TSV == XLSX`**: Khớp 100%

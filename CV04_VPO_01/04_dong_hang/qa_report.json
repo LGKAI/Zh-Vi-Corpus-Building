@@ -1,11 +1,11 @@
 {
-  "total_pairs": 1265,
-  "valid_pairs": 1265,
-  "valid_checked_pairs": 1265,
+  "total_pairs": 1264,
+  "valid_pairs": 1264,
+  "valid_checked_pairs": 1264,
   "error_pairs": 40,
   "num_error_pairs": 40,
-  "clean_pairs": 1225,
-  "error_rate": 0.031621,
+  "clean_pairs": 1224,
+  "error_rate": 0.031646,
   "passes_acceptance_threshold": true,
   "passes_threshold_30pct": true,
   "passes_internal_target": true,
@@ -259,7 +259,7 @@
       "viet": "mới hiền nhiên không nho"
     },
     {
-      "row_index": 673,
+      "row_index": 672,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['百'] not reflected in Việt translation.",
@@ -267,7 +267,7 @@
       "viet": "Dân vui-vẻ một lòng mẽn đức, / Việc thành-thơi, ra sức sửa-sang"
     },
     {
-      "row_index": 674,
+      "row_index": 673,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 5.50 > 4.5 (22 Viet words / 4 Han chars).",
@@ -275,7 +275,7 @@
       "viet": "tăng kỳ cựu chẽ. phàm việc gì từ trước phê thì đều sửa lại cả. Bèn sửa-sang lại lầu nhạc-dương."
     },
     {
-      "row_index": 677,
+      "row_index": 676,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.43 < 0.7 (3 Viet words / 7 Han chars).",
@@ -283,7 +283,7 @@
       "viet": "Ta ngắm xem:"
     },
     {
-      "row_index": 732,
+      "row_index": 731,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
@@ -291,7 +291,7 @@
       "viet": "nều may mà thành-công"
     },
     {
-      "row_index": 759,
+      "row_index": 758,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
@@ -299,7 +299,7 @@
       "viet": "Mộ-dung Thùy. Thùy tâu"
     },
     {
-      "row_index": 820,
+      "row_index": 819,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.60 < 0.7 (6 Viet words / 10 Han chars).",
@@ -307,7 +307,7 @@
       "viet": "mà dùng thì làm hỏng việc"
     },
     {
-      "row_index": 828,
+      "row_index": 827,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.60 < 0.7 (6 Viet words / 10 Han chars).",
@@ -315,7 +315,7 @@
       "viet": "mỗi khi nói chuyện với Quát"
     },
     {
-      "row_index": 853,
+      "row_index": 852,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.56 < 0.7 (5 Viet words / 9 Han chars).",
@@ -323,7 +323,7 @@
       "viet": "sau diệt được kinh-sở."
     },
     {
-      "row_index": 859,
+      "row_index": 858,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.64 < 0.7 (7 Viet words / 11 Han chars).",
@@ -331,7 +331,7 @@
       "viet": "nghc lời không dùng được mà bỏ"
     },
     {
-      "row_index": 866,
+      "row_index": 865,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.55 < 0.7 (6 Viet words / 11 Han chars).",
@@ -339,7 +339,7 @@
       "viet": "cũng vì vua ham công-danh"
     },
     {
-      "row_index": 888,
+      "row_index": 887,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (6 Viet words / 9 Han chars).",
@@ -347,7 +347,7 @@
       "viet": "Còn bệnh nào to hơn nữ"
     },
     {
-      "row_index": 1189,
+      "row_index": 1188,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
@@ -582,7 +582,7 @@
       "viet": "mới hiền nhiên không nho"
     },
     {
-      "row_index": 673,
+      "row_index": 672,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['百'] not reflected in Việt translation.",
@@ -590,7 +590,7 @@
       "viet": "Dân vui-vẻ một lòng mẽn đức, / Việc thành-thơi, ra sức sửa-sang"
     },
     {
-      "row_index": 674,
+      "row_index": 673,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 5.50 > 4.5 (22 Viet words / 4 Han chars).",
@@ -598,7 +598,7 @@
       "viet": "tăng kỳ cựu chẽ. phàm việc gì từ trước phê thì đều sửa lại cả. Bèn sửa-sang lại lầu nhạc-dương."
     },
     {
-      "row_index": 677,
+      "row_index": 676,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.43 < 0.7 (3 Viet words / 7 Han chars).",
@@ -606,7 +606,7 @@
       "viet": "Ta ngắm xem:"
     },
     {
-      "row_index": 732,
+      "row_index": 731,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
@@ -614,7 +614,7 @@
       "viet": "nều may mà thành-công"
     },
     {
-      "row_index": 759,
+      "row_index": 758,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
@@ -622,7 +622,7 @@
       "viet": "Mộ-dung Thùy. Thùy tâu"
     },
     {
-      "row_index": 820,
+      "row_index": 819,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.60 < 0.7 (6 Viet words / 10 Han chars).",
@@ -630,7 +630,7 @@
       "viet": "mà dùng thì làm hỏng việc"
     },
     {
-      "row_index": 828,
+      "row_index": 827,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.60 < 0.7 (6 Viet words / 10 Han chars).",
@@ -638,7 +638,7 @@
       "viet": "mỗi khi nói chuyện với Quát"
     },
     {
-      "row_index": 853,
+      "row_index": 852,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.56 < 0.7 (5 Viet words / 9 Han chars).",
@@ -646,7 +646,7 @@
       "viet": "sau diệt được kinh-sở."
     },
     {
-      "row_index": 859,
+      "row_index": 858,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.64 < 0.7 (7 Viet words / 11 Han chars).",
@@ -654,7 +654,7 @@
       "viet": "nghc lời không dùng được mà bỏ"
     },
     {
-      "row_index": 866,
+      "row_index": 865,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.55 < 0.7 (6 Viet words / 11 Han chars).",
@@ -662,7 +662,7 @@
       "viet": "cũng vì vua ham công-danh"
     },
     {
-      "row_index": 888,
+      "row_index": 887,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (6 Viet words / 9 Han chars).",
@@ -670,7 +670,7 @@
       "viet": "Còn bệnh nào to hơn nữ"
     },
     {
-      "row_index": 1189,
+      "row_index": 1188,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",

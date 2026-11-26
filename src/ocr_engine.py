@@ -547,15 +547,45 @@ def reconcile_han_viet_items(
 
     bkey = BOOK_ALIAS_TO_LAYOUT.get(book_type.upper().strip(), book_type.upper().strip())
 
-    # 1. Keep primary Hán candidates without mixed ASCII letters/digits
-    cand_han: List[Dict[str, Any]] = []
+    # 1. Keep primary Hán candidates without mixed ASCII letters/digits, and resolve vertical
+    #    column false-positive boxes (height >= 1.8 * width with >= 3 CJK chars, e.g. p0019 `極馬屋幕`)
+    raw_primary_han: List[Dict[str, Any]] = []
+    vertical_col_boxes: List[Dict[str, Any]] = []
     for hit in han_items:
         ht = unicodedata.normalize("NFC", str(hit.get("text", "")).strip())
         if not ht or not _is_primary_han_line(ht):
             continue
         if "[MASK]" not in ht and re.search(r"[A-Za-z0-9]", ht):
             continue
-        cand_han.append(dict(hit))
+        hx1, hy1, hx2, hy2 = _box_bounds(hit)
+        hw = max(1.0, hx2 - hx1)
+        hh = max(1.0, hy2 - hy1)
+        cjk_cnt, _ = _count_cjk_and_latin(ht)
+        if hx2 > 0.0 and hy2 > 0.0 and hh >= 1.8 * hw and cjk_cnt >= 3:
+            vertical_col_boxes.append(dict(hit))
+        else:
+            raw_primary_han.append(dict(hit))
+
+    for vbox in vertical_col_boxes:
+        vt_chars = [ch for ch in str(vbox.get("text", "")).strip() if _CJK_CHAR_RE.match(ch)]
+        vx1, vy1, vx2, vy2 = _box_bounds(vbox)
+        if not vt_chars:
+            continue
+        band_h = (vy2 - vy1) / float(len(vt_chars))
+        for idx_ch, ch in enumerate(vt_chars):
+            ch_yc = vy1 + (idx_ch + 0.5) * band_h
+            for hline in raw_primary_han:
+                lx1, ly1, lx2, ly2 = _box_bounds(hline)
+                lyc = 0.5 * (ly1 + ly2)
+                l_txt = str(hline.get("text", "")).strip()
+                l_cjk, _ = _count_cjk_and_latin(l_txt)
+                if abs(lyc - ch_yc) <= max(28.0, 0.6 * band_h) and -45.0 <= (lx1 - vx2) <= 60.0 and l_cjk in (4, 6):
+                    if not l_txt.startswith(ch):
+                        hline["text"] = ch + l_txt
+                        hline["box_xyxy"] = [min(vx1, lx1), min(vy1, ly1), lx2, ly2]
+                    break
+
+    cand_han: List[Dict[str, Any]] = raw_primary_han
 
     # 2. Filter out word-level Hán hallucinations sitting inside genuine Vietnamese lines
     filt_han: List[Dict[str, Any]] = []

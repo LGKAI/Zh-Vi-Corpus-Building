@@ -52,9 +52,12 @@ _ALL_LATIN_CHARS = "".join(
     if chr(cp).isalpha()
 )
 
-# OCR-corrupted parenthesized footnote markers: (?), (??), ('), (""), (%), (1?), (1%), (1*), (s), (t), (l)
+# OCR-corrupted parenthesized footnote markers and inline editorial phonetic glosses:
+# (?), (??), ('), (""), (%), (-), (1?), (1%), (1*), (?8), (3T), (â?), (s), (t), (l), (o), (ai), (kim), (son), (vong), (sái)
 _OCR_PAREN_NOISE_RE = re.compile(
-    r"\(\s*(?:\?{1,3}|'{1,2}|\"{1,2}|’{1,2}|“{1,2}|”{1,2}|%+|\d{1,2}\s*[*?%]+|[stl])\s*\)"
+    r"\(\s*(?:\?{1,3}|'{1,2}|\"{1,2}|’{1,2}|“{1,2}|”{1,2}|[-–—]+|%+|\d{1,2}\s*[*?%A-Za-z]+|"
+    r"[*?%A-Za-zÀ-ỹà-ỹ]{1,2}\s*[\d?%]+|[stlo]|ai|kim|son|sơn|vong|sái)\s*\)",
+    re.IGNORECASE,
 )
 
 # Attached trailing superscript digits after lowercase Vietnamese letters (e.g., đế5 -> đế, hương2. -> hương.)
@@ -63,8 +66,45 @@ _TRAILING_SUPERSCRIPT_DIGIT_RE = re.compile(
     rf"([{_LOWER_LATIN_CHARS}])\d{{1,2}}(?=[,.;:!?'\"”’)\]\s]|$)"
 )
 
-# Standalone OCR variant markers like `1?` or `4%` (preserves pure numbers like `45 tuổi`)
+# Standalone OCR variant markers like `1?`, `4%`, or inline footnote number `1.` between lowercase words
 _OCR_NUM_MARKER_RE = re.compile(r"(?<!\S)\d{1,2}[%?]+(?=\s|[,.;:]|$)")
+_INLINE_DOT_FOOTNOTE_RE = re.compile(
+    rf"(?<=[{_LOWER_LATIN_CHARS}])\s+\d{{1,2}}\.(?=\s+[{_LOWER_LATIN_CHARS}])"
+)
+_INLINE_OCR_GARBAGE_TOKENS_RE = re.compile(
+    r"(?:,\s*7uên\s+lên\s+sịx\b|\b7uên\s+lên\s+sịx\b|\bPOLITING\b|\bJITTVVNII\b|^\s*Ex\s+(?=[A-ZĐÀ-Ỹ]))"
+)
+# Leading/trailing guillemet/dash OCR misreads (`a `, `u `, ` n`, ` 1 n`) in HVTT verse lines
+_HVTT_LEADING_QUOTE_NOISE_RE = re.compile(
+    r"(?:^|(?<=/)\s*)(?:[-–—]\s*)?[au]\s+(?=[A-ZĐÀ-Ỹa-zà-ỹ]{2,})"
+)
+_HVTT_TRAILING_QUOTE_NOISE_RE = re.compile(
+    r"\s+(?:1\s+n|n|1)(?=\s*(?:$|/))"
+)
+# Deterministic VietOCR print-font confusions on classical anthology scans
+_OCR_LEXICAL_FIXES: tuple[tuple[re.Pattern[str], str], ...] = (
+    (re.compile(r"\bGŨI\s+NHÀ\s+SƯ\b"), "GỬI NHÀ SƯ"),
+    (re.compile(r"\bcồng\s+thông\b"), "cổng thông"),
+    (re.compile(r"\blăng\s+lê\b"), "lặng lẽ"),
+    (re.compile(r"\bthủ\s+vi\b"), "thú vị"),
+    (re.compile(r"\bkhông\s+ai\s+bay\b"), "không ai hay"),
+    (re.compile(r"\bchẳng\s+ái\s+hay\b"), "chẳng ai hay"),
+    (re.compile(r"\bcho\s+sử\s+vui\b"), "cho sư vui"),
+    (re.compile(r"\bĐầu\s+ngira\b"), "Đầu ngựa"),
+    (re.compile(r"\bmãy\s+lời\b"), "mấy lời"),
+    (re.compile(r"\bmẽn-phục\b"), "mến-phục"),
+    (re.compile(r"\bNước\s+mém\s+yêu\b"), "Nước mềm yếu"),
+    (re.compile(r"\bđùa-rõn\b"), "đùa-giỡn"),
+    (re.compile(r"\bđùa\s+rõn\b"), "đùa giỡn"),
+    (re.compile(r"\bbắt\s+nhăn\s+mãnh\b"), "bất nhẫn mãnh"),
+    (re.compile(r"\bKhông\s+nữ\s+mạnh\b"), "Không nỡ mạnh"),
+    (re.compile(r"\bĐầu\s+mây\s+tháng\s+rồi\s+chết\b"), "Đau mấy tháng rồi chết"),
+    (re.compile(r"\bcó\s+thể\s+lầy\s+khoan\b"), "có thể lấy khoan"),
+    (re.compile(r"\bbãt\s+cập\b"), "bất cập"),
+    (re.compile(r"\bMạc\s+45\s+không\b"), "Mạc không"),
+    (re.compile(r"\bĐịa\s+noãn\s+số\s+sầu\b"), "Địa noãn sầu"),
+    (re.compile(r"\bthanh\s+5\s+đám\b"), "thanh đàm"),
+)
 
 # Mid-sentence OCR `?` replacing footnote superscripts:
 # - `con hiếu?,` -> `con hiếu,`
@@ -286,14 +326,20 @@ def clean_viet_text(text: str) -> str:
 
     # Remove section labels, footnote markers, and OCR superscript/marker noise
     out = _VIET_SECTION_LABEL_RE.sub("", out)
+    out = _INLINE_OCR_GARBAGE_TOKENS_RE.sub("", out)
     out = _OCR_PAREN_NOISE_RE.sub("", out)
     out = _FOOTNOTE_BRACKET_RE.sub("", out)
     out = _FOOTNOTE_STAR_RE.sub("", out)
     out = _SUPERSCRIPTS_RE.sub("", out)
     out = _OCR_NUM_MARKER_RE.sub("", out)
+    out = _INLINE_DOT_FOOTNOTE_RE.sub("", out)
     out = _TRAILING_SUPERSCRIPT_DIGIT_RE.sub(r"\1", out)
     out = _OCR_Q_BEFORE_PUNCT_RE.sub("", out)
     out = _OCR_Q_MID_SENTENCE_RE.sub("", out)
+    out = _HVTT_LEADING_QUOTE_NOISE_RE.sub("", out)
+    out = _HVTT_TRAILING_QUOTE_NOISE_RE.sub("", out)
+    for pat, repl in _OCR_LEXICAL_FIXES:
+        out = pat.sub(repl, out)
 
     # Remove any stray CJK characters that leaked into the Vietnamese side
     out = _CJK_IDEOGRAPH_RE.sub("", out)
