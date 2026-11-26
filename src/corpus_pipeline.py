@@ -407,6 +407,50 @@ _TRANSLATOR_SIG_LINE_RE = re.compile(
     r"DO\s*VAN\s*HY|DU\s*VAN\s*HY|NGUYEN\s*DUC\s*VAN|TRAN\s*LE\s*SANG|HOANG\s*LE)",
     flags=re.IGNORECASE,
 )
+_NATIVE_VIET_PROSE_CUE_RE = re.compile(
+    r"\b(?:những|nhưng|chẳng|không|được|trong|ngoài|trước|dưới|cùng|người|chúng|"
+    r"nước|trời|biển|đường|thuyền|chiếc|chốn|khiến|rằng|mừng|buồn|thấy|nhìn|nghe|"
+    r"của|cho|với|này|kia|đây|đấy|ấy|sao|nào|đâu|mấy|lời|nỗi|niềm|bóng|giọt|cánh|"
+    r"ngọn|mảnh|đám|suốt|khắp|vẫn|chưa|đang|rồi|lại|cũng|rất|lắm|cha\s+mẹ|vợ\s+con)\b",
+    flags=re.IGNORECASE,
+)
+
+
+def _recover_unlabeled_dich_nghia(
+    pa_lines: List[str],
+    dn_lines: List[str],
+    dt_lines: List[str],
+) -> Tuple[List[str], List[str]]:
+    """Recover `dn_lines` when OCR missed the `Dịch nghĩa:` label and merged it into `pa_lines`."""
+    if dn_lines or not pa_lines:
+        return pa_lines, dn_lines
+
+    def _is_native_viet_line(ln: str) -> bool:
+        return len(_NATIVE_VIET_PROSE_CUE_RE.findall(ln)) >= 1
+
+    flags = [_is_native_viet_line(ln) for ln in pa_lines]
+    n = len(pa_lines)
+
+    # Case 1: `Phiên âm:` was missed and `pa_lines` is entirely modern Vietnamese Dịch nghĩa alongside `dt_lines`
+    if dt_lines and n >= 4 and sum(flags) >= 0.65 * n:
+        return [], list(pa_lines)
+
+    # Case 2: `pa_lines` has Sino-Vietnamese Phiên âm prefix followed by modern Vietnamese Dịch nghĩa suffix
+    if n >= 6:
+        best_k: Optional[int] = None
+        best_score = 0.0
+        for k in range(max(2, n // 4), min(n - 2, (3 * n) // 4 + 2)):
+            prefix_native_ratio = sum(flags[:k]) / float(k)
+            suffix_native_ratio = sum(flags[k:]) / float(n - k)
+            if prefix_native_ratio <= 0.30 and suffix_native_ratio >= 0.65:
+                score = suffix_native_ratio - prefix_native_ratio - 0.15 * abs(k - (n - k)) / float(n)
+                if score > best_score:
+                    best_score = score
+                    best_k = k
+        if best_k is not None:
+            return list(pa_lines[:best_k]), list(pa_lines[best_k:])
+
+    return pa_lines, dn_lines
 
 
 def _fold_ascii_simple(text: str) -> str:
@@ -430,6 +474,8 @@ def _is_tltvn_han_title_line(text: str) -> bool:
 def _is_tltvn_viet_title_line(text: str, max_words: int = 10) -> bool:
     s = clean_viet_text(text)
     if not s or _VIET_SENT_PUNCT_RE.search(s):
+        return False
+    if len(re.findall(r"[A-Za-zÀ-ỹà-ỹ]", s)) < 2:
         return False
     return 1 <= count_viet_words(s) <= max_words
 
@@ -991,6 +1037,8 @@ def _align_sequential_book_from_ocr(
                 if pa_meta:
                     pa_lines = [m["text"] for m in pa_meta if int(m.get("page", 0)) <= 24]
 
+            pa_lines, dn_lines = _recover_unlabeled_dich_nghia(pa_lines, dn_lines, dt_lines)
+
             # Recover unextracted work number + ALL-CAPS pa_title on prose works (e.g. W06, W07, W11)
             if not pa_title and pa_lines:
                 if re.match(r"^\d{1,2}$", pa_lines[0].strip()):
@@ -1078,6 +1126,12 @@ def _align_sequential_book_from_ocr(
             continue
 
         # Single-work TLTVN
+        pa_lines, dn_lines = _recover_unlabeled_dich_nghia(pa_lines, dn_lines, dt_lines)
+        while pa_lines and not re.search(r"[A-Za-zÀ-ỹà-ỹ]{2,}", pa_lines[0]):
+            pa_lines.pop(0)
+        while dn_lines and not re.search(r"[A-Za-zÀ-ỹà-ỹ]{2,}", dn_lines[0]):
+            dn_lines.pop(0)
+
         if not han_title_raw and han_lines and _is_tltvn_han_title_line(han_lines[0]):
             first_h = han_lines.pop(0).strip()
             if han_lines and len(han_lines) >= 2 and _is_tltvn_han_title_line(han_lines[0]):

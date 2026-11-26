@@ -28,6 +28,7 @@ from src.ocr_engine import (
     _word_count,
     classify_section_header,
     deduplicate_overlapping_items,
+    reconcile_han_viet_items,
 )
 
 
@@ -260,9 +261,16 @@ def _load_work3_supplement_paragraphs(workspace_root: Optional[Path] = None) -> 
     if workspace_root is not None:
         candidates.append(
             Path(workspace_root)
+            / "CV04_VPO_03/01_nguon/bai_03_thien_tong_chi_nam_tu_dich_nghia.txt"
+        )
+        candidates.append(
+            Path(workspace_root)
             / "deliverables/TVLT2_ThoVanLyTran2/01_nguon/bai_03_thien_tong_chi_nam_tu_dich_nghia.txt"
         )
     repo_root = Path(__file__).resolve().parent.parent
+    candidates.append(
+        repo_root / "CV04_VPO_03/01_nguon/bai_03_thien_tong_chi_nam_tu_dich_nghia.txt"
+    )
     candidates.append(
         repo_root / "deliverables/TVLT2_ThoVanLyTran2/01_nguon/bai_03_thien_tong_chi_nam_tu_dich_nghia.txt"
     )
@@ -299,6 +307,8 @@ def _preprocess_tvlt2_page_items(
     han_raw = page.get("han_items") or []
     viet_raw = page.get("viet_items") or []
     pw, ph, is_real_scan = _page_geometry(page, list(han_raw) + list(viet_raw))
+    if is_real_scan:
+        han_raw, viet_raw = reconcile_han_viet_items(han_raw, viet_raw, "TVLT2", pw)
 
     def _keep(it: Dict[str, Any], is_han: bool) -> bool:
         txt = _nfc(it.get("text", ""))
@@ -756,6 +766,14 @@ def _segment_tvlt2(
                 elif state == "PA":
                     if not current_work.pa_title and not current_work.pa_lines and _is_all_caps_title(txt):
                         current_work.pa_title = txt
+                    elif (
+                        len(current_work.pa_lines) >= 2
+                        and _is_all_caps_title(txt)
+                        and not current_work.dn_lines
+                    ):
+                        # Secondary ALL-CAPS title after Phiên âm signals missed `DỊCH NGHĨA:` header
+                        state = "DICH_NGHIA"
+                        current_work.dn_title = txt
                     else:
                         current_work.pa_lines.append(txt)
                         current_work.metadata.setdefault("_pa_meta", []).append(
@@ -879,6 +897,10 @@ def _preprocess_tltvn_page_items(
     han_raw = deduplicate_overlapping_items(_sort_items_reading_order(page.get("han_items") or []))
     viet_raw = deduplicate_overlapping_items(_sort_items_reading_order(page.get("viet_items") or []))
     pw, ph, is_real_scan = _page_geometry(page, list(han_raw) + list(viet_raw))
+    if is_real_scan:
+        han_raw, viet_raw = reconcile_han_viet_items(han_raw, viet_raw, "TLTVN", pw)
+        han_raw = deduplicate_overlapping_items(_sort_items_reading_order(han_raw))
+        viet_raw = deduplicate_overlapping_items(_sort_items_reading_order(viet_raw))
 
     viet_clean: List[Dict[str, Any]] = []
     for i, it in enumerate(viet_raw):
@@ -1156,6 +1178,19 @@ def _segment_tltvn(pages: Sequence[Dict[str, Any]]) -> List[WorkRecord]:
                 elif is_tune and active_sub_label["PA"]:
                     # Sub-poem tune subtitle (e.g. `II.` followed by `Vọng Giang Nam`)
                     continue
+                elif (
+                    len(current_work.pa_lines) >= 4
+                    and not current_work.dn_lines
+                    and not active_sub_label["PA"]
+                    and (
+                        _is_all_caps_title(txt)
+                        or folded.upper().startswith("DIEU ")
+                        or folded.upper().startswith("(DIEU ")
+                    )
+                ):
+                    # Missed `Dịch nghĩa:` header followed by translated title or `(Điệu ...)`
+                    state = "DICH_NGHIA"
+                    current_work.dn_title = txt
                 else:
                     current_work.pa_lines.append(txt)
                     sub_buckets["pa"].append((active_sub_label["PA"], txt))

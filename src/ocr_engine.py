@@ -515,6 +515,183 @@ def _sort_items_reading_order(items: Sequence[Dict[str, Any]], y_tolerance: floa
     return [t[2] for t in annotated]
 
 
+_VIET_DIACRITIC_CHARS = frozenset(
+    "àáảãạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵđ"
+    "ÀÁẢÃẠĂẰẮẲẴẶÂẦẤẨẪẬÈÉẺẼẸÊỀẾỂỄỆÌÍỈĨỊÒÓỎÕỌÔỒỐỔỖỘƠỜỚỞỠỢÙÚỦŨỤƯỪỨỬỮỰỲÝỶỸỴĐ"
+)
+_VIET_LOWER_DIACRITIC_CHARS = frozenset(
+    "àáảãạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵđ"
+)
+_MULTI_LETTER_WORD_RE = re.compile(r"[A-Za-zÀ-ỹà-ỹ]{2,}")
+
+
+def reconcile_han_viet_items(
+    han_items: Sequence[Dict[str, Any]],
+    viet_items: Sequence[Dict[str, Any]],
+    book_type: str = "TVLT2",
+    page_width: float = 1590.0,
+) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+    """Reconcile overlapping Hán and Việt OCR boxes on real scan pages.
+
+    1. Drops noisy Hán boxes that mix ASCII letters/digits with CJK (word-box hallucinations).
+    2. Filters out word-level Hán false positives sitting inside genuine Vietnamese lines.
+    3. Merges horizontally fragmented Hán boxes on the same Y-line within the same column.
+    4. Filters out VietOCR garbage hallucinations sitting on genuine Hán lines.
+    """
+    has_real_coords = any(
+        _box_bounds(it)[2] > 0.0 and _box_bounds(it)[3] > 0.0
+        for it in list(han_items) + list(viet_items)
+    )
+    if not has_real_coords:
+        return list(han_items), list(viet_items)
+
+    bkey = BOOK_ALIAS_TO_LAYOUT.get(book_type.upper().strip(), book_type.upper().strip())
+
+    # 1. Keep primary Hán candidates without mixed ASCII letters/digits
+    cand_han: List[Dict[str, Any]] = []
+    for hit in han_items:
+        ht = unicodedata.normalize("NFC", str(hit.get("text", "")).strip())
+        if not ht or not _is_primary_han_line(ht):
+            continue
+        if "[MASK]" not in ht and re.search(r"[A-Za-z0-9]", ht):
+            continue
+        cand_han.append(dict(hit))
+
+    # 2. Filter out word-level Hán hallucinations sitting inside genuine Vietnamese lines
+    filt_han: List[Dict[str, Any]] = []
+    for hit in cand_han:
+        ht = unicodedata.normalize("NFC", str(hit.get("text", "")).strip())
+        cjk_cnt, _ = _count_cjk_and_latin(ht)
+        hx1, hy1, hx2, hy2 = _box_bounds(hit)
+        if hx2 <= 0.0 and hy2 <= 0.0:
+            filt_han.append(hit)
+            continue
+        hw = max(1.0, hx2 - hx1)
+        hyc = 0.5 * (hy1 + hy2)
+        h_conf = float(hit.get("confidence", 0.8) or 0.8)
+        is_fake = False
+        for vit in viet_items:
+            vt = unicodedata.normalize("NFC", str(vit.get("text", "")).strip())
+            if not vt or _is_primary_han_line(vt):
+                continue
+            vx1, vy1, vx2, vy2 = _box_bounds(vit)
+            vw = max(1.0, vx2 - vx1)
+            vyc = 0.5 * (vy1 + vy2)
+            if abs(hyc - vyc) > 20.0:
+                continue
+            if min(hx2, vx2) - max(hx1, vx1) < 0.25 * hw:
+                continue
+            v_conf = float(vit.get("confidence", 0.8) or 0.8)
+            has_diac = any(c in _VIET_DIACRITIC_CHARS for c in vt)
+            has_lower_diac = any(c in _VIET_LOWER_DIACRITIC_CHARS for c in vt)
+            multi_words = len(_MULTI_LETTER_WORD_RE.findall(vt))
+            if hw < 0.55 * vw and multi_words >= 3 and (has_lower_diac or (has_diac and v_conf >= 0.78)):
+                is_fake = True
+                break
+            if cjk_cnt <= 3 and has_diac and multi_words >= 2 and v_conf >= h_conf + 0.08 and v_conf >= 0.75:
+                is_fake = True
+                break
+            if cjk_cnt == 1 and multi_words >= 2 and (has_diac or v_conf >= 0.72):
+                is_fake = True
+                break
+        if not is_fake:
+            filt_han.append(hit)
+
+    # 3. Cluster and merge horizontally split pure-CJK Hán boxes on the same Y-line
+    filt_han.sort(key=lambda it: 0.5 * (_box_bounds(it)[1] + _box_bounds(it)[3]))
+    y_clusters: List[List[Dict[str, Any]]] = []
+    for hit in filt_han:
+        hx1, hy1, hx2, hy2 = _box_bounds(hit)
+        if hx2 <= 0.0 and hy2 <= 0.0:
+            y_clusters.append([dict(hit)])
+            continue
+        hyc = 0.5 * (hy1 + hy2)
+        placed = False
+        for cl in reversed(y_clusters[-4:]):
+            c0 = cl[0]
+            cx1, cy1, cx2, cy2 = _box_bounds(c0)
+            if cx2 <= 0.0 and cy2 <= 0.0:
+                continue
+            cyc = sum(0.5 * (_box_bounds(x)[1] + _box_bounds(x)[3]) for x in cl) / len(cl)
+            if abs(hyc - cyc) <= 18.0:
+                cl.append(dict(hit))
+                placed = True
+                break
+        if not placed:
+            y_clusters.append([dict(hit)])
+
+    merged_han: List[Dict[str, Any]] = []
+    for cl in y_clusters:
+        cl.sort(key=lambda it: _box_bounds(it)[0])
+        for hit in cl:
+            hx1, hy1, hx2, hy2 = _box_bounds(hit)
+            if not merged_han or (hx2 <= 0.0 and hy2 <= 0.0):
+                merged_han.append(dict(hit))
+                continue
+            prev = merged_han[-1]
+            px1, py1, px2, py2 = _box_bounds(prev)
+            if px2 <= 0.0 and py2 <= 0.0:
+                merged_han.append(dict(hit))
+                continue
+            pyc = 0.5 * (py1 + py2)
+            hyc = 0.5 * (hy1 + hy2)
+            same_col = True
+            if bkey == "TVLT2":
+                if (px2 <= 0.52 * page_width and hx1 >= 0.48 * page_width) or (
+                    hx2 <= 0.52 * page_width and px1 >= 0.48 * page_width
+                ):
+                    same_col = False
+            max_gap = 260.0 if bkey == "HVTT" else 160.0
+            if abs(hyc - pyc) <= 18.0 and same_col and -35.0 <= (hx1 - px2) <= max_gap:
+                new_box = [min(px1, hx1), min(py1, hy1), max(px2, hx2), max(py2, hy2)]
+                prev["text"] = str(prev.get("text", "")).strip() + str(hit.get("text", "")).strip()
+                prev["box_xyxy"] = new_box
+                prev["bbox"] = [
+                    [new_box[0], new_box[1]],
+                    [new_box[2], new_box[1]],
+                    [new_box[2], new_box[3]],
+                    [new_box[0], new_box[3]],
+                ]
+                prev["confidence"] = max(
+                    float(prev.get("confidence", 0.8) or 0.8),
+                    float(hit.get("confidence", 0.8) or 0.8),
+                )
+            else:
+                merged_han.append(dict(hit))
+
+    # 4. Drop VietOCR garbage hallucinations sitting on genuine merged Hán boxes
+    clean_viet: List[Dict[str, Any]] = []
+    for vit in viet_items:
+        vt = unicodedata.normalize("NFC", str(vit.get("text", "")).strip())
+        if not vt:
+            continue
+        vx1, vy1, vx2, vy2 = _box_bounds(vit)
+        if vx2 <= 0.0 and vy2 <= 0.0:
+            clean_viet.append(vit)
+            continue
+        vw = max(1.0, vx2 - vx1)
+        vyc = 0.5 * (vy1 + vy2)
+        multi_words = len(_MULTI_LETTER_WORD_RE.findall(vt))
+        is_fake_v = False
+        for hit in merged_han:
+            ht = unicodedata.normalize("NFC", str(hit.get("text", "")).strip())
+            cjk_cnt, _ = _count_cjk_and_latin(ht)
+            if cjk_cnt < 1:
+                continue
+            if cjk_cnt == 1 and multi_words >= 1:
+                continue
+            hx1, hy1, hx2, hy2 = _box_bounds(hit)
+            hw = max(1.0, hx2 - hx1)
+            hyc = 0.5 * (hy1 + hy2)
+            if abs(hyc - vyc) <= 18.0 and (min(hx2, vx2) - max(hx1, vx1)) >= 0.35 * min(hw, vw):
+                is_fake_v = True
+                break
+        if not is_fake_v:
+            clean_viet.append(vit)
+
+    return merged_han, clean_viet
+
+
 def group_layout_blocks(
     han_items: Sequence[Dict[str, Any]],
     viet_items: Sequence[Dict[str, Any]],
@@ -543,8 +720,9 @@ def group_layout_blocks(
         into `dich_tho_lines` and stopping only at true apparatus headers (`KHẢO ĐÍNH`, `CHÚ THÍCH`).
     """
     book_key = BOOK_ALIAS_TO_LAYOUT.get(book_type.upper().strip(), book_type.upper().strip())
-    sorted_han = deduplicate_overlapping_items(_sort_items_reading_order(han_items))
-    sorted_viet = deduplicate_overlapping_items(_sort_items_reading_order(viet_items))
+    rec_han, rec_viet = reconcile_han_viet_items(han_items, viet_items, book_key, float(page_width))
+    sorted_han = deduplicate_overlapping_items(_sort_items_reading_order(rec_han))
+    sorted_viet = deduplicate_overlapping_items(_sort_items_reading_order(rec_viet))
 
     # 1. HVTT: odd title/bio/facing-verse pages + even 3-line interlinear pages
     if book_key == "HVTT":

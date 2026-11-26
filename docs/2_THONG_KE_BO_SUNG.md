@@ -28,4 +28,4 @@ Báo cáo rà soát cuốn *Thể loại từ Việt Nam thời trung đại* (`
 | 4 | *Cổ Duệ từ* — Nguyễn Phúc Miên Thẩm | *Từ học quý san* (1936) | `572–596` / `579–604` | `6/114` bài từ + Bạt | `108` bài từ (`98` đề mục) |
 
 ## 3. Trạng Thái Hoàn Thành Toàn Nhóm (`main`)
-Cả 3 bộ sách (`CV04_VPO_01`: `1.377`, `CV04_VPO_02`: `1.935`, `CV04_VPO_03`: `4.882`) đã hợp nhất đủ 4 thành viên (`1.584` trang OCR GPU $\rightarrow$ **`8.194` cặp hợp lệ**, vượt chỉ tiêu $\ge 8.000$ cặp, lỗi QA tổng **`8.21%`**, `MISSING = 0`, `TSV == XLSX = 100%`).
+Cả 3 bộ sách (`CV04_VPO_01`: `1.265`, `CV04_VPO_02`: `2.059`, `CV04_VPO_03`: `4.798`) đã hợp nhất đủ 4 thành viên (`1.584` trang OCR GPU $\rightarrow$ **`8.122` cặp hợp lệ**, vượt chỉ tiêu $\ge 8.000$ cặp, lỗi QA tổng **`6.43%`**, `MISSING = 0`, `TSV == XLSX = 100%`).
