@@ -21,46 +21,46 @@
       "bbox": [
         [
           180,
-          185
+          172
         ],
         [
-          1620,
-          185
+          950,
+          172
         ],
         [
-          1620,
-          230
+          950,
+          214
         ],
         [
           180,
-          230
+          214
         ]
       ],
       "bbox_original": [
         [
           180,
-          306
+          293
         ],
         [
-          1620,
-          306
+          950,
+          293
         ],
         [
-          1620,
-          351
+          950,
+          335
         ],
         [
           180,
-          351
+          335
         ]
       ],
       "box_xyxy": [
         180,
-        185,
-        1620,
-        230
+        172,
+        950,
+        214
       ],
-      "text": "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
+      "text": "Long thành giai nhân",
       "confidence": 0.985,
       "role": "phien_am"
     },
@@ -69,47 +69,47 @@
       "bbox": [
         [
           180,
-          240
+          224
         ],
         [
-          1620,
-          240
+          950,
+          224
         ],
         [
-          1620,
-          290
+          950,
+          268
         ],
         [
           180,
-          290
+          268
         ]
       ],
       "bbox_original": [
         [
           180,
-          361
+          345
         ],
         [
-          1620,
-          361
+          950,
+          345
         ],
         [
-          1620,
-          411
+          950,
+          389
         ],
         [
           180,
-          411
+          389
         ]
       ],
       "box_xyxy": [
         180,
-        240,
-        1620,
-        290
+        224,
+        950,
+        268
       ],
-      "text": "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :",
-      "confidence": 0.978,
+      "text": "Người đẹp Thăng-Long",
+      "confidence": 0.98,
       "role": "dich_nghia_gloss"
     },
     {
@@ -117,47 +117,47 @@
       "bbox": [
         [
           180,
-          375
+          352
         ],
         [
-          1620,
-          375
+          950,
+          352
         ],
         [
-          1620,
-          420
+          950,
+          394
         ],
         [
           180,
-          420
+          394
         ]
       ],
       "bbox_original": [
         [
           180,
-          496
+          473
         ],
         [
-          1620,
-          496
+          950,
+          473
         ],
         [
-          1620,
-          541
+          950,
+          515
         ],
         [
           180,
-          541
+          515
         ]
       ],
       "box_xyxy": [
         180,
-        375,
-        1620,
-        420
+        352,
+        950,
+        394
       ],
-      "text": "Ngã tử, tử tất vi chính.",
-      "confidence": 0.986,
+      "text": "Bất ký danh tự",
+      "confidence": 0.985,
       "role": "phien_am"
     },
     {
@@ -165,46 +165,46 @@
       "bbox": [
         [
           180,
-          430
+          404
         ],
         [
-          1620,
-          430
+          950,
+          404
         ],
         [
-          1620,
-          475
+          950,
+          448
         ],
         [
           180,
-          475
+          448
         ]
       ],
       "bbox_original": [
         [
           180,
-          551
+          525
         ],
         [
-          1620,
-          551
+          950,
+          525
         ],
         [
-          1620,
-          596
+          950,
+          569
         ],
         [
           180,
-          596
+          569
         ]
       ],
       "box_xyxy": [
         180,
-        430,
-        1620,
-        475
+        404,
+        950,
+        448
       ],
-      "text": "Ta chết, con sẽ giữ chính-quyền.",
+      "text": "Họ tên không rõ",
       "confidence": 0.98,
       "role": "dich_nghia_gloss"
     },
@@ -213,47 +213,47 @@
       "bbox": [
         [
           180,
-          555
+          532
         ],
         [
-          1620,
-          555
+          950,
+          532
         ],
         [
-          1620,
-          600
+          950,
+          574
         ],
         [
           180,
-          600
+          574
         ]
       ],
       "bbox_original": [
         [
           180,
-          676
+          653
         ],
         [
-          1620,
-          676
+          950,
+          653
         ],
         [
-          1620,
-          721
+          950,
+          695
         ],
         [
           180,
-          721
+          695
         ]
       ],
       "box_xyxy": [
         180,
-        555,
-        1620,
-        600
+        532,
+        950,
+        574
       ],
-      "text": "Duy hữu đức giả, năng dĩ khoan phục dân,",
-      "confidence": 0.984,
+      "text": "Độc thiện huyền cầm",
+      "confidence": 0.985,
       "role": "phien_am"
     },
     {
@@ -261,47 +261,47 @@
       "bbox": [
         [
           180,
-          610
+          584
         ],
         [
-          1620,
-          610
+          950,
+          584
         ],
         [
-          1620,
-          655
+          950,
+          628
         ],
         [
           180,
-          655
+          628
         ]
       ],
       "bbox_original": [
         [
           180,
-          731
+          705
         ],
         [
-          1620,
-          731
+          950,
+          705
         ],
         [
-          1620,
-          776
+          950,
+          749
         ],
         [
           180,
-          776
+          749
         ]
       ],
       "box_xyxy": [
         180,
-        610,
-        1620,
-        655
+        584,
+        950,
+        628
       ],
-      "text": "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
-      "confidence": 0.976,
+      "text": "Tiếng đàn não nùng",
+      "confidence": 0.98,
       "role": "dich_nghia_gloss"
     },
     {
@@ -309,47 +309,47 @@
       "bbox": [
         [
           180,
-          735
+          712
         ],
         [
-          1620,
-          735
+          950,
+          712
         ],
         [
-          1620,
-          780
+          950,
+          754
         ],
         [
           180,
-          780
+          754
         ]
       ],
       "bbox_original": [
         [
           180,
-          856
+          833
         ],
         [
-          1620,
-          856
+          950,
+          833
         ],
         [
-          1620,
-          901
+          950,
+          875
         ],
         [
           180,
-          901
+          875
         ]
       ],
       "box_xyxy": [
         180,
-        735,
-        1620,
-        780
+        712,
+        950,
+        754
       ],
-      "text": "Kỳ thứ mạc như mãnh.",
-      "confidence": 0.987,
+      "text": "Cử thành chi nhân dĩ Cầm danh",
+      "confidence": 0.985,
       "role": "phien_am"
     },
     {
@@ -357,47 +357,47 @@
       "bbox": [
         [
           180,
-          790
+          764
         ],
         [
-          1620,
-          790
+          950,
+          764
         ],
         [
-          1620,
-          835
+          950,
+          808
         ],
         [
           180,
-          835
+          808
         ]
       ],
       "bbox_original": [
         [
           180,
-          911
+          885
         ],
         [
-          1620,
-          911
+          950,
+          885
         ],
         [
-          1620,
-          956
+          950,
+          929
         ],
         [
           180,
-          956
+          929
         ]
       ],
       "box_xyxy": [
         180,
-        790,
-        1620,
-        835
+        764,
+        950,
+        808
       ],
-      "text": "còn thì không gì bằng chính-sách mạnh.",
-      "confidence": 0.981,
+      "text": "Đời gọi Nàng Cầm danh tự đó",
+      "confidence": 0.98,
       "role": "dich_nghia_gloss"
     },
     {
@@ -405,46 +405,46 @@
       "bbox": [
         [
           180,
-          915
+          892
         ],
         [
-          1620,
-          915
+          950,
+          892
         ],
         [
-          1620,
-          960
+          950,
+          934
         ],
         [
           180,
-          960
+          934
         ]
       ],
       "bbox_original": [
         [
           180,
-          1036
+          1013
         ],
         [
-          1620,
-          1036
+          950,
+          1013
         ],
         [
-          1620,
-          1081
+          950,
+          1055
         ],
         [
           180,
-          1081
+          1055
         ]
       ],
       "box_xyxy": [
         180,
-        915,
-        1620,
-        960
+        892,
+        950,
+        934
       ],
-      "text": "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.",
+      "text": "Học đắc tiên triều cung trung « Cung-Phụng khúc »",
       "confidence": 0.985,
       "role": "phien_am"
     },
@@ -453,47 +453,47 @@
       "bbox": [
         [
           180,
-          970
+          944
         ],
         [
-          1620,
-          970
+          950,
+          944
         ],
         [
-          1620,
-          1015
+          950,
+          988
         ],
         [
           180,
-          1015
+          988
         ]
       ],
       "bbox_original": [
         [
           180,
-          1091
+          1065
         ],
         [
-          1620,
-          1091
+          950,
+          1065
         ],
         [
-          1620,
-          1136
+          950,
+          1109
         ],
         [
           180,
-          1136
+          1109
         ]
       ],
       "box_xyxy": [
         180,
-        970,
-        1620,
-        1015
+        944,
+        950,
+        988
       ],
-      "text": "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa.",
-      "confidence": 0.979,
+      "text": "Khúc Cung-Phụng triều xưa học chốn thâm cung",
+      "confidence": 0.98,
       "role": "dich_nghia_gloss"
     },
     {
@@ -501,47 +501,47 @@
       "bbox": [
         [
           180,
-          1095
+          1072
         ],
         [
-          1620,
-          1095
+          950,
+          1072
         ],
         [
-          1620,
-          1140
+          950,
+          1114
         ],
         [
           180,
-          1140
+          1114
         ]
       ],
       "bbox_original": [
         [
           180,
-          1216
+          1193
         ],
         [
-          1620,
-          1216
+          950,
+          1193
         ],
         [
-          1620,
-          1261
+          950,
+          1235
         ],
         [
           180,
-          1261
+          1235
         ]
       ],
       "box_xyxy": [
         180,
-        1095,
-        1620,
-        1140
+        1072,
+        950,
+        1114
       ],
-      "text": "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.",
-      "confidence": 0.984,
+      "text": "Tự thị thiên thượng nhân gian đệ nhất thanh",
+      "confidence": 0.985,
       "role": "phien_am"
     },
     {
@@ -549,47 +549,47 @@
       "bbox": [
         [
           180,
-          1150
+          1124
         ],
         [
-          1620,
-          1150
+          950,
+          1124
         ],
         [
-          1620,
-          1195
+          950,
+          1168
         ],
         [
           180,
-          1195
+          1168
         ]
       ],
       "bbox_original": [
         [
           180,
-          1271
+          1245
         ],
         [
-          1620,
-          1271
+          950,
+          1245
         ],
         [
-          1620,
-          1316
+          950,
+          1289
         ],
         [
           180,
-          1316
+          1289
         ]
       ],
       "box_xyxy": [
         180,
-        1150,
-        1620,
-        1195
+        1124,
+        950,
+        1168
       ],
-      "text": "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều.",
-      "confidence": 0.978,
+      "text": "Tự cho khắp dưới đất trên trời hiếm có",
+      "confidence": 0.98,
       "role": "dich_nghia_gloss"
     },
     {
@@ -597,47 +597,47 @@
       "bbox": [
         [
           180,
-          1275
+          1252
         ],
         [
-          1620,
-          1275
+          950,
+          1252
         ],
         [
-          1620,
-          1320
+          950,
+          1294
         ],
         [
           180,
-          1320
+          1294
         ]
       ],
       "bbox_original": [
         [
           180,
-          1396
+          1373
         ],
         [
-          1620,
-          1396
+          950,
+          1373
         ],
         [
-          1620,
-          1441
+          950,
+          1415
         ],
         [
           180,
-          1441
+          1415
         ]
       ],
       "box_xyxy": [
         180,
-        1275,
-        1620,
-        1320
+        1252,
+        950,
+        1294
       ],
-      "text": "Cố khoan nan.",
-      "confidence": 0.988,
+      "text": "Dư tại thiếu niên tằng nhất kiến",
+      "confidence": 0.985,
       "role": "phien_am"
     },
     {
@@ -645,47 +645,47 @@
       "bbox": [
         [
           180,
-          1330
+          1304
         ],
         [
-          1620,
-          1330
+          950,
+          1304
         ],
         [
-          1620,
-          1375
+          950,
+          1348
         ],
         [
           180,
-          1375
+          1348
         ]
       ],
       "bbox_original": [
         [
           180,
-          1451
+          1425
         ],
         [
-          1620,
-          1451
+          950,
+          1425
         ],
         [
-          1620,
-          1496
+          950,
+          1469
         ],
         [
           180,
-          1496
+          1469
         ]
       ],
       "box_xyxy": [
         180,
-        1330,
-        1620,
-        1375
+        1304,
+        950,
+        1348
       ],
-      "text": "Vì thế khoan hồng là khó.",
-      "confidence": 0.982,
+      "text": "Tuổi trẻ một lần ta gặp gỡ",
+      "confidence": 0.98,
       "role": "dich_nghia_gloss"
     },
     {
@@ -693,46 +693,46 @@
       "bbox": [
         [
           180,
-          1455
+          1432
         ],
         [
-          1620,
-          1455
+          950,
+          1432
         ],
         [
-          1620,
-          1500
+          950,
+          1474
         ],
         [
           180,
-          1500
+          1474
         ]
       ],
       "bbox_original": [
         [
           180,
-          1576
+          1553
         ],
         [
-          1620,
-          1576
+          950,
+          1553
         ],
         [
-          1620,
-          1621
+          950,
+          1595
         ],
         [
           180,
-          1621
+          1595
         ]
       ],
       "box_xyxy": [
         180,
-        1455,
-        1620,
-        1500
+        1432,
+        950,
+        1474
       ],
-      "text": "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính.",
+      "text": "Giám-Hồ hồ biên dạ khai yến",
       "confidence": 0.985,
       "role": "phien_am"
     },
@@ -741,123 +741,135 @@
       "bbox": [
         [
           180,
-          1510
+          1484
         ],
         [
-          1620,
-          1510
+          950,
+          1484
         ],
         [
-          1620,
-          1555
+          950,
+          1528
         ],
         [
           180,
-          1555
+          1528
         ]
       ],
       "bbox_original": [
         [
           180,
-          1631
+          1605
         ],
         [
-          1620,
-          1631
+          950,
+          1605
         ],
         [
-          1620,
-          1676
+          950,
+          1649
         ],
         [
           180,
-          1676
+          1649
         ]
       ],
       "box_xyxy": [
         180,
-        1510,
-        1620,
-        1555
+        1484,
+        950,
+        1528
       ],
-      "text": "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền.",
+      "text": "Tiệc bên Hồ Giám một đêm nọ",
       "confidence": 0.98,
       "role": "dich_nghia_gloss"
     }
   ],
   "layout_summary": {
+    "book_type": "HVTT",
+    "page_num": 312,
     "layout_mode": "interlinear_3line_even_page",
-    "phien_am_lines": [
-      "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
-      "Ngã tử, tử tất vi chính.",
-      "Duy hữu đức giả, năng dĩ khoan phục dân,",
-      "Kỳ thứ mạc như mãnh.",
-      "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.",
-      "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.",
-      "Cố khoan nan.",
-      "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính."
-    ],
-    "dich_nghia_lines": [
-      "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :",
-      "Ta chết, con sẽ giữ chính-quyền.",
-      "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
-      "còn thì không gì bằng chính-sách mạnh.",
-      "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa.",
-      "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều.",
-      "Vì thế khoan hồng là khó.",
-      "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền."
-    ],
-    "dich_tho_lines": [],
     "interlinear_triplets": [
       {
         "triplet_index": 0,
-        "chu_han": "鄭 子 產 有 疾 謂 子 太 叔 曰",
-        "phien_am": "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
-        "dich_nghia_gloss": "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :"
+        "chu_han": "龍城佳人",
+        "phien_am": "Long thành giai nhân",
+        "dich_nghia_gloss": "Người đẹp Thăng-Long"
       },
       {
         "triplet_index": 1,
-        "chu_han": "我 死 子 必 爲 政",
-        "phien_am": "Ngã tử, tử tất vi chính.",
-        "dich_nghia_gloss": "Ta chết, con sẽ giữ chính-quyền."
+        "chu_han": "不記名字",
+        "phien_am": "Bất ký danh tự",
+        "dich_nghia_gloss": "Họ tên không rõ"
       },
       {
         "triplet_index": 2,
-        "chu_han": "惟 有 德 者 能 以 寬 服 民",
-        "phien_am": "Duy hữu đức giả, năng dĩ khoan phục dân,",
-        "dich_nghia_gloss": "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,"
+        "chu_han": "獨善絃琴",
+        "phien_am": "Độc thiện huyền cầm",
+        "dich_nghia_gloss": "Tiếng đàn não nùng"
       },
       {
         "triplet_index": 3,
-        "chu_han": "其 次 莫 如 猛",
-        "phien_am": "Kỳ thứ mạc như mãnh.",
-        "dich_nghia_gloss": "còn thì không gì bằng chính-sách mạnh."
+        "chu_han": "舉城之人以琴名",
+        "phien_am": "Cử thành chi nhân dĩ Cầm danh",
+        "dich_nghia_gloss": "Đời gọi Nàng Cầm danh tự đó"
       },
       {
         "triplet_index": 4,
-        "chu_han": "夫 火 烈 民 望 而 畏 之 故 鮮 死 焉",
-        "phien_am": "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.",
-        "dich_nghia_gloss": "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa."
+        "chu_han": "學得先朝宮中供奉曲",
+        "phien_am": "Học đắc tiên triều cung trung « Cung-Phụng khúc »",
+        "dich_nghia_gloss": "Khúc Cung-Phụng triều xưa học chốn thâm cung"
       },
       {
         "triplet_index": 5,
-        "chu_han": "水 懦 弱 民 狎 而 翫 之 則 多 死 焉",
-        "phien_am": "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.",
-        "dich_nghia_gloss": "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều."
+        "chu_han": "自是天上人間第一聲",
+        "phien_am": "Tự thị thiên thượng nhân gian đệ nhất thanh",
+        "dich_nghia_gloss": "Tự cho khắp dưới đất trên trời hiếm có"
       },
       {
         "triplet_index": 6,
-        "chu_han": "故 寬 難",
-        "phien_am": "Cố khoan nan.",
-        "dich_nghia_gloss": "Vì thế khoan hồng là khó."
+        "chu_han": "余在少年曾一見",
+        "phien_am": "Dư tại thiếu niên tằng nhất kiến",
+        "dich_nghia_gloss": "Tuổi trẻ một lần ta gặp gỡ"
       },
       {
         "triplet_index": 7,
-        "chu_han": "疾 數 月 而 卒 太 叔 爲 政",
-        "phien_am": "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính.",
-        "dich_nghia_gloss": "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền."
+        "chu_han": "監湖湖邊夜開宴",
+        "phien_am": "Giám-Hồ hồ biên dạ khai yến",
+        "dich_nghia_gloss": "Tiệc bên Hồ Giám một đêm nọ"
       }
     ],
+    "chu_han_lines": [
+      "龍城佳人",
+      "不記名字",
+      "獨善絃琴",
+      "舉城之人以琴名",
+      "學得先朝宮中供奉曲",
+      "自是天上人間第一聲",
+      "余在少年曾一見",
+      "監湖湖邊夜開宴"
+    ],
+    "phien_am_lines": [
+      "Long thành giai nhân",
+      "Bất ký danh tự",
+      "Độc thiện huyền cầm",
+      "Cử thành chi nhân dĩ Cầm danh",
+      "Học đắc tiên triều cung trung « Cung-Phụng khúc »",
+      "Tự thị thiên thượng nhân gian đệ nhất thanh",
+      "Dư tại thiếu niên tằng nhất kiến",
+      "Giám-Hồ hồ biên dạ khai yến"
+    ],
+    "dich_nghia_lines": [
+      "Người đẹp Thăng-Long",
+      "Họ tên không rõ",
+      "Tiếng đàn não nùng",
+      "Đời gọi Nàng Cầm danh tự đó",
+      "Khúc Cung-Phụng triều xưa học chốn thâm cung",
+      "Tự cho khắp dưới đất trên trời hiếm có",
+      "Tuổi trẻ một lần ta gặp gỡ",
+      "Tiệc bên Hồ Giám một đêm nọ"
+    ],
+    "dich_tho_lines": [],
     "has_dich_nghia": true
   }
 }

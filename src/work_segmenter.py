@@ -126,6 +126,18 @@ _TVLT2_WORK21_NEU_COLON_RE = re.compile(r"^\s*N[ÊE]U\s*:\s*(.*)$", flags=re.IGN
 
 # TLTVN-specific patterns
 _TLTVN_NOISE_DIVIDER_RE = re.compile(r"^\d+\.\d+\.\d+$")
+_APPARATUS_SIGLA_RE = re.compile(
+    r"(?:\b(?:TTBH\d*|TVTL\d*|VATT|TĐN\d*|TTTPHT|TIBH\d*|TTBLI\d*|TBH\d*)\b|"
+    r"ở\s+đây\s+theo|chép\s+là\s*:|Trong\s+TVTL|XUẤT\s*KÝ\s*:|"
+    r"Đầu\s+đề\s+d[oọ]\s+chúng\s+tôi\s+thêm)",
+    flags=re.IGNORECASE,
+)
+_TLTVN_BIO_LEAK_RE = re.compile(
+    r"(?:\b(?:VHv|VHc|A|HN)\.\s*\d+|lúc\s+nhỏ\s+có\s+tên\s+là|hiện\s+chưa\s+rõ\s+hành\s+trạng|"
+    r"về\s+trí\s+sĩ|được\s+chép\s+trong|là\s+tập\s+hợp\s+các|là\s+một\s+tập\b|"
+    r"lời\s+đề\s+từ\s+cho\s+tác\s+phẩm|^\s*Về\s+từ,\s*trong\b|\(\d{4}\?\s*[-–]?\s*\d{4}\)\s+về\s+trí\s+sĩ)",
+    flags=re.IGNORECASE,
+)
 _TLTVN_NUMBERED_FOOTNOTE_RE = re.compile(r"^\d{1,2}\s+[A-Z\u00C0-\u024F\u1E00-\u1EFF]")
 _TLTVN_FOOTNOTE_CUE_RE = re.compile(
     r"^(?:XET\s+TU\s+PHO\b|THEO\s+|NAM\s+.*\(\d{4}\)|\d{1,2}\s+[A-Z])",
@@ -367,10 +379,19 @@ def _is_tvlt2_work_number(
     return val
 
 
+def _is_ocr_gibberish_viet(text: str) -> bool:
+    """Return True if a VietOCR line is mostly single-char/digit noise from misread Hán."""
+    toks = _nfc(text).split()
+    if len(toks) < 4:
+        return False
+    noisy = sum(1 for t in toks if len(t) == 1 or any(ch.isdigit() for ch in t))
+    return (noisy / float(len(toks))) >= 0.45
+
+
 def _apply_work3_supplement(work: WorkRecord, paragraphs: Sequence[str]) -> None:
     """Attach the 15-paragraph Dịch nghĩa supplement for TVLT2 Work #3 (*Thiền tông chỉ nam tự*)."""
     is_work3 = (
-        work.work_id == 3
+        (work.work_id == 3 and any(20 <= p <= 35 for p in work.source_pages))
         or "指南序" in work.han_title
         or "THIEN TONG CHI NAM" in _fold_ascii_header(work.pa_title).upper()
         or any("朕竊謂佛無南北" in ln for ln in work.han_lines)
@@ -760,6 +781,10 @@ def _segment_tvlt2(
                     idx += 1
                     continue
 
+                if _APPARATUS_SIGLA_RE.search(txt) or _is_ocr_gibberish_viet(txt):
+                    idx += 1
+                    continue
+
                 _touch_page(current_work, pnum)
                 if state == "HAN_BODY":
                     zone_viet.append(item)
@@ -808,10 +833,11 @@ def _segment_tvlt2(
                 can_fallback_start = state in ("BIO_OR_SKIP", "SKIP_APPARATUS", "DICH_NGHIA", "DICH_THO") or current_work is None
                 if can_fallback_start:
                     # Fallback A: Paired 2-column Hán + ALL-CAPS Viet title on same line band
-                    paired_all_caps = any(
+                    paired_all_caps = not _APPARATUS_SIGLA_RE.search(txt) and any(
                         tagged[j][0] == "viet"
                         and abs(tagged[j][1] - yc) <= 45.0
                         and tagged[j][2] >= 0.42 * pw
+                        and not _APPARATUS_SIGLA_RE.search(tagged[j][5].get("text", ""))
                         and _is_all_caps_title(tagged[j][5].get("text", ""))
                         for j in range(max(0, idx - 2), min(n, idx + 4))
                     )
@@ -1056,7 +1082,18 @@ def _segment_tltvn(pages: Sequence[Dict[str, Any]]) -> List[WorkRecord]:
                 continue
 
             # kind == "viet"
-            if _is_bio_header(txt):
+            is_title_with_year = (
+                (state == "DICH_NGHIA" and current_work is not None and not current_work.dn_lines)
+                or (state == "PA" and current_work is not None and not current_work.pa_lines)
+            )
+            if _is_bio_header(txt) and not is_title_with_year:
+                _finalize_sub_poems(current_work)
+                _flush_work(works, current_work)
+                current_work = None
+                state = "BIO_OR_SKIP"
+                continue
+
+            if state in ("DICH_NGHIA", "DICH_THO") and _TLTVN_BIO_LEAK_RE.search(txt):
                 _finalize_sub_poems(current_work)
                 _flush_work(works, current_work)
                 current_work = None

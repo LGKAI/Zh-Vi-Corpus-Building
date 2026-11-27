@@ -94,7 +94,7 @@ def load_book_manifest(manifest_path: Optional[Path] = None) -> Dict[str, Any]:
                 "alignment_dir": "deliverables/TLTVN_TheLoaiTuVN/04_dong_hang",
                 "columns": ["Hán", "Dịch âm", "Dịch nghĩa", "Dịch thơ"],
                 "valid_range": {"pdf_page_start": 134, "pdf_page_end": 547},
-                "excluded_pdf_pages_in_valid_range": [378, 379, 380],
+                "excluded_pdf_pages_in_valid_range": [378, 379, 380, 545, 546, 547],
                 "pilot_pages": [134, 135, 136, 137],
             },
         }
@@ -259,7 +259,7 @@ def _align_hvtt_from_ocr(
         cleaned_ys: List[float] = []
         for idx, line in enumerate(raw_dt):
             c_line = clean_viet_text(line)
-            if not c_line:
+            if not c_line or _HVTT_NOTE_LINE_RE.search(c_line):
                 continue
             cleaned_dt.append(c_line)
             if idx < len(raw_ys):
@@ -330,6 +330,15 @@ def _align_hvtt_from_ocr(
                 )
 
         if not raw_han_list:
+            continue
+
+        # Skip stray drawing OCR false positives on even pages (e.g. p.0182 illustration)
+        if (
+            len(raw_han_list) == 1
+            and count_han_chars(raw_han_list[0]) <= 2
+            and not raw_pa_list[0].strip()
+            and not raw_dn_list[0].strip()
+        ):
             continue
 
         page_rows: List[Dict[str, Any]] = []
@@ -420,6 +429,11 @@ _NATIVE_VIET_PROSE_CUE_RE = re.compile(
     r"ngọn|mảnh|đám|suốt|khắp|vẫn|chưa|đang|rồi|lại|cũng|rất|lắm|cha\s+mẹ|vợ\s+con)\b",
     flags=re.IGNORECASE,
 )
+_HVTT_NOTE_LINE_RE = re.compile(
+    r"(?:Bản\s+dịch\s+(?:cũ|của|theo\s+nguyên\s+điệu)|[tl]ương\s+truyền\s+là\s+[lt]ác-giả|"
+    r"song\s+thất\s+lục\s+bát,\s+của|^\s*Bản,?\s*$|Cốc-thành\s*:|Thạch-công\s+hẹn|Thi,\s*qui\s*:)",
+    flags=re.IGNORECASE,
+)
 _EDITORIAL_COMMENTARY_LINE_RE = re.compile(
     r"(?:Hoàng\s+Xuân\s+Hãn|Đào\s+Duy\s+Anh|Truyện\s+Kiều|Nghĩa\s+2\s+v[ếề]\s*:|"
     r"xem\s+Cht\.|xem\s+b[ảà]ng\s+Ph[ảà]\s+hệ|"
@@ -427,9 +441,23 @@ _EDITORIAL_COMMENTARY_LINE_RE = re.compile(
     r"và\s+nhà\s+nho\s+nhiều\s+đời,\s+h[âà]m\s+mộ\s+Mạc\s+Đ[ĩị]nh\s+Ch[ỉị]|"
     r"đã\s+g[ắầ]n\s+ghép\s+thêm\s+thơ\s+văn\s+người\s+này|"
     r"thống\s+và\s+tr[ởờ]\s+n[êề]n\s+đẹp\s+đ[ẽè]\.\s*Do\s+đó,\s+những\s+thơ\s+văn\s+trên\s+đây|"
-    r"nguyên\s+họ\s+Ph[íi]\s+ý?\s*được\s+vua\s+Tr[ầậ]n\s+Nhân\s+T[ôộ]ng)",
+    r"nguyên\s+họ\s+Ph[íi]\s+ý?\s*được\s+vua\s+Tr[ầậ]n\s+Nhân\s+T[ôộ]ng|"
+    r"\b(?:TTBH\d*|TVTL\d*|VATT|TĐN\d*|TTTPHT|TIBH\d*|TTBLI\d*|TBH\d*)\b|"
+    r"ở\s+đây\s+theo|Trong\s+TVTL|XUẤT\s*KÝ\s*:|Đầu\s+đề\s+d[oọ]\s+chúng\s+tôi\s+thêm|"
+    r"Theo\s+Truyền\s+đăng\s+lục|Tuệ\s+Trung\s+mượn|Sư\s+Quy\s+Tông\s+nổi|Câu\s+này\s+cũng\s+chơi\s+chữ|"
+    r"\b(?:VHv|VHc|A|HN)\.\s*\d+|lúc\s+nhỏ\s+có\s+tên\s+là|hiện\s+chưa\s+rõ\s+hành\s+trạng|"
+    r"là\s+tập\s+hợp\s+các|là\s+một\s+tập\b|lời\s+đề\s+từ\s+cho\s+tác\s+phẩm|về\s+trí\s+sĩ)",
     flags=re.IGNORECASE,
 )
+
+
+def _is_ocr_gibberish_viet(line: str) -> bool:
+    """Return True if a VietOCR line is mostly single-char/digit noise from misread Hán."""
+    toks = str(line or "").strip().split()
+    if len(toks) < 4:
+        return False
+    noisy = sum(1 for t in toks if len(t) == 1 or any(ch.isdigit() for ch in t))
+    return (noisy / float(len(toks))) >= 0.45
 
 
 def _phonetic_line_similarity(h_line: str, pa_line: str) -> float:
@@ -733,6 +761,7 @@ def _align_verse_unit(
         if clean_viet_text(ln)
         and re.search(r"[A-Za-zÀ-ỹà-ỹ]", ln)
         and not _EDITORIAL_COMMENTARY_LINE_RE.search(ln)
+        and not _is_ocr_gibberish_viet(ln)
     ]
     dn_clean = [
         clean_viet_text(ln)
@@ -787,10 +816,10 @@ def _align_verse_unit(
                         phonetic_checks.append(verify_han_phien_am_pair(h_val, pa_clean[pj]))
                         pa_val = pa_clean[pj]
                         dn_val = dn_clean[pj] if pj < len(dn_clean) else ""
-                        if len(dt_clean) == len(pa_clean) and pj < len(dt_clean):
-                            dt_val = dt_clean[pj]
-                        elif len(dt_clean) == len(h_clean) and hi < len(dt_clean):
+                        if len(dt_clean) == len(h_clean) and hi < len(dt_clean):
                             dt_val = dt_clean[hi]
+                        elif len(dt_clean) == len(pa_clean) and pj < len(dt_clean):
+                            dt_val = dt_clean[pj]
                         else:
                             dt_val = ""
                         dp_rows.append((h_val, pa_val, dn_val, dt_val))
@@ -964,6 +993,7 @@ def _align_prose_unit(
         if clean_viet_text(ln)
         and re.search(r"[A-Za-zÀ-ỹà-ỹ]", ln)
         and not _EDITORIAL_COMMENTARY_LINE_RE.search(ln)
+        and not _is_ocr_gibberish_viet(ln)
     ]
 
     # Preserve dialogue-dash sentence breaks across OCR lines before joining

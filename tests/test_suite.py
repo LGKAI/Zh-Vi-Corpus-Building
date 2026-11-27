@@ -217,6 +217,25 @@ class TestCV04PipelineSuite(unittest.TestCase):
             self.assertIn("VPO_01", ocr_summary["books"])
             self.assertGreater(ocr_summary["total_pairs"], 0)
 
+    def test_regression_work3_scope_and_vpo02_appendix_exclusion(self) -> None:
+        from src.corpus_pipeline import _is_page_in_scope, load_book_manifest
+        from src.work_segmenter import WorkRecord, _apply_work3_supplement
+
+        # 1. Work #3 supplement must NOT attach to work_id=3 outside pages 20..35
+        fake_later_work = WorkRecord(work_id=3, book_type="TVLT2", source_pages=[400, 401])
+        _apply_work3_supplement(fake_later_work, ["Trẫm thầm nghĩ: ..."])
+        self.assertEqual(fake_later_work.dn_lines, [])
+
+        real_work3 = WorkRecord(work_id=3, book_type="TVLT2", source_pages=[22, 23, 24])
+        _apply_work3_supplement(real_work3, ["Trẫm thầm nghĩ: ..."])
+        self.assertEqual(real_work3.dn_lines, ["Trẫm thầm nghĩ: ..."])
+
+        # 2. VPO_02 must exclude Appendix 2 pages 545, 546, 547 from alignment scope
+        vpo2_cfg = load_book_manifest(ROOT_DIR / "config" / "book_manifest.json")["books"]["VPO_02"]
+        self.assertTrue(_is_page_in_scope(544, vpo2_cfg))
+        for app_pg in (545, 546, 547):
+            self.assertFalse(_is_page_in_scope(app_pg, vpo2_cfg))
+
 
 if __name__ == "__main__":
     unittest.main()

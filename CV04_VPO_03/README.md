@@ -10,7 +10,7 @@
 - **`04_dong_hang/`**: Phân đoạn tác phẩm xuyên trang bằng `src/work_segmenter.py` (thơ 2 cột, văn xuôi/biền ngẫu, bài kèm kệ, *Niêm tụng kệ*), tách mệnh đề song hành và dóng hàng 4 cột (`Hán - Dịch âm - Dịch nghĩa - Dịch thơ`) kèm dòng tiêu đề mỗi bài; bài văn xuôi không có dịch thơ để trống cột `Dịch thơ`.
 
 ## 2. Thống Kê QA (Toàn Bộ 795 Trang)
-- **Tổng dòng dóng hàng**: `4.663` (`284` dòng tiêu đề, `1.432` dòng có `Dịch thơ`)
-- **Số cặp hợp lệ**: `4.663` (`MISSING = 0`, `FORMAT_ERROR = 0`, `LEFTOVER_MARKER = 0`)
-- **Cảnh báo QA**: `396` (`OMISSION: 171`, `ADDITION: 137`, `NUMBER_MISMATCH: 100`) $\rightarrow$ **Tỷ lệ lỗi: `8.49%`** (đạt $\le 30\%$)
-- **Độ phủ Hán tự**: `44.67%` | **Điểm tin cậy**: `0.49 / 1.00` (`0.4887`) | **`TSV == XLSX`**: Khớp 100%
+- **Tổng dòng dóng hàng**: `4.669` (`282` dòng tiêu đề, `1.437` dòng có `Dịch thơ`)
+- **Số cặp hợp lệ**: `4.669` (`MISSING = 0`, `FORMAT_ERROR = 0`, `LEFTOVER_MARKER = 0`)
+- **Cảnh báo QA**: `389` (`OMISSION: 180`, `ADDITION: 120`, `NUMBER_MISMATCH: 101`) $\rightarrow$ **Tỷ lệ lỗi: `8.33%`** (đạt $\le 30\%$)
+- **Độ phủ Hán tự**: `44.43%` | **Điểm tin cậy**: `0.49 / 1.00` (`0.4874`) | **`TSV == XLSX`**: Khớp 100%

@@ -1,11 +1,11 @@
 {
-  "total_pairs": 2158,
-  "valid_pairs": 2158,
-  "valid_checked_pairs": 2158,
-  "error_pairs": 98,
-  "num_error_pairs": 98,
-  "clean_pairs": 2060,
-  "error_rate": 0.045412,
+  "total_pairs": 2160,
+  "valid_pairs": 2160,
+  "valid_checked_pairs": 2160,
+  "error_pairs": 103,
+  "num_error_pairs": 103,
+  "clean_pairs": 2057,
+  "error_rate": 0.047685,
   "passes_acceptance_threshold": true,
   "passes_threshold_30pct": true,
   "passes_internal_target": true,
@@ -13,23 +13,23 @@
   "is_valid": true,
   "error_counts_by_type": {
     "MISSING": 0,
-    "OMISSION": 74,
-    "ADDITION": 13,
+    "OMISSION": 73,
+    "ADDITION": 19,
     "FORMAT_ERROR": 0,
     "LEFTOVER_MARKER": 0,
     "NUMBER_MISMATCH": 13
   },
   "error_breakdown": {
     "MISSING": 0,
-    "OMISSION": 74,
-    "ADDITION": 13,
+    "OMISSION": 73,
+    "ADDITION": 19,
     "FORMAT_ERROR": 0,
     "LEFTOVER_MARKER": 0,
     "NUMBER_MISMATCH": 13
   },
   "missing_count": 0,
-  "omission_count": 74,
-  "addition_count": 13,
+  "omission_count": 73,
+  "addition_count": 19,
   "format_error_count": 0,
   "leftover_marker_count": 0,
   "number_mismatch_count": 13,
@@ -339,15 +339,71 @@
       "viet": "Điệu Hành hương tử"
     },
     {
-      "row_index": 878,
-      "category": "OMISSION",
+      "row_index": 879,
+      "category": "ADDITION",
       "severity": "warning",
-      "reason": "Length ratio 0.25 < 0.7 (4 Viet words / 16 Han chars).",
-      "han": "己西冬，奉擬謝福總督錦軸詞調滿庭芳",
-      "viet": "Hoành nhuận lưu quang"
+      "reason": "Length ratio 8.67 > 4.5 (26 Viet words / 3 Han chars).",
+      "han": "滿庭芳",
+      "viet": "Truyền lại ơn trạch lớn lao nhuân thâm Là do núi Tung cao vời hun đúc nên đức độ Là bậc trọng thần được kính ngưỡng"
     },
     {
-      "row_index": 900,
+      "row_index": 880,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 9.00 > 4.5 (36 Viet words / 4 Han chars).",
+      "han": "宏潤流光",
+      "viet": "vốn xuất thân từ nguồn gốc thần tiên? Tài văn võ đủ để sửa trị thiên ha Phẩm đức và uy vọng bao trùm trung nguyên Mưu lược, công lao to lớn, giúp rập cho trời?"
+    },
+    {
+      "row_index": 887,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 23.00 > 4.5 (69 Viet words / 3 Han chars).",
+      "han": "真正是",
+      "viet": "- Tám ngôi sao Đầu: Nguyên là? Bát Đầu? (Ở đây không thể hiểu là? Bát đấu? (Tám đấu), kiểu? Tài cao tám đấu được). Chòm sao Bắc Đầu chi có 7 1990 sao, Tuy nhiên, theo truyền thuyết, cân kề còn có Phụ tinh và Bật tinh, thành 9 sao. Ở đây trên tác giả nói đến \"Bật tinh\", có lẽ tính gộp cả Bật tỉnh với 7 ngôi"
+    },
+    {
+      "row_index": 888,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 8.25 > 4.5 (33 Viet words / 4 Han chars).",
+      "han": "弼星降世",
+      "viet": "của bắc đầu thành ra 8 sao xoay phân chuôi lại. Thái cực: Chi trạng thái trời đất hỗn mang trở về trước. Câu này đi liền câu dưới, ngụ ý chỉ trời"
+    },
+    {
+      "row_index": 889,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 13.60 > 4.5 (68 Viet words / 5 Han chars).",
+      "han": "入耳耀天垣",
+      "viet": "4 Phu tử: Chỉ Khổng Tử. Câu này lấy ý từ thiên Dương Hoá, sách Luận ngữ:? Khổng tử nói: Ta muốn không nói gì (Dư dục vô ngôn 7. Tử Cống hỏi: Nếu thầy không nói thì học trò biết thuật lại thế nào? Khổng Tử nói: Trời có nói gì đâu mà bốn mùa cứ vận hành, mọi vật sinh sôi; trời có nói gì đâul?"
+    },
+    {
+      "row_index": 890,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 25.00 > 4.5 (50 Viet words / 2 Han chars).",
+      "han": "乾旋",
+      "viet": "5 Tương truyền, Côn Sơn là nơi sinh ra phượng hoàng, Ác Thuỷ là nơi sinh nhiều tuấn mã. % Câu này lấy ý từ bài Đại đông trong Kinh Thi:? Kì bi Chức Nữ; Chung nhật thất tương 4 khẩi 4, 4 Đ Lầ? (Chòm sao Chức Nữ [gồm ba"
+    },
+    {
+      "row_index": 891,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 15.00 > 4.5 (45 Viet words / 3 Han chars).",
+      "han": "參化紐，",
+      "viet": "\" Phúc lộc: Nguyên là \"\"Tiền cốc\", chữ dùng trong thơ Thiên bảo \" trong Kinh Thi:? Thiên bảo định nhĩ, Tỉ nhĩ tiến cốc XIFZĐ, 14 Hải\" (Trời giúp ngài được yên định, khiến ngài trọn vẹn với phúc lộc của mình) Ân trạch mênh mang"
+    },
+    {
+      "row_index": 897,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 5.50 > 4.5 (22 Viet words / 4 Han chars).",
+      "han": "遙歌戩殺",
+      "viet": "Quy công cho Thái cực, Phu tử lặng thầm Lớp lớp Côn Sơn, Ốc Thuỷ Gấm mây Chức Nữ giáng phàm trần"
+    },
+    {
+      "row_index": 902,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (6 Viet words / 9 Han chars).",
@@ -355,7 +411,7 @@
       "viet": "trước hết viết ra kim tiên"
     },
     {
-      "row_index": 908,
+      "row_index": 910,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
@@ -363,7 +419,7 @@
       "viet": "Điệu Mãn đình phương"
     },
     {
-      "row_index": 927,
+      "row_index": 929,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -371,7 +427,7 @@
       "viet": "Điệu Pháp giá dấn"
     },
     {
-      "row_index": 936,
+      "row_index": 938,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['千'] not reflected in Việt translation.",
@@ -379,7 +435,7 @@
       "viet": "Mang theo ngọc bạch tiên công] qua đường trạm dịch trải chín tầng trời,"
     },
     {
-      "row_index": 944,
+      "row_index": 946,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
@@ -387,7 +443,7 @@
       "viet": "Điệu Thiên thu tuế"
     },
     {
-      "row_index": 957,
+      "row_index": 959,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['九'] not reflected in Việt translation.",
@@ -395,7 +451,7 @@
       "viet": "Mang lòng thành của loài hoa quỳ 5,"
     },
     {
-      "row_index": 958,
+      "row_index": 960,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.40 < 0.7 (4 Viet words / 10 Han chars).",
@@ -403,7 +459,7 @@
       "viet": "Điệu Lâm giang tiên"
     },
     {
-      "row_index": 967,
+      "row_index": 969,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.40 < 0.7 (4 Viet words / 10 Han chars).",
@@ -411,7 +467,7 @@
       "viet": "Điệu Thu ba mị"
     },
     {
-      "row_index": 977,
+      "row_index": 979,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.50 < 0.7 (4 Viet words / 8 Han chars).",
@@ -419,7 +475,7 @@
       "viet": "Điệu Bốc toán tử"
     },
     {
-      "row_index": 978,
+      "row_index": 980,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 7.40 > 4.5 (37 Viet words / 5 Han chars).",
@@ -427,7 +483,7 @@
       "viet": "Cơ đồ của nhà vua dài lâu như nhật nguyệt Đức của bậc thánh lớn như trời đất Mùa xuân phủ lên cõi tiên Dao Trì 3, say với đào bích. Tuổi thọ sánh ngang núi, biển"
     },
     {
-      "row_index": 984,
+      "row_index": 986,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.44 < 0.7 (4 Viet words / 9 Han chars).",
@@ -435,7 +491,7 @@
       "viet": "Điệu Yết kim môn"
     },
     {
-      "row_index": 992,
+      "row_index": 994,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.44 < 0.7 (4 Viet words / 9 Han chars).",
@@ -443,7 +499,7 @@
       "viet": "Điệu Hạ thánh triều"
     },
     {
-      "row_index": 1001,
+      "row_index": 1003,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
@@ -451,7 +507,7 @@
       "viet": "Điệu Lạc xuân phong"
     },
     {
-      "row_index": 1008,
+      "row_index": 1010,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.69 < 0.7 (9 Viet words / 13 Han chars).",
@@ -459,7 +515,7 @@
       "viet": "Ánh sáng ấm áp, được thừa hưởng ân huệ"
     },
     {
-      "row_index": 1010,
+      "row_index": 1012,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.50 < 0.7 (4 Viet words / 8 Han chars).",
@@ -467,7 +523,7 @@
       "viet": "Điệu Phượng hoàng các"
     },
     {
-      "row_index": 1014,
+      "row_index": 1016,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
@@ -475,7 +531,7 @@
       "viet": "Nấu vàng, nổi ngọc"
     },
     {
-      "row_index": 1035,
+      "row_index": 1037,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.20 < 0.7 (3 Viet words / 15 Han chars).",
@@ -483,7 +539,7 @@
       "viet": "Điều phong hú"
     },
     {
-      "row_index": 1035,
+      "row_index": 1037,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['千'] not reflected in Việt translation.",
@@ -491,7 +547,7 @@
       "viet": "Điều phong hú"
     },
     {
-      "row_index": 1040,
+      "row_index": 1042,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['三'] not reflected in Việt translation.",
@@ -499,7 +555,7 @@
       "viet": "Vị năng thành trạch tướng trị Thả cộng giới mi thọ. Khán niên niên"
     },
     {
-      "row_index": 1087,
+      "row_index": 1089,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
@@ -507,7 +563,7 @@
       "viet": "Trải xem non nước,"
     },
     {
-      "row_index": 1105,
+      "row_index": 1107,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 9.33 > 4.5 (28 Viet words / 3 Han chars).",
@@ -515,7 +571,7 @@
       "viet": "ĐÔNG QUÁ TỪ LĂNG TRỊ VÂN ÂM KÍNH CẢM TÁC MÙA ĐÔNG, QUA LĂNG MÀU THẦN, ĐÚNG LUC MÂY CHE, KÍNH CẦN CẢM TÁC (Điệu Lâm giang tiên)"
     },
     {
-      "row_index": 1215,
+      "row_index": 1217,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['七'] not reflected in Việt translation.",
@@ -523,7 +579,7 @@
       "viet": "THÁT CẢM TẬP CA (Điệu liễu sao thanh)"
     },
     {
-      "row_index": 1227,
+      "row_index": 1229,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.17 < 0.7 (1 Viet words / 6 Han chars).",
@@ -531,7 +587,7 @@
       "viet": "BAITUTRANGIHU"
     },
     {
-      "row_index": 1234,
+      "row_index": 1236,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.46 < 0.7 (6 Viet words / 13 Han chars).",
@@ -539,7 +595,7 @@
       "viet": "Đất này có cây cau tốt,"
     },
     {
-      "row_index": 1235,
+      "row_index": 1237,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
@@ -547,7 +603,7 @@
       "viet": "Mùi vị tựa quỳnh tương"
     },
     {
-      "row_index": 1261,
+      "row_index": 1263,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (8 Viet words / 12 Han chars).",
@@ -555,7 +611,7 @@
       "viet": "Ngày nay tiễn bằng tiếng buồn đứt ruột"
     },
     {
-      "row_index": 1351,
+      "row_index": 1353,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 4.67 > 4.5 (14 Viet words / 3 Han chars).",
@@ -563,7 +619,7 @@
       "viet": "SOẠN TRƯỚC CÁC BÀI TỨ CHỨC MÙNG TIẾT VẠN THỌ' Điệu Hạ thánh triều"
     },
     {
-      "row_index": 1352,
+      "row_index": 1354,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.33 < 0.7 (1 Viet words / 3 Han chars).",
@@ -571,7 +627,7 @@
       "viet": "II."
     },
     {
-      "row_index": 1356,
+      "row_index": 1358,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 6.00 > 4.5 (24 Viet words / 4 Han chars).",
@@ -579,7 +635,7 @@
       "viet": "Xuống dưới nhà tiếng sáo tiếng ca. Cảnh tinh xuất hiện cùng áng mây lành, Mong [bệ hạ thọ] như tuổi rùa tuổi hạc?"
     },
     {
-      "row_index": 1371,
+      "row_index": 1373,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 6.00 > 4.5 (18 Viet words / 3 Han chars).",
@@ -587,7 +643,7 @@
       "viet": "BÀI TỪ CHÚC MỪNG QUAN TRẤN THỦ LẠNG SƠN, TƯỚC PHONG KIÊN TRUNG HÂU (Điệu Nhất tiễn mai)"
     },
     {
-      "row_index": 1385,
+      "row_index": 1387,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.33 < 0.7 (1 Viet words / 3 Han chars).",
@@ -595,7 +651,7 @@
       "viet": "II."
     },
     {
-      "row_index": 1388,
+      "row_index": 1390,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.56 < 0.7 (5 Viet words / 9 Han chars).",
@@ -603,7 +659,7 @@
       "viet": "Trong tráp hồi văn đứt,"
     },
     {
-      "row_index": 1400,
+      "row_index": 1402,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 8.60 > 4.5 (43 Viet words / 5 Han chars).",
@@ -611,7 +667,7 @@
       "viet": "trên gỗ, hiện treo ở nhà thờ Đại tôn dòng họ Nguyễn Huy ở xã Trường Lộc, huyện Can Lộc, tỉnh Hà Tĩnh, Trên bảng gỗ không ghi tác giả và niên đại. Theo nội dung, các bài từ này được viết để"
     },
     {
-      "row_index": 1410,
+      "row_index": 1412,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.59 < 0.7 (10 Viet words / 17 Han chars).",
@@ -619,7 +675,7 @@
       "viet": "nay quay chèo ngược về, đúng vào đầu mùa đông:"
     },
     {
-      "row_index": 1410,
+      "row_index": 1412,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['三'] not reflected in Việt translation.",
@@ -627,7 +683,7 @@
       "viet": "nay quay chèo ngược về, đúng vào đầu mùa đông:"
     },
     {
-      "row_index": 1436,
+      "row_index": 1438,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.50 < 0.7 (6 Viet words / 12 Han chars).",
@@ -635,7 +691,7 @@
       "viet": "Mênh mông núi hô ngàn dặm"
     },
     {
-      "row_index": 1505,
+      "row_index": 1507,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.60 < 0.7 (6 Viet words / 10 Han chars).",
@@ -643,7 +699,7 @@
       "viet": "Người từ muôn dặm trở về"
     },
     {
-      "row_index": 1528,
+      "row_index": 1530,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -651,7 +707,7 @@
       "viet": "Giá bút ống thơ,"
     },
     {
-      "row_index": 1539,
+      "row_index": 1541,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['百'] not reflected in Việt translation.",
@@ -659,31 +715,15 @@
       "viet": "Vẫn ngỡ như năm nào. Đó là chuyện đã qua,"
     },
     {
-      "row_index": 1541,
-      "category": "ADDITION",
-      "severity": "warning",
-      "reason": "Length ratio 17.67 > 4.5 (53 Viet words / 3 Han chars).",
-      "han": "馥也蠢，",
-      "viet": "Ông là con trai thứ tư của hoàng đế gia Long, lên ngôi Hoàng đế năm 1820, là vị Hoàng đế thứ hai của triều Nguyễn, tại vị từ năm 1820 đến năm 1841, lấy niên hiệu là minh mạng (Mệnh), nên thường được gọi là hoàng đế minh mạng. Ông là vị"
-    },
-    {
-      "row_index": 1542,
+      "row_index": 1546,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 19.00 > 4.5 (57 Viet words / 3 Han chars).",
-      "han": "不知量。",
-      "viet": "Hoàng đế có hùng tài đại lược và có tài năng về văn chương. Sáng tác hiện còn của ông rất phong phú: về thơ có Ngự chế thi tập, gồm 6 quyền với khoảng trên dưới 3 nghìn bài, về văn có minh Mệnh ngự chế văn với hàng ngàn bài theo nhiều thể loại khác"
+      "han": "彼既往，",
+      "viet": "(Mệnh), nên thường được gọi là hoàng đế minh mạng. Ông là vị Hoàng đế có hùng tài đại lược và có tài năng về văn chương. Sáng tác hiện còn của ông rất phong phú: về thơ có Ngự chế thi tập, gồm 6 quyền với khoảng trên dưới 3 nghìn bài, về văn có minh"
     },
     {
-      "row_index": 1544,
-      "category": "ADDITION",
-      "severity": "warning",
-      "reason": "Length ratio 6.20 > 4.5 (31 Viet words / 5 Han chars).",
-      "han": "仍作當年想。",
-      "viet": "Về từ, trong minh mệnh ngự chế văn (97, tp 41) 2, tập 2, kí hiệu A.118, bản chụp kí hiệu VHc.2796) có 1 bài từ viết theo điệu"
-    },
-    {
-      "row_index": 1592,
+      "row_index": 1593,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -691,7 +731,7 @@
       "viet": "Khách có kẻ nói:"
     },
     {
-      "row_index": 1613,
+      "row_index": 1614,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['八'] not reflected in Việt translation.",
@@ -699,7 +739,7 @@
       "viet": "Các học giả Trung Quốc từ thời cận đại trở di còn coi từ học là một lĩnh vực học thuật chuyên biệt, lấy từ và các vấn đề hữu quan của nó làm đối tượng nghiên cứu ở Cây vực sum suê:"
     },
     {
-      "row_index": 1614,
+      "row_index": 1615,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['三'] not reflected in Việt translation.",
@@ -707,7 +747,7 @@
       "viet": "Nguyên là \"Vực bốc\", nghĩa là cây vực mọc thành bụi đan xen vào nhau, cũng là tên một bài trong phần Đại nhã của Kinh Thi, ca ngợi thịnh đức của vua Văn Vương nhà Chu, cũng có khi dùng chỉ hiền tài đông đúc."
     },
     {
-      "row_index": 1631,
+      "row_index": 1632,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['四', '七'] not reflected in Việt translation.",
@@ -715,7 +755,7 @@
       "viet": "Phát khởi được ý ta chính là trò Thương vậy, Thương có thể bát đầu cùng ta nói về Thi rồi đó."
     },
     {
-      "row_index": 1662,
+      "row_index": 1663,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.44 < 0.7 (4 Viet words / 9 Han chars).",
@@ -723,7 +763,7 @@
       "viet": "Thần thái rạng đẹp,"
     },
     {
-      "row_index": 1664,
+      "row_index": 1665,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -731,7 +771,7 @@
       "viet": "Thị nữ hầu rượu,"
     },
     {
-      "row_index": 1679,
+      "row_index": 1680,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
@@ -739,7 +779,7 @@
       "viet": "Làm bạn với tùng,"
     },
     {
-      "row_index": 1684,
+      "row_index": 1685,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
@@ -747,7 +787,7 @@
       "viet": "NGƯỜI Đẹp NGÙ DẬY"
     },
     {
-      "row_index": 1717,
+      "row_index": 1718,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 4.57 > 4.5 (32 Viet words / 7 Han chars).",
@@ -755,7 +795,7 @@
       "viet": "Đuốc bạc, chén vàng, mở yến tiệc trên hồ, Phách ngà màu hồng, tay áo màu tía, thổi tiêu trong đêm trăng, Đứng hững hờ trên chiếc cầu lan can màu đỏ."
     },
     {
-      "row_index": 1720,
+      "row_index": 1721,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 11.33 > 4.5 (34 Viet words / 3 Han chars).",
@@ -763,7 +803,7 @@
       "viet": "Nhớ Giang Nam Để tiêu tan mùa ha, làm bài về cảnh sống thanh nhàn Nhãn chín đầy bên hồ giục khách mở tiệc, Hoa nở bên dường dẫn xe của mẹ hiền đến,"
     },
     {
-      "row_index": 1733,
+      "row_index": 1734,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -771,7 +811,7 @@
       "viet": "Ngoành trông giữa dòng,"
     },
     {
-      "row_index": 1818,
+      "row_index": 1819,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.50 < 0.7 (3 Viet words / 6 Han chars).",
@@ -779,7 +819,7 @@
       "viet": "Nhớ tri âm"
     },
     {
-      "row_index": 1833,
+      "row_index": 1834,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.17 < 0.7 (1 Viet words / 6 Han chars).",
@@ -787,7 +827,7 @@
       "viet": "TITHTION"
     },
     {
-      "row_index": 1866,
+      "row_index": 1867,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
@@ -795,7 +835,7 @@
       "viet": "Ngàn ngàn trắng nõn,"
     },
     {
-      "row_index": 1938,
+      "row_index": 1939,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -803,7 +843,7 @@
       "viet": "Lạnh lạnh, thanh thanh"
     },
     {
-      "row_index": 2119,
+      "row_index": 2120,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -811,7 +851,7 @@
       "viet": "Sông lớn về đông?"
     },
     {
-      "row_index": 2121,
+      "row_index": 2122,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (6 Viet words / 9 Han chars).",
@@ -819,7 +859,7 @@
       "viet": "Nhân vật phong lưu ngàn xưa?"
     },
     {
-      "row_index": 2133,
+      "row_index": 2134,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (15 Viet words / 24 Han chars).",
@@ -827,7 +867,7 @@
       "viet": "vào thanh sắc, duyên tình, phù hoa là vì vậy. Đến như các văn học"
     },
     {
-      "row_index": 2141,
+      "row_index": 2142,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (15 Viet words / 24 Han chars).",
@@ -1142,15 +1182,71 @@
       "viet": "Điệu Hành hương tử"
     },
     {
-      "row_index": 878,
-      "category": "OMISSION",
+      "row_index": 879,
+      "category": "ADDITION",
       "severity": "warning",
-      "reason": "Length ratio 0.25 < 0.7 (4 Viet words / 16 Han chars).",
-      "han": "己西冬，奉擬謝福總督錦軸詞調滿庭芳",
-      "viet": "Hoành nhuận lưu quang"
+      "reason": "Length ratio 8.67 > 4.5 (26 Viet words / 3 Han chars).",
+      "han": "滿庭芳",
+      "viet": "Truyền lại ơn trạch lớn lao nhuân thâm Là do núi Tung cao vời hun đúc nên đức độ Là bậc trọng thần được kính ngưỡng"
     },
     {
-      "row_index": 900,
+      "row_index": 880,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 9.00 > 4.5 (36 Viet words / 4 Han chars).",
+      "han": "宏潤流光",
+      "viet": "vốn xuất thân từ nguồn gốc thần tiên? Tài văn võ đủ để sửa trị thiên ha Phẩm đức và uy vọng bao trùm trung nguyên Mưu lược, công lao to lớn, giúp rập cho trời?"
+    },
+    {
+      "row_index": 887,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 23.00 > 4.5 (69 Viet words / 3 Han chars).",
+      "han": "真正是",
+      "viet": "- Tám ngôi sao Đầu: Nguyên là? Bát Đầu? (Ở đây không thể hiểu là? Bát đấu? (Tám đấu), kiểu? Tài cao tám đấu được). Chòm sao Bắc Đầu chi có 7 1990 sao, Tuy nhiên, theo truyền thuyết, cân kề còn có Phụ tinh và Bật tinh, thành 9 sao. Ở đây trên tác giả nói đến \"Bật tinh\", có lẽ tính gộp cả Bật tỉnh với 7 ngôi"
+    },
+    {
+      "row_index": 888,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 8.25 > 4.5 (33 Viet words / 4 Han chars).",
+      "han": "弼星降世",
+      "viet": "của bắc đầu thành ra 8 sao xoay phân chuôi lại. Thái cực: Chi trạng thái trời đất hỗn mang trở về trước. Câu này đi liền câu dưới, ngụ ý chỉ trời"
+    },
+    {
+      "row_index": 889,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 13.60 > 4.5 (68 Viet words / 5 Han chars).",
+      "han": "入耳耀天垣",
+      "viet": "4 Phu tử: Chỉ Khổng Tử. Câu này lấy ý từ thiên Dương Hoá, sách Luận ngữ:? Khổng tử nói: Ta muốn không nói gì (Dư dục vô ngôn 7. Tử Cống hỏi: Nếu thầy không nói thì học trò biết thuật lại thế nào? Khổng Tử nói: Trời có nói gì đâu mà bốn mùa cứ vận hành, mọi vật sinh sôi; trời có nói gì đâul?"
+    },
+    {
+      "row_index": 890,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 25.00 > 4.5 (50 Viet words / 2 Han chars).",
+      "han": "乾旋",
+      "viet": "5 Tương truyền, Côn Sơn là nơi sinh ra phượng hoàng, Ác Thuỷ là nơi sinh nhiều tuấn mã. % Câu này lấy ý từ bài Đại đông trong Kinh Thi:? Kì bi Chức Nữ; Chung nhật thất tương 4 khẩi 4, 4 Đ Lầ? (Chòm sao Chức Nữ [gồm ba"
+    },
+    {
+      "row_index": 891,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 15.00 > 4.5 (45 Viet words / 3 Han chars).",
+      "han": "參化紐，",
+      "viet": "\" Phúc lộc: Nguyên là \"\"Tiền cốc\", chữ dùng trong thơ Thiên bảo \" trong Kinh Thi:? Thiên bảo định nhĩ, Tỉ nhĩ tiến cốc XIFZĐ, 14 Hải\" (Trời giúp ngài được yên định, khiến ngài trọn vẹn với phúc lộc của mình) Ân trạch mênh mang"
+    },
+    {
+      "row_index": 897,
+      "category": "ADDITION",
+      "severity": "warning",
+      "reason": "Length ratio 5.50 > 4.5 (22 Viet words / 4 Han chars).",
+      "han": "遙歌戩殺",
+      "viet": "Quy công cho Thái cực, Phu tử lặng thầm Lớp lớp Côn Sơn, Ốc Thuỷ Gấm mây Chức Nữ giáng phàm trần"
+    },
+    {
+      "row_index": 902,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (6 Viet words / 9 Han chars).",
@@ -1158,7 +1254,7 @@
       "viet": "trước hết viết ra kim tiên"
     },
     {
-      "row_index": 908,
+      "row_index": 910,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
@@ -1166,7 +1262,7 @@
       "viet": "Điệu Mãn đình phương"
     },
     {
-      "row_index": 927,
+      "row_index": 929,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -1174,7 +1270,7 @@
       "viet": "Điệu Pháp giá dấn"
     },
     {
-      "row_index": 936,
+      "row_index": 938,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['千'] not reflected in Việt translation.",
@@ -1182,7 +1278,7 @@
       "viet": "Mang theo ngọc bạch tiên công] qua đường trạm dịch trải chín tầng trời,"
     },
     {
-      "row_index": 944,
+      "row_index": 946,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
@@ -1190,7 +1286,7 @@
       "viet": "Điệu Thiên thu tuế"
     },
     {
-      "row_index": 957,
+      "row_index": 959,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['九'] not reflected in Việt translation.",
@@ -1198,7 +1294,7 @@
       "viet": "Mang lòng thành của loài hoa quỳ 5,"
     },
     {
-      "row_index": 958,
+      "row_index": 960,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.40 < 0.7 (4 Viet words / 10 Han chars).",
@@ -1206,7 +1302,7 @@
       "viet": "Điệu Lâm giang tiên"
     },
     {
-      "row_index": 967,
+      "row_index": 969,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.40 < 0.7 (4 Viet words / 10 Han chars).",
@@ -1214,7 +1310,7 @@
       "viet": "Điệu Thu ba mị"
     },
     {
-      "row_index": 977,
+      "row_index": 979,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.50 < 0.7 (4 Viet words / 8 Han chars).",
@@ -1222,7 +1318,7 @@
       "viet": "Điệu Bốc toán tử"
     },
     {
-      "row_index": 978,
+      "row_index": 980,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 7.40 > 4.5 (37 Viet words / 5 Han chars).",
@@ -1230,7 +1326,7 @@
       "viet": "Cơ đồ của nhà vua dài lâu như nhật nguyệt Đức của bậc thánh lớn như trời đất Mùa xuân phủ lên cõi tiên Dao Trì 3, say với đào bích. Tuổi thọ sánh ngang núi, biển"
     },
     {
-      "row_index": 984,
+      "row_index": 986,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.44 < 0.7 (4 Viet words / 9 Han chars).",
@@ -1238,7 +1334,7 @@
       "viet": "Điệu Yết kim môn"
     },
     {
-      "row_index": 992,
+      "row_index": 994,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.44 < 0.7 (4 Viet words / 9 Han chars).",
@@ -1246,7 +1342,7 @@
       "viet": "Điệu Hạ thánh triều"
     },
     {
-      "row_index": 1001,
+      "row_index": 1003,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
@@ -1254,7 +1350,7 @@
       "viet": "Điệu Lạc xuân phong"
     },
     {
-      "row_index": 1008,
+      "row_index": 1010,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.69 < 0.7 (9 Viet words / 13 Han chars).",
@@ -1262,7 +1358,7 @@
       "viet": "Ánh sáng ấm áp, được thừa hưởng ân huệ"
     },
     {
-      "row_index": 1010,
+      "row_index": 1012,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.50 < 0.7 (4 Viet words / 8 Han chars).",
@@ -1270,7 +1366,7 @@
       "viet": "Điệu Phượng hoàng các"
     },
     {
-      "row_index": 1014,
+      "row_index": 1016,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
@@ -1278,7 +1374,7 @@
       "viet": "Nấu vàng, nổi ngọc"
     },
     {
-      "row_index": 1035,
+      "row_index": 1037,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.20 < 0.7 (3 Viet words / 15 Han chars).",
@@ -1286,7 +1382,7 @@
       "viet": "Điều phong hú"
     },
     {
-      "row_index": 1035,
+      "row_index": 1037,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['千'] not reflected in Việt translation.",
@@ -1294,7 +1390,7 @@
       "viet": "Điều phong hú"
     },
     {
-      "row_index": 1040,
+      "row_index": 1042,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['三'] not reflected in Việt translation.",
@@ -1302,7 +1398,7 @@
       "viet": "Vị năng thành trạch tướng trị Thả cộng giới mi thọ. Khán niên niên"
     },
     {
-      "row_index": 1087,
+      "row_index": 1089,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
@@ -1310,7 +1406,7 @@
       "viet": "Trải xem non nước,"
     },
     {
-      "row_index": 1105,
+      "row_index": 1107,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 9.33 > 4.5 (28 Viet words / 3 Han chars).",
@@ -1318,7 +1414,7 @@
       "viet": "ĐÔNG QUÁ TỪ LĂNG TRỊ VÂN ÂM KÍNH CẢM TÁC MÙA ĐÔNG, QUA LĂNG MÀU THẦN, ĐÚNG LUC MÂY CHE, KÍNH CẦN CẢM TÁC (Điệu Lâm giang tiên)"
     },
     {
-      "row_index": 1215,
+      "row_index": 1217,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['七'] not reflected in Việt translation.",
@@ -1326,7 +1422,7 @@
       "viet": "THÁT CẢM TẬP CA (Điệu liễu sao thanh)"
     },
     {
-      "row_index": 1227,
+      "row_index": 1229,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.17 < 0.7 (1 Viet words / 6 Han chars).",
@@ -1334,7 +1430,7 @@
       "viet": "BAITUTRANGIHU"
     },
     {
-      "row_index": 1234,
+      "row_index": 1236,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.46 < 0.7 (6 Viet words / 13 Han chars).",
@@ -1342,7 +1438,7 @@
       "viet": "Đất này có cây cau tốt,"
     },
     {
-      "row_index": 1235,
+      "row_index": 1237,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
@@ -1350,7 +1446,7 @@
       "viet": "Mùi vị tựa quỳnh tương"
     },
     {
-      "row_index": 1261,
+      "row_index": 1263,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (8 Viet words / 12 Han chars).",
@@ -1358,7 +1454,7 @@
       "viet": "Ngày nay tiễn bằng tiếng buồn đứt ruột"
     },
     {
-      "row_index": 1351,
+      "row_index": 1353,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 4.67 > 4.5 (14 Viet words / 3 Han chars).",
@@ -1366,7 +1462,7 @@
       "viet": "SOẠN TRƯỚC CÁC BÀI TỨ CHỨC MÙNG TIẾT VẠN THỌ' Điệu Hạ thánh triều"
     },
     {
-      "row_index": 1352,
+      "row_index": 1354,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.33 < 0.7 (1 Viet words / 3 Han chars).",
@@ -1374,7 +1470,7 @@
       "viet": "II."
     },
     {
-      "row_index": 1356,
+      "row_index": 1358,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 6.00 > 4.5 (24 Viet words / 4 Han chars).",
@@ -1382,7 +1478,7 @@
       "viet": "Xuống dưới nhà tiếng sáo tiếng ca. Cảnh tinh xuất hiện cùng áng mây lành, Mong [bệ hạ thọ] như tuổi rùa tuổi hạc?"
     },
     {
-      "row_index": 1371,
+      "row_index": 1373,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 6.00 > 4.5 (18 Viet words / 3 Han chars).",
@@ -1390,7 +1486,7 @@
       "viet": "BÀI TỪ CHÚC MỪNG QUAN TRẤN THỦ LẠNG SƠN, TƯỚC PHONG KIÊN TRUNG HÂU (Điệu Nhất tiễn mai)"
     },
     {
-      "row_index": 1385,
+      "row_index": 1387,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.33 < 0.7 (1 Viet words / 3 Han chars).",
@@ -1398,7 +1494,7 @@
       "viet": "II."
     },
     {
-      "row_index": 1388,
+      "row_index": 1390,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.56 < 0.7 (5 Viet words / 9 Han chars).",
@@ -1406,7 +1502,7 @@
       "viet": "Trong tráp hồi văn đứt,"
     },
     {
-      "row_index": 1400,
+      "row_index": 1402,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 8.60 > 4.5 (43 Viet words / 5 Han chars).",
@@ -1414,7 +1510,7 @@
       "viet": "trên gỗ, hiện treo ở nhà thờ Đại tôn dòng họ Nguyễn Huy ở xã Trường Lộc, huyện Can Lộc, tỉnh Hà Tĩnh, Trên bảng gỗ không ghi tác giả và niên đại. Theo nội dung, các bài từ này được viết để"
     },
     {
-      "row_index": 1410,
+      "row_index": 1412,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.59 < 0.7 (10 Viet words / 17 Han chars).",
@@ -1422,7 +1518,7 @@
       "viet": "nay quay chèo ngược về, đúng vào đầu mùa đông:"
     },
     {
-      "row_index": 1410,
+      "row_index": 1412,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['三'] not reflected in Việt translation.",
@@ -1430,7 +1526,7 @@
       "viet": "nay quay chèo ngược về, đúng vào đầu mùa đông:"
     },
     {
-      "row_index": 1436,
+      "row_index": 1438,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.50 < 0.7 (6 Viet words / 12 Han chars).",
@@ -1438,7 +1534,7 @@
       "viet": "Mênh mông núi hô ngàn dặm"
     },
     {
-      "row_index": 1505,
+      "row_index": 1507,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.60 < 0.7 (6 Viet words / 10 Han chars).",
@@ -1446,7 +1542,7 @@
       "viet": "Người từ muôn dặm trở về"
     },
     {
-      "row_index": 1528,
+      "row_index": 1530,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -1454,7 +1550,7 @@
       "viet": "Giá bút ống thơ,"
     },
     {
-      "row_index": 1539,
+      "row_index": 1541,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['百'] not reflected in Việt translation.",
@@ -1462,31 +1558,15 @@
       "viet": "Vẫn ngỡ như năm nào. Đó là chuyện đã qua,"
     },
     {
-      "row_index": 1541,
-      "category": "ADDITION",
-      "severity": "warning",
-      "reason": "Length ratio 17.67 > 4.5 (53 Viet words / 3 Han chars).",
-      "han": "馥也蠢，",
-      "viet": "Ông là con trai thứ tư của hoàng đế gia Long, lên ngôi Hoàng đế năm 1820, là vị Hoàng đế thứ hai của triều Nguyễn, tại vị từ năm 1820 đến năm 1841, lấy niên hiệu là minh mạng (Mệnh), nên thường được gọi là hoàng đế minh mạng. Ông là vị"
-    },
-    {
-      "row_index": 1542,
+      "row_index": 1546,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 19.00 > 4.5 (57 Viet words / 3 Han chars).",
-      "han": "不知量。",
-      "viet": "Hoàng đế có hùng tài đại lược và có tài năng về văn chương. Sáng tác hiện còn của ông rất phong phú: về thơ có Ngự chế thi tập, gồm 6 quyền với khoảng trên dưới 3 nghìn bài, về văn có minh Mệnh ngự chế văn với hàng ngàn bài theo nhiều thể loại khác"
+      "han": "彼既往，",
+      "viet": "(Mệnh), nên thường được gọi là hoàng đế minh mạng. Ông là vị Hoàng đế có hùng tài đại lược và có tài năng về văn chương. Sáng tác hiện còn của ông rất phong phú: về thơ có Ngự chế thi tập, gồm 6 quyền với khoảng trên dưới 3 nghìn bài, về văn có minh"
     },
     {
-      "row_index": 1544,
-      "category": "ADDITION",
-      "severity": "warning",
-      "reason": "Length ratio 6.20 > 4.5 (31 Viet words / 5 Han chars).",
-      "han": "仍作當年想。",
-      "viet": "Về từ, trong minh mệnh ngự chế văn (97, tp 41) 2, tập 2, kí hiệu A.118, bản chụp kí hiệu VHc.2796) có 1 bài từ viết theo điệu"
-    },
-    {
-      "row_index": 1592,
+      "row_index": 1593,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -1494,7 +1574,7 @@
       "viet": "Khách có kẻ nói:"
     },
     {
-      "row_index": 1613,
+      "row_index": 1614,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['八'] not reflected in Việt translation.",
@@ -1502,7 +1582,7 @@
       "viet": "Các học giả Trung Quốc từ thời cận đại trở di còn coi từ học là một lĩnh vực học thuật chuyên biệt, lấy từ và các vấn đề hữu quan của nó làm đối tượng nghiên cứu ở Cây vực sum suê:"
     },
     {
-      "row_index": 1614,
+      "row_index": 1615,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['三'] not reflected in Việt translation.",
@@ -1510,7 +1590,7 @@
       "viet": "Nguyên là \"Vực bốc\", nghĩa là cây vực mọc thành bụi đan xen vào nhau, cũng là tên một bài trong phần Đại nhã của Kinh Thi, ca ngợi thịnh đức của vua Văn Vương nhà Chu, cũng có khi dùng chỉ hiền tài đông đúc."
     },
     {
-      "row_index": 1631,
+      "row_index": 1632,
       "category": "NUMBER_MISMATCH",
       "severity": "warning",
       "reason": "Hán number(s) ['四', '七'] not reflected in Việt translation.",
@@ -1518,7 +1598,7 @@
       "viet": "Phát khởi được ý ta chính là trò Thương vậy, Thương có thể bát đầu cùng ta nói về Thi rồi đó."
     },
     {
-      "row_index": 1662,
+      "row_index": 1663,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.44 < 0.7 (4 Viet words / 9 Han chars).",
@@ -1526,7 +1606,7 @@
       "viet": "Thần thái rạng đẹp,"
     },
     {
-      "row_index": 1664,
+      "row_index": 1665,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -1534,7 +1614,7 @@
       "viet": "Thị nữ hầu rượu,"
     },
     {
-      "row_index": 1679,
+      "row_index": 1680,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
@@ -1542,7 +1622,7 @@
       "viet": "Làm bạn với tùng,"
     },
     {
-      "row_index": 1684,
+      "row_index": 1685,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
@@ -1550,7 +1630,7 @@
       "viet": "NGƯỜI Đẹp NGÙ DẬY"
     },
     {
-      "row_index": 1717,
+      "row_index": 1718,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 4.57 > 4.5 (32 Viet words / 7 Han chars).",
@@ -1558,7 +1638,7 @@
       "viet": "Đuốc bạc, chén vàng, mở yến tiệc trên hồ, Phách ngà màu hồng, tay áo màu tía, thổi tiêu trong đêm trăng, Đứng hững hờ trên chiếc cầu lan can màu đỏ."
     },
     {
-      "row_index": 1720,
+      "row_index": 1721,
       "category": "ADDITION",
       "severity": "warning",
       "reason": "Length ratio 11.33 > 4.5 (34 Viet words / 3 Han chars).",
@@ -1566,7 +1646,7 @@
       "viet": "Nhớ Giang Nam Để tiêu tan mùa ha, làm bài về cảnh sống thanh nhàn Nhãn chín đầy bên hồ giục khách mở tiệc, Hoa nở bên dường dẫn xe của mẹ hiền đến,"
     },
     {
-      "row_index": 1733,
+      "row_index": 1734,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -1574,7 +1654,7 @@
       "viet": "Ngoành trông giữa dòng,"
     },
     {
-      "row_index": 1818,
+      "row_index": 1819,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.50 < 0.7 (3 Viet words / 6 Han chars).",
@@ -1582,7 +1662,7 @@
       "viet": "Nhớ tri âm"
     },
     {
-      "row_index": 1833,
+      "row_index": 1834,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.17 < 0.7 (1 Viet words / 6 Han chars).",
@@ -1590,7 +1670,7 @@
       "viet": "TITHTION"
     },
     {
-      "row_index": 1866,
+      "row_index": 1867,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.57 < 0.7 (4 Viet words / 7 Han chars).",
@@ -1598,7 +1678,7 @@
       "viet": "Ngàn ngàn trắng nõn,"
     },
     {
-      "row_index": 1938,
+      "row_index": 1939,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -1606,7 +1686,7 @@
       "viet": "Lạnh lạnh, thanh thanh"
     },
     {
-      "row_index": 2119,
+      "row_index": 2120,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -1614,7 +1694,7 @@
       "viet": "Sông lớn về đông?"
     },
     {
-      "row_index": 2121,
+      "row_index": 2122,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (6 Viet words / 9 Han chars).",
@@ -1622,7 +1702,7 @@
       "viet": "Nhân vật phong lưu ngàn xưa?"
     },
     {
-      "row_index": 2133,
+      "row_index": 2134,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (15 Viet words / 24 Han chars).",
@@ -1630,7 +1710,7 @@
       "viet": "vào thanh sắc, duyên tình, phù hoa là vì vậy. Đến như các văn học"
     },
     {
-      "row_index": 2141,
+      "row_index": 2142,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (15 Viet words / 24 Han chars).",

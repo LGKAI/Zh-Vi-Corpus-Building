@@ -1,11 +1,11 @@
 {
-  "total_pairs": 1264,
-  "valid_pairs": 1264,
-  "valid_checked_pairs": 1264,
+  "total_pairs": 1263,
+  "valid_pairs": 1263,
+  "valid_checked_pairs": 1263,
   "error_pairs": 40,
   "num_error_pairs": 40,
-  "clean_pairs": 1224,
-  "error_rate": 0.031646,
+  "clean_pairs": 1223,
+  "error_rate": 0.031671,
   "passes_acceptance_threshold": true,
   "passes_threshold_30pct": true,
   "passes_internal_target": true,
@@ -347,7 +347,7 @@
       "viet": "Còn bệnh nào to hơn nữ"
     },
     {
-      "row_index": 1188,
+      "row_index": 1187,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
@@ -670,7 +670,7 @@
       "viet": "Còn bệnh nào to hơn nữ"
     },
     {
-      "row_index": 1188,
+      "row_index": 1187,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
