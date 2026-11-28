@@ -15,6 +15,7 @@ from typing import Any, Dict, Iterable, List, Optional, Sequence, Set, Tuple
 
 from src.ocr_engine import (
     BOOK_DELIVERABLE_DIRS,
+    _is_vietocr_gibberish_line,
     group_layout_blocks,
 )
 from src.aligner import (
@@ -423,10 +424,13 @@ _NATIVE_VIET_PROSE_CUE_RE = re.compile(
 _EDITORIAL_COMMENTARY_LINE_RE = re.compile(
     r"(?:Hoàng\s+Xuân\s+Hãn|Đào\s+Duy\s+Anh|Truyện\s+Kiều|Nghĩa\s+2\s+v[ếề]\s*:|"
     r"xem\s+Cht\.|xem\s+b[ảà]ng\s+Ph[ảà]\s+hệ|"
+    r"\b(?:TTBH\d*|TTBLI?\d*|TTBN\d*|TVTL[123]|VATT\b|I?TTTPHT|I?TTPHT|TITPHT|TSNIL)\b|"
+    r"\bTrong\s+TVTL\b|\bk[íi]\s+hiệu\s+(?:VH[vc]\.|HN\.|AB\.|A\.)\s*\d+|"
+    r"^\s*[-–—]\s*[^:]{2,35}:\s*Nguyên\s+là\b|"
     r"Thật\s+ra,\s+tất\s+cả\s+những\s+điều\s+(?:ghi|khi)\s+chép\s+trên\s+đây\s+chỉ\s+là\s+truyền\s+thuyết|"
     r"và\s+nhà\s+nho\s+nhiều\s+đời,\s+h[âà]m\s+mộ\s+Mạc\s+Đ[ĩị]nh\s+Ch[ỉị]|"
     r"đã\s+g[ắầ]n\s+ghép\s+thêm\s+thơ\s+văn\s+người\s+này|"
-    r"thống\s+và\s+tr[ởờ]\s+n[êề]n\s+đẹp\s+đ[ẽè]\.\s*Do\s+đó,\s+những\s+thơ\s+văn\s+trên\s+đây|"
+    r"thống\s+và\s+tr[ởờ]?\s+n[êề]n\s+đẹp\s+đ[ẽè]\.\s*Do\s+đó,\s+những\s+thơ\s+văn\s+trên\s+đây|"
     r"nguyên\s+họ\s+Ph[íi]\s+ý?\s*được\s+vua\s+Tr[ầậ]n\s+Nhân\s+T[ôộ]ng)",
     flags=re.IGNORECASE,
 )
@@ -549,6 +553,8 @@ def _is_tltvn_han_title_line(text: str) -> bool:
         return False
     if (s.startswith("(") and s.endswith(")")) or (s.startswith("（") and s.endswith("）")):
         return count_han_chars(s) <= 10
+    if re.search(r"(?:詞調|詞并引|詞曲十調)$", s) and count_han_chars(s) <= 18:
+        return True
     if _HAN_SENT_PUNCT_RE.search(s):
         return False
     return 1 <= count_han_chars(s) <= 12
@@ -733,6 +739,7 @@ def _align_verse_unit(
         if clean_viet_text(ln)
         and re.search(r"[A-Za-zÀ-ỹà-ỹ]", ln)
         and not _EDITORIAL_COMMENTARY_LINE_RE.search(ln)
+        and not _is_vietocr_gibberish_line(ln)
     ]
     dn_clean = [
         clean_viet_text(ln)
@@ -740,6 +747,7 @@ def _align_verse_unit(
         if clean_viet_text(ln)
         and re.search(r"[A-Za-zÀ-ỹà-ỹ]", ln)
         and not _EDITORIAL_COMMENTARY_LINE_RE.search(ln)
+        and not _is_vietocr_gibberish_line(ln)
     ]
     dt_clean = [
         clean_viet_text(ln)
@@ -747,6 +755,7 @@ def _align_verse_unit(
         if clean_viet_text(ln)
         and re.search(r"[A-Za-zÀ-ỹà-ỹ]", ln)
         and not _EDITORIAL_COMMENTARY_LINE_RE.search(ln)
+        and not _is_vietocr_gibberish_line(ln)
     ]
 
     if not h_clean or (not pa_clean and not dn_clean and not dt_clean):
@@ -778,7 +787,11 @@ def _align_verse_unit(
         if has_shift:
             ops = _phonetic_dp_align_verse(h_clean, pa_clean)
             matched_cnt = sum(1 for op, _, _ in ops if op == "match")
+            skip_h_cnt = sum(1 for op, _, _ in ops if op == "skip_h")
+            skip_p_cnt = sum(1 for op, _, _ in ops if op == "skip_p")
             if matched_cnt >= max(2, min(len(h_clean), len(pa_clean)) - 2):
+                use_dt_by_h = bool(dt_clean and skip_p_cnt == 0 and len(dt_clean) == len(h_clean))
+                use_dt_by_p = bool(dt_clean and skip_h_cnt == 0 and len(dt_clean) == len(pa_clean))
                 dp_rows: List[Tuple[str, str, str, str]] = []
                 for op, hi, pj in ops:
                     if op == "match":
@@ -787,24 +800,29 @@ def _align_verse_unit(
                         phonetic_checks.append(verify_han_phien_am_pair(h_val, pa_clean[pj]))
                         pa_val = pa_clean[pj]
                         dn_val = dn_clean[pj] if pj < len(dn_clean) else ""
-                        if len(dt_clean) == len(pa_clean) and pj < len(dt_clean):
-                            dt_val = dt_clean[pj]
-                        elif len(dt_clean) == len(h_clean) and hi < len(dt_clean):
+                        if use_dt_by_h and hi < len(dt_clean):
                             dt_val = dt_clean[hi]
+                        elif use_dt_by_p and pj < len(dt_clean):
+                            dt_val = dt_clean[pj]
                         else:
                             dt_val = ""
                         dp_rows.append((h_val, pa_val, dn_val, dt_val))
                     elif op == "skip_h":
                         h_val = h_clean[hi]
-                        dt_val = dt_clean[hi] if len(dt_clean) == len(h_clean) and hi < len(dt_clean) else ""
-                        if dt_val:
-                            dp_rows.append((h_val, "", "", dt_val))
+                        if use_dt_by_h and hi < len(dt_clean):
+                            dp_rows.append((h_val, "", "", dt_clean[hi]))
+                        elif dt_clean and not use_dt_by_p and hi < len(dt_clean):
+                            # Keep gap Hán row as candidate slot for monotonic DT alignment below
+                            dp_rows.append((h_val, "", "", ""))
                 if dp_rows:
-                    # If dt_clean was not length-locked to h_clean or pa_clean, align it across dp_rows
-                    if dt_clean and len(dt_clean) not in (len(h_clean), len(pa_clean)):
+                    if dt_clean and not use_dt_by_h and not use_dt_by_p:
                         backbone = [{"han": r[0], "dich_am": r[1], "dich_nghia": r[2]} for r in dp_rows]
                         dt_aligned = align_hvtt_facing_dich_tho(backbone, dt_clean)
-                        dp_rows = [(r[0], r[1], r[2], dt_v) for r, dt_v in zip(dp_rows, dt_aligned)]
+                        dp_rows = [
+                            (r[0], r[1], r[2], dt_v)
+                            for r, dt_v in zip(dp_rows, dt_aligned)
+                            if r[1].strip() or r[2].strip() or dt_v.strip()
+                        ]
                     return dp_rows
 
     # Run phonetic correction / verification when line counts match 1:1
@@ -964,13 +982,14 @@ def _align_prose_unit(
         if clean_viet_text(ln)
         and re.search(r"[A-Za-zÀ-ỹà-ỹ]", ln)
         and not _EDITORIAL_COMMENTARY_LINE_RE.search(ln)
+        and not _is_vietocr_gibberish_line(ln)
     ]
 
     # Preserve dialogue-dash sentence breaks across OCR lines before joining
     norm_dn_lines: List[str] = []
     for ln in dn_lines:
         s = ln.strip()
-        if not s or _EDITORIAL_COMMENTARY_LINE_RE.search(s):
+        if not s or _EDITORIAL_COMMENTARY_LINE_RE.search(s) or _is_vietocr_gibberish_line(s):
             continue
         if (
             norm_dn_lines
@@ -1207,12 +1226,23 @@ def _align_sequential_book_from_ocr(
 
         if book_key in ("TVLT2", "VPO_03"):
             han_title = clean_han_text(work.han_title)
-            pa_title = clean_viet_text(work.pa_title)
-            dn_title = clean_viet_text(work.dn_title)
+            pa_title = clean_viet_text(re.sub(r"\s+\d{1,2}$", "", work.pa_title.strip()))
+            dn_title = clean_viet_text(re.sub(r"\s+\d{1,2}$", "", work.dn_title.strip()))
+            if _is_vietocr_gibberish_line(pa_title) or _EDITORIAL_COMMENTARY_LINE_RE.search(pa_title):
+                pa_title = ""
             han_lines = list(work.han_lines)
-            pa_lines = list(work.pa_lines)
-            dn_lines = list(work.dn_lines)
-            dt_lines = list(work.dt_lines)
+            pa_lines = [
+                ln for ln in work.pa_lines
+                if not _is_vietocr_gibberish_line(ln) and not _EDITORIAL_COMMENTARY_LINE_RE.search(ln)
+            ]
+            dn_lines = [
+                ln for ln in work.dn_lines
+                if not _is_vietocr_gibberish_line(ln) and not _EDITORIAL_COMMENTARY_LINE_RE.search(ln)
+            ]
+            dt_lines = [
+                ln for ln in work.dt_lines
+                if not _is_vietocr_gibberish_line(ln) and not _EDITORIAL_COMMENTARY_LINE_RE.search(ln)
+            ]
 
             # Fix Work #3: filter out p.26-27 Dịch nghĩa lines that leaked into pa_lines across blank p.25
             if work.metadata.get("dn_source") == "bai_03_thien_tong_chi_nam_tu_dich_nghia.txt":

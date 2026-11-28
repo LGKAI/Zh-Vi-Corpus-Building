@@ -20,844 +20,713 @@
       "line_id": "0326_viet_000",
       "bbox": [
         [
-          180,
-          185
+          217,
+          124
         ],
         [
-          1620,
-          185
+          825,
+          124
         ],
         [
-          1620,
-          230
+          825,
+          162
         ],
         [
-          180,
-          230
+          217,
+          162
         ]
       ],
       "bbox_original": [
         [
-          180,
-          306
+          217,
+          245
         ],
         [
-          1620,
-          306
+          825,
+          245
         ],
         [
-          1620,
-          351
+          825,
+          283
         ],
         [
-          180,
-          351
+          217,
+          283
         ]
       ],
       "box_xyxy": [
-        180,
-        185,
-        1620,
-        230
+        217,
+        124,
+        825,
+        162
       ],
-      "text": "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
-      "confidence": 0.985,
-      "role": "phien_am"
+      "text": "Thu dạ tĩnh, thiên-quang ẩn-ước,",
+      "confidence": 0.985
     },
     {
       "line_id": "0326_viet_001",
       "bbox": [
         [
-          180,
-          240
+          152,
+          182
         ],
         [
-          1620,
-          240
+          926,
+          182
         ],
         [
-          1620,
-          290
+          926,
+          221
         ],
         [
-          180,
-          290
+          152,
+          221
         ]
       ],
       "bbox_original": [
         [
-          180,
-          361
+          152,
+          303
         ],
         [
-          1620,
-          361
+          926,
+          303
         ],
         [
-          1620,
-          411
+          926,
+          342
         ],
         [
-          180,
-          411
+          152,
+          342
         ]
       ],
       "box_xyxy": [
-        180,
-        240,
-        1620,
-        290
+        152,
+        182,
+        926,
+        221
       ],
-      "text": "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :",
-      "confidence": 0.978,
-      "role": "dich_nghia_gloss"
+      "text": "Đêm thu lặng-lẽ, thấp-thoáng trời sáng trăng.",
+      "confidence": 0.985
     },
     {
       "line_id": "0326_viet_002",
       "bbox": [
         [
-          180,
-          375
+          218,
+          335
         ],
         [
-          1620,
-          375
+          804,
+          335
         ],
         [
-          1620,
-          420
+          804,
+          363
         ],
         [
-          180,
-          420
+          218,
+          363
         ]
       ],
       "bbox_original": [
         [
-          180,
-          496
+          218,
+          456
         ],
         [
-          1620,
-          496
+          804,
+          456
         ],
         [
-          1620,
-          541
+          804,
+          484
         ],
         [
-          180,
-          541
+          218,
+          484
         ]
       ],
       "box_xyxy": [
-        180,
-        375,
-        1620,
-        420
+        218,
+        335,
+        804,
+        363
       ],
-      "text": "Ngã tử, tử tất vi chính.",
-      "confidence": 0.986,
-      "role": "phien_am"
+      "text": "Cách sơ liêm đạm chước kim-lôi,",
+      "confidence": 0.985
     },
     {
       "line_id": "0326_viet_003",
       "bbox": [
         [
-          180,
-          430
+          152,
+          393
         ],
         [
-          1620,
-          430
+          1028,
+          393
         ],
         [
-          1620,
-          475
+          1028,
+          432
         ],
         [
-          180,
-          475
+          152,
+          432
         ]
       ],
       "bbox_original": [
         [
-          180,
-          551
+          152,
+          514
         ],
         [
-          1620,
-          551
+          1028,
+          514
         ],
         [
-          1620,
-          596
+          1028,
+          553
         ],
         [
-          180,
-          596
+          152,
+          553
         ]
       ],
       "box_xyxy": [
-        180,
-        430,
-        1620,
-        475
+        152,
+        393,
+        1028,
+        432
       ],
-      "text": "Ta chết, con sẽ giữ chính-quyền.",
-      "confidence": 0.98,
-      "role": "dich_nghia_gloss"
+      "text": "Cách rèm thưa thoảng rót chén rượu con bằng vàng.",
+      "confidence": 0.985
     },
     {
       "line_id": "0326_viet_004",
       "bbox": [
         [
-          180,
-          555
+          218,
+          545
         ],
         [
-          1620,
-          555
+          789,
+          545
         ],
         [
-          1620,
-          600
+          789,
+          582
         ],
         [
-          180,
-          600
+          218,
+          582
         ]
       ],
       "bbox_original": [
         [
-          180,
-          676
+          218,
+          666
         ],
         [
-          1620,
-          676
+          789,
+          666
         ],
         [
-          1620,
-          721
+          789,
+          703
         ],
         [
-          180,
-          721
+          218,
+          703
         ]
       ],
       "box_xyxy": [
-        180,
-        555,
-        1620,
-        600
+        218,
+        545,
+        789,
+        582
       ],
-      "text": "Duy hữu đức giả, năng dĩ khoan phục dân,",
-      "confidence": 0.984,
-      "role": "phien_am"
+      "text": "Thiên-thời, nhân-sự tương thôi",
+      "confidence": 0.985
     },
     {
       "line_id": "0326_viet_005",
       "bbox": [
         [
-          180,
-          610
+          153,
+          603
         ],
         [
-          1620,
-          610
+          845,
+          603
         ],
         [
-          1620,
-          655
+          845,
+          641
         ],
         [
-          180,
-          655
+          153,
+          641
         ]
       ],
       "bbox_original": [
         [
-          180,
-          731
+          153,
+          724
         ],
         [
-          1620,
-          731
+          845,
+          724
         ],
         [
-          1620,
-          776
+          845,
+          762
         ],
         [
-          180,
-          776
+          153,
+          762
         ]
       ],
       "box_xyxy": [
-        180,
-        610,
-        1620,
-        655
+        153,
+        603,
+        845,
+        641
       ],
-      "text": "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
-      "confidence": 0.976,
-      "role": "dich_nghia_gloss"
+      "text": "Thời trời và việc người thúc giục nhau.",
+      "confidence": 0.985
     },
     {
       "line_id": "0326_viet_006",
       "bbox": [
         [
-          180,
-          735
+          220,
+          756
         ],
         [
-          1620,
-          735
+          930,
+          756
         ],
         [
-          1620,
-          780
+          930,
+          792
         ],
         [
-          180,
-          780
+          220,
+          792
         ]
       ],
       "bbox_original": [
         [
-          180,
-          856
+          220,
+          877
         ],
         [
-          1620,
-          856
+          930,
+          877
         ],
         [
-          1620,
-          901
+          930,
+          913
         ],
         [
-          180,
-          901
+          220,
+          913
         ]
       ],
       "box_xyxy": [
-        180,
-        735,
-        1620,
-        780
+        220,
+        756,
+        930,
+        792
       ],
-      "text": "Kỳ thứ mạc như mãnh.",
-      "confidence": 0.987,
-      "role": "phien_am"
+      "text": "Phù-sanh nhược mộng kỷ hồi vi hoan ?",
+      "confidence": 0.985
     },
     {
       "line_id": "0326_viet_007",
       "bbox": [
         [
-          180,
-          790
+          157,
+          813
         ],
         [
-          1620,
-          790
+          1032,
+          813
         ],
         [
-          1620,
-          835
+          1032,
+          851
         ],
         [
-          180,
-          835
+          157,
+          851
         ]
       ],
       "bbox_original": [
         [
-          180,
-          911
+          157,
+          934
         ],
         [
-          1620,
-          911
+          1032,
+          934
         ],
         [
-          1620,
-          956
+          1032,
+          972
         ],
         [
-          180,
-          956
+          157,
+          972
         ]
       ],
       "box_xyxy": [
-        180,
-        790,
-        1620,
-        835
+        157,
+        813,
+        1032,
+        851
       ],
-      "text": "còn thì không gì bằng chính-sách mạnh.",
-      "confidence": 0.981,
-      "role": "dich_nghia_gloss"
+      "text": "Kiếp phù-sanh như giấc mộng, được mấy hồi vui.",
+      "confidence": 0.985
     },
     {
       "line_id": "0326_viet_008",
       "bbox": [
         [
-          180,
-          915
+          216,
+          966
         ],
         [
-          1620,
-          915
+          899,
+          966
         ],
         [
-          1620,
-          960
+          899,
+          1002
         ],
         [
-          180,
-          960
+          216,
+          1002
         ]
       ],
       "bbox_original": [
         [
-          180,
-          1036
+          216,
+          1087
         ],
         [
-          1620,
-          1036
+          899,
+          1087
         ],
         [
-          1620,
-          1081
+          899,
+          1123
         ],
         [
-          180,
-          1081
+          216,
+          1123
         ]
       ],
       "box_xyxy": [
-        180,
-        915,
-        1620,
-        960
+        216,
+        966,
+        899,
+        1002
       ],
-      "text": "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.",
-      "confidence": 0.985,
-      "role": "phien_am"
+      "text": "Nhơn đối cảnh, hoa gian nguyệt chiếu",
+      "confidence": 0.985
     },
     {
       "line_id": "0326_viet_009",
       "bbox": [
         [
-          180,
-          970
+          156,
+          1027
         ],
         [
-          1620,
-          970
+          999,
+          1027
         ],
         [
-          1620,
-          1015
+          999,
+          1068
         ],
         [
-          180,
-          1015
+          156,
+          1068
         ]
       ],
       "bbox_original": [
         [
-          180,
-          1091
+          156,
+          1148
         ],
         [
-          1620,
-          1091
+          999,
+          1148
         ],
         [
-          1620,
-          1136
+          999,
+          1189
         ],
         [
-          180,
-          1136
+          156,
+          1189
         ]
       ],
       "box_xyxy": [
-        180,
-        970,
-        1620,
-        1015
+        156,
+        1027,
+        999,
+        1068
       ],
-      "text": "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa.",
-      "confidence": 0.979,
-      "role": "dich_nghia_gloss"
+      "text": "Người ngắm cảnh (thấy) trăng rọi giữa lòng hoa.",
+      "confidence": 0.985
     },
     {
       "line_id": "0326_viet_010",
       "bbox": [
         [
-          180,
-          1095
+          222,
+          1175
         ],
         [
-          1620,
-          1095
+          894,
+          1175
         ],
         [
-          1620,
-          1140
+          894,
+          1213
         ],
         [
-          180,
-          1140
+          222,
+          1213
         ]
       ],
       "bbox_original": [
         [
-          180,
-          1216
+          222,
+          1296
         ],
         [
-          1620,
-          1216
+          894,
+          1296
         ],
         [
-          1620,
-          1261
+          894,
+          1334
         ],
         [
-          180,
-          1261
+          222,
+          1334
         ]
       ],
       "box_xyxy": [
-        180,
-        1095,
-        1620,
-        1140
+        222,
+        1175,
+        894,
+        1213
       ],
-      "text": "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.",
-      "confidence": 0.984,
-      "role": "phien_am"
+      "text": "Cảnh liêu nhơn, thọ diễu phong xuy,",
+      "confidence": 0.985
     },
     {
       "line_id": "0326_viet_011",
       "bbox": [
         [
-          180,
-          1150
+          157,
+          1237
         ],
         [
-          1620,
-          1150
+          963,
+          1237
         ],
         [
-          1620,
-          1195
+          963,
+          1276
         ],
         [
-          180,
-          1195
+          157,
+          1276
         ]
       ],
       "bbox_original": [
         [
-          180,
-          1271
+          157,
+          1358
         ],
         [
-          1620,
-          1271
+          963,
+          1358
         ],
         [
-          1620,
-          1316
+          963,
+          1397
         ],
         [
-          180,
-          1316
+          157,
+          1397
         ]
       ],
       "box_xyxy": [
-        180,
-        1150,
-        1620,
-        1195
+        157,
+        1237,
+        963,
+        1276
       ],
-      "text": "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều.",
-      "confidence": 0.978,
-      "role": "dich_nghia_gloss"
+      "text": "Cảnh trêu người (xui) gió thổi trên ngọn cây.",
+      "confidence": 0.985
     },
     {
       "line_id": "0326_viet_012",
       "bbox": [
         [
-          180,
-          1275
+          222,
+          1389
         ],
         [
-          1620,
-          1275
+          739,
+          1389
         ],
         [
-          1620,
-          1320
+          739,
+          1419
         ],
         [
-          180,
-          1320
+          222,
+          1419
         ]
       ],
       "bbox_original": [
         [
-          180,
-          1396
+          222,
+          1510
         ],
         [
-          1620,
-          1396
+          739,
+          1510
         ],
         [
-          1620,
-          1441
+          739,
+          1540
         ],
         [
-          180,
-          1441
+          222,
+          1540
         ]
       ],
       "box_xyxy": [
-        180,
-        1275,
-        1620,
-        1320
+        222,
+        1389,
+        739,
+        1419
       ],
-      "text": "Cố khoan nan.",
-      "confidence": 0.988,
-      "role": "phien_am"
+      "text": "Giá ban liệu thiểu nhơn tri,",
+      "confidence": 0.985
     },
     {
       "line_id": "0326_viet_013",
       "bbox": [
         [
-          180,
-          1330
+          156,
+          1446
         ],
         [
-          1620,
-          1330
+          1035,
+          1446
         ],
         [
-          1620,
-          1375
+          1035,
+          1486
         ],
         [
-          180,
-          1375
+          156,
+          1486
         ]
       ],
       "bbox_original": [
         [
-          180,
-          1451
+          156,
+          1567
         ],
         [
-          1620,
-          1451
+          1035,
+          1567
         ],
         [
-          1620,
-          1496
+          1035,
+          1607
         ],
         [
-          180,
-          1496
+          156,
+          1607
         ]
       ],
       "box_xyxy": [
-        180,
-        1330,
-        1620,
-        1375
+        156,
+        1446,
+        1035,
+        1486
       ],
-      "text": "Vì thế khoan hồng là khó.",
-      "confidence": 0.982,
-      "role": "dich_nghia_gloss"
+      "text": "Phong cảnh hữu tình, liệu chừng cũng ít người biết",
+      "confidence": 0.985
     },
     {
       "line_id": "0326_viet_014",
       "bbox": [
         [
-          180,
-          1455
+          158,
+          1497
         ],
         [
-          1620,
-          1455
+          534,
+          1497
         ],
         [
-          1620,
-          1500
+          534,
+          1529
         ],
         [
-          180,
-          1500
+          158,
+          1529
         ]
       ],
       "bbox_original": [
         [
-          180,
-          1576
+          158,
+          1618
         ],
         [
-          1620,
-          1576
+          534,
+          1618
         ],
         [
-          1620,
-          1621
+          534,
+          1650
         ],
         [
-          180,
-          1621
+          158,
+          1650
         ]
       ],
       "box_xyxy": [
-        180,
-        1455,
-        1620,
-        1500
+        158,
+        1497,
+        534,
+        1529
       ],
-      "text": "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính.",
-      "confidence": 0.985,
-      "role": "phien_am"
-    },
-    {
-      "line_id": "0326_viet_015",
-      "bbox": [
-        [
-          180,
-          1510
-        ],
-        [
-          1620,
-          1510
-        ],
-        [
-          1620,
-          1555
-        ],
-        [
-          180,
-          1555
-        ]
-      ],
-      "bbox_original": [
-        [
-          180,
-          1631
-        ],
-        [
-          1620,
-          1631
-        ],
-        [
-          1620,
-          1676
-        ],
-        [
-          180,
-          1676
-        ]
-      ],
-      "box_xyxy": [
-        180,
-        1510,
-        1620,
-        1555
-      ],
-      "text": "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền.",
-      "confidence": 0.98,
-      "role": "dich_nghia_gloss"
+      "text": "thưởng thức.",
+      "confidence": 0.985
     }
   ],
   "layout_summary": {
     "layout_mode": "interlinear_3line_even_page",
-    "phien_am_lines": [
-      "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
-      "Ngã tử, tử tất vi chính.",
-      "Duy hữu đức giả, năng dĩ khoan phục dân,",
-      "Kỳ thứ mạc như mãnh.",
-      "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.",
-      "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.",
-      "Cố khoan nan.",
-      "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính."
-    ],
-    "dich_nghia_lines": [
-      "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :",
-      "Ta chết, con sẽ giữ chính-quyền.",
-      "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,",
-      "còn thì không gì bằng chính-sách mạnh.",
-      "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa.",
-      "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều.",
-      "Vì thế khoan hồng là khó.",
-      "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền."
-    ],
-    "dich_tho_lines": [],
-    "interlinear_triplets": [
-      {
-        "triplet_index": 0,
-        "chu_han": "鄭 子 產 有 疾 謂 子 太 叔 曰",
-        "phien_am": "Trịnh Tử-Sản hữu tật, vị tử Thái-Thúc viết :",
-        "dich_nghia_gloss": "Trịnh Tử-Sản bệnh nặng, bảo con là Thái-Thúc rằng :"
-      },
-      {
-        "triplet_index": 1,
-        "chu_han": "我 死 子 必 爲 政",
-        "phien_am": "Ngã tử, tử tất vi chính.",
-        "dich_nghia_gloss": "Ta chết, con sẽ giữ chính-quyền."
-      },
-      {
-        "triplet_index": 2,
-        "chu_han": "惟 有 德 者 能 以 寬 服 民",
-        "phien_am": "Duy hữu đức giả, năng dĩ khoan phục dân,",
-        "dich_nghia_gloss": "Chỉ kẻ có đức mới có thể lấy khoan hòa cho dân phục,"
-      },
-      {
-        "triplet_index": 3,
-        "chu_han": "其 次 莫 如 猛",
-        "phien_am": "Kỳ thứ mạc như mãnh.",
-        "dich_nghia_gloss": "còn thì không gì bằng chính-sách mạnh."
-      },
-      {
-        "triplet_index": 4,
-        "chu_han": "夫 火 烈 民 望 而 畏 之 故 鮮 死 焉",
-        "phien_am": "Phù hỏa liệt, dân vọng nhi úy chi, cố tiển tử yên.",
-        "dich_nghia_gloss": "Như lửa cháy, dân trông là sợ, nên ít kẻ chết vì lửa."
-      },
-      {
-        "triplet_index": 5,
-        "chu_han": "水 懦 弱 民 狎 而 翫 之 則 多 死 焉",
-        "phien_am": "Thủy nhu nhược, dân hạp nhi ngoạn chi, tắc đa tử yên.",
-        "dich_nghia_gloss": "Nước mềm yếu, dân ưa đùa-rỡn, nên chết nhiều."
-      },
-      {
-        "triplet_index": 6,
-        "chu_han": "故 寬 難",
-        "phien_am": "Cố khoan nan.",
-        "dich_nghia_gloss": "Vì thế khoan hồng là khó."
-      },
-      {
-        "triplet_index": 7,
-        "chu_han": "疾 數 月 而 卒 太 叔 爲 政",
-        "phien_am": "Tật sổ nguyệt nhi tốt, Thái-Thúc vi chính.",
-        "dich_nghia_gloss": "Đau mấy tháng rồi chết, Thái-Thúc lên cầm quyền."
-      }
-    ],
-    "has_dich_nghia": true
+    "han_line_count": 7,
+    "phien_am_line_count": 7,
+    "dich_nghia_line_count": 7,
+    "dich_tho_line_count": 0
   }
 }

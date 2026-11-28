@@ -72,7 +72,8 @@ _INLINE_DOT_FOOTNOTE_RE = re.compile(
     rf"(?<=[{_LOWER_LATIN_CHARS}])\s+\d{{1,2}}\.(?=\s+[{_LOWER_LATIN_CHARS}])"
 )
 _INLINE_OCR_GARBAGE_TOKENS_RE = re.compile(
-    r"(?:,\s*7uên\s+lên\s+sịx\b|\b7uên\s+lên\s+sịx\b|\bPOLITING\b|\bJITTVVNII\b|^\s*Ex\s+(?=[A-ZĐÀ-Ỹ]))"
+    r"(?:,\s*7uên\s+lên\s+sịx\b|\b7uên\s+lên\s+sịx\b|\bPOLITING\b|\bJITTVVNII\b|^\s*Ex\s+(?=[A-ZĐÀ-Ỹ])|"
+    r"^\s*\d{0,3}\s*TVTL\d[,\sTVTL\d]*[a-zà-ỹ\s]+(?=[A-ZĐÀ-Ỹ]{2,})|\s+xxx\s*$|^\s*xxx\s+)"
 )
 # Leading/trailing guillemet/dash OCR misreads (`a `, `u `, ` n`, ` 1 n`) in HVTT verse lines
 _HVTT_LEADING_QUOTE_NOISE_RE = re.compile(

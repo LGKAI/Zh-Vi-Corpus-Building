@@ -24,6 +24,7 @@ from src.ocr_engine import (
     _extract_header_remainder,
     _fold_ascii_header,
     _is_primary_han_line,
+    _is_vietocr_gibberish_line,
     _sort_items_reading_order,
     _word_count,
     classify_section_header,
@@ -73,11 +74,27 @@ class WorkRecord:
 _PURE_INT_RE = re.compile(r"^\d{1,3}$")
 _AUTHOR_BIO_HEADER_RE = re.compile(
     r"^[A-Z\u00C0-\u024F\u1E00-\u1EFF][A-Z\u00C0-\u024F\u1E00-\u1EFF\s.\-]{3,}"
-    r"\s*\((?:\d{3,4}|TH[EÊ]\s*K[IỈ])",
-    flags=re.UNICODE,
+    r"\s*\((?:\d{3,4}|(?:CU[ỐÔ]I|Đ[ẦÂ]U|GI[ỮƯ]A|N[ỬƯ]A)?\s*TH[ẾÊ]\s*K[ỈIỶY]|\?\s*[-–—?]\s*\?)[^)]*\)\s*[.:]?\s*$",
+    flags=re.UNICODE | re.IGNORECASE,
 )
 _FOLDED_BIO_HEADER_RE = re.compile(
-    r"^[A-Z][A-Z\s.\-]{4,}\s*\((?:\d{3,4}|THE\s*K[I1]|TR[UO]*C)",
+    r"^[A-Z][A-Z\s.\-]{4,}\s*\((?:\d{3,4}|(?:CUOI|DAU|GIUA|NUA)?\s*THE\s*K[I1Y]|TR[UO]*C|\?\s*[-–—?]\s*\?)[^)]*\)\s*[.:]?\s*$",
+)
+_BIO_HEADER_DATE_TITLE_EXCLUSION_RE = re.compile(
+    r"^(?:MUA\s+|NAM\s+|THANG\s+|NGAY\s+|TIET\s+|BAI\s+|DIEU\s+)",
+)
+_TLTVN_BIO_PROSE_START_RE = re.compile(
+    r"(?:^\s*(?:Sách\s+.{3,50}\(k[íi]\s*hiệu|PH[ỒỒNG]+\s+NGƯ\s+TRÚ\s+TÚ\s+LỤC|CAC\s+DIEU\s+TU\s+DA\s+DUOC)|"
+    r"\blúc\s+nhỏ\s+có\s+tên\s+là\b|"
+    r"\blà\s+con\s+trai\s+thứ\s+\d*\s*của\s+(?:hoàng\s+đế|vua)\b|"
+    r"\bthường\s+được\s+gọi\s+(?:tắt|tất)\s+là\b|"
+    r"\bhiện\s+chưa\s+rõ\s+(?:năm\s+sinh|hành\s+trạng)\b|"
+    r"\bSau\s+khi\s+thi\s+đỗ,\s+ông\s+được\s+bổ\s+làm\b|"
+    r"\bk[íi]\s+hiệu\s+(?:VH[vc]\.|HN\.|AB\.|A\.)\s*\d+|"
+    r"\bA\.\s*(?:1006|560|781|118|630|2152|449)\b|"
+    r"\bVH[vc]\.\s*\d+\b|"
+    r"^\s*Về\s+từ,\s+(?:ông|trong|Miên\s+Thẩm|hiện\s+mới)\b)",
+    flags=re.IGNORECASE,
 )
 _NON_ALPHA_TITLE_CHARS_RE = re.compile(r"[\d\s.,;:!?()\[\]\"'«»—\-/*]+")
 
@@ -128,7 +145,7 @@ _TVLT2_WORK21_NEU_COLON_RE = re.compile(r"^\s*N[ÊE]U\s*:\s*(.*)$", flags=re.IGN
 _TLTVN_NOISE_DIVIDER_RE = re.compile(r"^\d+\.\d+\.\d+$")
 _TLTVN_NUMBERED_FOOTNOTE_RE = re.compile(r"^\d{1,2}\s+[A-Z\u00C0-\u024F\u1E00-\u1EFF]")
 _TLTVN_FOOTNOTE_CUE_RE = re.compile(
-    r"^(?:XET\s+TU\s+PHO\b|THEO\s+|NAM\s+.*\(\d{4}\)|\d{1,2}\s+[A-Z])",
+    r"^(?:XET\s+TU\s+PHO\b|THEO\s+|NAM\s+.*\(\d{4}\)|\d{1,2}\s+[A-Z]|[-–—]\s*[^:]{2,35}:\s*NGUYEN\s+LA\b)",
     flags=re.IGNORECASE,
 )
 _TLTVN_SUITE_MARKER_RE = re.compile(
@@ -215,10 +232,15 @@ def _is_all_caps_title(text: str) -> bool:
 
 def _is_bio_header(text: str) -> bool:
     nfc = _nfc(text)
-    if not nfc:
+    if not nfc or "(" not in nfc or ")" not in nfc:
         return False
-    if _AUTHOR_BIO_HEADER_RE.match(nfc):
-        return True
+    prefix = nfc.split("(", 1)[0].strip()
+    alpha_prefix = [ch for ch in prefix if ch.isalpha()]
+    if len(alpha_prefix) < 4 or any(ch.islower() for ch in alpha_prefix):
+        return False
+    folded_prefix = _fold_ascii_header(prefix).upper()
+    if _BIO_HEADER_DATE_TITLE_EXCLUSION_RE.match(folded_prefix):
+        return False
     folded = _fold_ascii_header(nfc).upper()
     return bool(_FOLDED_BIO_HEADER_RE.match(folded))
 
@@ -340,6 +362,24 @@ def _preprocess_tvlt2_page_items(
     viet_filtered = deduplicate_overlapping_items(
         _sort_items_reading_order([it for it in viet_raw if _keep(it, False)])
     )
+    # On full-page pure Classical Chinese pages (e.g. p.326..331 Niêm tụng kệ, p.385..386 Hịch tướng sĩ)
+    # where >=18 primary Hán boxes span the page and VietOCR has no section headers or valid Vietnamese prose,
+    # drop VietOCR items (including stray digits '2', '3', '7', '11' misread from Chinese strokes).
+    if is_real_scan:
+        prim_han_cnt = sum(1 for it in han_filtered if _is_primary_han_line(it.get("text", "")))
+        has_any_hdr = any(classify_section_header(it.get("text", "")) is not None for it in viet_filtered)
+        has_right_caps_title = any(
+            _is_all_caps_title(it.get("text", "")) and _box_bounds(it)[0] >= 0.42 * pw
+            for it in viet_filtered
+        )
+        valid_viet_lines = [
+            it for it in viet_filtered
+            if not _PURE_INT_RE.match(_nfc(it.get("text", "")))
+            and not _is_vietocr_gibberish_line(it.get("text", ""))
+            and _word_count(_nfc(it.get("text", ""))) >= 4
+        ]
+        if prim_han_cnt >= 18 and not has_any_hdr and not has_right_caps_title and len(valid_viet_lines) <= 2:
+            viet_filtered = []
     return han_filtered, viet_filtered, pw, ph, is_real_scan
 
 
@@ -369,11 +409,15 @@ def _is_tvlt2_work_number(
 
 def _apply_work3_supplement(work: WorkRecord, paragraphs: Sequence[str]) -> None:
     """Attach the 15-paragraph Dịch nghĩa supplement for TVLT2 Work #3 (*Thiền tông chỉ nam tự*)."""
+    in_work3_page_band = not work.source_pages or any(19 <= p <= 35 for p in work.source_pages)
     is_work3 = (
-        work.work_id == 3
-        or "指南序" in work.han_title
-        or "THIEN TONG CHI NAM" in _fold_ascii_header(work.pa_title).upper()
-        or any("朕竊謂佛無南北" in ln for ln in work.han_lines)
+        (work.work_id == 3 and in_work3_page_band and ("指南" in work.han_title or "CHỈ NAM" in work.pa_title.upper() or not work.dn_lines))
+        and (
+            "指南序" in work.han_title
+            or "THIEN TONG CHI NAM" in _fold_ascii_header(work.pa_title).upper()
+            or any("朕" in ln and "佛" in ln for ln in work.han_lines)
+            or (work.work_id == 3 and any(19 <= p <= 28 for p in work.source_pages))
+        )
     )
     if not is_work3:
         return
@@ -385,10 +429,13 @@ def _apply_work3_supplement(work: WorkRecord, paragraphs: Sequence[str]) -> None
 
 def _subsegment_work21(work: WorkRecord) -> None:
     """Split TVLT2 Work #21 (*Niêm tụng kệ*) locally into ~43 `SubPoem` tiết units."""
+    folded_dn_t = _fold_ascii_header(work.dn_title).upper()
     is_work21 = (
-        work.work_id == 21
-        or "拈頌偈" in work.han_title
+        "拈頌偈" in work.han_title
         or "NIEM TUNG KE" in _fold_ascii_header(work.pa_title).upper()
+        or "TUNG CO" in folded_dn_t
+        or (any(326 <= p <= 335 for p in work.source_pages) and len(work.pa_lines) >= 80)
+        or (work.work_id == 21 and not work.source_pages)
     )
     if not is_work21:
         return
@@ -721,7 +768,7 @@ def _segment_tvlt2(
                     _touch_page(current_work, pnum)
                     state = "DICH_NGHIA"
                     _, rest = _extract_header_remainder(txt, _FOLDED_DICH_NGHIA_HEADER_RE)
-                    if rest:
+                    if rest and len(re.sub(r"[^A-Za-zÀ-ỹà-ỹ]", "", rest)) >= 4:
                         if not current_work.dn_title and _is_all_caps_title(rest):
                             current_work.dn_title = rest
                         else:
@@ -780,6 +827,10 @@ def _segment_tvlt2(
                             {"text": txt, "x1": x1, "pw": pw, "page": pnum}
                         )
                 elif state == "DICH_NGHIA":
+                    if not current_work.dn_lines and len(re.sub(r"[^A-Za-zÀ-ỹà-ỹ]", "", txt)) <= 3:
+                        # Drop 1-3 letter OCR noise (e.g. 'SĨ', ';') right after DỊCH NGHĨA: so ALL-CAPS dn_title is captured
+                        idx += 1
+                        continue
                     if (
                         not current_work.dn_title
                         and not current_work.dn_lines
@@ -816,12 +867,13 @@ def _segment_tvlt2(
                         for j in range(max(0, idx - 2), min(n, idx + 4))
                     )
                     # Fallback B: Centered tall Hán title (h >= 58, concise width <= 0.55*pw)
-                    # followed by full-width Hán prose or PHIÊN ÂM (guards against p0028 quoted prose)
+                    # followed by full-width Hán prose or PHIÊN ÂM (guards against p0028 quoted prose & p0846 biography couplets)
                     h_box_h = y2 - y1
                     h_box_w = x2 - x1
                     h_xc = 0.5 * (x1 + x2)
                     is_centered_tall = (
                         is_real_scan
+                        and state != "BIO_OR_SKIP"
                         and h_box_h >= 58.0
                         and h_box_w <= 0.55 * pw
                         and 0.22 * pw <= h_xc <= 0.78 * pw
@@ -837,16 +889,24 @@ def _segment_tvlt2(
                             for j in range(idx + 1, n)
                         )
                     )
+                    # Fallback B2: Full-page pure-Hán work starting directly after SKIP_APPARATUS (e.g. p.326 Niêm tụng kệ)
+                    is_full_han_page_start = (
+                        is_real_scan
+                        and state == "SKIP_APPARATUS"
+                        and idx == 0
+                        and not viet_items
+                        and len(han_items) >= 18
+                    )
                     # Fallback C: Synthetic non-real-scan page starting cleanly with primary Han
                     is_synthetic_start = (
                         not is_real_scan
                         and current_work is None
                         and not any(_is_bio_header(t[5].get("text", "")) for t in tagged[:idx])
                     )
-                    if paired_all_caps or is_centered_tall or is_synthetic_start:
+                    if paired_all_caps or is_centered_tall or is_full_han_page_start or is_synthetic_start:
                         _flush_zone()
                         _start_work(None, pnum)
-                        if paired_all_caps or is_synthetic_start:
+                        if paired_all_caps or is_full_han_page_start or is_synthetic_start:
                             zone_han.append(item)
                         else:
                             current_work.han_title = txt
@@ -1057,6 +1117,23 @@ def _segment_tltvn(pages: Sequence[Dict[str, Any]]) -> List[WorkRecord]:
 
             # kind == "viet"
             if _is_bio_header(txt):
+                _finalize_sub_poems(current_work)
+                _flush_work(works, current_work)
+                current_work = None
+                state = "BIO_OR_SKIP"
+                continue
+
+            # Detect author biography / bibliographic intro paragraphs starting after a completed TLTVN work
+            # (when the top author header had no dates or was cropped at the top of the page)
+            if (
+                state in ("DICH_THO", "DICH_NGHIA")
+                and current_work is not None
+                and (len(current_work.dn_lines) >= 2 or len(current_work.dt_lines) >= 2)
+                and (
+                    _TLTVN_BIO_PROSE_START_RE.search(txt)
+                    or _TLTVN_BIO_PROSE_START_RE.search(_fold_ascii_header(txt))
+                )
+            ):
                 _finalize_sub_poems(current_work)
                 _flush_work(works, current_work)
                 current_work = None

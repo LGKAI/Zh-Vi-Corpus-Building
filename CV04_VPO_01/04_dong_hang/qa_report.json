@@ -1,11 +1,11 @@
 {
-  "total_pairs": 1264,
-  "valid_pairs": 1264,
-  "valid_checked_pairs": 1264,
+  "total_pairs": 1259,
+  "valid_pairs": 1259,
+  "valid_checked_pairs": 1259,
   "error_pairs": 40,
   "num_error_pairs": 40,
-  "clean_pairs": 1224,
-  "error_rate": 0.031646,
+  "clean_pairs": 1219,
+  "error_rate": 0.031771,
   "passes_acceptance_threshold": true,
   "passes_threshold_30pct": true,
   "passes_internal_target": true,
@@ -13,26 +13,26 @@
   "is_valid": true,
   "error_counts_by_type": {
     "MISSING": 0,
-    "OMISSION": 33,
-    "ADDITION": 6,
+    "OMISSION": 35,
+    "ADDITION": 5,
     "FORMAT_ERROR": 0,
     "LEFTOVER_MARKER": 0,
-    "NUMBER_MISMATCH": 1
+    "NUMBER_MISMATCH": 0
   },
   "error_breakdown": {
     "MISSING": 0,
-    "OMISSION": 33,
-    "ADDITION": 6,
+    "OMISSION": 35,
+    "ADDITION": 5,
     "FORMAT_ERROR": 0,
     "LEFTOVER_MARKER": 0,
-    "NUMBER_MISMATCH": 1
+    "NUMBER_MISMATCH": 0
   },
   "missing_count": 0,
-  "omission_count": 33,
-  "addition_count": 6,
+  "omission_count": 35,
+  "addition_count": 5,
   "format_error_count": 0,
   "leftover_marker_count": 0,
-  "number_mismatch_count": 1,
+  "number_mismatch_count": 0,
   "issues": [
     {
       "row_index": 26,
@@ -107,12 +107,28 @@
       "viet": "Kẻ đồng-tử này đâu biết có việc chi, hân-hạnh gặp buổi tiệc linh-đình"
     },
     {
+      "row_index": 342,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.60 < 0.7 (6 Viet words / 10 Han chars).",
+      "han": "屈賈誼放長沙非無聖主",
+      "viet": "chẳng phải không vua hiền thánh;"
+    },
+    {
+      "row_index": 354,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.67 < 0.7 (8 Viet words / 12 Han chars).",
+      "han": "有懷投筆興慕宗興愨之長風",
+      "viet": "yêu mên cơn gió dài của tông xác"
+    },
+    {
       "row_index": 377,
       "category": "ADDITION",
       "severity": "warning",
-      "reason": "Length ratio 6.40 > 4.5 (32 Viet words / 5 Han chars).",
+      "reason": "Length ratio 6.20 > 4.5 (31 Viet words / 5 Han chars).",
       "han": "蜀山元阿房",
-      "viet": "Giữa miền núi thục cao phẳng cung A-phòng hiện ra LRETAPER Phúc áp tam bách dư lý, cách ly thiên nhật Che kín hơn ba trăm dặm, xa cách mặt trời."
+      "viet": "Giữa miền núi thục cao phẳng cung A-phòng hiện ra Phúc áp tam bách dư lý, cách ly thiên nhật Che kín hơn ba trăm dặm, xa cách mặt trời."
     },
     {
       "row_index": 383,
@@ -126,9 +142,9 @@
       "row_index": 418,
       "category": "ADDITION",
       "severity": "warning",
-      "reason": "Length ratio 8.00 > 4.5 (80 Viet words / 10 Han chars).",
+      "reason": "Length ratio 6.80 > 4.5 (68 Viet words / 10 Han chars).",
       "han": "縫參差多妙周身之泉線",
-      "viet": "những đường ngói tiếp giáp nhau so-le nhiều hơn những sợi vải, sợi tơ che phủ khắp mình trần đế 3%rizeria trực lan hoành hạm đa ư cửu thồ chi thành quách; những lan-can thẳng những ván hiên-ngang nhiều hơn những thành quách của chín châu; E 3è về định x z là 13 quản huyền âu nha, đa ư thị nhân chi ngôn ngữ tiếng đàn sáo ổn ào nhiều hơn tiếng người trong chợ"
+      "viet": "những đường ngói tiếp giáp nhau so-le nhiều hơn những sợi vải, sợi tơ che phủ khắp mình trực lan hoành hạm đa ư cửu thồ chi thành quách; những lan-can thẳng những ván hiên-ngang nhiều hơn những thành quách của chín châu; quản huyền âu nha, đa ư thị nhân chi ngôn ngữ tiếng đàn sáo ổn ào nhiều hơn tiếng người trong chợ"
     },
     {
       "row_index": 426,
@@ -179,7 +195,7 @@
       "viet": "Ta thương tình mới hỏi: nghề này"
     },
     {
-      "row_index": 601,
+      "row_index": 599,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.60 < 0.7 (6 Viet words / 10 Han chars).",
@@ -187,7 +203,7 @@
       "viet": "nêu quả cháy rụi hết cả"
     },
     {
-      "row_index": 602,
+      "row_index": 600,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
@@ -195,7 +211,7 @@
       "viet": "lại càng nên mừng hơn"
     },
     {
-      "row_index": 609,
+      "row_index": 607,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -203,7 +219,7 @@
       "viet": "Người ta thường nói"
     },
     {
-      "row_index": 625,
+      "row_index": 623,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -211,7 +227,7 @@
       "viet": "Kẻ sĩ giữ tiềng"
     },
     {
-      "row_index": 629,
+      "row_index": 627,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.42 < 0.7 (5 Viet words / 12 Han chars).",
@@ -219,7 +235,7 @@
       "viet": "đời nhiều kẻ ngại-ngùng"
     },
     {
-      "row_index": 633,
+      "row_index": 631,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (6 Viet words / 9 Han chars).",
@@ -227,7 +243,7 @@
       "viet": "Thây văn chương bác uần-súc"
     },
     {
-      "row_index": 639,
+      "row_index": 637,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
@@ -235,7 +251,7 @@
       "viet": "có thể nói được rồi,"
     },
     {
-      "row_index": 646,
+      "row_index": 644,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.60 < 0.7 (6 Viet words / 10 Han chars).",
@@ -243,7 +259,7 @@
       "viet": "Nay may có trận hỏa tai"
     },
     {
-      "row_index": 648,
+      "row_index": 646,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -251,7 +267,7 @@
       "viet": "nhà tường cháy đen"
     },
     {
-      "row_index": 650,
+      "row_index": 648,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
@@ -259,23 +275,7 @@
       "viet": "mới hiền nhiên không nho"
     },
     {
-      "row_index": 672,
-      "category": "NUMBER_MISMATCH",
-      "severity": "warning",
-      "reason": "Hán number(s) ['百'] not reflected in Việt translation.",
-      "han": "百廢具興乃重修岳陽樓",
-      "viet": "Dân vui-vẻ một lòng mẽn đức, / Việc thành-thơi, ra sức sửa-sang"
-    },
-    {
       "row_index": 673,
-      "category": "ADDITION",
-      "severity": "warning",
-      "reason": "Length ratio 5.50 > 4.5 (22 Viet words / 4 Han chars).",
-      "han": "增其舊制",
-      "viet": "tăng kỳ cựu chẽ. phàm việc gì từ trước phê thì đều sửa lại cả. Bèn sửa-sang lại lầu nhạc-dương."
-    },
-    {
-      "row_index": 676,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.43 < 0.7 (3 Viet words / 7 Han chars).",
@@ -283,7 +283,7 @@
       "viet": "Ta ngắm xem:"
     },
     {
-      "row_index": 731,
+      "row_index": 727,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
@@ -291,7 +291,7 @@
       "viet": "nều may mà thành-công"
     },
     {
-      "row_index": 758,
+      "row_index": 754,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
@@ -299,7 +299,7 @@
       "viet": "Mộ-dung Thùy. Thùy tâu"
     },
     {
-      "row_index": 819,
+      "row_index": 815,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.60 < 0.7 (6 Viet words / 10 Han chars).",
@@ -307,7 +307,7 @@
       "viet": "mà dùng thì làm hỏng việc"
     },
     {
-      "row_index": 827,
+      "row_index": 823,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.60 < 0.7 (6 Viet words / 10 Han chars).",
@@ -315,7 +315,7 @@
       "viet": "mỗi khi nói chuyện với Quát"
     },
     {
-      "row_index": 852,
+      "row_index": 848,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.56 < 0.7 (5 Viet words / 9 Han chars).",
@@ -323,7 +323,7 @@
       "viet": "sau diệt được kinh-sở."
     },
     {
-      "row_index": 858,
+      "row_index": 854,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.64 < 0.7 (7 Viet words / 11 Han chars).",
@@ -331,7 +331,7 @@
       "viet": "nghc lời không dùng được mà bỏ"
     },
     {
-      "row_index": 865,
+      "row_index": 861,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.55 < 0.7 (6 Viet words / 11 Han chars).",
@@ -339,7 +339,7 @@
       "viet": "cũng vì vua ham công-danh"
     },
     {
-      "row_index": 887,
+      "row_index": 883,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (6 Viet words / 9 Han chars).",
@@ -347,7 +347,7 @@
       "viet": "Còn bệnh nào to hơn nữ"
     },
     {
-      "row_index": 1188,
+      "row_index": 1183,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
@@ -430,12 +430,28 @@
       "viet": "Kẻ đồng-tử này đâu biết có việc chi, hân-hạnh gặp buổi tiệc linh-đình"
     },
     {
+      "row_index": 342,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.60 < 0.7 (6 Viet words / 10 Han chars).",
+      "han": "屈賈誼放長沙非無聖主",
+      "viet": "chẳng phải không vua hiền thánh;"
+    },
+    {
+      "row_index": 354,
+      "category": "OMISSION",
+      "severity": "warning",
+      "reason": "Length ratio 0.67 < 0.7 (8 Viet words / 12 Han chars).",
+      "han": "有懷投筆興慕宗興愨之長風",
+      "viet": "yêu mên cơn gió dài của tông xác"
+    },
+    {
       "row_index": 377,
       "category": "ADDITION",
       "severity": "warning",
-      "reason": "Length ratio 6.40 > 4.5 (32 Viet words / 5 Han chars).",
+      "reason": "Length ratio 6.20 > 4.5 (31 Viet words / 5 Han chars).",
       "han": "蜀山元阿房",
-      "viet": "Giữa miền núi thục cao phẳng cung A-phòng hiện ra LRETAPER Phúc áp tam bách dư lý, cách ly thiên nhật Che kín hơn ba trăm dặm, xa cách mặt trời."
+      "viet": "Giữa miền núi thục cao phẳng cung A-phòng hiện ra Phúc áp tam bách dư lý, cách ly thiên nhật Che kín hơn ba trăm dặm, xa cách mặt trời."
     },
     {
       "row_index": 383,
@@ -449,9 +465,9 @@
       "row_index": 418,
       "category": "ADDITION",
       "severity": "warning",
-      "reason": "Length ratio 8.00 > 4.5 (80 Viet words / 10 Han chars).",
+      "reason": "Length ratio 6.80 > 4.5 (68 Viet words / 10 Han chars).",
       "han": "縫參差多妙周身之泉線",
-      "viet": "những đường ngói tiếp giáp nhau so-le nhiều hơn những sợi vải, sợi tơ che phủ khắp mình trần đế 3%rizeria trực lan hoành hạm đa ư cửu thồ chi thành quách; những lan-can thẳng những ván hiên-ngang nhiều hơn những thành quách của chín châu; E 3è về định x z là 13 quản huyền âu nha, đa ư thị nhân chi ngôn ngữ tiếng đàn sáo ổn ào nhiều hơn tiếng người trong chợ"
+      "viet": "những đường ngói tiếp giáp nhau so-le nhiều hơn những sợi vải, sợi tơ che phủ khắp mình trực lan hoành hạm đa ư cửu thồ chi thành quách; những lan-can thẳng những ván hiên-ngang nhiều hơn những thành quách của chín châu; quản huyền âu nha, đa ư thị nhân chi ngôn ngữ tiếng đàn sáo ổn ào nhiều hơn tiếng người trong chợ"
     },
     {
       "row_index": 426,
@@ -502,7 +518,7 @@
       "viet": "Ta thương tình mới hỏi: nghề này"
     },
     {
-      "row_index": 601,
+      "row_index": 599,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.60 < 0.7 (6 Viet words / 10 Han chars).",
@@ -510,7 +526,7 @@
       "viet": "nêu quả cháy rụi hết cả"
     },
     {
-      "row_index": 602,
+      "row_index": 600,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
@@ -518,7 +534,7 @@
       "viet": "lại càng nên mừng hơn"
     },
     {
-      "row_index": 609,
+      "row_index": 607,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -526,7 +542,7 @@
       "viet": "Người ta thường nói"
     },
     {
-      "row_index": 625,
+      "row_index": 623,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -534,7 +550,7 @@
       "viet": "Kẻ sĩ giữ tiềng"
     },
     {
-      "row_index": 629,
+      "row_index": 627,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.42 < 0.7 (5 Viet words / 12 Han chars).",
@@ -542,7 +558,7 @@
       "viet": "đời nhiều kẻ ngại-ngùng"
     },
     {
-      "row_index": 633,
+      "row_index": 631,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (6 Viet words / 9 Han chars).",
@@ -550,7 +566,7 @@
       "viet": "Thây văn chương bác uần-súc"
     },
     {
-      "row_index": 639,
+      "row_index": 637,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
@@ -558,7 +574,7 @@
       "viet": "có thể nói được rồi,"
     },
     {
-      "row_index": 646,
+      "row_index": 644,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.60 < 0.7 (6 Viet words / 10 Han chars).",
@@ -566,7 +582,7 @@
       "viet": "Nay may có trận hỏa tai"
     },
     {
-      "row_index": 648,
+      "row_index": 646,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (4 Viet words / 6 Han chars).",
@@ -574,7 +590,7 @@
       "viet": "nhà tường cháy đen"
     },
     {
-      "row_index": 650,
+      "row_index": 648,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
@@ -582,23 +598,7 @@
       "viet": "mới hiền nhiên không nho"
     },
     {
-      "row_index": 672,
-      "category": "NUMBER_MISMATCH",
-      "severity": "warning",
-      "reason": "Hán number(s) ['百'] not reflected in Việt translation.",
-      "han": "百廢具興乃重修岳陽樓",
-      "viet": "Dân vui-vẻ một lòng mẽn đức, / Việc thành-thơi, ra sức sửa-sang"
-    },
-    {
       "row_index": 673,
-      "category": "ADDITION",
-      "severity": "warning",
-      "reason": "Length ratio 5.50 > 4.5 (22 Viet words / 4 Han chars).",
-      "han": "增其舊制",
-      "viet": "tăng kỳ cựu chẽ. phàm việc gì từ trước phê thì đều sửa lại cả. Bèn sửa-sang lại lầu nhạc-dương."
-    },
-    {
-      "row_index": 676,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.43 < 0.7 (3 Viet words / 7 Han chars).",
@@ -606,7 +606,7 @@
       "viet": "Ta ngắm xem:"
     },
     {
-      "row_index": 731,
+      "row_index": 727,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
@@ -614,7 +614,7 @@
       "viet": "nều may mà thành-công"
     },
     {
-      "row_index": 758,
+      "row_index": 754,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",
@@ -622,7 +622,7 @@
       "viet": "Mộ-dung Thùy. Thùy tâu"
     },
     {
-      "row_index": 819,
+      "row_index": 815,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.60 < 0.7 (6 Viet words / 10 Han chars).",
@@ -630,7 +630,7 @@
       "viet": "mà dùng thì làm hỏng việc"
     },
     {
-      "row_index": 827,
+      "row_index": 823,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.60 < 0.7 (6 Viet words / 10 Han chars).",
@@ -638,7 +638,7 @@
       "viet": "mỗi khi nói chuyện với Quát"
     },
     {
-      "row_index": 852,
+      "row_index": 848,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.56 < 0.7 (5 Viet words / 9 Han chars).",
@@ -646,7 +646,7 @@
       "viet": "sau diệt được kinh-sở."
     },
     {
-      "row_index": 858,
+      "row_index": 854,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.64 < 0.7 (7 Viet words / 11 Han chars).",
@@ -654,7 +654,7 @@
       "viet": "nghc lời không dùng được mà bỏ"
     },
     {
-      "row_index": 865,
+      "row_index": 861,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.55 < 0.7 (6 Viet words / 11 Han chars).",
@@ -662,7 +662,7 @@
       "viet": "cũng vì vua ham công-danh"
     },
     {
-      "row_index": 887,
+      "row_index": 883,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.67 < 0.7 (6 Viet words / 9 Han chars).",
@@ -670,7 +670,7 @@
       "viet": "Còn bệnh nào to hơn nữ"
     },
     {
-      "row_index": 1188,
+      "row_index": 1183,
       "category": "OMISSION",
       "severity": "warning",
       "reason": "Length ratio 0.62 < 0.7 (5 Viet words / 8 Han chars).",

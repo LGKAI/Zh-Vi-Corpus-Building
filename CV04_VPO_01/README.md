@@ -10,7 +10,7 @@
 - **`04_dong_hang/`**: Dóng hàng 4 cột (`Hán - Dịch âm - Dịch nghĩa - Dịch thơ`) kèm dòng tiêu đề mỗi bài (`src/aligner.py`, `src/corpus_pipeline.py`); các bài không có dịch nghĩa (như *Thạch Hào lại*, *Thu dạ hoài ngâm*) để trống cột `Dịch nghĩa`.
 
 ## 2. Thống Kê QA (Toàn Bộ 375 Trang)
-- **Tổng dòng dóng hàng**: `1.264` (`25` dòng tiêu đề, `1.124` dòng có `Dịch thơ`)
-- **Số cặp hợp lệ**: `1.264` (`MISSING = 0`, `FORMAT_ERROR = 0`, `LEFTOVER_MARKER = 0`)
-- **Cảnh báo QA**: `40` (`OMISSION: 33`, `ADDITION: 6`, `NUMBER_MISMATCH: 1`) $\rightarrow$ **Tỷ lệ lỗi: `3.16%`** (đạt $\le 30\%$)
-- **Độ phủ Hán tự**: `59.56%` | **Điểm tin cậy**: `0.57 / 1.00` (`0.5747`) | **`TSV == XLSX`**: Khớp 100%
+- **Tổng dòng dóng hàng**: `1.259` (`25` dòng tiêu đề, `1.179` dòng có `Dịch thơ`, `1.251` dòng có `Dịch nghĩa`/`Dịch thơ`)
+- **Số cặp hợp lệ**: `1.259` (`MISSING = 0`, `FORMAT_ERROR = 0`, `LEFTOVER_MARKER = 0`)
+- **Cảnh báo QA**: `40` (`OMISSION: 35`, `ADDITION: 5`, `NUMBER_MISMATCH: 0`) $\rightarrow$ **Tỷ lệ lỗi: `3.18%`** (đạt $\le 30\%$)
+- **Độ phủ Hán tự**: `59.23%` | **Điểm tin cậy**: `0.57 / 1.00` (`0.5737`) | **`TSV == XLSX`**: Khớp 100%

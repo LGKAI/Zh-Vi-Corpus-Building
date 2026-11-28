@@ -9,7 +9,7 @@
 | **Tên tài liệu** | *Hán Văn Tinh Túy* (Lãng Nhân) | *Thể loại từ VN thời trung đại* (Phạm Văn Ánh / Nguyễn Xuân Diện – Nguyễn Quảng Tuân) | *Thơ văn Lý – Trần Tập II* (Nguyễn Huệ Chi chủ biên) |
 | **Tệp gốc (`raw_data/`)** | `Hán văn tinh tuý - Lãng Nhân.pdf` | `Thể loại từ VN thời trung đại - Phạm Văn Ánh.pdf` | `Thơ văn Lý-Trần tập 2 - Nguyễn Huệ Chi.pdf` |
 | **Định dạng** | PDF Scan (`386` tr) | PDF Scan (`645` tr, text layer lỗi chữ Hán) | PDF Scan (`965` tr) |
-| **Phạm vi hợp lệ** | Sách `1..375` (`PDF 7..381`, **`375` tr**, gồm trang chẵn Hán–âm–nghĩa & trang lẻ tiêu đề/Dịch thơ) | Phần Ba, sách `127..540` (`PDF 134..547`, **`414` tr**; trừ `378..380` khuyết gốc còn `411` tr dóng hàng) | Sách `19..863` (`PDF 17..861`, **`795` tr**, loại trang trắng `PDF 25` & 4 bài Chữ Nôm `493..525`, `688..703`, `862..873`) |
+| **Phạm vi hợp lệ** | Sách `1..375` (`PDF 7..381`, **`375` tr**, gồm trang chẵn Hán–âm–nghĩa & trang lẻ tiêu đề/Dịch thơ) | Phần Ba, sách `127..540` (`PDF 134..547`, **`414` tr OCR**; trừ `378..380` khuyết gốc & `545..547` bảng Phụ lục còn **`408` tr** dóng hàng) | Sách `19..863` (`PDF 17..861`, **`795` tr OCR**, **`774` tr** dóng hàng sau khi loại trang trắng `PDF 25` & 4 bài Chữ Nôm cùng chú thích Nôm `493..535`, `688..714`, `862..873`) |
 | **Công thức lệch trang** | `pdf_page = book_page + 6` | `pdf_page = book_page + 7` *(sách `1..593`)* | `book_page = pdf_page + 2` *(từ `PDF 7`)* |
 | **Ghi chú xử lý** | Bài *Thạch Hào lại* (`PDF 100`) & *Thu dạ hoài ngâm* (`PDF 367..381`) để trống cột `Dịch nghĩa` | Bỏ Phần 1–2 (`PDF 8..133`) & Phụ lục (`PDF 548..645`); chi tiết khuyết gốc ở [`2_THONG_KE_BO_SUNG.md`](2_THONG_KE_BO_SUNG.md) | Bổ sung bản dịch nghĩa bài 3 (*Thiền tông chỉ nam tự*) bù trang 25 trắng từ file của chị Lưu Như |
 

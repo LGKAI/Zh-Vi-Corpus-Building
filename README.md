@@ -15,10 +15,10 @@ Toàn bộ **1.584 trang hợp lệ** từ 3 bộ PDF scan gốc (`1.996` trang 
 
 | Thư mục / Tác phẩm | Trang OCR GPU | Trang dóng hàng | Cặp hợp lệ | Dòng tiêu đề | Dòng có `Dịch thơ` | Lỗi QA *(ngưỡng $\le 30\%$)* | `MISSING` / `FORMAT_ERROR` | `TSV == XLSX` |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [`CV04_VPO_01`](CV04_VPO_01/README.md) — *Hán Văn Tinh Túy* | `375` (`PDF 7..381`) | `375` | `1.264` | `25` | `1.124` | `3.16%` (`40`) | `0` / `0` | 100% |
-| [`CV04_VPO_02`](CV04_VPO_02/README.md) — *Thể loại từ VN trung đại* | `414` (`PDF 134..547`) | `411` *(trừ `378..380`)* | `2.158` | `174` | `1.321` | `4.54%` (`98`) | `0` / `0` | 100% |
-| [`CV04_VPO_03`](CV04_VPO_03/README.md) — *Thơ văn Lý – Trần Tập II* | `795` (`PDF 17..861`) | `783` *(trừ trang Nôm)* | `4.663` | `284` | `1.432` | `8.49%` (`396`) | `0` / `0` | 100% |
-| **Tổng toàn nhóm `CV04`** | **`1.584`** | **`1.569`** | **`8.085`** | **`483`** | **`3.877`** | **`6.60%` (`534/8.085`)** | **`0` / `0`** | **100%** |
+| [`CV04_VPO_01`](CV04_VPO_01/README.md) — *Hán Văn Tinh Túy* | `375` (`PDF 7..381`) | `375` | `1.259` | `25` | `1.179` | `3.18%` (`40`) | `0` / `0` | 100% |
+| [`CV04_VPO_02`](CV04_VPO_02/README.md) — *Thể loại từ VN trung đại* | `414` (`PDF 134..547`) | `408` *(trừ `378..380`, `545..547`)* | `2.170` | `175` | `1.326` | `4.47%` (`97`) | `0` / `0` | 100% |
+| [`CV04_VPO_03`](CV04_VPO_03/README.md) — *Thơ văn Lý – Trần Tập II* | `795` (`PDF 17..861`) | `774` *(trừ trang Nôm & chú thích Nôm)* | `4.929` | `281` | `1.484` | `7.67%` (`378`) | `0` / `0` | 100% |
+| **Tổng toàn nhóm `CV04`** | **`1.584`** | **`1.557`** | **`8.358`** *(8.320 có nghĩa/thơ)* | **`481`** | **`3.989`** | **`6.16%` (`515/8.358`)** | **`0` / `0`** | **100%** |
 
 > **Phân công đóng góp**: Khoa `398` trang (`origin/khoa`), Hiếu `397` trang (`origin/hieu`), Khánh `396` trang (`khanh`), Kin `393` trang (`kin`). Chi tiết tại [`docs/3_PHAN_CONG_4_NGUOI.md`](docs/3_PHAN_CONG_4_NGUOI.md).
 
@@ -55,8 +55,8 @@ Toàn bộ **1.584 trang hợp lệ** từ 3 bộ PDF scan gốc (`1.996` trang 
 - **Đồng bộ tệp bàn giao**: `.tsv` (UTF-8, không header, phân tách `\t`) khớp 100% với sheet `DONG_HANG` (hàng 1 là tiêu đề 4 cột) của `.xlsx` kèm sheet `THONG_KE`. `03_text_sach/{han,viet}.txt` chuẩn `UTF-8 NFC`, đồng bộ 1-1 theo dòng với `.tsv` (khi chạy `align`).
 - **5 tiêu chí phương pháp đề xuất**:
   1. *Lý do chọn*: `PyMuPDF` (300 DPI đa nền tảng), `PaddleOCR chinese_cht` + `VietOCR vgg_transformer`, khử nhầm nét Hán bằng `Phiên âm` (`M.E.D. Levenshtein` $S_1 \cap S_2$, `105` cụm nhầm nét, `764` mục từ điển Hán–Việt lõi), tách mệnh đề song hành văn xuôi/biền ngẫu và DP Gale-Church + neo từ vựng/số đếm.
-  2. *Đầu vào / Đầu ra*: 3 PDF scan (`raw_data/`) + bản dịch trang 25 `VPO_03` $\rightarrow$ 3 thư mục `CV04_VPO_01..03/` (`01_nguon`, `02_ocr_tho`, `03_text_sach`, `04_dong_hang` với **`8.085` cặp hợp lệ**).
-  3. *Kiểm chứng*: `validate_pairs` (6 loại cờ lỗi, tỷ lệ lỗi tổng **`6.60% <= 30%`**), kiểm tra `TSV == XLSX`, độ phủ Hán tự (`word_aligner.py`), `tests/test_suite.py` (`8/8` pass) và hậu kiểm trực quan trên `web_app/app.py`.
+  2. *Đầu vào / Đầu ra*: 3 PDF scan (`raw_data/`) + bản dịch trang 25 `VPO_03` $\rightarrow$ 3 thư mục `CV04_VPO_01..03/` (`01_nguon`, `02_ocr_tho`, `03_text_sach`, `04_dong_hang` với **`8.358` cặp hợp lệ**, trong đó **`8.320` cặp** có đầy đủ `Dịch nghĩa` hoặc `Dịch thơ`).
+  3. *Kiểm chứng*: `validate_pairs` (6 loại cờ lỗi, tỷ lệ lỗi tổng **`6.16% <= 30%`**), kiểm tra `TSV == XLSX`, độ phủ Hán tự (`word_aligner.py`), `tests/test_suite.py` (`8/8` pass) và hậu kiểm trực quan trên `web_app/app.py`.
   4. *Rủi ro & dự phòng*: Cắt header 7%, lọc đường kẻ chú thích (`VPO_02`), bù trang trắng `PDF 25` (`VPO_03`), hỗ trợ bảo toàn `[MASK]`/`□` và chỉnh sửa tay qua CAT Workbench.
   5. *Tái lập*: Cấu hình tập trung ở `config/`, xuất `.xlsx` thuần thư viện chuẩn Python (zero-dependency), chạy lại qua `main.py`.
 
@@ -108,8 +108,8 @@ CV04_VPO_0x/
 
 ### 5.4. Chỉ tiêu & quy tắc đóng gói
 
-- **Số lượng**: $\ge 8.000$ cặp hợp lệ toàn nhóm (tài liệu cần OCR) — hiện đạt **`8.085`**.
-- **Chất lượng**: Tỷ lệ lỗi QA $\le 30\%$ — hiện đạt **`6.60%`**.
+- **Số lượng**: $\ge 8.000$ cặp hợp lệ toàn nhóm (tài liệu cần OCR) — hiện đạt **`8.358`** (**`8.320`** cặp có `Dịch nghĩa`/`Dịch thơ`).
+- **Chất lượng**: Tỷ lệ lỗi QA $\le 30\%$ — hiện đạt **`6.16%`**.
 - **Không chứa**: mật khẩu, token/API key (`kaggle.json`, `.env`), thư mục tạm (`.venv/`, `staging/`, `__pycache__/`).
 - **Không đặt tên** kiểu `final`, `final2`, `final_new`.
 - **Hạn nộp**: `30/11`.

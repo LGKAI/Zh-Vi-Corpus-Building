@@ -523,6 +523,39 @@ _VIET_LOWER_DIACRITIC_CHARS = frozenset(
     "àáảãạăằắẳẵặâầấẩẫậèéẻẽẹêềếểễệìíỉĩịòóỏõọôồốổỗộơờớởỡợùúủũụưừứửữựỳýỷỹỵđ"
 )
 _MULTI_LETTER_WORD_RE = re.compile(r"[A-Za-zÀ-ỹà-ỹ]{2,}")
+_VIETOCR_GIBBERISH_RE = re.compile(
+    r"(?:\d{6,}|[A-Z]{9,}|[?%]{3,}|(?:\b\d+[A-Za-zÀ-ỹ%/.\-]+\d+\b.*){2,}|"
+    r"\b(?:LRETAPER|BAREHILDNXEF|METRICH|RYAPHEN|TRANSFRONTS|THERBIXE|ZEMITZ|ZILLEZIL|HAHRAZ|KINKFAHTS|WHICKING|BFL|AIRY|ÁIRY)\b|"
+    r"^\s*\d{2,4}\s+[A-Z]{1,3}\s*$|"
+    r"^\s*[0-9?%()\[\]/\-.,:;xXzZkKfF\s]{4,}\s*$)",
+    flags=re.IGNORECASE,
+)
+_HVTT_TRANSLATOR_OR_NOTE_RE = re.compile(
+    r"^\s*(?:[-–—(\[]\s*)*(?:Bản\s+dịch\b|Bản\s*,\s*và\b|(?:tương|lương)\s+truyền\s+là\b|\(\d{1,2}\)\s+[A-ZĐÀ-Ỹ])",
+    flags=re.IGNORECASE,
+)
+
+
+def _is_vietocr_gibberish_line(text: str) -> bool:
+    s = unicodedata.normalize("NFC", str(text or "").strip())
+    if not s:
+        return True
+    if _VIETOCR_GIBBERISH_RE.search(s):
+        return True
+    non_viet_letters = sum(1 for ch in s if ch in "zZwWjJfF%")
+    alpha_cnt = sum(1 for ch in s if ch.isalpha())
+    if non_viet_letters >= 2 and non_viet_letters >= 0.14 * max(1, alpha_cnt):
+        return True
+    # Broken single-letter / 2-letter uppercase fragments from VietOCR scanning CJK
+    tokens = s.split()
+    if len(tokens) >= 5:
+        tiny_or_sym = sum(
+            1 for tok in tokens
+            if len(re.sub(r"[^A-Za-zÀ-ỹà-ỹ]", "", tok)) <= 2 or any(c in tok for c in "%?0123456789zZkKxXfF")
+        )
+        if tiny_or_sym >= 0.85 * len(tokens) and any(c in s for c in "0123456789%?zZkKxXfF"):
+            return True
+    return False
 
 
 def reconcile_han_viet_items(
@@ -699,6 +732,8 @@ def reconcile_han_viet_items(
         if vx2 <= 0.0 and vy2 <= 0.0:
             clean_viet.append(vit)
             continue
+        if _is_vietocr_gibberish_line(vt) and classify_section_header(vt) is None:
+            continue
         vw = max(1.0, vx2 - vx1)
         vyc = 0.5 * (vy1 + vy2)
         multi_words = len(_MULTI_LETTER_WORD_RE.findall(vt))
@@ -713,7 +748,11 @@ def reconcile_han_viet_items(
             hx1, hy1, hx2, hy2 = _box_bounds(hit)
             hw = max(1.0, hx2 - hx1)
             hyc = 0.5 * (hy1 + hy2)
-            if abs(hyc - vyc) <= 18.0 and (min(hx2, vx2) - max(hx1, vx1)) >= 0.35 * min(hw, vw):
+            y_tol = 26.0 if bkey == "HVTT" else 18.0
+            if bkey == "HVTT" and cjk_cnt >= 2 and abs(hyc - vyc) <= y_tol:
+                is_fake_v = True
+                break
+            if abs(hyc - vyc) <= y_tol and (min(hx2, vx2) - max(hx1, vx1)) >= 0.35 * min(hw, vw):
                 is_fake_v = True
                 break
         if not is_fake_v:
@@ -866,14 +905,30 @@ def group_layout_blocks(
                 }
 
             body_entries: List[Tuple[Dict[str, Any], str, float]] = []
+            prev_verse_y2: Optional[float] = None
+            verse_widths: List[float] = []
             for it in viet_odd_source:
                 txt = unicodedata.normalize("NFC", it.get("text", "").strip())
-                _, y1, _, y2 = _box_bounds(it)
+                bx1, y1, bx2, y2 = _box_bounds(it)
                 if not txt or _is_primary_han_line(txt) or _is_hvtt_running_header(txt, y1):
                     continue
-                if is_stop_section_header(txt):
+                if is_stop_section_header(txt) or _HVTT_TRANSLATOR_OR_NOTE_RE.match(txt):
+                    break
+                bw = bx2 - bx1
+                # Detect full-width footnote/historical note block below verse stanza after a vertical gap
+                if (
+                    bx2 > 0.0
+                    and prev_verse_y2 is not None
+                    and len(verse_widths) >= 2
+                    and (y1 - prev_verse_y2) >= 40.0
+                    and bw >= 0.68 * float(page_width)
+                    and statistics.median(verse_widths) <= 0.60 * float(page_width)
+                ):
                     break
                 body_entries.append((it, txt, 0.5 * (y1 + y2)))
+                if bx2 > 0.0:
+                    prev_verse_y2 = y2
+                    verse_widths.append(bw)
 
             if body_entries:
                 x1s = [_box_bounds(it)[0] for it, _, _ in body_entries]
@@ -1018,6 +1073,25 @@ def group_layout_blocks(
         has_dich_nghia = not (is_final_no_dich_nghia_page or no_gloss_by_bands)
 
         if use_vertical_bands:
+            # Merge wrapped 2-line Hán sentences where the first Hán line has no intervening Việt band
+            merged_h_lines: List[str] = []
+            merged_bands: List[List[Tuple[Dict[str, Any], str]]] = []
+            k_idx = 0
+            while k_idx < len(han_lines):
+                if (
+                    not band_items[k_idx]
+                    and k_idx + 1 < len(han_lines)
+                    and (han_y_centers[k_idx + 1] - han_y_centers[k_idx]) <= 145.0
+                ):
+                    han_lines[k_idx + 1] = f"{han_lines[k_idx]}{han_lines[k_idx + 1]}"
+                    k_idx += 1
+                    continue
+                merged_h_lines.append(han_lines[k_idx])
+                merged_bands.append(band_items[k_idx])
+                k_idx += 1
+            han_lines = merged_h_lines
+            band_items = merged_bands
+
             phien_am_lines = []
             gloss_lines = []
             for b_idx, b in enumerate(band_items):
@@ -1034,7 +1108,18 @@ def group_layout_blocks(
                     han_char_count = _count_cjk_and_latin(han_lines[b_idx])[0]
                     w0 = _word_count(b[0][1])
                     w1 = _word_count(b[1][1])
-                    if (
+                    is_right_bracket_wrap = (
+                        b[1][1].lstrip().startswith("[")
+                        or (l1_x1 >= 0.58 * float(page_width) and w1 <= 3 and w0 < han_char_count)
+                    )
+                    is_aligned_pa_wrap = (
+                        l0_x2 >= 0.72 * float(page_width)
+                        and w1 <= 6
+                        and w0 < han_char_count
+                        and (w0 + w1) <= han_char_count + 3
+                        and abs(l1_x1 - l0_x1) <= 32.0
+                    )
+                    if is_right_bracket_wrap or is_aligned_pa_wrap or (
                         l0_x2 >= 0.80 * float(page_width)
                         and w1 <= 5
                         and (
